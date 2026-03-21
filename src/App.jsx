@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import LandingPage from "./LandingPage";
 
 // ─── SUPABASE ─────────────────────────────────────────────────────────────────
 const supabase = createClient(
@@ -706,7 +707,7 @@ export default function App() {
   const [session,  setSession]  = useState(undefined); // undefined = loading
   const [profile,  setProfile]  = useState(null);
   const [business, setBusiness] = useState(null);
-  const [authPage, setAuthPage] = useState("signin");
+  const [authPage, setAuthPage] = useState("landing"); // Start with landing page
 
   useEffect(() => {
     // Get initial session
@@ -747,7 +748,15 @@ export default function App() {
   if (!session) {
     if (authPage==="signup") return <SignUp setPage={setAuthPage}/>;
     if (authPage==="forgot") return <ForgotPassword setPage={setAuthPage}/>;
-    return <SignIn setPage={setAuthPage}/>;
+    if (authPage==="signin") return <SignIn setPage={setAuthPage}/>;
+    // Default: show landing page
+    return (
+      <>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+        <style>{`* { box-sizing:border-box; margin:0; padding:0; } body { font-family:Manrope,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; } button,input,select{font-family:inherit;} html{scroll-behavior:smooth;} ::-webkit-scrollbar{width:4px;} ::-webkit-scrollbar-thumb{background:#1e2e45;border-radius:4px;}`}</style>
+        <LandingPage onNavigate={setAuthPage}/>
+      </>
+    );
   }
 
   // Logged in but not onboarded
