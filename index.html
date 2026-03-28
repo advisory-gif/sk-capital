@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SK Capital — Decision Clarity Through Numbers</title>
-<meta name="description" content="You don't actually know your numbers — and it's costing you money every month. SK Capital helps founders understand cash, margins, and growth.">
+<meta name="description" content="You don't actually know your numbers — and it's costing you money. SK Capital helps founders understand cash, margins, and growth.">
 <meta property="og:title" content="SK Capital — Decision Clarity Through Numbers">
 <meta property="og:description" content="We help founders understand cash, margins, and growth — so you stop guessing and start making confident decisions.">
 <meta property="og:type" content="website">
@@ -114,7 +114,7 @@ a { color:inherit; }
 }
 .hero h1 {
   font-family:var(--serif); font-size:clamp(32px,4.8vw,50px);
-  line-height:1.18; color:var(--cream); margin-bottom:8px; max-width:620px;
+  line-height:1.18; color:var(--cream); margin-bottom:8px; max-width:640px;
 }
 .hero-hit {
   font-family:var(--serif); font-size:clamp(20px,2.5vw,26px);
@@ -144,6 +144,24 @@ a { color:inherit; }
   margin-top:12px; font-size:12px; color:var(--muted);
 }
 .hero-meta a { color:var(--gold); text-decoration:none; font-weight:600; }
+
+/* DISCOVER SECTION */
+.discover-list {
+  margin-top:32px; display:flex; flex-direction:column; gap:14px;
+}
+.discover-item {
+  display:flex; align-items:flex-start; gap:12px;
+  font-size:14px; color:var(--text); line-height:1.6;
+}
+.discover-check {
+  color:var(--gold); font-size:14px; font-weight:700; flex-shrink:0; width:18px; margin-top:2px;
+}
+.discover-bottom {
+  margin-top:28px;
+  font-family:var(--serif); font-size:clamp(16px,2.2vw,20px);
+  color:var(--cream); line-height:1.4; font-style:italic;
+  border-left:3px solid var(--gold); padding-left:18px;
+}
 
 /* WHO THIS IS FOR */
 .who-grid {
@@ -245,6 +263,10 @@ a { color:inherit; }
 .founder-info h3 { font-size:15px; font-weight:700; color:var(--text-strong); margin-bottom:2px; }
 .founder-info .title { font-size:12px; color:var(--gold); font-weight:600; margin-bottom:8px; }
 .founder-info p { font-size:13px; color:var(--muted); line-height:1.7; }
+.founders-line {
+  margin-top:24px; font-size:15px; color:var(--text); line-height:1.7;
+  border-left:3px solid var(--gold); padding-left:18px; font-style:italic;
+}
 
 /* PRODUCT HINT */
 .product-hint {
@@ -333,12 +355,12 @@ a { color:inherit; }
   </div>
 </nav>
 
-<!-- ====== HERO ====== -->
+<!-- ====== HERO (CHANGE 1: updated headline) ====== -->
 <section class="hero">
   <div class="contain hero-inner">
     <div class="hero-eyebrow anim a1">Financial Intelligence &amp; Advisory</div>
-    <h1 class="anim a2">You don't actually know your numbers.</h1>
-    <div class="hero-hit anim a3">And it's costing you money every month.</div>
+    <h1 class="anim a2">You don't actually know your numbers — and it's costing you money.</h1>
+    <div class="hero-hit anim a3">We fix that.</div>
     <p class="hero-desc anim a4">
       We help founders understand cash, margins, and growth — so you 
       stop guessing and start making confident decisions.
@@ -348,10 +370,42 @@ a { color:inherit; }
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
     <p class="hero-promise anim a6">You'll walk away with 3 clear actions — even if you don't work with us.</p>
+    <!-- CHANGE 2: credibility line with real company names -->
     <div class="hero-trust anim a7">
-      <strong>Built by finance professionals</strong> with experience across FP&amp;A, financial reporting, and data analytics at multinational corporations and high-growth firms — now helping growing businesses get the same clarity.
+      Built FP&amp;A and finance data systems across companies like <strong>Amazon, American Express, Sun Pharma,</strong> and high-growth startups.
     </div>
     <p class="hero-meta anim a7">Free · 30 minutes · No obligations · <a href="mailto:advisory@skcapital.co.in">advisory@skcapital.co.in</a></p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ====== CHANGE 3: NEW SECTION — What founders discover (after hero, before who) ====== -->
+<section class="section bg-alt">
+  <div class="contain">
+    <div class="section-label">Within 7 days</div>
+    <h2 class="section-title">What founders usually discover.</h2>
+    <div class="discover-list">
+      <div class="discover-item">
+        <div class="discover-check">→</div>
+        <p>Hidden cost leaks that were never tracked</p>
+      </div>
+      <div class="discover-item">
+        <div class="discover-check">→</div>
+        <p>Clear understanding of cash runway</p>
+      </div>
+      <div class="discover-item">
+        <div class="discover-check">→</div>
+        <p>What's actually driving profit vs just revenue</p>
+      </div>
+      <div class="discover-item">
+        <div class="discover-check">→</div>
+        <p>Where money is being wasted vs creating value</p>
+      </div>
+    </div>
+    <div class="discover-bottom">
+      Most businesses don't have a data problem. They have a clarity problem.
+    </div>
   </div>
 </section>
 
@@ -491,18 +545,18 @@ a { color:inherit; }
   </div>
 </section>
 
-<!-- ====== COST OF INACTION (trimmed) ====== -->
+<!-- ====== COST OF INACTION (CHANGE 4: kept trimmed, 3 points only) ====== -->
 <section class="section">
   <div class="contain">
     <div class="section-label">The cost of waiting</div>
     <h2 class="section-title">What happens if you don't fix this.</h2>
     <div class="cost-list">
-      <div class="cost-item"><div class="cost-x">✕</div><p>You keep making decisions on incomplete data — and some will be expensive mistakes.</p></div>
-      <div class="cost-item"><div class="cost-x">✕</div><p>Costs grow silently. By the time you notice, margins are already gone.</p></div>
-      <div class="cost-item"><div class="cost-x">✕</div><p>Cash surprises hit when it's too late. Growth feels chaotic instead of controlled.</p></div>
+      <div class="cost-item"><div class="cost-x">✕</div><p>Making decisions based on incomplete data — some will be expensive mistakes.</p></div>
+      <div class="cost-item"><div class="cost-x">✕</div><p>Costs growing without visibility — by the time you notice, margins are already gone.</p></div>
+      <div class="cost-item"><div class="cost-x">✕</div><p>Cash surprises hitting too late — growth feels chaotic instead of controlled.</p></div>
     </div>
     <div class="cost-bottom">
-      Most businesses don't fail from lack of revenue.<br>
+      Most businesses don't fail because of lack of revenue.<br>
       They fail because they don't understand their numbers in time.
     </div>
   </div>
@@ -510,14 +564,11 @@ a { color:inherit; }
 
 <div class="divider"></div>
 
-<!-- ====== ABOUT / FOUNDERS ====== -->
+<!-- ====== ABOUT / FOUNDERS (CHANGE 5: updated bios + combined positioning line) ====== -->
 <section class="section bg-alt" id="about">
   <div class="contain">
     <div class="section-label">Who we are</div>
     <h2 class="section-title">The people behind SK Capital.</h2>
-    <p class="section-sub">
-      We've worked inside finance teams at real companies. Now we bring that same rigour to growing businesses that need it most.
-    </p>
     <div class="founders-grid">
       <div class="founder-card">
         <div class="founder-avatar">SK</div>
@@ -525,8 +576,9 @@ a { color:inherit; }
           <h3>Snesh Kakkar</h3>
           <div class="title">Co-founder, SK Capital</div>
           <p>
-            Started SK Capital to solve a simple problem: most businesses under ₹10Cr have no real financial visibility. 
-            Focused on building the systems and technology that make financial intelligence accessible to every growing business.
+            FP&amp;A experience at Amazon and American Express. Expertise in forecasting, 
+            reporting, and financial decision-making. Started SK Capital to make CFO-level 
+            intelligence accessible to every growing business.
           </p>
         </div>
       </div>
@@ -536,11 +588,16 @@ a { color:inherit; }
           <h3>Megha Dalmia</h3>
           <div class="title">Co-founder, SK Capital</div>
           <p>
-            ~4 years across FP&amp;A, financial reporting, and data analytics at multinational corporations and high-growth firms. 
-            MBA in Finance. Specialises in turning messy financial data into clear, decision-ready insight for leadership teams.
+            Senior Data Analyst with experience in finance reporting, FP&amp;A, and analytics. 
+            Strong in data validation, reconciliation, and turning complex financial data 
+            into clear, actionable business insights.
           </p>
         </div>
       </div>
+    </div>
+
+    <div class="founders-line">
+      We work at the intersection of finance, data, and decision-making — ensuring your numbers are not just accurate, but actually useful.
     </div>
 
     <div class="product-hint">
