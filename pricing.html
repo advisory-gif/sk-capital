@@ -1,552 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing — SK Capital</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<meta name="description" content="Simple, honest pricing for financial advisory, FP&A, and fractional CFO services. INR and USD. Cancel anytime.">
+<meta property="og:title" content="Pricing — SK Capital">
+<meta property="og:description" content="Simple, honest pricing for financial advisory, FP&A, and fractional CFO services.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skcapital.co.in/pricing.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #0b1120;
-    --navy-2: #101828;
-    --navy-3: #182136;
-    --gold: #c9a84c;
-    --gold-hover: #dabb5e;
-    --gold-faint: rgba(201,168,76,0.06);
-    --gold-border: rgba(201,168,76,0.15);
-    --gold-border-strong: rgba(201,168,76,0.35);
-    --cream: #f0ead6;
-    --text: #d8d5cc;
-    --text-strong: #eae8e0;
-    --muted: rgba(216,213,204,0.45);
-    --border: rgba(255,255,255,0.055);
-    --serif: 'DM Serif Display', Georgia, serif;
-    --sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  }
+:root {
+  --navy: #0b1120;
+  --navy-2: #101828;
+  --navy-3: #182136;
+  --gold: #c9a84c;
+  --gold-hover: #dabb5e;
+  --gold-faint: rgba(201,168,76,0.06);
+  --gold-border: rgba(201,168,76,0.15);
+  --gold-border-strong: rgba(201,168,76,0.35);
+  --cream: #f0ead6;
+  --text: #d8d5cc;
+  --text-strong: #eae8e0;
+  --muted: rgba(216,213,204,0.45);
+  --border: rgba(255,255,255,0.055);
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:var(--sans); background:var(--navy); color:var(--text);
+  -webkit-font-smoothing:antialiased; font-size:16px; line-height:1.65;
+}
+a { color:inherit; }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.contain { max-width:860px; margin:0 auto; padding:0 28px; }
+.section-label {
+  font-size:11px; font-weight:700; color:var(--gold); letter-spacing:0.18em;
+  text-transform:uppercase; margin-bottom:20px;
+}
+.section-title {
+  font-family:var(--serif); font-size:clamp(26px,3.8vw,38px);
+  color:var(--cream); line-height:1.22; margin-bottom:20px;
+}
+.section-sub {
+  font-size:16px; color:var(--muted); line-height:1.75; max-width:580px;
+}
 
-  html { scroll-behavior: smooth; }
+/* NAV */
+.nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:18px 0; transition:all 0.35s;
+  background:rgba(11,17,32,0.96); backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav.scrolled { padding:12px 0; }
+.nav-inner {
+  max-width:860px; margin:0 auto; padding:0 28px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.logo { font-family:var(--serif); font-size:22px; color:var(--gold); text-decoration:none; }
+.logo-sub {
+  font-family:var(--sans); font-size:10px; color:var(--muted);
+  letter-spacing:0.12em; text-transform:uppercase; margin-left:10px; font-weight:500;
+}
+.nav-right { display:flex; align-items:center; gap:28px; }
+.nav-link {
+  color:var(--muted); text-decoration:none; font-size:13px; font-weight:500;
+  transition:color 0.2s;
+}
+.nav-link:hover { color:var(--text); }
+.nav-link.active { color:var(--text); }
+.nav-cta-link {
+  color:var(--gold); text-decoration:none; font-size:13px; font-weight:600;
+  border:1px solid var(--gold-border); padding:8px 20px; border-radius:3px;
+  transition:all 0.2s;
+}
+.nav-cta-link:hover { background:var(--gold); color:var(--navy); }
+@media(max-width:640px){
+  .nav-right .nav-link { display:none; }
+}
 
-  body {
-    font-family: var(--sans);
-    background-color: var(--navy);
-    color: var(--text);
-    line-height: 1.6;
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
-  }
+/* HERO */
+.pricing-hero {
+  padding:140px 0 48px; text-align:center;
+  position:relative; overflow:hidden;
+}
+.pricing-hero::before {
+  content:''; position:absolute; top:-30%; left:50%; transform:translateX(-50%);
+  width:700px; height:700px; border-radius:50%;
+  background:radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 65%);
+  pointer-events:none;
+}
+.pricing-hero .contain { position:relative; z-index:1; }
+.pricing-hero .eyebrow {
+  font-size:13px; font-weight:600; color:var(--gold); margin-bottom:28px;
+  display:inline-flex; align-items:center; gap:10px;
+}
+.pricing-hero .eyebrow::before, .pricing-hero .eyebrow::after {
+  content:''; width:24px; height:1px; background:var(--gold);
+}
+.pricing-hero h1 {
+  font-family:var(--serif); font-size:clamp(32px,4.8vw,50px);
+  line-height:1.15; color:var(--cream); margin-bottom:12px;
+}
+.pricing-hero .hit {
+  font-family:var(--serif); font-size:clamp(20px,2.5vw,26px);
+  color:var(--gold); margin-bottom:28px; line-height:1.3;
+}
+.pricing-hero p.desc {
+  font-size:17px; color:var(--muted); line-height:1.8;
+  max-width:540px; margin:0 auto 40px;
+}
 
-  /* NAV — matches site */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 48px;
-    height: 72px;
-    background: rgba(11,17,32,0.88);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
-  .nav-logo-main {
-    font-family: var(--serif);
-    font-size: 22px;
-    color: var(--gold);
-    letter-spacing: -0.005em;
-  }
-  .nav-logo-sub {
-    font-family: var(--sans);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-    text-transform: uppercase;
-  }
-  .nav-links { display: flex; align-items: center; gap: 40px; }
-  .nav-links a {
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--text);
-    text-decoration: none;
-    letter-spacing: 0.01em;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-strong);
-    background: transparent;
-    border: 1px solid var(--gold-border-strong);
-    padding: 10px 22px;
-    border-radius: 2px;
-    cursor: pointer;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: all 0.2s;
-  }
-  .nav-cta:hover { background: var(--gold-faint); border-color: var(--gold); }
+/* TOGGLE */
+.currency-toggle {
+  display:inline-flex; align-items:center;
+  background:var(--navy-2); border:1px solid var(--gold-border);
+  border-radius:3px; padding:3px;
+}
+.toggle-btn {
+  font-family:var(--sans); font-size:13px; font-weight:600;
+  letter-spacing:0.04em; color:var(--muted);
+  background:transparent; border:none; padding:10px 30px;
+  cursor:pointer; transition:all 0.2s; border-radius:2px;
+}
+.toggle-btn.active { background:var(--gold); color:var(--navy); }
+.toggle-btn:not(.active):hover { color:var(--text-strong); }
 
-  /* HERO */
-  .pricing-hero {
-    text-align: center;
-    padding: 96px 24px 56px;
-    max-width: 720px;
-    margin: 0 auto;
-  }
-  .section-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    color: var(--gold);
-    margin-bottom: 36px;
-  }
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--gold);
-  }
-  .pricing-hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(40px, 5.5vw, 60px);
-    font-weight: 400;
-    line-height: 1.08;
-    color: var(--text-strong);
-    margin-bottom: 24px;
-    letter-spacing: -0.015em;
-  }
-  .pricing-hero .tag {
-    font-family: var(--serif);
-    color: var(--gold);
-    display: block;
-    margin-top: 4px;
-  }
-  .pricing-hero p {
-    font-family: var(--sans);
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--text);
-    line-height: 1.65;
-    max-width: 520px;
-    margin: 0 auto 48px;
-  }
+/* PLANS */
+.plans-section { padding:40px 0; }
+.plans-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(252px, 1fr));
+  gap:18px; max-width:1160px; margin:0 auto; padding:0 28px;
+}
+.plan-card {
+  background:var(--navy-2); border:1px solid var(--border); border-radius:4px;
+  padding:36px 28px 32px; position:relative; display:flex; flex-direction:column;
+  transition:border-color 0.25s, transform 0.25s;
+}
+.plan-card:hover { border-color:var(--gold-border-strong); transform:translateY(-2px); }
+.plan-card.featured {
+  border:1px solid var(--gold-border-strong); background:var(--navy-3);
+}
+.featured-badge {
+  position:absolute; top:-1px; left:50%; transform:translateX(-50%);
+  background:var(--gold); color:var(--navy);
+  font-family:var(--sans); font-size:10px; font-weight:700;
+  letter-spacing:0.16em; text-transform:uppercase;
+  padding:5px 16px; border-radius:0 0 3px 3px;
+}
+.plan-name {
+  font-family:var(--serif); font-size:24px; color:var(--cream);
+  margin-bottom:8px; line-height:1.2;
+}
+.plan-subtitle {
+  font-size:13px; color:var(--muted); margin-bottom:28px;
+  line-height:1.6; min-height:50px;
+}
+.plan-price-block { margin-bottom:26px; }
+.plan-price {
+  font-family:var(--serif); font-size:30px; color:var(--cream);
+  line-height:1; letter-spacing:-0.01em;
+}
+.plan-price .currency-sym {
+  font-family:var(--sans); font-size:16px; font-weight:600;
+  vertical-align:super; margin-right:3px; color:var(--gold);
+  top:-0.3em; position:relative;
+}
+.plan-freq {
+  display:block; font-size:12px; color:var(--muted);
+  margin-top:10px; letter-spacing:0.02em;
+}
+.plan-price.custom {
+  font-family:var(--sans); font-size:20px; font-weight:500;
+  color:var(--gold); letter-spacing:-0.005em;
+}
+.plan-divider {
+  width:40px; height:1px; background:var(--gold-border-strong); margin-bottom:24px;
+}
+.plan-features { list-style:none; margin-bottom:32px; flex:1; }
+.plan-features li {
+  display:flex; align-items:flex-start; gap:10px;
+  font-size:13.5px; color:var(--text); margin-bottom:12px; line-height:1.55;
+}
+.plan-features li::before {
+  content:''; display:block; width:5px; height:5px;
+  background:var(--gold); border-radius:50%;
+  flex-shrink:0; margin-top:8px;
+}
+.plan-cta {
+  display:block; text-align:center; font-family:var(--sans);
+  font-size:14px; font-weight:600; letter-spacing:0.02em;
+  text-decoration:none; padding:13px 24px; border-radius:3px;
+  transition:all 0.2s; cursor:pointer;
+}
+.plan-cta.outline {
+  color:var(--gold); border:1px solid var(--gold-border);
+  background:transparent;
+}
+.plan-cta.outline:hover { background:var(--gold-faint); border-color:var(--gold); }
+.plan-cta.solid {
+  color:var(--navy); background:var(--gold); border:1px solid var(--gold);
+}
+.plan-cta.solid:hover { background:var(--gold-hover); border-color:var(--gold-hover); }
 
-  /* TOGGLE */
-  .currency-toggle {
-    display: inline-flex;
-    align-items: center;
-    background: var(--navy-2);
-    border: 1px solid var(--gold-border);
-    border-radius: 3px;
-    overflow: hidden;
-    margin-bottom: 72px;
-    padding: 3px;
-  }
-  .toggle-btn {
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    color: var(--muted);
-    background: transparent;
-    border: none;
-    padding: 10px 30px;
-    cursor: pointer;
-    transition: all 0.2s;
-    border-radius: 2px;
-  }
-  .toggle-btn.active {
-    background: var(--gold);
-    color: var(--navy);
-  }
-  .toggle-btn:not(.active):hover { color: var(--text-strong); }
+/* NOTE */
+.pricing-note {
+  text-align:center; padding:32px 24px 88px;
+  font-size:13px; color:var(--muted); line-height:1.85;
+  max-width:680px; margin:0 auto;
+}
+.pricing-note strong { color:var(--text); font-weight:600; }
+.pricing-note a { color:var(--gold); text-decoration:none; font-weight:600; }
+.pricing-note a:hover { text-decoration:underline; }
 
-  /* PLANS */
-  .plans-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
-    gap: 20px;
-    max-width: 1160px;
-    margin: 0 auto;
-    padding: 0 32px 88px;
-  }
+/* FINAL CTA */
+.cta-section {
+  padding:88px 0; position:relative; text-align:center;
+  background:var(--navy-2); border-top:1px solid var(--border);
+}
+.cta-section::before {
+  content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:500px; height:500px; border-radius:50%;
+  background:radial-gradient(circle, rgba(201,168,76,0.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+.cta-section .contain { position:relative; z-index:1; }
+.cta-section .section-title { margin-left:auto; margin-right:auto; max-width:520px; }
+.cta-section .section-sub { margin:0 auto 36px; text-align:center; }
+.cta-main-btn {
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--gold); color:var(--navy); border:none;
+  padding:18px 44px; font-family:var(--sans); font-size:16px; font-weight:700;
+  cursor:pointer; border-radius:3px; transition:all 0.25s; text-decoration:none;
+}
+.cta-main-btn:hover { background:var(--gold-hover); transform:translateY(-1px); }
+.cta-promise { margin-top:16px; font-size:14px; color:var(--text-strong); font-weight:500; }
+.cta-alt { margin-top:16px; font-size:13px; color:var(--muted); line-height:1.8; }
+.cta-alt a { color:var(--gold); text-decoration:none; font-weight:600; }
+.cta-alt a:hover { text-decoration:underline; }
 
-  .plan-card {
-    background: var(--navy-2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 40px 32px 36px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    transition: border-color 0.25s, transform 0.25s;
-  }
-  .plan-card:hover {
-    border-color: var(--gold-border-strong);
-    transform: translateY(-2px);
-  }
-  .plan-card.featured {
-    border: 1px solid var(--gold-border-strong);
-    background: var(--navy-3);
-  }
+/* FOOTER */
+.footer { padding:36px 0; border-top:1px solid var(--border); }
+.footer-inner {
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
+}
+.footer-brand { font-family:var(--serif); font-size:16px; color:var(--gold); }
+.footer-right { font-size:12px; color:var(--muted); }
 
-  .featured-badge {
-    position: absolute;
-    top: -1px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--gold);
-    color: var(--navy);
-    font-family: var(--sans);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    padding: 5px 16px;
-    border-radius: 0 0 3px 3px;
-  }
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(20px); }
+  to { opacity:1; transform:translateY(0); }
+}
+.anim { opacity:0; animation:fadeIn 0.6s ease forwards; }
+.a1 { animation-delay:0.05s; }
+.a2 { animation-delay:0.12s; }
+.a3 { animation-delay:0.2s; }
+.a4 { animation-delay:0.28s; }
+.a5 { animation-delay:0.36s; }
 
-  .plan-name {
-    font-family: var(--serif);
-    font-size: 26px;
-    font-weight: 400;
-    color: var(--text-strong);
-    margin-bottom: 8px;
-    letter-spacing: -0.005em;
-  }
-  .plan-subtitle {
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--muted);
-    margin-bottom: 32px;
-    line-height: 1.55;
-  }
-
-  .plan-price-block { margin-bottom: 28px; }
-  .plan-price {
-    font-family: var(--serif);
-    font-size: 34px;
-    font-weight: 400;
-    color: var(--text-strong);
-    line-height: 1;
-    letter-spacing: -0.01em;
-  }
-  .plan-price .currency-sym {
-    font-family: var(--sans);
-    font-size: 18px;
-    font-weight: 500;
-    vertical-align: super;
-    margin-right: 3px;
-    color: var(--gold);
-    top: -0.3em;
-    position: relative;
-  }
-  .plan-price .unit {
-    font-family: var(--sans);
-    font-size: 14px;
-    color: var(--muted);
-    font-weight: 400;
-    margin-left: 4px;
-    letter-spacing: 0.02em;
-  }
-  .plan-freq {
-    display: block;
-    font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--muted);
-    margin-top: 10px;
-    letter-spacing: 0.02em;
-  }
-  .plan-price.custom {
-    font-family: var(--sans);
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--gold);
-    letter-spacing: -0.005em;
-  }
-
-  .plan-divider {
-    width: 40px;
-    height: 1px;
-    background: var(--gold-border-strong);
-    margin-bottom: 28px;
-  }
-
-  .plan-features {
-    list-style: none;
-    margin-bottom: 36px;
-    flex: 1;
-  }
-  .plan-features li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 14px;
-    line-height: 1.55;
-  }
-  .plan-features li::before {
-    content: '';
-    display: block;
-    width: 5px;
-    height: 5px;
-    background: var(--gold);
-    border-radius: 50%;
-    flex-shrink: 0;
-    margin-top: 8px;
-  }
-
-  .plan-cta {
-    display: block;
-    text-align: center;
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    text-decoration: none;
-    padding: 14px 24px;
-    border-radius: 2px;
-    transition: all 0.2s;
-    cursor: pointer;
-  }
-  .plan-cta.outline {
-    color: var(--gold);
-    border: 1px solid var(--gold-border-strong);
-    background: transparent;
-  }
-  .plan-cta.outline:hover {
-    background: var(--gold-faint);
-    border-color: var(--gold);
-  }
-  .plan-cta.solid {
-    color: var(--navy);
-    background: var(--gold);
-    border: 1px solid var(--gold);
-  }
-  .plan-cta.solid:hover { background: var(--gold-hover); border-color: var(--gold-hover); }
-
-  /* NOTE */
-  .pricing-note {
-    text-align: center;
-    padding: 0 24px 96px;
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--muted);
-    line-height: 1.85;
-    max-width: 680px;
-    margin: 0 auto;
-  }
-  .pricing-note strong { color: var(--text); font-weight: 500; }
-  .pricing-note a { color: var(--gold); text-decoration: none; }
-  .pricing-note a:hover { text-decoration: underline; }
-
-  /* BOTTOM CTA */
-  .bottom-cta {
-    background: var(--navy-2);
-    border-top: 1px solid var(--border);
-    padding: 88px 24px;
-    text-align: center;
-  }
-  .bottom-cta h2 {
-    font-family: var(--serif);
-    font-size: clamp(30px, 4vw, 38px);
-    font-weight: 400;
-    color: var(--text-strong);
-    margin-bottom: 16px;
-    letter-spacing: -0.01em;
-  }
-  .bottom-cta p {
-    font-family: var(--sans);
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--text);
-    max-width: 480px;
-    margin: 0 auto 40px;
-    line-height: 1.65;
-  }
-  .bottom-cta a {
-    display: inline-block;
-    background: var(--gold);
-    color: var(--navy);
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 500;
-    padding: 15px 38px;
-    border-radius: 2px;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: background 0.2s;
-  }
-  .bottom-cta a:hover { background: var(--gold-hover); }
-
-  /* FOOTER */
-  footer {
-    background: var(--navy);
-    border-top: 1px solid var(--border);
-    padding: 32px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  footer p, footer a {
-    font-family: var(--sans);
-    font-size: 13px;
-    font-weight: 400;
-    color: var(--muted);
-    text-decoration: none;
-  }
-  footer a:hover { color: var(--gold); }
-
-  @media (max-width: 640px) {
-    nav { padding: 0 20px; height: 64px; }
-    .nav-links { display: none; }
-    .pricing-hero { padding: 64px 20px 40px; }
-    .plans-grid { padding: 0 16px 60px; gap: 16px; }
-    footer { padding: 24px 20px; text-align: center; justify-content: center; }
-  }
+@media(max-width:640px) {
+  .pricing-hero { padding:110px 0 32px; }
+  .plan-subtitle { min-height:auto; }
+  .footer-inner { flex-direction:column; text-align:center; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
-  <a href="/" class="nav-logo">
-    <span class="nav-logo-main">SK Capital</span>
-    <span class="nav-logo-sub">Advisory</span>
-  </a>
-  <div class="nav-links">
-    <a href="/#services">Services</a>
-    <a href="/#process">Process</a>
-    <a href="/#about">About</a>
+<nav class="nav scrolled" id="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">SK Capital<span class="logo-sub">Advisory</span></a>
+    <div class="nav-right">
+      <a href="/#services" class="nav-link">Services</a>
+      <a href="/#process" class="nav-link">Process</a>
+      <a href="/pricing.html" class="nav-link active">Pricing</a>
+      <a href="/#about" class="nav-link">About</a>
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="nav-cta-link">Book a Free Call</a>
+    </div>
   </div>
-  <a href="https://cal.com/skcapital/free-financial-breakdown" class="nav-cta">Book a Free Call</a>
 </nav>
 
 <!-- HERO -->
-<div class="pricing-hero">
-  <div class="section-label">Transparent Pricing</div>
-  <h1>Simple, honest pricing.<span class="tag">No surprises.</span></h1>
-  <p>Every engagement starts with a free 30-minute financial breakdown. No charge, no obligation. Just clarity.</p>
-
-  <div class="currency-toggle" role="group" aria-label="Select currency">
-    <button class="toggle-btn active" id="btn-inr" onclick="setCurrency('inr')">&#8377; INR</button>
-    <button class="toggle-btn" id="btn-usd" onclick="setCurrency('usd')">$ USD</button>
+<section class="pricing-hero">
+  <div class="contain">
+    <div class="eyebrow anim a1">Transparent Pricing</div>
+    <h1 class="anim a2">Simple, honest pricing.</h1>
+    <div class="hit anim a3">No surprises.</div>
+    <p class="desc anim a4">
+      Every engagement starts with a free 30-minute financial breakdown.
+      No charge, no obligation. Just clarity on where your numbers stand.
+    </p>
+    <div class="currency-toggle anim a5" role="group" aria-label="Select currency">
+      <button class="toggle-btn active" id="btn-inr" onclick="setCurrency('inr')">&#8377; INR</button>
+      <button class="toggle-btn" id="btn-usd" onclick="setCurrency('usd')">$ USD</button>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- PLANS -->
-<div class="plans-grid">
+<section class="plans-section">
+  <div class="plans-grid">
 
-  <!-- STARTER -->
-  <div class="plan-card">
-    <div class="plan-name">Starter</div>
-    <div class="plan-subtitle">For lean teams and early-stage businesses that need financial clarity without a full setup.</div>
-    <div class="plan-price-block">
-      <div class="plan-price">
-        <span class="currency-sym inr-sym">&#8377;</span><span class="currency-sym usd-sym" style="display:none">$</span><span class="price-val" data-inr="10,000 – 15,000" data-usd="750 – 1,200">10,000 – 15,000</span>
+    <div class="plan-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-subtitle">For lean teams and early-stage businesses that need financial clarity without a full setup.</div>
+      <div class="plan-price-block">
+        <div class="plan-price">
+          <span class="currency-sym inr-sym">&#8377;</span><span class="currency-sym usd-sym" style="display:none">$</span><span class="price-val" data-inr="10,000 – 15,000" data-usd="750 – 1,200">10,000 – 15,000</span>
+        </div>
+        <span class="plan-freq">per month &nbsp;·&nbsp; cancel anytime</span>
       </div>
-      <span class="plan-freq">per month &nbsp;·&nbsp; cancel anytime</span>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Monthly MIS with actuals vs budget</li>
+        <li>Cash flow snapshot (30/60/90-day view)</li>
+        <li>1 finance dashboard with key metrics</li>
+        <li>Monthly async review call</li>
+        <li>Email support</li>
+      </ul>
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="plan-cta outline">Book a Free Call &rarr;</a>
     </div>
-    <div class="plan-divider"></div>
-    <ul class="plan-features">
-      <li>Monthly MIS with actuals vs budget</li>
-      <li>Cash flow snapshot (30/60/90-day view)</li>
-      <li>1 finance dashboard with key metrics</li>
-      <li>Monthly async review call</li>
-      <li>Email support</li>
-    </ul>
-    <a href="https://cal.com/skcapital/free-financial-breakdown" class="plan-cta outline">Book a Free Call &rarr;</a>
-  </div>
 
-  <!-- GROWTH — FEATURED -->
-  <div class="plan-card featured">
-    <div class="featured-badge">Most Popular</div>
-    <div class="plan-name">Growth</div>
-    <div class="plan-subtitle">For growing SMBs that need real forecasting, board-ready reporting, and regular advisory.</div>
-    <div class="plan-price-block">
-      <div class="plan-price">
-        <span class="currency-sym inr-sym">&#8377;</span><span class="currency-sym usd-sym" style="display:none">$</span><span class="price-val" data-inr="20,000 – 30,000" data-usd="1,800 – 2,800">20,000 – 30,000</span>
+    <div class="plan-card featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="plan-name">Growth</div>
+      <div class="plan-subtitle">For growing SMBs that need real forecasting, board-ready reporting, and regular advisory.</div>
+      <div class="plan-price-block">
+        <div class="plan-price">
+          <span class="currency-sym inr-sym">&#8377;</span><span class="currency-sym usd-sym" style="display:none">$</span><span class="price-val" data-inr="20,000 – 30,000" data-usd="1,800 – 2,800">20,000 – 30,000</span>
+        </div>
+        <span class="plan-freq">per month &nbsp;·&nbsp; cancel anytime</span>
       </div>
-      <span class="plan-freq">per month &nbsp;·&nbsp; cancel anytime</span>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Everything in Starter</li>
+        <li>Variance commentary and trend analysis</li>
+        <li>Rolling 3-month forecast</li>
+        <li>Profitability breakdown by product or channel</li>
+        <li>2 finance dashboards</li>
+        <li>Bi-weekly review call</li>
+        <li>Priority email and WhatsApp support</li>
+      </ul>
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="plan-cta solid">Book a Free Call &rarr;</a>
     </div>
-    <div class="plan-divider"></div>
-    <ul class="plan-features">
-      <li>Everything in Starter</li>
-      <li>Variance commentary and trend analysis</li>
-      <li>Rolling 3-month forecast</li>
-      <li>Profitability breakdown by product or channel</li>
-      <li>2 finance dashboards</li>
-      <li>Bi-weekly review call</li>
-      <li>Priority email and WhatsApp support</li>
-    </ul>
-    <a href="https://cal.com/skcapital/free-financial-breakdown" class="plan-cta solid">Book a Free Call &rarr;</a>
-  </div>
 
-  <!-- SCALE -->
-  <div class="plan-card">
-    <div class="plan-name">Scale</div>
-    <div class="plan-subtitle">For businesses that need fractional CFO-level support, scenario modelling, and investor-grade reporting.</div>
-    <div class="plan-price-block">
-      <div class="plan-price">
-        <span class="currency-sym inr-sym">&#8377;</span><span class="currency-sym usd-sym" style="display:none">$</span><span class="price-val" data-inr="40,000+" data-usd="3,500+">40,000+</span>
+    <div class="plan-card">
+      <div class="plan-name">Scale</div>
+      <div class="plan-subtitle">For businesses that need fractional CFO-level support, scenario modelling, and investor-grade reporting.</div>
+      <div class="plan-price-block">
+        <div class="plan-price">
+          <span class="currency-sym inr-sym">&#8377;</span><span class="currency-sym usd-sym" style="display:none">$</span><span class="price-val" data-inr="40,000+" data-usd="3,500+">40,000+</span>
+        </div>
+        <span class="plan-freq">per month &nbsp;·&nbsp; scope-based</span>
       </div>
-      <span class="plan-freq">per month &nbsp;·&nbsp; scope-based</span>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Everything in Growth</li>
+        <li>Scenario and sensitivity modelling</li>
+        <li>Board and investor deck support</li>
+        <li>Annual budgeting and planning</li>
+        <li>Full finance dashboard suite</li>
+        <li>Weekly advisory calls</li>
+        <li>Dedicated Slack or WhatsApp channel</li>
+      </ul>
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="plan-cta outline">Book a Free Call &rarr;</a>
     </div>
-    <div class="plan-divider"></div>
-    <ul class="plan-features">
-      <li>Everything in Growth</li>
-      <li>Scenario and sensitivity modelling</li>
-      <li>Board and investor deck support</li>
-      <li>Annual budgeting and planning</li>
-      <li>Full finance dashboard suite</li>
-      <li>Weekly advisory calls</li>
-      <li>Dedicated Slack or WhatsApp channel</li>
-    </ul>
-    <a href="https://cal.com/skcapital/free-financial-breakdown" class="plan-cta outline">Book a Free Call &rarr;</a>
-  </div>
 
-  <!-- ONE-TIME -->
-  <div class="plan-card">
-    <div class="plan-name">One-time Project</div>
-    <div class="plan-subtitle">Need a specific deliverable? We scope and price individual projects. No retainer required.</div>
-    <div class="plan-price-block">
-      <div class="plan-price custom">Custom quote</div>
-      <span class="plan-freq">scoped to your specific needs</span>
+    <div class="plan-card">
+      <div class="plan-name">One-time Project</div>
+      <div class="plan-subtitle">Need a specific deliverable? We scope and price individual projects. No retainer required.</div>
+      <div class="plan-price-block">
+        <div class="plan-price custom">Custom quote</div>
+        <span class="plan-freq">scoped to your specific needs</span>
+      </div>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Financial model or forecast build</li>
+        <li>MIS setup from scratch</li>
+        <li>Cash flow or runway analysis</li>
+        <li>Investor or board deck financials</li>
+        <li>Cost and profitability audit</li>
+      </ul>
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="plan-cta outline">Discuss Your Project &rarr;</a>
     </div>
-    <div class="plan-divider"></div>
-    <ul class="plan-features">
-      <li>Financial model or forecast build</li>
-      <li>MIS setup from scratch</li>
-      <li>Cash flow or runway analysis</li>
-      <li>Investor or board deck financials</li>
-      <li>Cost and profitability audit</li>
-    </ul>
-    <a href="https://cal.com/skcapital/free-financial-breakdown" class="plan-cta outline">Discuss Your Project &rarr;</a>
-  </div>
 
-</div>
+  </div>
+</section>
 
 <!-- NOTE -->
 <div class="pricing-note">
@@ -555,29 +401,44 @@
   Questions? Write to us at <a href="mailto:advisory@skcapital.co.in">advisory@skcapital.co.in</a>
 </div>
 
-<!-- BOTTOM CTA -->
-<div class="bottom-cta">
-  <h2>Not sure which plan fits?</h2>
-  <p>Book the free call. We look at your numbers together and tell you exactly what you need. Honestly, with no upsell pressure.</p>
-  <a href="https://cal.com/skcapital/free-financial-breakdown">Book Your Free Financial Breakdown &rarr;</a>
-</div>
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <div class="contain">
+    <div class="section-label">Get started</div>
+    <h2 class="section-title">Not sure which plan fits?</h2>
+    <p class="section-sub" style="max-width:500px;">
+      Book the free call. We look at your numbers together and tell you exactly what you need.
+      Honestly, with no upsell pressure.
+    </p>
+    <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="cta-main-btn">
+      Book Your Free Financial Breakdown &rarr;
+    </a>
+    <p class="cta-promise">You'll walk away with 3 clear actions — even if you don't work with us.</p>
+    <p class="cta-alt">
+      Or reach out directly: <a href="mailto:advisory@skcapital.co.in">advisory@skcapital.co.in</a>
+    </p>
+  </div>
+</section>
 
 <!-- FOOTER -->
-<footer>
-  <p>&copy; 2026 SK Capital &nbsp;·&nbsp; Decision Clarity Through Numbers</p>
-  <a href="mailto:advisory@skcapital.co.in">advisory@skcapital.co.in</a>
+<footer class="footer">
+  <div class="contain footer-inner">
+    <div class="footer-brand">SK Capital</div>
+    <div class="footer-right">© 2026 SK Capital · Decision Clarity Through Numbers.</div>
+  </div>
 </footer>
 
 <script>
-  function setCurrency(c) {
-    document.querySelectorAll('.inr-sym').forEach(el => el.style.display = c === 'inr' ? '' : 'none');
-    document.querySelectorAll('.usd-sym').forEach(el => el.style.display = c === 'usd' ? '' : 'none');
-    document.querySelectorAll('.price-val').forEach(el => {
-      el.textContent = c === 'inr' ? el.dataset.inr : el.dataset.usd;
-    });
-    document.getElementById('btn-inr').classList.toggle('active', c === 'inr');
-    document.getElementById('btn-usd').classList.toggle('active', c === 'usd');
-  }
+function setCurrency(c) {
+  document.querySelectorAll('.inr-sym').forEach(el => el.style.display = c === 'inr' ? '' : 'none');
+  document.querySelectorAll('.usd-sym').forEach(el => el.style.display = c === 'usd' ? '' : 'none');
+  document.querySelectorAll('.price-val').forEach(el => {
+    el.textContent = c === 'inr' ? el.dataset.inr : el.dataset.usd;
+  });
+  document.getElementById('btn-inr').classList.toggle('active', c === 'inr');
+  document.getElementById('btn-usd').classList.toggle('active', c === 'usd');
+}
 </script>
+
 </body>
 </html>
