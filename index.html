@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SK Capital — Decision Clarity Through Numbers</title>
-<meta name="description" content="You don't actually know your numbers — and it's costing you money. SK Capital helps founders and business owners understand cash flow, profitability, and monthly performance.">
-<meta property="og:title" content="SK Capital — Decision Clarity Through Numbers">
-<meta property="og:description" content="We help founders and business owners understand cash flow, profitability, and monthly performance — so you stop guessing and start making decisions with confidence.">
+<title>SK Capital · An AI-augmented finance team for founders</title>
+<meta name="description" content="Investor-ready reporting, cash visibility, and profitability analysis. Delivered by senior finance professionals from Amazon, Amex, and Sun Pharma. Accelerated by AI, reviewed by humans.">
+<meta property="og:title" content="SK Capital · An AI-augmented finance team for founders">
+<meta property="og:description" content="Investor-ready reporting, cash visibility, and profitability analysis. Delivered by senior finance professionals from Amazon, Amex, and Sun Pharma. Accelerated by AI, reviewed by humans.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://skcapital.co.in">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,7 +87,7 @@ a { color:inherit; }
   transition:all 0.2s;
 }
 .nav-cta-link:hover { background:var(--gold); color:var(--navy); }
-@media(max-width:640px){
+@media(max-width:760px){
   .nav-right .nav-link { display:none; }
 }
 
@@ -121,6 +121,9 @@ a { color:inherit; }
 .hero-desc {
   font-size:17px; color:var(--muted); line-height:1.8; max-width:540px; margin-bottom:40px;
 }
+.hero-cta-row {
+  display:flex; align-items:center; gap:24px; flex-wrap:wrap;
+}
 .hero-cta {
   display:inline-flex; align-items:center; gap:10px;
   background:var(--gold); color:var(--navy); border:none;
@@ -130,6 +133,15 @@ a { color:inherit; }
 .hero-cta:hover { background:var(--gold-hover); transform:translateY(-1px); box-shadow:0 8px 30px rgba(201,168,76,0.15); }
 .hero-cta svg { transition:transform 0.2s; }
 .hero-cta:hover svg { transform:translateX(3px); }
+.hero-cta-secondary {
+  display:inline-flex; align-items:center; gap:6px;
+  color:var(--gold); text-decoration:none;
+  font-family:var(--sans); font-size:14px; font-weight:600;
+  transition:color 0.2s;
+}
+.hero-cta-secondary:hover { color:var(--gold-hover); }
+.hero-cta-secondary svg { transition:transform 0.2s; }
+.hero-cta-secondary:hover svg { transform:translateX(3px); }
 .hero-promise {
   margin-top:14px; font-size:13px; color:var(--text-strong); line-height:1.6;
 }
@@ -174,22 +186,41 @@ a { color:inherit; }
 .who-card h3 { font-size:15px; font-weight:700; color:var(--text-strong); margin-bottom:6px; }
 .who-card p { font-size:13px; color:var(--muted); line-height:1.65; }
 
-/* WHAT WE HELP WITH */
-.help-list { margin-top:40px; }
-.help-item {
-  display:flex; align-items:flex-start; gap:20px;
-  padding:22px 0; border-bottom:1px solid var(--border);
+/* SERVICE TRACKS */
+.track-list { margin-top:48px; }
+.track {
+  display:flex; gap:24px; padding:32px 0;
+  border-bottom:1px solid var(--border);
 }
-.help-item:last-child { border-bottom:none; }
-.help-num {
-  font-family:var(--serif); font-size:18px; color:var(--gold); opacity:0.6;
-  width:28px; flex-shrink:0; padding-top:2px;
+.track:last-child { border-bottom:none; }
+.track-num {
+  font-family:var(--serif); font-size:32px; color:var(--gold); opacity:0.7;
+  width:56px; flex-shrink:0; line-height:1; padding-top:4px;
 }
-.help-text h3 { font-size:15px; font-weight:700; color:var(--text-strong); margin-bottom:4px; }
-.help-text p { font-size:14px; color:var(--muted); line-height:1.6; }
-.help-outcome {
-  display:block; margin-top:6px; font-size:13px; font-weight:600;
-  color:var(--gold); font-style:italic;
+.track-body { flex:1; min-width:0; }
+.track-name {
+  font-family:var(--serif); font-size:24px; color:var(--cream);
+  margin-bottom:8px; line-height:1.2;
+}
+.track-desc {
+  font-size:15px; color:var(--text); font-style:italic;
+  margin-bottom:18px; line-height:1.6;
+}
+.track-meta { display:flex; flex-direction:column; gap:8px; }
+.track-row {
+  display:flex; gap:16px; font-size:13.5px; line-height:1.6;
+}
+.track-row dt {
+  flex-shrink:0; width:108px;
+  font-size:11px; font-weight:700; color:var(--gold);
+  letter-spacing:0.12em; text-transform:uppercase;
+  padding-top:3px;
+}
+.track-row dd { color:var(--text); flex:1; }
+.track-usd { color:var(--muted); font-size:13px; }
+.track-footer {
+  margin-top:36px; padding-top:24px; border-top:1px solid var(--gold-border);
+  font-size:14px; color:var(--muted); line-height:1.7; font-style:italic;
 }
 
 /* HOW IT WORKS */
@@ -209,37 +240,6 @@ a { color:inherit; }
 .step-body p { font-size:14px; color:var(--muted); line-height:1.7; }
 .step-callout {
   margin-top:8px; font-size:13px; font-weight:600; color:var(--gold);
-}
-
-/* OUTCOMES */
-.outcomes {
-  margin-top:40px; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px;
-}
-.outcome-card {
-  background:var(--navy-3); border:1px solid var(--border); padding:24px 22px;
-  border-radius:4px;
-}
-.outcome-card .num {
-  font-family:var(--serif); font-size:28px; color:var(--gold); margin-bottom:6px;
-}
-.outcome-card p { font-size:13px; color:var(--muted); line-height:1.6; }
-
-/* COST OF INACTION */
-.cost-list {
-  margin-top:28px; display:flex; flex-direction:column; gap:10px;
-}
-.cost-item {
-  display:flex; align-items:center; gap:12px;
-  font-size:14px; color:var(--text); line-height:1.5;
-}
-.cost-x {
-  color:var(--danger); font-size:14px; font-weight:700; flex-shrink:0; width:16px;
-}
-.cost-bottom {
-  margin-top:24px;
-  font-family:var(--serif); font-size:clamp(16px,2.2vw,20px);
-  color:var(--cream); line-height:1.4; font-style:italic;
-  border-left:3px solid var(--gold); padding-left:18px;
 }
 
 /* FOUNDERS */
@@ -266,15 +266,33 @@ a { color:inherit; }
   border-left:3px solid var(--gold); padding-left:18px; font-style:italic;
 }
 
-/* PRODUCT HINT */
-.product-hint {
+/* FOUNDER LINKEDIN */
+.founder-link {
+  display:inline-block; margin-top:12px;
+  color:var(--gold); text-decoration:none;
+  font-size:13px; font-weight:600; transition:color 0.2s;
+}
+.founder-link:hover { color:var(--gold-hover); }
+
+/* AI HINT */
+a.ai-hint {
+  display:flex; justify-content:space-between; align-items:center; gap:20px;
   background:var(--gold-faint); border:1px solid var(--gold-border);
   border-radius:4px; padding:22px 24px; margin-top:28px;
-  display:flex; align-items:flex-start; gap:14px;
+  text-decoration:none; transition:border-color 0.25s, background 0.25s;
 }
-.product-hint-icon { font-size:18px; flex-shrink:0; margin-top:2px; }
-.product-hint p { font-size:13px; color:var(--text); line-height:1.7; }
-.product-hint strong { color:var(--gold); font-weight:600; }
+a.ai-hint:hover { border-color:var(--gold); background:rgba(201,168,76,0.1); }
+.ai-hint-label {
+  font-size:11px; font-weight:700; color:var(--gold);
+  letter-spacing:0.16em; text-transform:uppercase;
+  flex-shrink:0; align-self:flex-start; padding-top:2px;
+}
+a.ai-hint p { font-size:13px; color:var(--text); line-height:1.7; flex:1; }
+a.ai-hint strong { color:var(--gold); font-weight:600; }
+.ai-hint-arrow {
+  color:var(--gold); font-size:18px; flex-shrink:0; transition:transform 0.2s;
+}
+a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
 
 /* CTA SECTION */
 .cta-section {
@@ -311,7 +329,10 @@ a { color:inherit; }
   display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
 }
 .footer-brand { font-family:var(--serif); font-size:16px; color:var(--gold); }
-.footer-right { font-size:12px; color:var(--muted); }
+.footer-right { font-size:12px; color:var(--muted); display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.footer-link { color:var(--gold); text-decoration:none; font-weight:600; transition:color 0.2s; }
+.footer-link:hover { color:var(--gold-hover); }
+.footer-sep { color:var(--muted); }
 
 /* ANIMATIONS */
 @keyframes fadeIn {
@@ -333,7 +354,11 @@ a { color:inherit; }
   .founder-card { flex-direction:column; gap:14px; }
   .founders-grid { grid-template-columns:1fr; }
   .step { flex-direction:column; gap:12px; }
-  .product-hint { flex-direction:column; gap:10px; }
+  .track { flex-direction:column; gap:8px; }
+  .track-num { width:auto; padding-top:0; font-size:28px; }
+  .track-row { flex-direction:column; gap:2px; }
+  .track-row dt { padding-top:0; width:auto; }
+  a.ai-hint { flex-direction:column; align-items:flex-start; gap:12px; }
   .footer-inner { flex-direction:column; text-align:center; }
 }
 </style>
@@ -349,6 +374,7 @@ a { color:inherit; }
       <a href="#process" class="nav-link">Process</a>
       <a href="/pricing.html" class="nav-link">Pricing</a>
       <a href="/portfolio.html" class="nav-link">Portfolio</a>
+      <a href="/how-we-use-ai.html" class="nav-link">How we use AI</a>
       <a href="#about" class="nav-link">About</a>
       <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="nav-cta-link">Book a Free Call</a>
     </div>
@@ -359,32 +385,34 @@ a { color:inherit; }
 <section class="hero">
   <div class="contain hero-inner">
     <div class="hero-eyebrow anim a1">Financial Intelligence &amp; Advisory</div>
-    <h1 class="anim a2">You don't actually know your numbers — and it's costing you money.</h1>
-    <div class="hero-hit anim a3">We fix that.</div>
+    <h1 class="anim a2">An outsourced finance team for founders who want answers, not just spreadsheets.</h1>
+    <div class="hero-hit anim a3">Accelerated by AI, reviewed by humans.</div>
     <p class="hero-desc anim a4">
-      We help founders and business owners understand cash flow, 
-      profitability, and monthly performance — so you stop guessing 
-      and start making decisions with confidence.
+      Investor-ready reporting, cash visibility, and profitability analysis.
+      Delivered by senior finance professionals from Amazon, Amex, and Sun Pharma.
     </p>
-    <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="hero-cta anim a5">
-      Book Your Free 30-Min Financial Breakdown
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
-    <p class="hero-promise anim a6">You'll walk away with 3 clear actions — even if you don't work with us.</p>
-    <div class="hero-trust anim a7">
-      Built FP&amp;A and finance data systems across companies like <strong>Amazon, American Express, Sun Pharma,</strong> and high-growth businesses.
+    <div class="hero-cta-row anim a5">
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="hero-cta">
+        Book a Free 30-Min Financial Breakdown
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="/how-we-use-ai.html" class="hero-cta-secondary">
+        See how we use AI
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
     </div>
+    <p class="hero-promise anim a6">You'll walk away with 3 clear actions, even if you don't work with us.</p>
     <p class="hero-meta anim a7">Free · 30 minutes · No obligations · <a href="mailto:advisory@skcapital.co.in">advisory@skcapital.co.in</a></p>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ====== WHAT BUSINESSES DISCOVER ====== -->
+<!-- ====== WHAT FOUNDERS FIND ====== -->
 <section class="section bg-alt">
   <div class="contain">
     <div class="section-label">Within 7 days</div>
-    <h2 class="section-title">What businesses usually discover.</h2>
+    <h2 class="section-title">What founders usually find.</h2>
     <div class="discover-list">
       <div class="discover-item">
         <div class="discover-check">→</div>
@@ -392,19 +420,19 @@ a { color:inherit; }
       </div>
       <div class="discover-item">
         <div class="discover-check">→</div>
-        <p>Clear understanding of cash runway</p>
+        <p>A clear picture of cash runway under realistic scenarios</p>
       </div>
       <div class="discover-item">
         <div class="discover-check">→</div>
-        <p>What's actually driving profit vs just revenue</p>
+        <p>What's actually driving profit, not just revenue</p>
       </div>
       <div class="discover-item">
         <div class="discover-check">→</div>
-        <p>Where money is being wasted vs creating value</p>
+        <p>Which spend creates value, and which is drag</p>
       </div>
     </div>
     <div class="discover-bottom">
-      Most businesses don't have a data problem. They have a clarity problem.
+      Most founders don't have a data problem. They have a clarity problem.
     </div>
   </div>
 </section>
@@ -415,23 +443,23 @@ a { color:inherit; }
 <section class="section" id="who">
   <div class="contain">
     <div class="section-label">Who this is for</div>
-    <h2 class="section-title">If any of this sounds familiar, we should talk.</h2>
+    <h2 class="section-title">These are the founders we work with.</h2>
     <div class="who-grid">
       <div class="who-card">
-        <h3>Startups without a CFO</h3>
-        <p>You need runway visibility, burn tracking, and better financial decision-making — but hiring a full-time CFO does not make sense yet.</p>
+        <h3>Funded startups, raising again</h3>
+        <p>You're between rounds or in active conversations. You need a fundraising-ready model, a clean data room, and someone who can sit with investors and answer the hard questions.</p>
       </div>
       <div class="who-card">
-        <h3>SMBs with messy reporting</h3>
-        <p>Everyone has a different version of the numbers, and no one fully trusts them. Decisions are being made without real visibility.</p>
+        <h3>Funded startups, managing runway</h3>
+        <p>You raised, you're spending, and you need to know exactly how long the runway is, where the burn is going, and what scenarios change the picture.</p>
       </div>
       <div class="who-card">
-        <h3>Revenue without clarity</h3>
-        <p>Sales are happening, but margins are unclear, costs keep growing, and you do not know what is actually driving profit.</p>
+        <h3>Growing SMBs, scaling fast</h3>
+        <p>Revenue is up, hiring is up, and the existing finance setup is starting to crack. You need monthly MIS, real margin breakdowns, and a finance partner who scales with you.</p>
       </div>
       <div class="who-card">
-        <h3>Growing businesses without decision support</h3>
-        <p>You want budgets, forecasts, dashboards, and financial clarity — but do not have the internal finance capability to build it properly.</p>
+        <h3>Multi-product or multi-segment businesses</h3>
+        <p>You sell more than one thing to more than one customer type. You need clarity on which products, segments, or cohorts are actually profitable, not just contributing revenue.</p>
       </div>
     </div>
   </div>
@@ -439,82 +467,62 @@ a { color:inherit; }
 
 <div class="divider"></div>
 
-<!-- ====== WHAT WE HELP WITH ====== -->
+<!-- ====== SERVICE TRACKS ====== -->
 <section class="section bg-alt" id="services">
   <div class="contain">
-    <div class="section-label">What we help with</div>
-    <h2 class="section-title">Concrete financial work, not vague advice.</h2>
-    <div class="help-list">
-      <div class="help-item">
-        <div class="help-num">01</div>
-        <div class="help-text">
-          <h3>Monthly MIS &amp; management reporting</h3>
-          <p>Actuals vs budget, variance commentary, trend analysis — written clearly, ready for your board or leadership team.</p>
-          <span class="help-outcome">→ So you always know what changed, why, and what to do next.</span>
-        </div>
-      </div>
-      <div class="help-item">
-        <div class="help-num">02</div>
-        <div class="help-text">
-          <h3>Budgeting &amp; forecasting</h3>
-          <p>Rolling forecasts, scenario models, and driver-based budgets that reflect your actual business.</p>
-          <span class="help-outcome">→ So you can plan hiring and spending with real numbers behind it.</span>
-        </div>
-      </div>
-      <div class="help-item">
-        <div class="help-num">03</div>
-        <div class="help-text">
-          <h3>Cash flow visibility</h3>
-          <p>30/60/90-day projections. Know when you'll be short and how long your runway really is.</p>
-          <span class="help-outcome">→ So you know when cash will get tight — before it happens.</span>
-        </div>
-      </div>
-      <div class="help-item">
-        <div class="help-num">04</div>
-        <div class="help-text">
-          <h3>Profitability &amp; cost analysis</h3>
-          <p>Margin breakdown by product, client, or channel. Fixed vs variable. Productive vs wasteful.</p>
-          <span class="help-outcome">→ So you cut the right costs and protect the ones that drive growth.</span>
-        </div>
-      </div>
-      <div class="help-item">
-        <div class="help-num">05</div>
-        <div class="help-text">
-          <h3>Finance dashboards for decisions</h3>
-          <p>Clean dashboards that answer the questions you actually ask — not 50 charts nobody reads.</p>
-          <span class="help-outcome">→ So every leadership meeting starts with clarity, not confusion.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="section-label">Service tracks</div>
+    <h2 class="section-title">Three ways we work together.</h2>
+    <p class="section-sub">Productized engagements with clear deliverables, timelines, and price bands. Pick the one that fits where you are right now.</p>
 
-<!-- ====== REAL OUTCOMES ====== -->
-<section class="section" id="outcomes">
-  <div class="contain">
-    <div class="section-label">Real outcomes</div>
-    <h2 class="section-title">What businesses typically discover.</h2>
-    <div class="outcomes">
-      <div class="outcome-card">
-        <div class="num">1–2</div>
-        <p>Unnecessary cost leaks that are bleeding money every month without anyone noticing.</p>
+    <div class="track-list">
+      <div class="track">
+        <div class="track-num">01</div>
+        <div class="track-body">
+          <h3 class="track-name">Investor Pack</h3>
+          <p class="track-desc">For founders preparing to raise or already in conversations.</p>
+          <dl class="track-meta">
+            <div class="track-row"><dt>Delivered</dt><dd>Fundraising-ready financial model, deck financials, data room setup, investor Q&amp;A prep</dd></div>
+            <div class="track-row"><dt>Engagement</dt><dd>Project-based, 2 to 4 weeks</dd></div>
+            <div class="track-row"><dt>Price</dt><dd>&#8377;2L to &#8377;5L per engagement <span class="track-usd">($3,000 to $8,000 international)</span></dd></div>
+          </dl>
+        </div>
       </div>
-      <div class="outcome-card">
-        <div class="num">10–20%</div>
-        <p>Improvement in financial visibility within the first month of working together.</p>
+
+      <div class="track">
+        <div class="track-num">02</div>
+        <div class="track-body">
+          <h3 class="track-name">Cash Command</h3>
+          <p class="track-desc">For founders who need to know where money is going and how long runway lasts.</p>
+          <dl class="track-meta">
+            <div class="track-row"><dt>Delivered</dt><dd>13-week rolling cash flow, monthly cash review, scenario planning, spend categorization</dd></div>
+            <div class="track-row"><dt>Engagement</dt><dd>Monthly retainer</dd></div>
+            <div class="track-row"><dt>Price</dt><dd>&#8377;50,000 to &#8377;75,000 per month <span class="track-usd">($750 to $1,200 international)</span></dd></div>
+          </dl>
+        </div>
       </div>
-      <div class="outcome-card">
-        <div class="num">7 days</div>
-        <p>To go from "I think we're fine" to clear runway understanding backed by real numbers.</p>
+
+      <div class="track">
+        <div class="track-num">03</div>
+        <div class="track-body">
+          <h3 class="track-name">Profit Map</h3>
+          <p class="track-desc">For founders running multiple products, segments, or customer cohorts.</p>
+          <dl class="track-meta">
+            <div class="track-row"><dt>Delivered</dt><dd>Monthly MIS, segment / product / customer profitability, finance dashboard, narrative commentary</dd></div>
+            <div class="track-row"><dt>Engagement</dt><dd>Monthly retainer</dd></div>
+            <div class="track-row"><dt>Price</dt><dd>&#8377;75,000 to &#8377;1,25,000 per month <span class="track-usd">($1,200 to $2,000 international)</span></dd></div>
+          </dl>
+        </div>
       </div>
     </div>
+
+    <p class="track-footer">Need something else? Audit, financial clean-up, board pack, ad-hoc analysis, talk to us.</p>
   </div>
 </section>
 
 <div class="divider"></div>
 
 <!-- ====== HOW IT WORKS ====== -->
-<section class="section bg-alt" id="process">
+<section class="section" id="process">
   <div class="contain">
     <div class="section-label">Process</div>
     <h2 class="section-title">Three steps to clarity.</h2>
@@ -523,41 +531,24 @@ a { color:inherit; }
         <div class="step-marker">1</div>
         <div class="step-body">
           <h3>Free 30-minute financial breakdown</h3>
-          <p>We look at your numbers together — revenue, costs, cash, margins. We tell you what we see, honestly. No sales pitch.</p>
+          <p>We look at your numbers together: revenue, costs, cash, margins. We tell you what we see. No sales pitch.</p>
         </div>
       </div>
       <div class="step">
         <div class="step-marker">2</div>
         <div class="step-body">
-          <h3>A brutally honest 1-page report</h3>
+          <h3>A focused 1-page report</h3>
           <p>Within 48 hours: your burn rate, runway, margin breakdown, and 3 specific actions you can take immediately.</p>
-          <div class="step-callout">Most businesses we work with have never seen their numbers laid out this clearly. We do it free.</div>
+          <div class="step-callout">Free, regardless of whether we work together. Most founders we send this to have never seen their numbers laid out this cleanly.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-marker">3</div>
         <div class="step-body">
-          <h3>Ongoing advisory, if you want it</h3>
-          <p>Monthly MIS, forecasting, cash flow tracking, and a direct line to finance advice. Simple engagement, cancel anytime.</p>
+          <h3>Pick a track, if it's a fit</h3>
+          <p>Investor Pack, Cash Command, or Profit Map. Or a one-off project if that's what you actually need. Simple engagement, cancel anytime.</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== COST OF WAITING ====== -->
-<section class="section">
-  <div class="contain">
-    <div class="section-label">The cost of waiting</div>
-    <h2 class="section-title">What happens if you don't fix this.</h2>
-    <div class="cost-list">
-      <div class="cost-item"><div class="cost-x">✕</div><p>Making decisions based on incomplete data — some will be expensive mistakes.</p></div>
-      <div class="cost-item"><div class="cost-x">✕</div><p>Costs growing without visibility — by the time you notice, margins are already gone.</p></div>
-      <div class="cost-item"><div class="cost-x">✕</div><p>Cash surprises hitting too late — growth feels chaotic instead of controlled.</p></div>
-    </div>
-    <div class="cost-bottom">
-      Most businesses don't fail because of lack of revenue.<br>
-      They fail because they don't understand their numbers in time.
     </div>
   </div>
 </section>
@@ -576,37 +567,34 @@ a { color:inherit; }
           <h3>Snesh Kakkar</h3>
           <div class="title">Co-founder, SK Capital</div>
           <p>
-            FP&amp;A experience across Amazon, American Express, and corporate finance roles. 
-            Strong in forecasting, reporting, business performance, and financial decision support.
+            Ex-Amazon. FP&amp;A and analytics background. Co-founder of SK Capital.
           </p>
+          <a href="https://linkedin.com/in/snesh" target="_blank" rel="noopener" class="founder-link">View on LinkedIn &rarr;</a>
         </div>
       </div>
+      <!-- TODO: Megha bio detail -->
       <div class="founder-card">
         <div class="founder-avatar">MD</div>
         <div class="founder-info">
           <h3>Megha Dalmia</h3>
           <div class="title">Co-founder, SK Capital</div>
           <p>
-            Senior Data Analyst with experience in finance reporting, FP&amp;A, analytics, 
-            validation, and reconciliation. Strong in ensuring data integrity, explainability, 
-            and business insight quality.
+            Co-founder of SK Capital. Finance and reporting background.
           </p>
+          <a href="https://linkedin.com/in/megha-dalmia" target="_blank" rel="noopener" class="founder-link">View on LinkedIn &rarr;</a>
         </div>
       </div>
     </div>
 
     <div class="founders-line">
-      We work at the intersection of finance, data, and decision-making — ensuring your numbers are not just accurate, but actually useful.
+      We work at the intersection of finance, data, and decision-making. Our job is to make sure your numbers are not just accurate, but useful enough to act on.
     </div>
 
-    <div class="product-hint">
-      <div class="product-hint-icon">⚡</div>
-      <p>
-        We're also building <strong>internal finance tools and dashboards</strong> to give 
-        clients better ongoing visibility into their numbers — combining advisory with 
-        technology for deeper, continuous insight.
-      </p>
-    </div>
+    <a href="/how-we-use-ai.html" class="ai-hint">
+      <span class="ai-hint-label">Transparency</span>
+      <p>Curious how AI fits into our process? Read <strong>How we use AI</strong>: what AI does, what humans always do, and how we handle your data.</p>
+      <span class="ai-hint-arrow">&rarr;</span>
+    </a>
   </div>
 </section>
 
@@ -616,14 +604,13 @@ a { color:inherit; }
     <div class="section-label">Get started</div>
     <h2 class="section-title">Let's find out what your numbers are really telling you.</h2>
     <p class="section-sub" style="max-width:500px;">
-      If you are a founder or business owner and want better visibility into 
-      your numbers — let's talk. Free 30-minute call, brutally honest 1-page 
-      report, no charge, no obligations.
+      If you're a founder who wants better visibility into your numbers, let's talk.
+      Free 30-minute call, focused 1-page report, no charge, no obligations.
     </p>
     <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="cta-main-btn">
-      Book Your Free Financial Breakdown →
+      Book a Free 30-Min Financial Breakdown &rarr;
     </a>
-    <p class="cta-promise">You'll walk away with 3 clear actions — even if you don't work with us.</p>
+    <p class="cta-promise">You'll walk away with 3 clear actions, even if you don't work with us.</p>
     <p class="cta-alt">
       Or reach out directly: <a href="mailto:advisory@skcapital.co.in">advisory@skcapital.co.in</a>
     </p>
@@ -634,7 +621,11 @@ a { color:inherit; }
 <footer class="footer">
   <div class="contain footer-inner">
     <div class="footer-brand">SK Capital</div>
-    <div class="footer-right">© 2026 SK Capital · Decision Clarity Through Numbers.</div>
+    <div class="footer-right">
+      <a href="/how-we-use-ai.html" class="footer-link">How we use AI</a>
+      <span class="footer-sep">·</span>
+      <span>© 2026 SK Capital · An AI-augmented finance team for founders.</span>
+    </div>
   </div>
 </footer>
 
