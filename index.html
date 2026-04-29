@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SK Capital · An AI-augmented finance team for founders</title>
-<meta name="description" content="Investor-ready reporting, cash visibility, and profitability analysis. Delivered by senior finance professionals from Amazon, Amex, and Sun Pharma. Accelerated by AI, reviewed by humans.">
-<meta property="og:title" content="SK Capital · An AI-augmented finance team for founders">
+<title>SK Capital | Finance &amp; FP&amp;A for startups</title>
+<meta name="description" content="We build financial models, dashboards, and forecasts that help founders understand cash, runway, and growth.">
+<meta property="og:title" content="SK Capital | Finance &amp; FP&amp;A for startups">
 <meta property="og:description" content="Investor-ready reporting, cash visibility, and profitability analysis. Delivered by senior finance professionals from Amazon, Amex, and Sun Pharma. Accelerated by AI, reviewed by humans.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://skcapital.co.in">
@@ -38,18 +38,18 @@ body {
 }
 a { color:inherit; }
 
-.contain { max-width:860px; margin:0 auto; padding:0 28px; }
-.section { padding:88px 0; }
+.contain { max-width:1200px; margin:0 auto; padding:0 28px; }
+.section { padding:80px 0; }
 .section-label {
-  font-size:11px; font-weight:700; color:var(--gold); letter-spacing:0.18em;
+  font-size:14px; font-weight:700; color:var(--gold); letter-spacing:0.14em;
   text-transform:uppercase; margin-bottom:20px;
 }
 .section-title {
-  font-family:var(--serif); font-size:clamp(26px,3.8vw,38px);
-  color:var(--cream); line-height:1.22; margin-bottom:20px;
+  font-family:var(--serif); font-size:clamp(32px,3.8vw,40px);
+  color:var(--cream); line-height:1.18; margin-bottom:20px;
 }
 .section-sub {
-  font-size:16px; color:var(--muted); line-height:1.75; max-width:580px;
+  font-size:18px; color:var(--muted); line-height:1.7; max-width:70ch;
 }
 .divider {
   max-width:860px; margin:0 auto;
@@ -65,9 +65,10 @@ a { color:inherit; }
 .nav.scrolled {
   background:rgba(11,17,32,0.96); backdrop-filter:blur(16px);
   border-bottom:1px solid var(--border); padding:12px 0;
+  box-shadow:0 10px 30px rgba(0,0,0,0.22);
 }
 .nav-inner {
-  max-width:860px; margin:0 auto; padding:0 28px;
+  max-width:1200px; margin:0 auto; padding:0 28px;
   display:flex; align-items:center; justify-content:space-between;
 }
 .logo { font-family:var(--serif); font-size:22px; color:var(--gold); text-decoration:none; }
@@ -83,10 +84,10 @@ a { color:inherit; }
 .nav-link:hover { color:var(--text); }
 .nav-cta-link {
   color:var(--gold); text-decoration:none; font-size:13px; font-weight:600;
-  border:1px solid var(--gold-border); padding:8px 20px; border-radius:3px;
-  transition:all 0.2s;
+  border:1px solid var(--gold-border); padding:12px 22px; border-radius:6px;
+  transition:all 0.25s;
 }
-.nav-cta-link:hover { background:var(--gold); color:var(--navy); }
+.nav-cta-link:hover { background:var(--gold); color:var(--navy); transform:translateY(-1px); box-shadow:0 10px 24px rgba(0,0,0,0.18); }
 @media(max-width:760px){
   .nav-right .nav-link { display:none; }
 }
@@ -111,15 +112,15 @@ a { color:inherit; }
   content:''; width:24px; height:1px; background:var(--gold);
 }
 .hero h1 {
-  font-family:var(--serif); font-size:clamp(32px,4.8vw,50px);
-  line-height:1.18; color:var(--cream); margin-bottom:8px; max-width:640px;
+  font-family:var(--serif); font-size:clamp(48px,5vw,56px);
+  line-height:1.06; color:var(--cream); margin-bottom:10px; max-width:12ch;
 }
 .hero-hit {
-  font-family:var(--serif); font-size:clamp(20px,2.5vw,26px);
-  color:var(--gold); margin-bottom:28px; line-height:1.3;
+  font-family:var(--serif); font-size:clamp(24px,2.8vw,28px);
+  color:var(--gold); margin-bottom:24px; line-height:1.28;
 }
 .hero-desc {
-  font-size:17px; color:var(--muted); line-height:1.8; max-width:540px; margin-bottom:40px;
+  font-size:18px; color:var(--muted); line-height:1.72; max-width:40rem; margin-bottom:40px;
 }
 .hero-cta-row {
   display:flex; align-items:center; gap:24px; flex-wrap:wrap;
@@ -127,23 +128,24 @@ a { color:inherit; }
 .hero-cta {
   display:inline-flex; align-items:center; gap:10px;
   background:var(--gold); color:var(--navy); border:none;
-  padding:16px 36px; font-family:var(--sans); font-size:15px; font-weight:700;
-  cursor:pointer; border-radius:3px; transition:all 0.25s; text-decoration:none;
+  padding:18px 30px; font-family:var(--sans); font-size:16px; font-weight:700;
+  cursor:pointer; border-radius:6px; transition:all 0.25s; text-decoration:none;
 }
-.hero-cta:hover { background:var(--gold-hover); transform:translateY(-1px); box-shadow:0 8px 30px rgba(201,168,76,0.15); }
+.hero-cta:hover { background:var(--gold-hover); transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,0.22); }
 .hero-cta svg { transition:transform 0.2s; }
 .hero-cta:hover svg { transform:translateX(3px); }
 .hero-cta-secondary {
   display:inline-flex; align-items:center; gap:6px;
   color:var(--gold); text-decoration:none;
-  font-family:var(--sans); font-size:14px; font-weight:600;
-  transition:color 0.2s;
+  font-family:var(--sans); font-size:15px; font-weight:600;
+  padding:18px 26px; border:1px solid var(--gold-border); border-radius:6px;
+  transition:all 0.25s;
 }
-.hero-cta-secondary:hover { color:var(--gold-hover); }
+.hero-cta-secondary:hover { color:var(--gold-hover); transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,0.18); }
 .hero-cta-secondary svg { transition:transform 0.2s; }
 .hero-cta-secondary:hover svg { transform:translateX(3px); }
 .hero-promise {
-  margin-top:14px; font-size:13px; color:var(--text-strong); line-height:1.6;
+  margin-top:14px; font-size:14px; color:var(--text-strong); line-height:1.6;
 }
 .hero-trust {
   margin-top:20px; font-size:12px; color:var(--muted); line-height:1.7;
@@ -151,7 +153,7 @@ a { color:inherit; }
 }
 .hero-trust strong { color:var(--text); font-weight:600; }
 .hero-meta {
-  margin-top:12px; font-size:12px; color:var(--muted);
+  margin-top:12px; font-size:14px; color:var(--muted);
 }
 .hero-meta a { color:var(--gold); text-decoration:none; font-weight:600; }
 
@@ -161,7 +163,7 @@ a { color:inherit; }
 }
 .discover-item {
   display:flex; align-items:flex-start; gap:12px;
-  font-size:14px; color:var(--text); line-height:1.6;
+  font-size:16px; color:var(--text); line-height:1.65;
 }
 .discover-check {
   color:var(--gold); font-size:14px; font-weight:700; flex-shrink:0; width:18px; margin-top:2px;
@@ -179,48 +181,29 @@ a { color:inherit; }
   margin-top:40px;
 }
 .who-card {
-  background:var(--navy-3); border:1px solid var(--border); padding:24px 22px;
-  border-radius:4px; transition:border-color 0.3s;
+  background:var(--navy-3); border:1px solid var(--border); padding:28px 26px;
+  border-radius:6px; transition:border-color 0.3s, transform 0.25s, box-shadow 0.25s;
 }
-.who-card:hover { border-color:var(--gold-border); }
-.who-card h3 { font-size:15px; font-weight:700; color:var(--text-strong); margin-bottom:6px; }
-.who-card p { font-size:13px; color:var(--muted); line-height:1.65; }
+.who-card:hover { border-color:var(--gold-border); transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,0.18); }
+.who-card h3 { font-size:22px; font-weight:600; color:var(--text-strong); margin-bottom:10px; line-height:1.25; }
+.who-card p { font-size:16px; color:var(--muted); line-height:1.7; max-width:36ch; }
 
-/* SERVICE TRACKS */
-.track-list { margin-top:48px; }
-.track {
-  display:flex; gap:24px; padding:32px 0;
-  border-bottom:1px solid var(--border);
+/* SERVICES */
+.service-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+  gap:18px; margin-top:40px;
 }
-.track:last-child { border-bottom:none; }
-.track-num {
-  font-family:var(--serif); font-size:32px; color:var(--gold); opacity:0.7;
-  width:56px; flex-shrink:0; line-height:1; padding-top:4px;
+.service-card {
+  background:var(--navy-3); border:1px solid var(--border); border-radius:6px;
+  padding:28px; transition:border-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
-.track-body { flex:1; min-width:0; }
-.track-name {
-  font-family:var(--serif); font-size:24px; color:var(--cream);
-  margin-bottom:8px; line-height:1.2;
+.service-card:hover { border-color:var(--gold-border); transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,0.18); }
+.service-card h3 {
+  font-family:var(--serif); font-size:clamp(22px,2.4vw,26px);
+  line-height:1.2; color:var(--cream); margin-bottom:10px;
 }
-.track-desc {
-  font-size:15px; color:var(--text); font-style:italic;
-  margin-bottom:18px; line-height:1.6;
-}
-.track-meta { display:flex; flex-direction:column; gap:8px; }
-.track-row {
-  display:flex; gap:16px; font-size:13.5px; line-height:1.6;
-}
-.track-row dt {
-  flex-shrink:0; width:108px;
-  font-size:11px; font-weight:700; color:var(--gold);
-  letter-spacing:0.12em; text-transform:uppercase;
-  padding-top:3px;
-}
-.track-row dd { color:var(--text); flex:1; }
-.track-usd { color:var(--muted); font-size:13px; }
-.track-footer {
-  margin-top:36px; padding-top:24px; border-top:1px solid var(--gold-border);
-  font-size:14px; color:var(--muted); line-height:1.7; font-style:italic;
+.service-card p {
+  font-size:16px; color:var(--muted); line-height:1.7; max-width:32ch;
 }
 
 /* HOW IT WORKS */
@@ -236,8 +219,8 @@ a { color:inherit; }
   display:flex; align-items:center; justify-content:center;
   font-family:var(--serif); font-size:16px; color:var(--gold);
 }
-.step-body h3 { font-size:16px; font-weight:700; color:var(--text-strong); margin-bottom:6px; }
-.step-body p { font-size:14px; color:var(--muted); line-height:1.7; }
+.step-body h3 { font-size:22px; font-weight:600; color:var(--text-strong); margin-bottom:8px; line-height:1.3; }
+.step-body p { font-size:16px; color:var(--muted); line-height:1.7; max-width:42ch; }
 .step-callout {
   margin-top:8px; font-size:13px; font-weight:600; color:var(--gold);
 }
@@ -250,17 +233,18 @@ a { color:inherit; }
 .founder-card {
   display:flex; align-items:flex-start; gap:20px;
   background:var(--navy-3); border:1px solid var(--border);
-  padding:28px 24px; border-radius:4px;
+  padding:28px 24px; border-radius:6px; transition:border-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
+.founder-card:hover { border-color:var(--gold-border); transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,0.18); }
 .founder-avatar {
   width:56px; height:56px; border-radius:50%; flex-shrink:0;
   background:var(--gold-faint); border:1.5px solid var(--gold-border);
   display:flex; align-items:center; justify-content:center;
   font-family:var(--serif); font-size:18px; color:var(--gold);
 }
-.founder-info h3 { font-size:15px; font-weight:700; color:var(--text-strong); margin-bottom:2px; }
-.founder-info .title { font-size:12px; color:var(--gold); font-weight:600; margin-bottom:8px; }
-.founder-info p { font-size:13px; color:var(--muted); line-height:1.7; }
+.founder-info h3 { font-size:22px; font-weight:600; color:var(--text-strong); margin-bottom:4px; }
+.founder-info .title { font-size:14px; color:var(--gold); font-weight:600; margin-bottom:10px; }
+.founder-info p { font-size:16px; color:var(--muted); line-height:1.7; max-width:34ch; }
 .founders-line {
   margin-top:24px; font-size:15px; color:var(--text); line-height:1.7;
   border-left:3px solid var(--gold); padding-left:18px; font-style:italic;
@@ -270,7 +254,7 @@ a { color:inherit; }
 .founder-link {
   display:inline-block; margin-top:12px;
   color:var(--gold); text-decoration:none;
-  font-size:13px; font-weight:600; transition:color 0.2s;
+  font-size:14px; font-weight:600; transition:color 0.2s;
 }
 .founder-link:hover { color:var(--gold-hover); }
 
@@ -278,7 +262,7 @@ a { color:inherit; }
 a.ai-hint {
   display:flex; justify-content:space-between; align-items:center; gap:20px;
   background:var(--gold-faint); border:1px solid var(--gold-border);
-  border-radius:4px; padding:22px 24px; margin-top:28px;
+  border-radius:6px; padding:24px 26px; margin-top:28px;
   text-decoration:none; transition:border-color 0.25s, background 0.25s;
 }
 a.ai-hint:hover { border-color:var(--gold); background:rgba(201,168,76,0.1); }
@@ -287,7 +271,7 @@ a.ai-hint:hover { border-color:var(--gold); background:rgba(201,168,76,0.1); }
   letter-spacing:0.16em; text-transform:uppercase;
   flex-shrink:0; align-self:flex-start; padding-top:2px;
 }
-a.ai-hint p { font-size:13px; color:var(--text); line-height:1.7; flex:1; }
+a.ai-hint p { font-size:16px; color:var(--text); line-height:1.7; flex:1; max-width:50ch; }
 a.ai-hint strong { color:var(--gold); font-weight:600; }
 .ai-hint-arrow {
   color:var(--gold); font-size:18px; flex-shrink:0; transition:transform 0.2s;
@@ -310,10 +294,10 @@ a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
 .cta-main-btn {
   display:inline-flex; align-items:center; gap:10px;
   background:var(--gold); color:var(--navy); border:none;
-  padding:18px 44px; font-family:var(--sans); font-size:16px; font-weight:700;
-  cursor:pointer; border-radius:3px; transition:all 0.25s; text-decoration:none;
+  padding:18px 30px; font-family:var(--sans); font-size:16px; font-weight:700;
+  cursor:pointer; border-radius:6px; transition:all 0.25s; text-decoration:none;
 }
-.cta-main-btn:hover { background:var(--gold-hover); transform:translateY(-1px); }
+.cta-main-btn:hover { background:var(--gold-hover); transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,0.22); }
 .cta-promise {
   margin-top:16px; font-size:14px; color:var(--text-strong); font-weight:500;
 }
@@ -324,12 +308,12 @@ a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
 .cta-alt a:hover { text-decoration:underline; }
 
 /* FOOTER */
-.footer { padding:36px 0; border-top:1px solid var(--border); }
+.footer { padding:32px 0; border-top:1px solid var(--border); }
 .footer-inner {
   display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
 }
 .footer-brand { font-family:var(--serif); font-size:16px; color:var(--gold); }
-.footer-right { font-size:12px; color:var(--muted); display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.footer-right { font-size:14px; color:var(--muted); display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 .footer-link { color:var(--gold); text-decoration:none; font-weight:600; transition:color 0.2s; }
 .footer-link:hover { color:var(--gold-hover); }
 .footer-sep { color:var(--muted); }
@@ -350,16 +334,16 @@ a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
 
 /* RESPONSIVE */
 @media(max-width:640px) {
-  .section { padding:64px 0; }
+  .section { padding:56px 0; }
   .founder-card { flex-direction:column; gap:14px; }
   .founders-grid { grid-template-columns:1fr; }
   .step { flex-direction:column; gap:12px; }
-  .track { flex-direction:column; gap:8px; }
-  .track-num { width:auto; padding-top:0; font-size:28px; }
-  .track-row { flex-direction:column; gap:2px; }
-  .track-row dt { padding-top:0; width:auto; }
   a.ai-hint { flex-direction:column; align-items:flex-start; gap:12px; }
   .footer-inner { flex-direction:column; text-align:center; }
+}
+@media(max-width:480px) {
+  .section { padding:40px 0; }
+  .contain { padding:0 20px; }
 }
 </style>
 </head>
@@ -376,7 +360,7 @@ a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
       <a href="/portfolio.html" class="nav-link">Portfolio</a>
       <a href="/how-we-use-ai.html" class="nav-link">How we use AI</a>
       <a href="#about" class="nav-link">About</a>
-      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="nav-cta-link">Book a Free Call</a>
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="nav-cta-link">Book a call</a>
     </div>
   </div>
 </nav>
@@ -385,24 +369,23 @@ a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
 <section class="hero">
   <div class="contain hero-inner">
     <div class="hero-eyebrow anim a1">Financial Intelligence &amp; Advisory</div>
-    <h1 class="anim a2">An outsourced finance team for founders who want answers, not just spreadsheets.</h1>
+    <h1 class="anim a2">Your Finance Team. Without the Full-Time Cost.</h1>
     <div class="hero-hit anim a3">Accelerated by AI, reviewed by humans.</div>
     <p class="hero-desc anim a4">
-      Investor-ready reporting, cash visibility, and profitability analysis.
-      Delivered by senior finance professionals from Amazon, Amex, and Sun Pharma.
+      We build financial models, dashboards, and forecasts that help founders understand cash, runway, and growth.
     </p>
     <div class="hero-cta-row anim a5">
       <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="hero-cta">
-        Book a Free 30-Min Financial Breakdown
+        Start your FP&amp;A setup
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
-      <a href="/how-we-use-ai.html" class="hero-cta-secondary">
-        See how we use AI
+      <a href="/pricing.html" class="hero-cta-secondary">
+        See pricing
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
     <p class="hero-promise anim a6">You'll walk away with 3 clear actions, even if you don't work with us.</p>
-    <p class="hero-meta anim a7">Free · 30 minutes · No obligations · <a href="mailto:advisory@skcapital.co.in">advisory@skcapital.co.in</a></p>
+    <p class="hero-meta anim a7">Free &middot; 30 minutes &middot; No obligations &middot; <a href="mailto:advisory@skcapital.co.in">advisory@skcapital.co.in</a></p>
   </div>
 </section>
 
@@ -415,19 +398,19 @@ a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
     <h2 class="section-title">What founders usually find.</h2>
     <div class="discover-list">
       <div class="discover-item">
-        <div class="discover-check">→</div>
+        <div class="discover-check">&rarr;</div>
         <p>Hidden cost leaks that were never tracked</p>
       </div>
       <div class="discover-item">
-        <div class="discover-check">→</div>
+        <div class="discover-check">&rarr;</div>
         <p>A clear picture of cash runway under realistic scenarios</p>
       </div>
       <div class="discover-item">
-        <div class="discover-check">→</div>
+        <div class="discover-check">&rarr;</div>
         <p>What's actually driving profit, not just revenue</p>
       </div>
       <div class="discover-item">
-        <div class="discover-check">→</div>
+        <div class="discover-check">&rarr;</div>
         <p>Which spend creates value, and which is drag</p>
       </div>
     </div>
@@ -470,52 +453,28 @@ a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
 <!-- ====== SERVICE TRACKS ====== -->
 <section class="section bg-alt" id="services">
   <div class="contain">
-    <div class="section-label">Service tracks</div>
-    <h2 class="section-title">Three ways we work together.</h2>
-    <p class="section-sub">Productized engagements with clear deliverables, timelines, and price bands. Pick the one that fits where you are right now.</p>
+    <div class="section-label">Services</div>
+    <h2 class="section-title">Finance infrastructure built for better decisions.</h2>
+    <p class="section-sub">A focused operating layer for startups that need better reporting, clearer forecasting, and investor-ready materials.</p>
 
-    <div class="track-list">
-      <div class="track">
-        <div class="track-num">01</div>
-        <div class="track-body">
-          <h3 class="track-name">Investor Pack</h3>
-          <p class="track-desc">For founders preparing to raise or already in conversations.</p>
-          <dl class="track-meta">
-            <div class="track-row"><dt>Delivered</dt><dd>Fundraising-ready financial model, deck financials, data room setup, investor Q&amp;A prep</dd></div>
-            <div class="track-row"><dt>Engagement</dt><dd>Project-based, 2 to 4 weeks</dd></div>
-            <div class="track-row"><dt>Price</dt><dd>&#8377;2L to &#8377;5L per engagement <span class="track-usd">($3,000 to $8,000 international)</span></dd></div>
-          </dl>
-        </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Financial Model</h3>
+        <p>Investor-ready 3-statement models and forecasts.</p>
       </div>
-
-      <div class="track">
-        <div class="track-num">02</div>
-        <div class="track-body">
-          <h3 class="track-name">Cash Command</h3>
-          <p class="track-desc">For founders who need to know where money is going and how long runway lasts.</p>
-          <dl class="track-meta">
-            <div class="track-row"><dt>Delivered</dt><dd>13-week rolling cash flow, monthly cash review, scenario planning, spend categorization</dd></div>
-            <div class="track-row"><dt>Engagement</dt><dd>Monthly retainer</dd></div>
-            <div class="track-row"><dt>Price</dt><dd>&#8377;50,000 to &#8377;75,000 per month <span class="track-usd">($750 to $1,200 international)</span></dd></div>
-          </dl>
-        </div>
+      <div class="service-card">
+        <h3>Dashboards</h3>
+        <p>Real-time visibility into revenue, burn, and runway.</p>
       </div>
-
-      <div class="track">
-        <div class="track-num">03</div>
-        <div class="track-body">
-          <h3 class="track-name">Profit Map</h3>
-          <p class="track-desc">For founders running multiple products, segments, or customer cohorts.</p>
-          <dl class="track-meta">
-            <div class="track-row"><dt>Delivered</dt><dd>Monthly MIS, segment / product / customer profitability, finance dashboard, narrative commentary</dd></div>
-            <div class="track-row"><dt>Engagement</dt><dd>Monthly retainer</dd></div>
-            <div class="track-row"><dt>Price</dt><dd>&#8377;75,000 to &#8377;1,25,000 per month <span class="track-usd">($1,200 to $2,000 international)</span></dd></div>
-          </dl>
-        </div>
+      <div class="service-card">
+        <h3>Forecasting</h3>
+        <p>Monthly forecasting and variance analysis.</p>
+      </div>
+      <div class="service-card">
+        <h3>Investor Reporting</h3>
+        <p>Board decks and investor updates done for you.</p>
       </div>
     </div>
-
-    <p class="track-footer">Need something else? Audit, financial clean-up, board pack, ad-hoc analysis, talk to us.</p>
   </div>
 </section>
 
@@ -545,8 +504,8 @@ a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
       <div class="step">
         <div class="step-marker">3</div>
         <div class="step-body">
-          <h3>Pick a track, if it's a fit</h3>
-          <p>Investor Pack, Cash Command, or Profit Map. Or a one-off project if that's what you actually need. Simple engagement, cancel anytime.</p>
+          <h3>Start with the right support level</h3>
+          <p>We recommend the scope that fits your current stage, then help you build reporting, forecasting, and investor-ready finance from there.</p>
         </div>
       </div>
     </div>
@@ -591,7 +550,7 @@ a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
     </div>
 
     <a href="/how-we-use-ai.html" class="ai-hint">
-      <span class="ai-hint-label">Transparency</span>
+      <span class="ai-hint-label">How we work</span>
       <p>Curious how AI fits into our process? Read <strong>How we use AI</strong>: what AI does, what humans always do, and how we handle your data.</p>
       <span class="ai-hint-arrow">&rarr;</span>
     </a>
@@ -604,11 +563,11 @@ a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
     <div class="section-label">Get started</div>
     <h2 class="section-title">Let's find out what your numbers are really telling you.</h2>
     <p class="section-sub" style="max-width:500px;">
-      If you're a founder who wants better visibility into your numbers, let's talk.
-      Free 30-minute call, focused 1-page report, no charge, no obligations.
+      Tell us about your startup.
+      We&rsquo;ll show you how we can help in a 30-minute call.
     </p>
     <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="cta-main-btn">
-      Book a Free 30-Min Financial Breakdown &rarr;
+      Request intro call
     </a>
     <p class="cta-promise">You'll walk away with 3 clear actions, even if you don't work with us.</p>
     <p class="cta-alt">
@@ -622,9 +581,15 @@ a.ai-hint:hover .ai-hint-arrow { transform:translateX(3px); }
   <div class="contain footer-inner">
     <div class="footer-brand">SK Capital</div>
     <div class="footer-right">
+      <a href="mailto:advisory@skcapital.co.in" class="footer-link">Email</a>
+      <span class="footer-sep">&middot;</span>
+      <a href="https://linkedin.com/company/sk-capital" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+      <span class="footer-sep">&middot;</span>
+      <span>SK Capital - Finance &amp; FP&amp;A for startups.</span>
+      <span class="footer-sep">&middot;</span>
       <a href="/how-we-use-ai.html" class="footer-link">How we use AI</a>
-      <span class="footer-sep">·</span>
-      <span>© 2026 SK Capital · An AI-augmented finance team for founders.</span>
+      <span class="footer-sep">&middot;</span>
+      <span>&copy; <span class="year"></span> SK Capital</span>
     </div>
   </div>
 </footer>
@@ -640,6 +605,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const t = document.querySelector(a.getAttribute('href'));
     if (t) t.scrollIntoView({ behavior:'smooth', block:'start' });
   });
+});
+document.querySelectorAll('.year').forEach((element) => {
+  element.textContent = new Date().getFullYear();
 });
 </script>
 
