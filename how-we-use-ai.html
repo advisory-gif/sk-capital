@@ -38,18 +38,18 @@ body {
 }
 a { color:inherit; }
 
-.contain { max-width:860px; margin:0 auto; padding:0 28px; }
+.contain { max-width:1200px; margin:0 auto; padding:0 28px; }
 
 .section-label {
-  font-size:11px; font-weight:700; color:var(--gold); letter-spacing:0.18em;
+  font-size:14px; font-weight:700; color:var(--gold); letter-spacing:0.14em;
   text-transform:uppercase; margin-bottom:20px;
 }
 .section-title {
-  font-family:var(--serif); font-size:clamp(26px,3.8vw,38px);
-  color:var(--cream); line-height:1.22; margin-bottom:20px;
+  font-family:var(--serif); font-size:clamp(32px,3.8vw,40px);
+  color:var(--cream); line-height:1.18; margin-bottom:20px;
 }
 .section-sub {
-  font-size:16px; color:var(--muted); line-height:1.75; max-width:580px;
+  font-size:18px; color:var(--muted); line-height:1.7; max-width:70ch;
 }
 
 /* NAV */
@@ -61,7 +61,7 @@ a { color:inherit; }
 }
 .nav.scrolled { padding:12px 0; }
 .nav-inner {
-  max-width:860px; margin:0 auto; padding:0 28px;
+  max-width:1200px; margin:0 auto; padding:0 28px;
   display:flex; align-items:center; justify-content:space-between;
 }
 .logo { font-family:var(--serif); font-size:22px; color:var(--gold); text-decoration:none; }
@@ -78,10 +78,10 @@ a { color:inherit; }
 .nav-link.active { color:var(--text); }
 .nav-cta-link {
   color:var(--gold); text-decoration:none; font-size:13px; font-weight:600;
-  border:1px solid var(--gold-border); padding:8px 20px; border-radius:3px;
+  border:1px solid var(--gold-border); padding:12px 22px; border-radius:6px;
   transition:all 0.2s;
 }
-.nav-cta-link:hover { background:var(--gold); color:var(--navy); }
+.nav-cta-link:hover { background:var(--gold); color:var(--navy); transform:translateY(-1px); box-shadow:0 10px 24px rgba(0,0,0,0.18); }
 @media(max-width:760px){
   .nav-right .nav-link { display:none; }
 }
@@ -182,10 +182,10 @@ a { color:inherit; }
 .cta-main-btn {
   display:inline-flex; align-items:center; gap:10px;
   background:var(--gold); color:var(--navy); border:none;
-  padding:18px 44px; font-family:var(--sans); font-size:16px; font-weight:700;
-  cursor:pointer; border-radius:3px; transition:all 0.25s; text-decoration:none;
+  padding:18px 30px; font-family:var(--sans); font-size:16px; font-weight:700;
+  cursor:pointer; border-radius:6px; transition:all 0.25s; text-decoration:none;
 }
-.cta-main-btn:hover { background:var(--gold-hover); transform:translateY(-1px); }
+.cta-main-btn:hover { background:var(--gold-hover); transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,0.22); }
 .cta-alt {
   margin-top:18px; font-size:13px; color:var(--muted); line-height:1.8;
 }
@@ -198,7 +198,7 @@ a { color:inherit; }
   display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
 }
 .footer-brand { font-family:var(--serif); font-size:16px; color:var(--gold); }
-.footer-right { font-size:12px; color:var(--muted); display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.footer-right { font-size:14px; color:var(--muted); display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 .footer-link { color:var(--gold); text-decoration:none; font-weight:600; transition:color 0.2s; }
 .footer-link:hover { color:var(--gold-hover); }
 .footer-sep { color:var(--muted); }
@@ -234,7 +234,7 @@ a { color:inherit; }
       <a href="/portfolio.html" class="nav-link">Portfolio</a>
       <a href="/how-we-use-ai.html" class="nav-link active">How we use AI</a>
       <a href="/#about" class="nav-link">About</a>
-      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="nav-cta-link">Book a Free Call</a>
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="nav-cta-link">Book a call</a>
     </div>
   </div>
 </nav>
@@ -411,10 +411,10 @@ a { color:inherit; }
     <div class="section-label">Talk to us</div>
     <h2 class="section-title">Got a specific question about AI, data, or how we work?</h2>
     <p class="section-sub">
-      Email us, or book a free 30-minute financial breakdown. We answer questions about our workflow with the same directness you'll get on the actual engagement.
+      Email us, or book a call. We answer questions about our workflow with the same directness you'll get on the actual engagement.
     </p>
     <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="cta-main-btn">
-      Book a Free 30-Min Financial Breakdown &rarr;
+      Book a call
     </a>
     <p class="cta-alt">
       Or reach out directly: <a href="mailto:advisory@skcapital.co.in">advisory@skcapital.co.in</a>
@@ -427,12 +427,24 @@ a { color:inherit; }
   <div class="contain footer-inner">
     <div class="footer-brand">SK Capital</div>
     <div class="footer-right">
+      <a href="mailto:advisory@skcapital.co.in" class="footer-link">Email</a>
+      <span class="footer-sep">&middot;</span>
+      <a href="https://linkedin.com/company/sk-capital" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+      <span class="footer-sep">&middot;</span>
+      <span>SK Capital - Finance &amp; FP&amp;A for startups.</span>
+      <span class="footer-sep">&middot;</span>
       <a href="/how-we-use-ai.html" class="footer-link">How we use AI</a>
-      <span class="footer-sep">·</span>
-      <span>© 2026 SK Capital · An AI-augmented finance team for founders.</span>
+      <span class="footer-sep">&middot;</span>
+      <span>&copy; <span class="year"></span> SK Capital</span>
     </div>
   </div>
 </footer>
+
+<script>
+document.querySelectorAll('.year').forEach((element) => {
+  element.textContent = new Date().getFullYear();
+});
+</script>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing | SK Capital</title>
-<meta name="description" content="Simple pricing for investor-ready finance work, cash visibility, and profitability reporting. INR and USD, with clear engagement labels.">
+<meta name="description" content="Simple monthly pricing for startup finance, FP&A, dashboards, and forecasting support.">
 <meta property="og:title" content="Pricing | SK Capital">
 <meta property="og:description" content="Simple pricing for investor-ready finance work, cash visibility, and profitability reporting.">
 <meta property="og:type" content="website">
@@ -38,17 +38,17 @@ body {
 }
 a { color:inherit; }
 
-.contain { max-width:860px; margin:0 auto; padding:0 28px; }
+.contain { max-width:1200px; margin:0 auto; padding:0 28px; }
 .section-label {
-  font-size:11px; font-weight:700; color:var(--gold); letter-spacing:0.18em;
+  font-size:14px; font-weight:700; color:var(--gold); letter-spacing:0.14em;
   text-transform:uppercase; margin-bottom:20px;
 }
 .section-title {
-  font-family:var(--serif); font-size:clamp(26px,3.8vw,38px);
-  color:var(--cream); line-height:1.22; margin-bottom:20px;
+  font-family:var(--serif); font-size:clamp(32px,3.8vw,40px);
+  color:var(--cream); line-height:1.18; margin-bottom:20px;
 }
 .section-sub {
-  font-size:16px; color:var(--muted); line-height:1.75; max-width:620px;
+  font-size:18px; color:var(--muted); line-height:1.7; max-width:70ch;
 }
 
 .nav {
@@ -59,7 +59,7 @@ a { color:inherit; }
 }
 .nav.scrolled { padding:12px 0; }
 .nav-inner {
-  max-width:860px; margin:0 auto; padding:0 28px;
+  max-width:1200px; margin:0 auto; padding:0 28px;
   display:flex; align-items:center; justify-content:space-between;
 }
 .logo { font-family:var(--serif); font-size:22px; color:var(--gold); text-decoration:none; }
@@ -75,16 +75,16 @@ a { color:inherit; }
 .nav-link:hover, .nav-link.active { color:var(--text); }
 .nav-cta-link {
   color:var(--gold); text-decoration:none; font-size:13px; font-weight:600;
-  border:1px solid var(--gold-border); padding:8px 20px; border-radius:3px;
+  border:1px solid var(--gold-border); padding:12px 22px; border-radius:6px;
   transition:all 0.2s;
 }
-.nav-cta-link:hover { background:var(--gold); color:var(--navy); }
+.nav-cta-link:hover { background:var(--gold); color:var(--navy); transform:translateY(-1px); box-shadow:0 10px 24px rgba(0,0,0,0.18); }
 @media(max-width:760px){
   .nav-right .nav-link { display:none; }
 }
 
 .pricing-hero {
-  padding:140px 0 44px; text-align:center;
+  padding:140px 0 56px; text-align:center;
   position:relative; overflow:hidden;
 }
 .pricing-hero::before {
@@ -102,15 +102,15 @@ a { color:inherit; }
   content:''; width:24px; height:1px; background:var(--gold);
 }
 .pricing-hero h1 {
-  font-family:var(--serif); font-size:clamp(32px,4.8vw,50px);
-  line-height:1.15; color:var(--cream); margin-bottom:12px;
+  font-family:var(--serif); font-size:clamp(48px,5vw,56px);
+  line-height:1.08; color:var(--cream); margin-bottom:12px;
 }
 .pricing-hero .hit {
-  font-family:var(--serif); font-size:clamp(20px,2.5vw,26px);
-  color:var(--gold); margin-bottom:28px; line-height:1.3;
+  font-family:var(--serif); font-size:clamp(24px,2.8vw,28px);
+  color:var(--gold); margin-bottom:24px; line-height:1.3;
 }
 .pricing-hero .desc {
-  font-size:17px; color:var(--muted); line-height:1.8;
+  font-size:18px; color:var(--muted); line-height:1.75;
   max-width:580px; margin:0 auto 36px;
 }
 
@@ -128,7 +128,7 @@ a { color:inherit; }
 .toggle-btn.active { background:var(--gold); color:var(--navy); }
 .toggle-btn:not(.active):hover { color:var(--text-strong); }
 
-.tracks-section { padding:36px 0 28px; }
+.tracks-section { padding:40px 0 32px; }
 .tracks-grid {
   display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
   gap:18px; max-width:1160px; margin:0 auto; padding:0 28px;
@@ -137,8 +137,9 @@ a { color:inherit; }
   background:var(--navy-2); border:1px solid var(--border); border-radius:4px;
   padding:34px 28px 30px; display:flex; flex-direction:column;
   transition:border-color 0.25s, transform 0.25s;
+  min-height:100%;
 }
-.track-card:hover { border-color:var(--gold-border-strong); transform:translateY(-2px); }
+.track-card:hover { border-color:var(--gold-border-strong); transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,0.18); }
 .track-card.featured {
   background:var(--navy-3);
   border-color:var(--gold-border-strong);
@@ -178,7 +179,7 @@ a { color:inherit; }
 }
 .track-cta {
   display:block; text-align:center; text-decoration:none;
-  padding:13px 24px; border-radius:3px; font-size:14px; font-weight:600;
+  margin-top:auto; padding:16px 24px; border-radius:6px; font-size:14px; font-weight:600;
   transition:all 0.2s;
 }
 .track-cta.outline {
@@ -191,7 +192,7 @@ a { color:inherit; }
 .track-cta.solid:hover { background:var(--gold-hover); border-color:var(--gold-hover); }
 
 .pricing-note {
-  text-align:center; padding:32px 24px 88px;
+  text-align:center; padding:32px 24px 80px;
   font-size:13px; color:var(--muted); line-height:1.85;
   max-width:720px; margin:0 auto;
 }
@@ -215,10 +216,10 @@ a { color:inherit; }
 .cta-main-btn {
   display:inline-flex; align-items:center; gap:10px;
   background:var(--gold); color:var(--navy); border:none;
-  padding:18px 44px; font-family:var(--sans); font-size:16px; font-weight:700;
-  cursor:pointer; border-radius:3px; transition:all 0.25s; text-decoration:none;
+  padding:18px 30px; font-family:var(--sans); font-size:16px; font-weight:700;
+  cursor:pointer; border-radius:6px; transition:all 0.25s; text-decoration:none;
 }
-.cta-main-btn:hover { background:var(--gold-hover); transform:translateY(-1px); }
+.cta-main-btn:hover { background:var(--gold-hover); transform:translateY(-2px); box-shadow:0 14px 34px rgba(0,0,0,0.22); }
 .cta-promise { margin-top:16px; font-size:14px; color:var(--text-strong); font-weight:500; }
 .cta-alt { margin-top:16px; font-size:13px; color:var(--muted); line-height:1.8; }
 .cta-alt a { color:var(--gold); text-decoration:none; font-weight:600; }
@@ -229,7 +230,7 @@ a { color:inherit; }
   display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;
 }
 .footer-brand { font-family:var(--serif); font-size:16px; color:var(--gold); }
-.footer-right { font-size:12px; color:var(--muted); display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.footer-right { font-size:14px; color:var(--muted); display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 .footer-link { color:var(--gold); text-decoration:none; font-weight:600; transition:color 0.2s; }
 .footer-link:hover { color:var(--gold-hover); }
 .footer-sep { color:var(--muted); }
@@ -264,19 +265,18 @@ a { color:inherit; }
       <a href="/portfolio.html" class="nav-link">Portfolio</a>
       <a href="/how-we-use-ai.html" class="nav-link">How we use AI</a>
       <a href="/#about" class="nav-link">About</a>
-      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="nav-cta-link">Book a Free Call</a>
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="nav-cta-link">Book a call</a>
     </div>
   </div>
 </nav>
 
 <section class="pricing-hero">
   <div class="contain">
-    <div class="eyebrow anim a1">Transparent Pricing</div>
-    <h1 class="anim a2">Three tracks, clear scope.</h1>
-    <div class="hit anim a3">No guesswork on what you are buying.</div>
+    <div class="eyebrow anim a1">Pricing</div>
+    <h1 class="anim a2">Simple monthly pricing. No surprises.</h1>
+    <div class="hit anim a3">Start small. Upgrade as you grow.</div>
     <p class="desc anim a4">
-      Every engagement starts with a free 30-minute financial breakdown. Then we point you toward the track that actually fits:
-      fundraising support, cash visibility, or profitability clarity.
+      Choose the support level that fits your current stage, then scale when reporting, planning, and investor expectations become more demanding.
     </p>
     <div class="currency-toggle anim a5" role="group" aria-label="Select currency">
       <button class="toggle-btn active" id="btn-inr" onclick="setCurrency('inr')">&#8377; INR</button>
@@ -288,79 +288,76 @@ a { color:inherit; }
 <section class="tracks-section">
   <div class="tracks-grid">
     <article class="track-card">
-      <div class="track-kicker">Project Track</div>
-      <h2 class="track-name">Investor Pack</h2>
-      <p class="track-subtitle">For founders preparing to raise, already in diligence, or needing a sharper finance story for investors.</p>
+      <div class="track-kicker">Plan 01</div>
+      <h2 class="track-name">Starter</h2>
+      <p class="track-subtitle">For early-stage startups needing financial clarity.</p>
       <div class="track-price-wrap">
-        <div class="track-price inr">&#8377;2L to &#8377;5L</div>
-        <div class="track-price usd">$3,000 to $8,000</div>
-        <div class="track-price-note">per engagement</div>
+        <div class="track-price"><span class="price-value" data-inr="&#8377;50,000 to &#8377;75,000" data-usd="$750 to $1,200">&#8377;50,000 to &#8377;75,000</span></div>
+        <div class="track-price-note">per month</div>
       </div>
       <div class="track-divider"></div>
       <ul class="track-meta">
-        <li>Fundraising-ready financial model</li>
-        <li>Deck financials and investor support materials</li>
-        <li>Data room cleanup and structure</li>
-        <li>Q&amp;A prep for investor conversations</li>
+        <li>Monthly forecasting and variance analysis</li>
+        <li>Core management reporting pack</li>
+        <li>Runway, burn, and cash visibility</li>
+        <li>Email support for finance questions</li>
       </ul>
-      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="track-cta outline">Book a Free 30-Min Financial Breakdown</a>
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="track-cta outline">Book intro call</a>
     </article>
 
     <article class="track-card featured">
-      <div class="track-kicker">Monthly Track</div>
-      <h2 class="track-name">Cash Command</h2>
-      <p class="track-subtitle">For founders who need tight runway visibility, better cash planning, and fewer surprises every month.</p>
+      <div class="track-kicker">Plan 02</div>
+      <h2 class="track-name">Growth</h2>
+      <p class="track-subtitle">For scaling startups raising or preparing to raise.</p>
       <div class="track-price-wrap">
-        <div class="track-price inr">&#8377;50,000 to &#8377;75,000</div>
-        <div class="track-price usd">$750 to $1,200</div>
+        <div class="track-price"><span class="price-value" data-inr="&#8377;75,000 to &#8377;1.25L" data-usd="$1,200 to $2,000">&#8377;75,000 to &#8377;1.25L</span></div>
         <div class="track-price-note">per month</div>
       </div>
       <div class="track-divider"></div>
       <ul class="track-meta">
-        <li>13-week rolling cash flow and runway tracking</li>
-        <li>Monthly cash review and spend visibility</li>
-        <li>Scenario planning for hiring and growth decisions</li>
-        <li>Direct advisory on where money is leaking</li>
+        <li>Everything in Starter</li>
+        <li>Investor-ready dashboards and board updates</li>
+        <li>Scenario planning for hiring and fundraising</li>
+        <li>Deeper forecasting and reporting support</li>
       </ul>
-      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="track-cta solid">Book a Free 30-Min Financial Breakdown</a>
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="track-cta solid">Book intro call</a>
     </article>
 
     <article class="track-card">
-      <div class="track-kicker">Monthly Track</div>
-      <h2 class="track-name">Profit Map</h2>
-      <p class="track-subtitle">For businesses with multiple products, customer types, or segments that need clean reporting on what actually drives profit.</p>
+      <div class="track-kicker">Plan 03</div>
+      <h2 class="track-name">Scale</h2>
+      <p class="track-subtitle">For funded startups needing full FP&amp;A support.</p>
       <div class="track-price-wrap">
-        <div class="track-price inr">&#8377;75,000 to &#8377;1.25L</div>
-        <div class="track-price usd">$1,200 to $2,000</div>
+        <div class="track-price"><span class="price-value" data-inr="&#8377;2L+" data-usd="$3,000+">&#8377;2L+</span></div>
         <div class="track-price-note">per month</div>
       </div>
       <div class="track-divider"></div>
       <ul class="track-meta">
-        <li>Monthly MIS with narrative commentary</li>
-        <li>Product, segment, or customer profitability analysis</li>
-        <li>Finance dashboard built around real decision questions</li>
-        <li>Ongoing advisory on margin and reporting clarity</li>
+        <li>Full FP&amp;A support across reporting, planning, and investor materials</li>
+        <li>Leadership-level dashboards and monthly reviews</li>
+        <li>Support for board decks and investor updates</li>
+        <li>Hands-on advisory as finance complexity grows</li>
       </ul>
-      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="track-cta outline">Book a Free 30-Min Financial Breakdown</a>
+      <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="track-cta outline">Book intro call</a>
     </article>
   </div>
 </section>
 
 <div class="pricing-note">
-  All tracks start with a <strong>free 30-minute financial breakdown</strong>.<br>
-  INR is the base price. USD bands are for international clients and are indicative.<br>
+  All plans start with a <strong>free 30-minute intro call</strong>.<br>
+  Currency switcher updates all plan prices instantly. INR is the base price, USD is indicative.<br>
   Questions? Write to us at <a href="mailto:advisory@skcapital.co.in">advisory@skcapital.co.in</a>
 </div>
 
 <section class="cta-section">
   <div class="contain">
     <div class="section-label">Get started</div>
-    <h2 class="section-title">Not sure which track fits?</h2>
+    <h2 class="section-title">Not sure which plan fits?</h2>
     <p class="section-sub" style="max-width:500px;">
       Book the free call. We will look at your numbers, tell you what is actually needed, and point you to the right scope without padding the engagement.
     </p>
     <a href="https://cal.com/skcapital/free-financial-breakdown" target="_blank" class="cta-main-btn">
-      Book a Free 30-Min Financial Breakdown
+      Book intro call
     </a>
     <p class="cta-promise">You'll walk away with 3 clear actions, even if you don't work with us.</p>
     <p class="cta-alt">
@@ -373,24 +370,30 @@ a { color:inherit; }
   <div class="contain footer-inner">
     <div class="footer-brand">SK Capital</div>
     <div class="footer-right">
+      <a href="mailto:advisory@skcapital.co.in" class="footer-link">Email</a>
+      <span class="footer-sep">&middot;</span>
+      <a href="https://linkedin.com/company/sk-capital" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+      <span class="footer-sep">&middot;</span>
+      <span>SK Capital - Finance &amp; FP&amp;A for startups.</span>
+      <span class="footer-sep">&middot;</span>
       <a href="/how-we-use-ai.html" class="footer-link">How we use AI</a>
       <span class="footer-sep">&middot;</span>
-      <span>&copy; 2026 SK Capital &middot; An AI-augmented finance team for founders.</span>
+      <span>&copy; <span class="year"></span> SK Capital</span>
     </div>
   </div>
 </footer>
 
 <script>
 function setCurrency(currency) {
-  document.querySelectorAll('.track-price.inr').forEach((element) => {
-    element.style.display = currency === 'inr' ? '' : 'none';
-  });
-  document.querySelectorAll('.track-price.usd').forEach((element) => {
-    element.style.display = currency === 'usd' ? '' : 'none';
+  document.querySelectorAll('.price-value').forEach((element) => {
+    element.innerHTML = currency === 'inr' ? element.dataset.inr : element.dataset.usd;
   });
   document.getElementById('btn-inr').classList.toggle('active', currency === 'inr');
   document.getElementById('btn-usd').classList.toggle('active', currency === 'usd');
 }
+document.querySelectorAll('.year').forEach((element) => {
+  element.textContent = new Date().getFullYear();
+});
 </script>
 
 </body>
