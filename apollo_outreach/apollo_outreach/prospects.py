@@ -53,11 +53,12 @@ def iter_prospects(
     for locations in (PERSON_LOCATIONS_PRIMARY, PERSON_LOCATIONS_SECONDARY):
         page = 1
         while yielded < cfg.max_prospects:
+            remaining = cfg.max_prospects - yielded
             data = search_people(
                 client,
                 locations=locations,
                 page=page,
-                per_page=cfg.page_size,
+                per_page=min(cfg.page_size, remaining),
             )
             people = data.get("people") or data.get("contacts") or []
             if not people:
