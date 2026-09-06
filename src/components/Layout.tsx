@@ -35,12 +35,7 @@ export default function Layout({ children }: LayoutProps) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-navy text-warm relative">
-      {/* Grain overlay */}
-      <div className="grain-overlay" />
-
-      {/* Vignette overlay */}
-      <div className="vignette-overlay" />
+    <div className="site-shell">
 
       <Navbar />
       <main id="main-content" tabIndex={-1} className="relative z-10">{children}</main>
