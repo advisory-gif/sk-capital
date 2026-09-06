@@ -254,12 +254,12 @@ export default function HowWeUseAI() {
               Have questions about how we handle your data?
             </p>
             <a
-              href="https://cal.com/skcapital/free-financial-breakdown"
+              href="/business-health-review"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-navy font-medium rounded-full hover:bg-gold/90 transition-all hover:-translate-y-0.5"
             >
-              Book a Free Finance Systems Review
+              Start your Business Health Review
               <ArrowRight size={16} />
             </a>
           </div>
