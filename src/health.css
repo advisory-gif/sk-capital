@@ -2,3 +2,4 @@
 
 
 .runway-dialog{background:#131923;color:#f5f2eb;border:1px solid #d6a434;padding:30px;max-width:500px;width:calc(100% - 32px);border-radius:8px}.runway-dialog::backdrop{background:#000b}.runway-dialog h2{font-size:2rem;margin:24px 0}.runway-dialog p{color:#bbc2ce;margin:15px 0;line-height:1.6}.runway-dialog label,.runway-dialog output{display:block;margin:20px 0 8px}.runway-dialog input{width:100%;padding:12px;background:#0b0f17;border:1px solid #68717e;color:white;font-size:1rem}
+.decision-question{padding:17px 0;border-bottom:1px solid #ffffff20;font-size:1rem}.audience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.audience-grid .secondary{margin-top:24px}.strategy-steps{grid-template-columns:repeat(5,minmax(0,1fr))}@media(max-width:1050px){.strategy-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.audience-grid,.strategy-steps{grid-template-columns:1fr}}
