@@ -10,9 +10,6 @@ const __dirname = path.dirname(__filename)
 export default defineConfig({
   base: '/',
   plugins: [react()],
-  optimizeDeps: {
-    exclude: ["lucide-react", "react-router", "react-router-dom"],
-  },
   server: {
     port: 3000,
   },
