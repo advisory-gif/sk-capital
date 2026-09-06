@@ -1,7 +1,7 @@
 {
   "/": [
-    "Management & Strategy Consulting for Startups & SMEs",
-    "SK Capital helps founders understand business performance, identify cost and revenue opportunities, and guide their teams from strategy to action. Investment assessment and portfolio support."
+    "Strategy Consulting & Applied AI for Businesses and Startups",
+    "Strategic clarity, applied AI and a financial lens. SK Capital helps established businesses improve performance and startups build metrics, reporting and plans."
   ],
   "/business-health-review": [
     "Discuss Your Business | Business Health Review",
@@ -12,11 +12,19 @@
     "Explore an illustrative financial model covering revenue, profitability, cash flow and scenarios with SK Capital."
   ],
   "/blog": [
-    "Insights",
-    "Explore SK Capital insights on business finance, cash, forecasting and financial decisions."
+    "Perspectives on Business & Startup Performance",
+    "Short perspectives from SK Capital on profitability, startup metrics and turning strategy into practical action."
   ],
   "/how-we-use-ai": [
-    "How We Use AI",
-    "Learn how SK Capital combines AI-assisted analysis with human review in financial work."
+    "Applied AI & Human Judgement",
+    "Explore how AI can support analysis and reporting, with human judgement and review at the centre of SK Capital's consulting approach."
+  ],
+  "/businesses": [
+    "Management Consulting for Small & Medium Businesses",
+    "Understand profitability, costs, working capital and growth opportunities. SK Capital guides your team from business analysis to action."
+  ],
+  "/startups": [
+    "Startup Metrics, Reporting & Financial Planning",
+    "Metrics, MIS, investor reporting, unit economics and runway planning for startup founders. Explore support shaped around your stage and business model."
   ]
 }

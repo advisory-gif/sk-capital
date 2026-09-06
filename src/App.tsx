@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 import Layout from '@/components/Layout';
 import LoadingScreen from '@/components/LoadingScreen';
 
+const Audience = lazy(() => import('@/pages/Audience'));
 const Home = lazy(() => import('@/pages/Home'));
 const BusinessHealthReview = lazy(() => import('@/pages/BusinessHealthReview'));
 const Portfolio = lazy(() => import('@/pages/Portfolio'));
@@ -16,6 +17,8 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/businesses" element={<Audience kind="business" />} />
+            <Route path="/startups" element={<Audience kind="startup" />} />
             <Route path="/pricing" element={<Navigate to="/business-health-review" replace />} />
             <Route path="/business-health-review" element={<BusinessHealthReview />} />
             <Route path="/portfolio" element={<Portfolio />} />
