@@ -130,7 +130,7 @@ export default function Portfolio() {
   const kpis = kpiData[activeTab as keyof typeof kpiData] || kpiData.overview;
 
   return (
-    <div ref={pageRef} className="pt-24 lg:pt-32 pb-16">
+    <div ref={pageRef} className="sample-page pb-16">
       <div className="w-full px-6 lg:px-12 xl:px-20 max-w-6xl mx-auto">
         {/* Header */}
         <div className="portfolio-header text-center mb-12">
@@ -145,13 +145,12 @@ export default function Portfolio() {
             See what our work actually looks like.
           </h1>
           <p className="text-xl text-gold font-display mb-4">
-            Not slides. Real models.
+            An illustrative view of startup performance.
           </p>
           <p className="text-cool max-w-2xl mx-auto">
-            Below is a sanitised version of a full reporting and forecasting
-            system we built for a B2B SaaS company. Revenue build, P&amp;L,
-            unit economics, cash flow, scenarios. This is the kind of output
-            our clients get every month.
+            Explore a fictional B2B SaaS example across revenue, profitability,
+            unit economics, cash flow and scenarios. The figures illustrate
+            how a reporting model can organise a business discussion.
           </p>
         </div>
 
