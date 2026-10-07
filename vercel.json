@@ -1,4 +1,8 @@
 {
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "redirects": [{ "source": "/pricing", "destination": "/business-health-review", "permanent": true }],
   "rewrites": [
     {
       "source": "/(.*)",

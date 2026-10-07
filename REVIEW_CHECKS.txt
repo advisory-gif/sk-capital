@@ -1,0 +1,26 @@
+SK CAPITAL LAUNCH CANDIDATE: VERIFICATION SCOPE
+7 October 2026
+
+COMMANDS
+npm ci
+npm run lint
+npx tsc -b --force
+npm run build
+npm test
+npm run test:launch
+
+AUTOMATED COVERAGE
+The portable DOM suite checks 15 flows: homepage and business areas, navigation and Escape, pilot CTAs/anchors/metadata, local enquiry preview/repeat/clear behavior, FAQ disclosures, advisory selection, route navigation, Back/Forward, portable pricing alias, runway calculation/validation/close, six sample-model views, all content routes and not-found handling, and absence of active contact endpoints in disabled preview mode.
+
+The four isolated launch checks cover invalid launch configurations, the enabled email-draft CTA, safe encoding of enquiry inputs without sending, and preservation of the actual disabled configuration. The live fixture uses a reserved example.test address and does not send an email.
+
+TypeScript and Vite build cover the source used by the normal deployment. Route metadata checks verify the seven known routes. The sample model uses shared derived figures and reconciles its P&L, cash bridge and unit economics.
+
+NOT VERIFIED BY THESE TESTS
+Rendered browser/device layouts, actual contrast, screen-reader behavior, native modal focus handling, hosted deep links, a working business mailbox, hosting-plan eligibility and live deployment behavior. These are explicit launch gates in LAUNCH_PREPARATION.md.
+
+The DOM tests stub scrolling, media-query and native-dialog methods. The portable file uses preview-only hash routing and system fonts. The normal deployment keeps BrowserRouter and the /pricing redirect. Generated HTML and JSON test results are ignored and regenerated locally.
+
+The initial source baseline had 12 lint errors and one warning. Small source corrections and a narrow Fast Refresh allowance for established UI helper/style exports resolve them; unrelated lint rules remain active. No general dependency security audit is claimed.
+
+Actual fresh check results for the submitted commit are recorded in the pull request description. Any CI or hosting integration result is separate from these local checks.

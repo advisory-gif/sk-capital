@@ -1,0 +1,96 @@
+import { Link } from "react-router-dom";
+const applications = [
+  [
+    "Organise the information",
+    "AI can assist with categorising and structuring information so the underlying business questions are easier to examine.",
+  ],
+  [
+    "Explore patterns",
+    "It can support comparisons, highlight unusual movements and help prepare scenarios for further investigation.",
+  ],
+  [
+    "Prepare reporting",
+    "It can help draft commentary and organise reporting. The numbers, interpretation and business context still need review.",
+  ],
+  [
+    "Support a useful workflow",
+    "We assess where an AI-assisted step could reduce repetitive work within the agreed engagement. The aim is useful analysis and better decisions.",
+  ],
+];
+export default function HowWeUseAI() {
+  return (
+    <div className="health">
+      <section className="wrap section review-hero">
+        <p className="eyebrow">Our approach to applied AI</p>
+        <h1>
+          Technology in the work.
+          <br />
+          <em>Judgement in the advice.</em>
+        </h1>
+        <p className="intro">
+          Strategic clarity starts with the right question. AI can support the
+          analytical work that follows, giving us more room to focus on the
+          business context and the decisions you need to make.
+        </p>
+      </section>
+      <section className="wrap impact-band">
+        <h2>Start with the business need.</h2>
+        <p>
+          A useful application of AI should help answer a question, improve a
+          workflow or make information easier to use. We consider its role
+          within the scope of the work, with human review of the resulting
+          analysis.
+        </p>
+      </section>
+      <section className="wrap section">
+        <p className="eyebrow">Where AI can help</p>
+        <div className="area-list">
+          {applications.map(([t, d], i) => (
+            <article key={t}>
+              <span className="number">0{i + 1}</span>
+              <h3>{t}</h3>
+              <p>{d}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="process section">
+        <div className="wrap review-grid">
+          <div>
+            <p className="eyebrow">Human responsibility</p>
+            <h2>
+              Context matters.
+              <br />
+              <em>So does accountability.</em>
+            </h2>
+            <p className="intro">
+              We challenge assumptions, investigate exceptions and connect the
+              analysis to your goals. Recommendations and conversations with
+              your team remain our responsibility.
+            </p>
+          </div>
+          <aside className="review-note">
+            <h3>Agree the approach together.</h3>
+            <p>
+              The appropriate tools, information to be used and review process
+              should be established within the engagement. Discuss data handling
+              with us before sharing confidential records.
+            </p>
+          </aside>
+        </div>
+      </section>
+      <section className="closing">
+        <div className="wrap">
+          <h2>
+            Where could better
+            <br />
+            information help your team?
+          </h2>
+          <Link className="primary" to="/business-health-review">
+            Explore the pilot scope ↗
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
