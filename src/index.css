@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 5%;
+    --foreground: 40 20% 95%;
+    --card: 220 25% 8%;
+    --card-foreground: 40 20% 95%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 40 20% 95%;
+    --primary: 43 65% 52%;
+    --primary-foreground: 220 30% 5%;
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 40 20% 95%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 43 65% 52%;
+    --accent-foreground: 220 30% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 43 65% 52%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  .font-ui {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .text-gold {
+    color: #D6A434;
+  }
+  .bg-gold {
+    background-color: #D6A434;
+  }
+  .border-gold {
+    border-color: #D6A434;
+  }
+  .bg-navy {
+    background-color: #0B0F17;
+  }
+  .bg-navy-light {
+    background-color: #111827;
+  }
+  .text-warm {
+    color: #F3F0EA;
+  }
+  .text-cool {
+    color: #A9B1BF;
+  }
+}
+
+
+@layer components {
+  .content-width { @apply max-w-7xl mx-auto px-6 lg:px-12; }
+  .section-space { @apply py-16 lg:py-24; }
+  .section-title { @apply font-display text-3xl sm:text-4xl lg:text-5xl leading-tight text-warm; }
+  .eyebrow { @apply font-ui text-xs uppercase tracking-[0.18em] text-gold mb-5; }
+  .button-primary { @apply inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-full bg-gold text-navy font-medium text-sm hover:bg-gold/90 transition-colors; }
+  .button-secondary { @apply inline-flex justify-center items-center gap-2 px-6 py-3.5 rounded-full border border-white/20 text-warm text-sm hover:border-gold/60 transition-colors; }
+}
+section[id] { scroll-margin-top: 6rem; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #D6A434; outline-offset: 5px; }
+.skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 100; background: #D6A434; color: #0B0F17; padding: 1rem; }
+.skip-link:focus { top: 1rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
