@@ -1,0 +1,88 @@
+import { Link } from "react-router-dom";
+const perspectives = [
+  {
+    id: "profitable-growth",
+    label: "For businesses",
+    title: "More revenue is only part of the picture.",
+    paragraphs: [
+      "A growing top line can hide pressure elsewhere. Discounts, delivery costs, customer mix and the resources needed to serve demand all affect what the business retains.",
+      "A useful management conversation connects growth to contribution and cash. Which products or customers support the result? What does it cost to win and serve them? Where does payment timing create pressure?",
+    ],
+    question: "Which part of your growth is making the business stronger?",
+    link: "/businesses",
+  },
+  {
+    id: "startup-metrics",
+    label: "For startups",
+    title: "Choose metrics that fit the business you are building.",
+    paragraphs: [
+      "A subscription startup, a marketplace and a services business should not be forced into the same reporting template. Start with how value is created, how revenue is earned and where cash is spent.",
+      "A focused reporting pack should connect the relevant growth measures with unit economics, spending and cash needs. Consistent definitions and clear assumptions make trends more useful to founders and investors.",
+    ],
+    question: "Which measures would change your next decision?",
+    link: "/startups",
+  },
+  {
+    id: "strategy-review",
+    label: "Management & strategy",
+    title: "A strategy needs a review rhythm.",
+    paragraphs: [
+      "A recommendation becomes useful when someone owns the action and the team knows what progress should look like. Agree responsibilities, measures and a time to review the results.",
+      "When performance differs from the plan, examine what changed. The assumptions, execution and wider business context may each explain part of the outcome. That discussion helps determine whether to continue or adapt.",
+    ],
+    question: "What evidence would tell you to change course?",
+    link: "/business-health-review",
+  },
+];
+export default function Blog() {
+  return (
+    <div className="health">
+      <section className="wrap section review-hero">
+        <p className="eyebrow">Perspectives from SK Capital</p>
+        <h1>
+          Better questions.
+          <br />
+          <em>Clearer decisions.</em>
+        </h1>
+        <p className="intro">
+          Short perspectives on business performance, startup metrics and
+          putting strategy into practice.
+        </p>
+        <div className="metric-tags">
+          {perspectives.map((p) => (
+            <Link className="secondary" key={p.id} to={"/blog#" + p.id}>
+              {p.label} ↓
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section className="wrap">
+        {perspectives.map((p) => (
+          <article id={p.id} className="perspective" key={p.id}>
+            <p className="eyebrow">{p.label}</p>
+            <h2>{p.title}</h2>
+            {p.paragraphs.map((t) => (
+              <p key={t}>{t}</p>
+            ))}
+            <h3>{p.question}</h3>
+            <Link className="text-link" to={p.link}>
+              Explore how we help ↗
+            </Link>
+          </article>
+        ))}
+      </section>
+      <section className="closing">
+        <div className="wrap">
+          <h2>
+            Let’s put your
+            <br />
+            questions on the table.
+          </h2>
+          <Link className="primary" to="/business-health-review">
+            Explore the pilot scope ↗
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
