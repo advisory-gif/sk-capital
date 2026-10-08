@@ -1,20 +1,27 @@
+import { useSectionReveal } from '@/hooks/useSectionReveal';
 import { ArrowRight } from 'lucide-react';
 import Services from '@/components/Reviews';
 import CustomProjects from '@/components/CustomProjects';
 import { bookingUrl, enquiryUrl, emailAddress } from '@/lib/offers';
 export default function Home() {
+  useSectionReveal();
   return <>
-    <section className="py-20 sm:py-24 lg:py-28"><div className="content-width"><div className="max-w-3xl">
-      <p className="eyebrow">Cash flow & profitability</p><h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.02] tracking-[-0.025em] text-forest">Understand your<br className="hidden sm:block" /> business numbers.<br /><span className="text-forest">See what needs attention.</span></h1>
+    <section className="py-14 sm:py-20 lg:py-24"><div className="content-width hero-layout"><div className="min-w-0">
+      <p className="eyebrow">Cash flow & profitability</p><h1 className="font-display text-5xl sm:text-6xl lg:text-[3.75rem] xl:text-[4.25rem] leading-[1.02] tracking-[-0.025em] text-forest">Understand your<br className="hidden sm:block" /> business numbers.<br /><span className="text-forest">See what needs attention.</span></h1>
       <p className="text-ink text-lg leading-relaxed mt-6 max-w-2xl">Practical finance support for small service businesses worldwide. Start with a focused project or discuss a larger financial planning, reporting or implementation need.</p>
       <div className="flex flex-col sm:flex-row sm:items-center gap-5 mt-8"><a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary">Book a free intro <ArrowRight size={16} /></a><a href="#services" className="text-sm text-ink hover:text-forest">Explore our services ↓</a></div><p className="text-xs text-ink mt-5">A free introductory conversation. Clearly scoped paid projects.</p>
-    </div></div></section>
+    </div>
+      <figure className="hero-visual">
+        <img src="/images/finance-workspace-960.webp" srcSet="/images/finance-workspace-640.webp 640w, /images/finance-workspace-960.webp 960w, /images/finance-workspace-1440.webp 1440w" sizes="(min-width: 1280px) 424px, (min-width: 1024px) 38vw, calc(100vw - 48px)" width={1440} height={960} fetchPriority="high" decoding="async" alt="Illustrative image of hands reviewing financial plans and business charts at a sunlit desk." />
+        <figcaption className="text-xs text-ink mt-3">Illustrative image</figcaption>
+      </figure>
+    </div></section>
     <Services />
     <CustomProjects />
-    <section id="process" className="section-space"><div className="content-width"><p className="eyebrow">How it works</p><h2 className="section-title">A clear next step, from the start.</h2><div className="grid md:grid-cols-3 gap-10 mt-10">
+    <section data-reveal id="process" className="section-space"><div className="content-width"><p className="eyebrow">How it works</p><h2 className="section-title">A clear next step, from the start.</h2><div className="grid md:grid-cols-3 gap-10 mt-10">
       {[['01', 'Have a short intro', 'Tell us about your business and the question you want to answer. We will help you choose a starter project or scope a larger engagement.'], ['02', 'Agree the work', 'Confirm the deliverables, fee, inputs and delivery date before work begins.'], ['03', 'Put the work to use', 'Receive the agreed outputs and walkthrough. Starter projects include a 15-minute discussion of the findings; larger projects have a tailored handover.']].map(([number, title, text]) => <div key={number}><span className="font-ui text-forest text-sm">{number}</span><h3 className="font-display text-2xl mt-4 mb-3">{title}</h3><p className="text-ink text-sm leading-relaxed">{text}</p></div>)}
     </div></div></section>
     <section className="pb-16 lg:pb-24"><div className="content-width"><details className="border-y border-forest/15 py-6"><summary className="cursor-pointer text-forest font-medium">Good to know before you start</summary><div className="max-w-3xl space-y-4 text-sm text-ink leading-relaxed mt-5"><p>Each starter project covers one business and one currency, using complete, organised information you provide in the agreed template. Larger projects have their own agreed inputs and deliverables.</p><p>Findings depend on the information and assumptions supplied. Our work supports financial management; it is not audit, tax, legal or investment advice.</p><p>The intro is free. Analysis and written deliverables are paid work, with scope agreed separately. Delivery timing is agreed after reviewing your needs and inputs.</p><p>For your first email, a short description of your question is enough. Please do not include bank statements, customer details or other sensitive documents. We will agree what is needed and how to share it.</p></div></details></div></section>
-    <section id="contact" className="pb-16 lg:pb-24"><div className="content-width"><div className="max-w-3xl"><h2 className="section-title">What would you like to understand better?</h2><p className="text-ink mt-5">Start with a free intro, or email us your question.</p><div className="flex flex-col sm:flex-row sm:items-center gap-5 mt-8"><a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary">Book a free intro <ArrowRight size={16} /></a><a href={enquiryUrl('Finance project enquiry')} className="text-sm text-ink hover:text-forest break-all">{emailAddress}</a></div><p className="text-xs text-ink mt-5">Email opens your email app. Nothing is sent automatically.</p></div></div></section>
+    <section data-reveal id="contact" className="pb-16 lg:pb-24"><div className="content-width"><div className="max-w-3xl"><h2 className="section-title">What would you like to understand better?</h2><p className="text-ink mt-5">Start with a free intro, or email us your question.</p><div className="flex flex-col sm:flex-row sm:items-center gap-5 mt-8"><a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary">Book a free intro <ArrowRight size={16} /></a><a href={enquiryUrl('Finance project enquiry')} className="text-sm text-ink hover:text-forest break-all">{emailAddress}</a></div><p className="text-xs text-ink mt-5">Email opens your email app. Nothing is sent automatically.</p></div></div></section>
   </>;
 }

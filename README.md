@@ -37,7 +37,7 @@ Official references:
 
 ## Publish review / handoff
 
-1. Use the draft PR branch `codex/expand-custom-finance-projects`, not the older launch-candidate PR.
+1. Use the draft PR branch `codex/subtle-editorial-visuals`, not the older launch-candidate PR.
 2. In the existing Vercel project, verify its connected repository is `advisory-gif/sk-capital` and that its domain is the intended `www.skcapital.co.in` before publishing. Do not create or connect a different project by guesswork.
 3. Review the exact commit from this PR. Build command: `npm run build`. Output directory: `dist`. Install command: `npm ci`. Repository root directory: repository root. `vercel.json` sets the build/output and excludes `/api/` from the SPA rewrite.
 4. The `/api/country` Node function must deploy alongside static assets. A plain static-only upload cannot provide automatic country detection, though manual currency and USD fallback still work.
@@ -45,3 +45,9 @@ Official references:
 6. After the owner approves/publishes, verify the live domain is on the exact reviewed commit and repeat the production smoke checks. No automatic merge or production promotion is part of this draft.
 
 No API keys, third-party credentials, security settings or new account permissions are needed by this code. Hosting plan/commercial-use eligibility must be checked in the owner's Vercel account; this repository does not establish the account's current plan.
+
+## Editorial image and motion
+
+The single hero image is an original AI-generated illustrative financial-planning scene, not an SK Capital team or client photograph. It is labelled in both its caption and alt text. The three WebP sizes (640, 960 and 1440 pixels wide; approximately 26, 43 and 70 KB) share its original 3:2 composition. Explicit dimensions reserve layout space. There are no additional photography requests or animation libraries.
+
+Section entrances are a once-per-mount, 550 ms progressive enhancement. Sections stay fully visible before observation and if the enhancement is unavailable. Reduced-motion preferences disable entrances, hover movement and smooth scrolling; changing the preference during the session also stops observation. Fine-pointer hover moves buttons by 2 pixels and service cards by 3 pixels. There are no repeating animations, parallax, autoplay videos or carousels.
