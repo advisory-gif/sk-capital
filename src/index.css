@@ -151,3 +151,6 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
   .sample-more > summary > span { display: block; margin-left: 1rem; margin-top: .4rem; }
   .visual-bar-label { font-size: .875rem; gap: .5rem; }
 }
+/* Long disclosure text and tables must not widen their grid or page. */
+.sample-overview > *, .sample-details-body, .sample-details-body section, .sample-disclosure { min-width: 0; max-width: 100%; }
+.sample-page p, .sample-page li, .sample-page summary, .sample-page th, .sample-page td { overflow-wrap: anywhere; }

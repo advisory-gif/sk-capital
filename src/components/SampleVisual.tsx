@@ -36,11 +36,11 @@ function CashChart({ model }: { model: VisualModel }) {
   return <div>
     <div className="cash-legend"><span><i /> On-time receipt</span><span><i className="cash-delayed-key" /> Late receipt</span></div>
     <div className="cash-chart">
-      <div className="cash-axis" aria-hidden="true">{[60000, 40000, 20000, 0, -20000].map(value => <span key={value} style={{ top: `${y(value) / 2}%` }}>{value < 0 ? '−' : ''}₹{Math.abs(value) / 1000}k</span>)}</div>
+      <div className="cash-axis" aria-hidden="true">{[60000, 40000, 20000, 0, -20000].map(value => <span key={value} style={{ top: `${y(value) / 2}%` }}>{value < 0 ? '−' : ''}${Math.abs(value) / 1000}k</span>)}</div>
       <div className="cash-plot">
         <svg viewBox="0 0 500 200" preserveAspectRatio="none" role="img" aria-labelledby="cash-chart-title cash-chart-description">
           <title id="cash-chart-title">Cash balance with an on-time or late receipt</title>
-          <desc id="cash-chart-description">Balance after each fictional transaction from 2 to 29 November 2026. Opening cash is ₹30,000. The on-time case stays at or above ₹15,000. With the receipt delayed, cash falls to minus ₹10,000 on 20 November. Both cases close at ₹35,000. Full transaction figures are in Show details.</desc>
+          <desc id="cash-chart-description">Balance after each fictional transaction from 2 to 29 November 2026. Opening cash is $30,000. The on-time case stays at or above $15,000. With the receipt delayed, cash falls to minus $10,000 on 20 November. Both cases close at $35,000. Full transaction figures are in Show details.</desc>
           <rect x="0" y={y(0)} width="500" height={200 - y(0)} fill="#fbebe4" />
           {[60000, 40000, 20000, 0, -20000].map(value => <line key={value} x1="0" x2="500" y1={y(value)} y2={y(value)} stroke={value === 0 ? '#58665b' : '#d9dfd6'} vectorEffect="non-scaling-stroke" />)}
           <path data-series="on-time" d={path(base)} fill="none" stroke="#276b43" strokeWidth="3" vectorEffect="non-scaling-stroke" />
@@ -55,15 +55,15 @@ function CashChart({ model }: { model: VisualModel }) {
 }
 
 function Workflow() {
-  return <ol className="workflow-track" aria-label="Illustrated workflow: approved spreadsheet, draft commentary, human check">
-    {[{ title: 'Your spreadsheet', text: 'Approved figures in a consistent template.', Icon: Table2 }, { title: 'A first draft', text: 'A prompt turns figures into commentary.', Icon: FileText }, { title: 'A human check', text: 'Verify numbers and explanations before use.', Icon: CheckCircle2 }].map(({ title, text, Icon }, index) => <li key={title}><div className="workflow-step"><Icon size={30} strokeWidth={1.5} aria-hidden="true" /><span className="workflow-number">0{index + 1}</span><h3>{title}</h3><p>{text}</p></div>{index < 2 && <ArrowDown className="workflow-arrow" aria-hidden="true" size={22} />}</li>)}
+  return <ol className="workflow-track" aria-label="Illustrated workflow: approved spreadsheet, first draft, human check">
+    {[{ title: 'Your spreadsheet', text: 'Use an agreed template.', Icon: Table2 }, { title: 'A first draft', text: 'Turn numbers into a short update.', Icon: FileText }, { title: 'A human check', text: 'Check the numbers and explanation.', Icon: CheckCircle2 }].map(({ title, text, Icon }, index) => <li key={title}><div className="workflow-step"><Icon size={30} strokeWidth={1.5} aria-hidden="true" /><span className="workflow-number">0{index + 1}</span><h3>{title}</h3><p>{text}</p></div>{index < 2 && <ArrowDown className="workflow-arrow" aria-hidden="true" size={22} />}</li>)}
   </ol>;
 }
 
 export default function SampleVisual({ model }: { model: VisualModel }) {
   return <figure className="sample-visual" aria-labelledby="visual-title">
     <figcaption id="visual-title" className="visual-title">{model.title}</figcaption>
-    {model.kind === 'stack' && <div role="img" aria-label="₹50,000 revenue is split into ₹38,000 direct costs and ₹12,000 contribution, or 24%, left before overheads and tax.">
+    {model.kind === 'stack' && <div role="img" aria-label="$50,000 in sales pays $38,000 in delivery costs, leaving $12,000 before overheads and tax.">
       <div className="contribution-stack">{(model.bars ?? []).map((bar, index) => <span key={bar.label} data-value={bar.value} className={index === 1 ? 'contribution-left' : ''} style={{ width: `${bar.value / (model.max ?? 1) * 100}%` }} />)}</div>
       <div className="stack-labels">{(model.bars ?? []).map((bar, index) => <div key={bar.label}><span><i className={index === 1 ? 'contribution-left' : ''} /> {bar.label}</span><strong>{money(bar.value)}</strong></div>)}</div>
     </div>}

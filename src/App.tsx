@@ -20,7 +20,7 @@ function NavigationEffects() {
     const isSample = pathname.startsWith('/samples');
     const sample = findSample(pathname.split('/')[2]);
     const title = sample ? `${sample.name} example | SK Capital` : isSample ? 'Service examples | SK Capital' : 'Business Performance Advisory | SK Capital';
-    const description = isSample ? 'Explore fictional examples of SK Capital services: a business question, clear figures, a finding and a practical next step. Prewritten explanations, not live AI.' : 'Understand what is holding your business back. Practical analysis of profit, cash, growth and marketing performance, with useful planning, reporting and focused AI workflows.';
+    const description = isSample ? 'Explore simple visual examples of SK Capital services, using fictional US-dollar figures. One question, a clear chart and a practical next step.' : 'Understand what is holding your business back. Practical analysis of profit, cash, growth and marketing performance, with useful planning, reporting and focused AI workflows.';
     document.title = title;
     for (const [selector, content] of [['meta[name="description"]', description], ['meta[property="og:title"]', title], ['meta[property="og:description"]', description], ['meta[property="og:url"]', `https://www.skcapital.co.in${pathname}`]]) {
       document.querySelector(selector)?.setAttribute('content', content);

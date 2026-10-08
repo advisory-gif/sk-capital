@@ -60,7 +60,7 @@ for x in P['scenario']['rows']:
  for k in ['planned','actual']:eq(x[k],agg[x['category']][k],'Variance table aggregate '+x['category']+' '+k)
 r=A['inputs']['rows'];asum=lambda key:sum(x[key]*(1 if x['kind']=='Income' else -1) for x in r)
 eq(asum('planned'),15000,'AI planned subtotal');eq(asum('actual'),5000,'AI actual subtotal');eq(asum('actual')-asum('planned'),-10000,'AI variance');ok(bool(A['draftCommentary']),'AI includes prewritten draft')
-ok('no live AI' in A['inputs']['note'],'AI clearly states no live AI')
+ok('prewritten, not a live AI chat' in A['inputs']['note'],'AI clearly identifies the prewritten demonstration')
 for src,out in zip(H['inputs']['rows'],H['scenario']['rows']):
  eq(src['revenue']-src['directCosts']-src['existingFixedCosts']-src['hireCost'],out['operatingSurplus'],'Hire recurring surplus '+src['case'])
  eq(60000+out['operatingSurplus']-src['setupCash'],out['closingCash'],'Hire first-month cash '+src['case'])

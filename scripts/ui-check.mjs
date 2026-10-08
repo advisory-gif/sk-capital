@@ -60,10 +60,10 @@ const starterCta = [...ui.document.querySelectorAll('#services a')].find(link =>
 assert.equal(starterCta.href, 'https://cal.com/skcapital/free-financial-breakdown');
 assert.equal(starterCta.target, '_blank');
 const sample = ui.document.querySelector('#sample-output');
-assert.ok(sample.textContent.includes('Fictional example · Margin Check · INR'));
+assert.ok(sample.textContent.includes('Fictional example · Margin Check · USD'));
 assert.equal(sample.querySelectorAll('.sample-visual').length, 1);
 assert.deepEqual([...sample.querySelectorAll('.contribution-stack [data-value]')].map(node => Number(node.dataset.value)), [38000, 12000]);
-assert.ok(sample.textContent.includes('₹12,000 is left after direct costs'));
+assert.ok(sample.textContent.includes('$50,000 in sales leaves $12,000 after delivery costs'));
 assert.ok(sample.textContent.includes('not service prices or a client result'));
 assert.ok(starterCta.compareDocumentPosition(sample) & ui.window.Node.DOCUMENT_POSITION_FOLLOWING);
 assert.ok(sample.compareDocumentPosition(ui.document.querySelector('#ai-workflow')) & ui.window.Node.DOCUMENT_POSITION_FOLLOWING);
@@ -127,8 +127,9 @@ for (const item of exampleData) {
   assert.equal(examples.document.querySelectorAll('h1').length, 1);
   assert.equal(examples.document.querySelector('h1').textContent, item.question);
   assert.equal(examples.document.activeElement.tagName, 'H1');
-  assert.ok(examples.document.body.textContent.includes('All example amounts are INR (₹)'));
-  assert.ok(examples.document.body.textContent.includes(item.finding));
+  assert.ok(examples.document.body.textContent.includes('All examples use fictional US dollars (USD)'));
+  assert.ok(!/₹|\bINR\b|Nothing is submitted|A little more explanation|Contribution left|Contribution margin/.test(examples.document.body.textContent));
+  assert.equal(examples.document.querySelector('#explanations-heading').textContent, 'Common questions');
   const allDetails = examples.document.querySelector('#sample-details');
   assert.equal(allDetails.open, false);
   assert.ok(allDetails.contains(examples.document.querySelector('table')));
@@ -137,7 +138,7 @@ for (const item of exampleData) {
   assert.equal(examples.document.querySelectorAll('.sample-overview table, .sample-overview details').length, 0);
   allDetails.querySelector('summary').click(); assert.equal(allDetails.open, true);
   allDetails.querySelector('summary').click(); assert.equal(allDetails.open, false);
-  assert.ok(examples.document.body.textContent.includes(item.nextStep));
+
   assert.equal(examples.document.querySelectorAll('#explanations-heading + p + details, #explanations-heading ~ details').length, 3);
   assert.equal(examples.document.querySelectorAll('table').length, 2);
   for (const detail of examples.document.querySelectorAll('details')) {
@@ -177,4 +178,4 @@ const missing = await load({ url:'https://example.test/samples/not-a-service' })
 assert.ok(missing.document.querySelector('h1').textContent.includes('right example'));
 assert.ok(missing.document.querySelector('main a[href="/samples"]'));
 missing.window.close();
-console.log('PASS all eight service links, direct routes, 24 explanations, repeated disclosures, accessible tables, focus, back/forward, missing route, fixed INR examples and retained regional prices');
+console.log('PASS all eight service links, direct routes, 24 explanations, repeated disclosures, accessible tables, focus, back/forward, missing route, fixed USD examples and retained regional prices');

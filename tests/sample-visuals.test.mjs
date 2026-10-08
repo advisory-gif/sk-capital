@@ -48,7 +48,7 @@ test('plan gap has three correctly calculated, additive unfavourable drivers', (
 test('AI sample is a process illustration rather than a fabricated performance chart', () => {
   assert.equal(models['ai-finance-workflow'].kind, 'workflow');
   assert.equal(models['ai-finance-workflow'].bars, undefined);
-  assert.ok(models['ai-finance-workflow'].note.includes('No live AI'));
+  assert.ok(models['ai-finance-workflow'].note.includes('prewritten, not a live AI chat'));
 });
 test('hire compares incremental monthly sales with the contribution-based break-even threshold', () => {
   const m = models['plan-hire-expansion'];
@@ -73,4 +73,19 @@ test('reporting separates currency and percentage measures without misleading sc
   assert.equal(m.tiles[1].current - m.tiles[1].previous, -5);
   assert.equal(m.tiles[1].max, 100);
   for (const tile of m.tiles) assert.ok(tile.max >= Math.max(tile.previous, tile.current));
+});
+
+test('all sample prose uses fictional USD and consistent US number formatting', async () => {
+  const strings = [];
+  function collect(value) { if (typeof value === 'string') strings.push(value); else if (Array.isArray(value)) value.forEach(collect); else if (value && typeof value === 'object') Object.values(value).forEach(collect); }
+  collect(data); collect(models);
+  assert.ok(!strings.some(text => /₹|\bINR\b|\$\d{1,2},\d{2},\d{3}/.test(text)));
+  assert.ok(!strings.some(text => /Nothing is submitted|Contribution left|Contribution margin|operating surplus/.test(text)));
+  const formatBundle = await build({ entryPoints: ['src/lib/samples.ts'], bundle: true, write: false, format: 'esm', platform: 'node' });
+  const { formatExample, exampleCurrencyNote } = await import(`data:text/javascript;base64,${Buffer.from(formatBundle.outputFiles[0].text).toString('base64')}`);
+  assert.equal(formatExample(100000, 'currency'), '$100,000');
+  assert.equal(formatExample(-800, 'currency'), '−$800');
+  assert.equal(formatExample(35, 'percent'), '35%');
+  assert.ok(exampleCurrencyNote.includes('fictional US dollars (USD)'));
+  assert.ok(exampleCurrencyNote.includes('not service prices or currency conversions'));
 });

@@ -16,10 +16,10 @@ export type ServiceSample = {
 };
 export const samples = data as ServiceSample[];
 export const findSample = (id?: string) => samples.find(sample => sample.id === id);
-export const exampleCurrencyNote = 'All example amounts are INR (₹). These are fictional business figures, not service prices or currency conversions.';
+export const exampleCurrencyNote = 'All examples use fictional US dollars (USD), not service prices or currency conversions.';
 export function formatExample(value: string | number, format: string) {
   if (typeof value !== 'number') return value;
-  const number = Math.abs(value).toLocaleString('en-IN', { maximumFractionDigits: 2 });
+  const number = Math.abs(value).toLocaleString('en-US', { maximumFractionDigits: 2 });
   const sign = value < 0 ? '−' : '';
-  return format === 'currency' ? `${sign}₹${number}` : format === 'percent' ? `${sign}${number}%` : `${sign}${number}`;
+  return format === 'currency' ? `${sign}$${number}` : format === 'percent' ? `${sign}${number}%` : `${sign}${number}`;
 }
