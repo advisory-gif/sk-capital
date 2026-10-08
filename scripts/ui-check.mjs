@@ -61,15 +61,10 @@ assert.equal(starterCta.href, 'https://cal.com/skcapital/free-financial-breakdow
 assert.equal(starterCta.target, '_blank');
 const sample = ui.document.querySelector('#sample-output');
 assert.ok(sample.textContent.includes('Fictional example · Margin Check · INR'));
-assert.deepEqual([...sample.querySelectorAll('dt')].map(label => label.textContent), ['Project revenue', 'Direct delivery costs', 'Contribution']);
-assert.deepEqual([...sample.querySelectorAll('dd')].map(value => value.textContent), ['₹50,000', '₹38,000', '₹12,00024% of revenue']);
-assert.equal(50000 - 38000, 12000); assert.equal(12000 / 50000 * 100, 24);
-assert.equal(12000 - 5000, 7000); assert.equal(Math.round(7000 / 50000 * 100), 14);
-assert.ok(sample.textContent.includes('₹5,000 of direct delivery cost would reduce contribution to ₹7,000 (14%)'));
-assert.ok(sample.textContent.includes('before shared overheads and tax. It is not net profit.'));
-assert.ok(sample.textContent.includes('not a client result or a full business review'));
-assert.ok(sample.textContent.includes('freelancer fees and project-specific software'));
-assert.ok(sample.textContent.includes('Is revision time included in the quoted scope and recorded delivery cost?'));
+assert.equal(sample.querySelectorAll('.sample-visual').length, 1);
+assert.deepEqual([...sample.querySelectorAll('.contribution-stack [data-value]')].map(node => Number(node.dataset.value)), [38000, 12000]);
+assert.ok(sample.textContent.includes('₹12,000 is left after direct costs'));
+assert.ok(sample.textContent.includes('not service prices or a client result'));
 assert.ok(starterCta.compareDocumentPosition(sample) & ui.window.Node.DOCUMENT_POSITION_FOLLOWING);
 assert.ok(sample.compareDocumentPosition(ui.document.querySelector('#ai-workflow')) & ui.window.Node.DOCUMENT_POSITION_FOLLOWING);
 console.log('PASS visible fictional Margin Check, contribution/scenario maths, narrow scope label and shared starter booking CTA');
@@ -126,7 +121,7 @@ assert.equal((examples.document.querySelector('#services').textContent.match(/On
 assert.ok(!examples.document.body.textContent.includes('base fee'));
 for (const item of exampleData) {
   const link = examples.document.querySelector(`a[href="/samples/${item.id}"]`);
-  link.click(); await delay(40);
+  link.click(); await delay(120);
   assert.equal(examples.window.location.pathname, `/samples/${item.id}`);
   assert.equal(examples.document.title, `${item.name} example | SK Capital`);
   assert.equal(examples.document.querySelectorAll('h1').length, 1);
@@ -134,6 +129,14 @@ for (const item of exampleData) {
   assert.equal(examples.document.activeElement.tagName, 'H1');
   assert.ok(examples.document.body.textContent.includes('All example amounts are INR (₹)'));
   assert.ok(examples.document.body.textContent.includes(item.finding));
+  const allDetails = examples.document.querySelector('#sample-details');
+  assert.equal(allDetails.open, false);
+  assert.ok(allDetails.contains(examples.document.querySelector('table')));
+  assert.ok(allDetails.contains(examples.document.querySelector('#explanations-heading')));
+  assert.equal(examples.document.querySelectorAll('.sample-overview .sample-visual').length, 1);
+  assert.equal(examples.document.querySelectorAll('.sample-overview table, .sample-overview details').length, 0);
+  allDetails.querySelector('summary').click(); assert.equal(allDetails.open, true);
+  allDetails.querySelector('summary').click(); assert.equal(allDetails.open, false);
   assert.ok(examples.document.body.textContent.includes(item.nextStep));
   assert.equal(examples.document.querySelectorAll('#explanations-heading + p + details, #explanations-heading ~ details').length, 3);
   assert.equal(examples.document.querySelectorAll('table').length, 2);
@@ -149,7 +152,7 @@ for (const item of exampleData) {
   const ids = [...examples.document.querySelectorAll('[id]')].map(node => node.id);
   assert.equal(ids.length, new Set(ids).size);
   assert.equal(examples.document.querySelectorAll('form,input,textarea,iframe').length, 0);
-  [...examples.document.querySelectorAll('a')].find(a => a.textContent === 'Back to services').click(); await delay(40);
+  [...examples.document.querySelectorAll('a')].find(a => a.textContent === 'Back to services').click(); await delay(150);
   assert.equal(examples.window.location.pathname, '/');
   assert.equal(examples.document.activeElement.id, item.category === 'Tailored project' ? 'custom-projects' : 'services');
   assert.equal(examples.document.querySelector('#currency').value, 'AED');
