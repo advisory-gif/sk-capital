@@ -13,14 +13,14 @@ function NavigationEffects() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
     document.title = pathname === '/pricing' ? 'Project pricing | SK Capital Advisory' : 'Business health, cash flow & margins | SK Capital Advisory';
-    if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+    if (hash) document.getElementById(hash === '#reviews' ? 'services' : hash.slice(1))?.scrollIntoView();
     else window.scrollTo(0, 0);
   }, [pathname, hash]);
   return null;
 }
 export default function App() {
   return <BrowserRouter><NavigationEffects /><a href="#main-content" className="skip-link">Skip to content</a><Navbar /><main id="main-content"><Routes>
-    <Route path="/" element={<Home />} /><Route path="/pricing" element={<Navigate to="/#reviews" replace />} />
+    <Route path="/" element={<Home />} /><Route path="/pricing" element={<Navigate to="/#services" replace />} />
     <Route path="*" element={<Navigate to="/" replace />} />
   </Routes></main><Footer /></BrowserRouter>;
 }
