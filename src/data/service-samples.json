@@ -3,10 +3,10 @@
     "id": "margin-check",
     "name": "Margin Check",
     "category": "Starter project",
-    "question": "What does each sale really leave?",
+    "question": "How much of each sale is left after doing the work?",
     "scope": "Up to 10 products, services or projects; one price-or-cost scenario; a one-page summary with up to three points to investigate.",
-    "problem": "Three projects brought in $50,000. The owner wants to know how much is left after the costs directly needed to deliver them.",
-    "inputLabel": "Three fictional projects",
+    "problem": "Three projects generated $50,000 in sales. How much is left after paying the costs of doing that work?",
+    "inputLabel": "Sales and delivery costs for three fictional projects",
     "inputs": {
       "columns": [
         {
@@ -42,53 +42,53 @@
           "directCosts": 9600
         }
       ],
-      "note": "Delivery costs are costs assigned to these projects. Shared overheads, tax and finance costs are not included."
+      "note": "Delivery costs are the costs assigned to doing these projects. Rent, other shared running costs, interest and tax are excluded."
     },
     "metrics": [
       {
-        "label": "Sales",
+        "label": "Total sales",
         "value": 50000,
         "format": "currency",
         "detail": ""
       },
       {
-        "label": "Delivery costs",
+        "label": "Cost of doing the work",
         "value": 38000,
         "format": "currency",
         "detail": ""
       },
       {
-        "label": "Money left after delivery costs",
+        "label": "Left after delivery costs",
         "value": 12000,
         "format": "currency",
-        "detail": "Before overheads and tax. This is not final profit."
+        "detail": "Still has to cover rent, other running costs and tax."
       },
       {
-        "label": "Share left after delivery costs",
+        "label": "Percentage of sales left",
         "value": 24,
         "format": "percent",
-        "detail": "$24 left from every $100 in sales."
+        "detail": "$24 of every $100 sold remains after delivery costs."
       }
     ],
-    "finding": "Sales of $50,000 minus $38,000 in delivery costs leave $12,000. That is $24 of every $100 sold, before overheads and tax.",
-    "nextStep": "Check that every delivery cost is included before setting the next price.",
+    "finding": "Three projects generated $50,000 in sales and cost $38,000 to deliver, leaving $12,000.",
+    "nextStep": "Before setting the next price, check that every delivery cost is included and whether the amount left covers the remaining running costs.",
     "qa": [
       {
-        "question": "What does this mean?",
-        "answer": "For every $100 sold, $76 pays for delivery and $24 is left. The business still has to pay its overheads and tax."
+        "question": "Does the $12,000 mean profit?",
+        "answer": "It is the amount left after the costs of doing these projects. Rent, other shared running costs, interest and tax still have to come out of it. You need those figures before you can calculate final profit."
       },
       {
-        "question": "Why is this happening?",
-        "answer": "The three projects bring in $50,000 and cost $38,000 to deliver. Project A leaves 30% of its sales; Projects B and C leave 20%. Check prices and delivery effort to understand why."
+        "question": "Which projects leave more?",
+        "answer": "Project A leaves $6,000 from $20,000 in sales: $30 per $100. Project B leaves $3,600 from $18,000, and Project C leaves $2,400 from $12,000: $20 per $100 each. Their prices and delivery costs need checking; these figures do not tell us why they differ."
       },
       {
-        "question": "What should I do next?",
-        "answer": "Include all delivery costs, compare the projects that leave less, and use a realistic cost estimate for the next quote."
+        "question": "What should I check before the next quote?",
+        "answer": "Check that the estimate includes every cost of doing the work. Compare the price and cost breakdown for Projects B and C with Project A. In the extra-cost example below, another $5,000 of costs cuts the amount left from $12,000 to $7,000."
       }
     ],
     "scenario": {
-      "title": "What if delivery costs rise?",
-      "description": "Sales stay at $50,000, but delivery costs rise by $5,000. Money left falls to $7,000, or 14% of sales.",
+      "title": "What if the same work costs $5,000 more?",
+      "description": "Keep sales at $50,000. Increase delivery costs from $38,000 to $43,000. The amount left falls from $12,000 to $7,000.",
       "columns": [
         {
           "key": "case",
@@ -107,12 +107,12 @@
         },
         {
           "key": "contribution",
-          "label": "Money left",
+          "label": "Left after delivery costs",
           "format": "currency"
         },
         {
           "key": "margin",
-          "label": "Share left",
+          "label": "Percentage of sales left",
           "format": "percent"
         }
       ],
@@ -125,14 +125,14 @@
           "margin": 24
         },
         {
-          "case": "$5,000 extra direct cost",
+          "case": "$5,000 more delivery costs",
           "revenue": 50000,
           "directCosts": 43000,
           "contribution": 7000,
           "margin": 14
         }
       ],
-      "note": "The extra cost is an example to test, not a prediction."
+      "note": "Only delivery costs change in this example. Rent, other running costs and tax still have to be covered."
     },
     "deliverables": [
       "A comparison of money left after delivery costs for the three projects",
@@ -140,24 +140,26 @@
       "A one-page summary with up to three checks to make before the next quote"
     ],
     "cautions": [
-      "Money left after delivery costs still has to cover overheads, other costs and tax. It is not final profit.",
-      "The cost increase is an assumption, not a prediction."
+      "Delivery costs cover the costs assigned to doing the work. Rent, other shared running costs, interest and tax must still be paid.",
+      "The cost increase is an assumption to test. It is not a prediction."
     ],
     "calculationNotes": [
-      "Revenue: 20,000 + 18,000 + 12,000 = 50,000.",
-      "Direct costs: 14,000 + 14,400 + 9,600 = 38,000.",
-      "Money left after delivery costs: 50,000 − 38,000 = 12,000; 12,000 ÷ 50,000 = 24%.",
-      "Scenario: 50,000 − 43,000 = 7,000; 7,000 ÷ 50,000 = 14%."
-    ]
+      "Total sales: $20,000 + $18,000 + $12,000 = $50,000.",
+      "Total delivery costs: $14,000 + $14,400 + $9,600 = $38,000.",
+      "Left after delivery: $50,000 − $38,000 = $12,000. Divide $12,000 by $50,000 to get 24%, or $24 left per $100 sold.",
+      "Project A leaves $6,000 of $20,000, or $30 per $100 sold. Project B leaves $3,600 of $18,000, and Project C leaves $2,400 of $12,000: each leaves $20 per $100 sold.",
+      "With the extra cost: $50,000 − $43,000 = $7,000. Divide $7,000 by $50,000 to get 14%, or $14 left per $100 sold."
+    ],
+    "meaning": "That is $24 per $100 sold, before rent, other running costs and tax."
   },
   {
     "id": "four-week-cash",
     "name": "Four-Week Cash Snapshot",
     "category": "Starter project",
-    "question": "Could cash get tight in the next four weeks?",
+    "question": "Can we pay the bills if one customer pays late?",
     "scope": "Opening cash plus up to 20 dated expected receipts and payments; a four-week forecast; one delayed-payment scenario; a one-page summary.",
-    "problem": "The business starts with $30,000 in cash. Its owner wants to know whether the next four weeks of expected receipts will cover the payments due.",
-    "inputLabel": "Opening cash $30,000 plus eight dated entries",
+    "problem": "The business starts with $30,000. A customer is due to pay $40,000 on 16 November. What happens if that payment arrives on 26 November instead?",
+    "inputLabel": "Starting cash: $30,000. Expected payments in and out: 2–29 November 2026",
     "inputs": {
       "columns": [
         {
@@ -167,12 +169,12 @@
         },
         {
           "key": "item",
-          "label": "Receipt or payment",
+          "label": "Customer payment or bill",
           "format": "text"
         },
         {
           "key": "direction",
-          "label": "Cash direction",
+          "label": "In or out",
           "format": "text"
         },
         {
@@ -231,7 +233,7 @@
           "amount": 20000
         }
       ],
-      "note": "Fictional forecast for 2–29 November 2026. Receipts and payments occur on the stated dates. No borrowing facility is assumed."
+      "note": "Fictional forecast for 2–29 November 2026. Payments happen on the listed dates. No overdraft or other borrowing is included."
     },
     "metrics": [
       {
@@ -241,43 +243,43 @@
         "detail": ""
       },
       {
-        "label": "Cash at the end, if paid on time",
+        "label": "Cash at the end if customers pay on time",
         "value": 35000,
         "format": "currency",
         "detail": ""
       },
       {
-        "label": "Lowest cash, if paid on time",
+        "label": "Lowest balance if customers pay on time",
         "value": 15000,
         "format": "currency",
-        "detail": ""
+        "detail": "Reached on 13 November."
       },
       {
-        "label": "Cash gap if payment is late",
+        "label": "Shortfall if the $40,000 payment is late",
         "value": 10000,
         "format": "currency",
-        "detail": "Cash would fall to −$10,000 on 20 November."
+        "detail": "The forecast reaches −$10,000 on 20 November."
       }
     ],
-    "finding": "If customers pay on time, cash ends at $35,000. If the $40,000 payment arrives ten days late, the business is $10,000 short on 20 November, even though cash still ends at $35,000.",
-    "nextStep": "Confirm when the $40,000 will arrive and prepare a backup plan before the supplier bill is due.",
+    "finding": "A $40,000 customer payment arriving ten days late creates a $10,000 shortfall on 20 November.",
+    "nextStep": "Confirm the customer’s payment date and how the $10,000 gap would be covered before the supplier bill is due.",
     "qa": [
       {
-        "question": "What does this mean?",
-        "answer": "There is enough money overall, but a bill may come due before a customer pays. The dates matter as much as the total."
+        "question": "Why does a late payment matter if the month ends with $35,000?",
+        "answer": "On 20 November, a $25,000 supplier bill is due. Without the $40,000 customer payment, only $15,000 is available. The business needs another $10,000 that day, even though later payments bring the final balance back to $35,000."
       },
       {
-        "question": "Why is this happening?",
-        "answer": "There is $15,000 available when a $25,000 supplier bill falls due. If the $40,000 customer payment has not arrived, the gap is $10,000."
+        "question": "What does −$10,000 on the chart mean?",
+        "answer": "It means the listed bills exceed the cash available by $10,000 on 20 November. It is a funding gap to resolve, not an approved overdraft. The chart checks each payment date, so a positive final balance cannot hide an earlier gap."
       },
       {
-        "question": "What should I do next?",
-        "answer": "Check the customer’s payment date and which bills cannot move. Agree a backup plan, such as an agreed payment-date change or cash already set aside."
+        "question": "What should I check before the bill is due?",
+        "answer": "Confirm when the customer will pay and whether the supplier’s 20 November due date is fixed. Check any cash already available for the gap. If the payment date needs to change, agree that with the supplier in advance."
       }
     ],
     "scenario": {
-      "title": "What if one customer pays late?",
-      "description": "Only receipt C changes: 16 November becomes 26 November. All other amounts and dates stay the same.",
+      "title": "Same money, different payment date",
+      "description": "Move only the $40,000 customer payment from 16 November to 26 November. All other dates and amounts stay the same.",
       "columns": [
         {
           "key": "week",
@@ -286,12 +288,12 @@
         },
         {
           "key": "baseClosing",
-          "label": "Base-case closing cash",
+          "label": "Balance if paid on 16 Nov",
           "format": "currency"
         },
         {
           "key": "delayedClosing",
-          "label": "Delayed-receipt closing cash",
+          "label": "Balance if paid on 26 Nov",
           "format": "currency"
         }
       ],
@@ -317,7 +319,7 @@
           "delayedClosing": 35000
         }
       ],
-      "note": "A negative forecast balance represents funding needed; it does not assume the bank will permit an overdraft. The dated entries were checked as well as the weekly totals."
+      "note": "The shortfall happens on 20 November, in week 3. The table shows week-end balances; the chart also checks every listed payment date. A negative figure is funding needed, not an agreed overdraft."
     },
     "deliverables": [
       "A four-week cash forecast from the eight entries",
@@ -325,25 +327,27 @@
       "A one-page summary of the potential gap and receipt/payment questions"
     ],
     "cautions": [
-      "Expected cash receipts are not the same as revenue or profit.",
-      "Unlisted payments, taxes or changes in timing would change the forecast."
+      "The forecast depends on the listed amounts arriving or leaving on the stated dates.",
+      "A negative forecast shows money that would be needed. It does not mean the bank has agreed an overdraft.",
+      "Sales and profit are different from money received in the bank. Unlisted bills or taxes would change this forecast."
     ],
     "calculationNotes": [
-      "Expected receipts: 30,000 + 20,000 + 40,000 + 25,000 = 115,000.",
-      "Expected payments: 20,000 + 45,000 + 25,000 + 20,000 = 110,000.",
-      "Closing cash: 30,000 + 115,000 − 110,000 = 35,000.",
-      "Delayed week three: 15,000 − 25,000 = −10,000.",
-      "Delayed week four: −10,000 + 25,000 + 40,000 − 20,000 = 35,000."
-    ]
+      "Total customer payments expected: $30,000 + $20,000 + $40,000 + $25,000 = $115,000.",
+      "Total bills expected: $20,000 + $45,000 + $25,000 + $20,000 = $110,000.",
+      "End-of-period balance: $30,000 starting cash + $115,000 received − $110,000 paid = $35,000.",
+      "With the late payment, $15,000 is available before the $25,000 supplier bill on 20 November. $15,000 − $25,000 = −$10,000, a $10,000 shortfall.",
+      "After that shortfall: −$10,000 + $25,000 received on 23 November + $40,000 received on 26 November − $20,000 paid on 27 November = $35,000."
+    ],
+    "meaning": "The final $35,000 balance cannot pay a bill that was due earlier."
   },
   {
     "id": "plan-vs-actual",
     "name": "Plan vs Actual Review",
     "category": "Starter project",
-    "question": "Where did results differ from the plan?",
+    "question": "Why was $23,000 less left than we planned?",
     "scope": "An existing budget and matching actuals for up to three months and 15 categories; the three largest differences by value; a one-page summary.",
-    "problem": "The owner had a two-month budget, but less money was left after operating costs than expected. Which differences need attention first?",
-    "inputLabel": "Two months, four matching categories",
+    "problem": "Over two months, the business expected to have $45,000 left after delivery costs, payroll and rent. It had $22,000 left. Where did the $23,000 difference come from?",
+    "inputLabel": "Two months of planned and actual sales and costs",
     "inputs": {
       "columns": [
         {
@@ -363,12 +367,12 @@
         },
         {
           "key": "planned",
-          "label": "Plan",
+          "label": "Planned amount",
           "format": "currency"
         },
         {
           "key": "actual",
-          "label": "Actual",
+          "label": "Actual amount",
           "format": "currency"
         }
       ],
@@ -382,7 +386,7 @@
         },
         {
           "month": "Month 1",
-          "category": "Direct costs",
+          "category": "Delivery costs",
           "kind": "Expense",
           "planned": 50000,
           "actual": 49000
@@ -410,7 +414,7 @@
         },
         {
           "month": "Month 2",
-          "category": "Direct costs",
+          "category": "Delivery costs",
           "kind": "Expense",
           "planned": 55000,
           "actual": 58000
@@ -430,47 +434,47 @@
           "actual": 10000
         }
       ],
-      "note": "Only sales, delivery costs, payroll and rent are included. Any other costs, interest and tax still need to be considered."
+      "note": "Only sales, delivery costs, payroll and rent are shown. Other costs, interest and tax are excluded. Use matching periods and categories for a fair comparison."
     },
     "metrics": [
       {
-        "label": "Planned money left after listed costs",
+        "label": "Planned amount left",
         "value": 45000,
         "format": "currency",
-        "detail": ""
+        "detail": "After the listed costs, over two months."
       },
       {
-        "label": "Actual money left after listed costs",
+        "label": "Actual amount left",
         "value": 22000,
         "format": "currency",
-        "detail": ""
+        "detail": "After the same cost categories, over two months."
       },
       {
-        "label": "Below plan by",
+        "label": "Less left than planned",
         "value": 23000,
         "format": "currency",
         "detail": ""
       }
     ],
-    "finding": "There is $23,000 less left than planned: $15,000 from lower sales, $6,000 from extra payroll and $2,000 from extra delivery costs.",
-    "nextStep": "Start with sales, then ask the team about staffing costs and delivery costs.",
+    "finding": "$22,000 is left after delivery costs, payroll and rent, against a $45,000 plan.",
+    "nextStep": "Compare actual orders with the sales plan first, then check payroll records and supplier bills for the reasons.",
     "qa": [
       {
-        "question": "What does this mean?",
-        "answer": "After the costs shown, $22,000 is left instead of the planned $45,000. This compares business results; it does not show when cash is received or paid."
+        "question": "How does the $23,000 gap add up?",
+        "answer": "Sales were $15,000 below plan. Payroll was $6,000 above plan, and delivery costs were $2,000 above plan. All three reduce the amount left: $15,000 + $6,000 + $2,000 = $23,000. Rent matched the plan."
       },
       {
-        "question": "Why is this happening?",
-        "answer": "Sales are lower than planned, while payroll and delivery costs are higher. The figures show where to look, but not why it happened."
+        "question": "Does this tell us why sales fell or costs rose?",
+        "answer": "No. It shows where the differences are. Compare actual orders with the sales plan, payroll records with the staffing plan, and supplier bills with the delivery-cost budget. Those records are needed to explain the changes."
       },
       {
-        "question": "What should I do next?",
-        "answer": "Review the $15,000 sales gap first. Then check the $6,000 extra payroll and $2,000 extra delivery costs with the people responsible."
+        "question": "Which difference should I look at first?",
+        "answer": "Start with the $15,000 sales gap because it is the largest. Then investigate the $6,000 extra payroll and $2,000 extra delivery costs. Check whether each difference is temporary or should change the next budget."
       }
     ],
     "scenario": {
-      "title": "The three largest differences",
-      "description": "Add the two months together, then compare the largest differences.",
+      "title": "The three changes behind the $23,000 gap",
+      "description": "Add both months together. Lower sales and higher costs each reduce the amount left.",
       "columns": [
         {
           "key": "category",
@@ -489,7 +493,7 @@
         },
         {
           "key": "impact",
-          "label": "Effect on money left",
+          "label": "How much less was left",
           "format": "text"
         }
       ],
@@ -498,22 +502,22 @@
           "category": "Sales",
           "planned": 210000,
           "actual": 195000,
-          "impact": "$15,000 lower"
+          "impact": "$15,000 less left"
         },
         {
           "category": "Payroll",
           "planned": 40000,
           "actual": 46000,
-          "impact": "$6,000 lower"
+          "impact": "$6,000 less left"
         },
         {
-          "category": "Direct costs",
+          "category": "Delivery costs",
           "planned": 105000,
           "actual": 107000,
-          "impact": "$2,000 lower"
+          "impact": "$2,000 less left"
         }
       ],
-      "note": "Lower sales and higher costs reduce the money left. Rent matches its $20,000 plan."
+      "note": "Rent was $20,000 both in the plan and in the actual results, so it adds nothing to the gap."
     },
     "deliverables": [
       "A matching monthly plan-versus-actual comparison",
@@ -521,24 +525,27 @@
       "A one-page summary with possible drivers and team questions"
     ],
     "cautions": [
-      "A difference from the plan is a question to investigate, not proof of its cause.",
-      "Only the listed costs are included. This is not final profit."
+      "The comparison shows which numbers changed. It does not prove what caused the changes.",
+      "Only the listed costs are deducted. Other costs, interest and tax may reduce the amount left.",
+      "This is a comparison of sales and costs. It does not show when customers paid or bills left the bank."
     ],
     "calculationNotes": [
-      "Planned left after listed costs: 210,000 − 105,000 − 40,000 − 20,000 = 45,000.",
-      "Actual left after listed costs: 195,000 − 107,000 − 46,000 − 20,000 = 22,000.",
-      "Surplus change: −15,000 sales − 6,000 payroll − 2,000 direct costs = −23,000.",
-      "Eight monthly rows cover two months and four unique categories, within the starter limits."
-    ]
+      "Planned amount left: $210,000 sales − $105,000 delivery costs − $40,000 payroll − $20,000 rent = $45,000.",
+      "Actual amount left: $195,000 sales − $107,000 delivery costs − $46,000 payroll − $20,000 rent = $22,000.",
+      "The gap is $45,000 − $22,000 = $23,000.",
+      "$15,000 less sales + $6,000 extra payroll + $2,000 extra delivery costs = $23,000 less left. Rent is unchanged.",
+      "The example uses two months and four categories, within the starter project limits."
+    ],
+    "meaning": "$15,000 less sales, $6,000 extra payroll and $2,000 extra delivery costs explain the $23,000 gap."
   },
   {
     "id": "ai-finance-workflow",
     "name": "AI Finance Workflow Setup",
     "category": "Optional workflow support",
-    "question": "Can one spreadsheet become a clearer first draft?",
+    "question": "How can AI help write our monthly numbers update?",
     "scope": "One approved spreadsheet input to one draft commentary workflow in the client’s approved ChatGPT or Claude setup; reusable prompt, input template, sample draft, basic tests, human-review checklist and walkthrough.",
-    "problem": "The owner writes the same monthly explanation of sales and costs. A clear template can help produce a first draft for a person to check.",
-    "inputLabel": "One approved input template, with three fictional rows",
+    "problem": "A business wants to turn its monthly spreadsheet into a short explanation without writing the update from scratch each time.",
+    "inputLabel": "One example spreadsheet: planned and actual sales and costs",
     "inputs": {
       "columns": [
         {
@@ -553,12 +560,12 @@
         },
         {
           "key": "planned",
-          "label": "Plan",
+          "label": "Planned amount",
           "format": "currency"
         },
         {
           "key": "actual",
-          "label": "Actual",
+          "label": "Actual amount",
           "format": "currency"
         }
       ],
@@ -570,91 +577,91 @@
           "actual": 90000
         },
         {
-          "category": "Direct costs",
+          "category": "Delivery costs",
           "kind": "Expense",
           "planned": 60000,
           "actual": 58000
         },
         {
-          "category": "Other operating costs",
+          "category": "Other running costs",
           "kind": "Expense",
           "planned": 25000,
           "actual": 27000
         }
       ],
-      "note": "This sample commentary is prewritten, not a live AI chat."
+      "note": "The sample draft is prewritten, not a live AI chat. Only the sales and costs listed here are included."
     },
     "metrics": [
       {
-        "label": "Planned money left after listed costs",
+        "label": "Planned amount left",
         "value": 15000,
         "format": "currency",
-        "detail": ""
+        "detail": "After the listed costs."
       },
       {
-        "label": "Actual money left after listed costs",
+        "label": "Actual amount left",
         "value": 5000,
         "format": "currency",
-        "detail": ""
+        "detail": "After the listed costs."
       },
       {
-        "label": "Below plan by",
+        "label": "Less left than planned",
         "value": 10000,
         "format": "currency",
         "detail": ""
       }
     ],
-    "finding": "The draft highlights $10,000 less sales than planned. The two cost differences cancel each other out. A person must check the figures and the explanation.",
-    "nextStep": "Choose an approved tool and template, test it with known numbers, and name the person who will review each draft.",
-    "draftCommentary": "Sales were $90,000 against a $100,000 plan. Delivery costs were $2,000 below plan, while other operating costs were $2,000 above plan. After the costs shown, $5,000 was left instead of the planned $15,000. Check what changed in sales; these figures alone do not explain the reason.",
+    "finding": "The example draft summarises a $10,000 gap: $5,000 left after the listed costs, against a $15,000 plan.",
+    "nextStep": "Test the approved template with known totals and missing numbers before using real drafts.",
+    "draftCommentary": "Sales were $90,000 against a $100,000 plan: $10,000 lower. Delivery costs were $2,000 lower, but other running costs were $2,000 higher, so the total cost was unchanged. That left $5,000 after the listed costs, instead of $15,000. Compare actual orders with the sales plan to find the reason; these figures alone do not explain it.",
     "qa": [
       {
-        "question": "What does this mean?",
-        "answer": "One spreadsheet can become a first draft of a business update. This sample is prewritten, not a live AI chat."
+        "question": "What does the workflow actually do?",
+        "answer": "You put the agreed monthly figures into a spreadsheet template. Reusable instructions ask the approved AI tool to draft a short explanation of the differences. A person then checks and edits it. This page illustrates that process with a prewritten draft."
       },
       {
-        "question": "Why is this happening?",
-        "answer": "A consistent template makes the task easier to repeat. It does not guarantee a correct answer. Here, lower sales explain the $10,000 gap after the two cost differences cancel out."
+        "question": "What should the draft say about these figures?",
+        "answer": "Sales were $10,000 below plan. Delivery costs were $2,000 lower and other running costs $2,000 higher, leaving total costs unchanged. The amount left therefore fell from the planned $15,000 to $5,000. The draft should ask for the reason for lower sales, rather than make one up."
       },
       {
-        "question": "What should I do next?",
-        "answer": "Use approved data and tools. Test the draft with known figures, then have a person check it before sharing or using it."
+        "question": "How do we check that the workflow is useful?",
+        "answer": "Test it with these known totals, then with a missing number, text in a number field and an unsupported explanation. It should flag problems rather than fill gaps by guessing. A person must still check the input, calculations and wording before each draft is used."
       }
     ],
     "scenario": {
-      "title": "Basic checks before a draft is used",
-      "description": "Simple checks to try before using a draft for real work.",
+      "title": "Four checks before using a draft",
+      "description": "These are test cases and expected responses for the proposed workflow. This web page does not run the tests.",
       "columns": [
         {
           "key": "test",
-          "label": "Test input",
+          "label": "Try this input",
           "format": "text"
         },
         {
           "key": "expected",
-          "label": "Expected behaviour",
+          "label": "What the workflow should do",
           "format": "text"
         }
       ],
       "rows": [
         {
           "test": "The three complete example rows",
-          "expected": "Check the result is $5,000 actual and $15,000 planned money left after listed costs."
+          "expected": "Calculate $15,000 planned and $5,000 actual left after the listed costs, with a $10,000 gap."
         },
         {
           "test": "A required actual amount is blank",
-          "expected": "Stop and ask for the missing figure; do not treat a blank as zero."
+          "expected": "Ask for the missing number. Do not treat the blank as zero."
         },
         {
           "test": "A required amount contains text",
-          "expected": "Flag the invalid value; do not produce numerical conclusions."
+          "expected": "Flag the invalid entry and stop the numerical explanation until it is corrected."
         },
         {
-          "test": "A note claims a reason without supporting data",
-          "expected": "Label it unverified or ask for evidence; do not present it as fact."
+          "test": "A note gives a reason without evidence",
+          "expected": "Mark the reason as unverified or ask for supporting information. Do not state it as a fact."
         }
       ],
-      "note": ""
+      "note": "Passing these basic tests does not guarantee every future draft will be correct. Human checking remains necessary."
     },
     "deliverables": [
       "A reusable prompt and one input template",
@@ -662,26 +669,27 @@
       "A human-review checklist and walkthrough"
     ],
     "cautions": [
-      "All AI outputs require human review before financial decisions.",
-      "Tool subscriptions, API usage, custom integrations and ongoing support are separate.",
-      "Excel add-in setup depends on compatibility and administrator approval.",
-      "Use only tools and data approved for the intended purpose. This demonstration uses fictional data."
+      "A person must check every real AI draft before it is shared or used for a financial decision.",
+      "Use only data and tools approved for this purpose. This demonstration uses fictional figures.",
+      "Tool subscriptions, API charges, custom connections and ongoing support are separate.",
+      "Any Excel add-in depends on compatibility and administrator approval."
     ],
     "calculationNotes": [
-      "Planned left after listed costs: 100,000 − 60,000 − 25,000 = 15,000.",
-      "Actual left after listed costs: 90,000 − 58,000 − 27,000 = 5,000.",
-      "Surplus change: −10,000 sales + 2,000 direct-cost saving − 2,000 other-cost increase = −10,000.",
-      "The draft is stored text. No model call is made by these example files."
-    ]
+      "Planned amount left: $100,000 sales − $60,000 delivery costs − $25,000 other running costs = $15,000.",
+      "Actual amount left: $90,000 sales − $58,000 delivery costs − $27,000 other running costs = $5,000.",
+      "Both planned and actual costs total $85,000. The $10,000 fall in sales therefore explains the $10,000 gap in the amount left.",
+      "The displayed draft is stored example text. The page does not call an AI model."
+    ],
+    "meaning": "AI can draft an update, but a person must check it. This is a prewritten illustration."
   },
   {
     "id": "plan-hire-expansion",
     "name": "Plan a hire or expansion",
     "category": "Tailored project",
-    "question": "What would a new hire need to pay for itself?",
+    "question": "How much more would we need to sell to cover a new hire?",
     "scope": "Illustrative tailored planning work. The actual budget, forecast, scenarios, deliverables, timeline and fee are agreed separately after discussing the decision.",
-    "problem": "The owner is considering a hire costing $30,000 per month plus $20,000 of one-time setup cash. Would the expected extra sales cover the ongoing cost?",
-    "inputLabel": "Three simple monthly scenarios",
+    "problem": "The example hire costs $30,000 a month, plus $20,000 to set up. The business expects each extra $100 of sales to leave $50 after delivery costs.",
+    "inputLabel": "Three monthly cases: no hire, expected sales and lower sales",
     "inputs": {
       "columns": [
         {
@@ -706,12 +714,12 @@
         },
         {
           "key": "hireCost",
-          "label": "New monthly hire cost",
+          "label": "Monthly cost of new hire",
           "format": "currency"
         },
         {
           "key": "setupCash",
-          "label": "One-time setup cash",
+          "label": "One-time setup payment",
           "format": "currency"
         }
       ],
@@ -741,53 +749,53 @@
           "setupCash": 20000
         }
       ],
-      "note": "Start with $60,000 cash. Half of sales is left after delivery costs. All sales are collected and monthly costs paid in the same month. The hire cost includes the employment costs assumed here. Setup payments are shown separately."
+      "note": "Assume $60,000 starting cash, delivery costs of $50 per $100 sold, and existing fixed costs of $70,000 a month. All sales are collected and all monthly costs are paid in the same month. The $30,000 hire cost includes the employment costs assumed in this example. Setup cash is separate."
     },
     "metrics": [
       {
-        "label": "Monthly cost of the hire",
+        "label": "Monthly cost of hire",
         "value": 30000,
         "format": "currency",
         "detail": ""
       },
       {
-        "label": "Extra sales needed each month",
+        "label": "Extra monthly sales to cover hire",
         "value": 60000,
         "format": "currency",
-        "detail": ""
+        "detail": "Assumes $50 of each extra $100 sold is left after delivery costs."
       },
       {
         "label": "One-time setup payment",
         "value": 20000,
         "format": "currency",
-        "detail": ""
+        "detail": "Separate from the monthly hire cost."
       },
       {
-        "label": "Cash at first month-end, expected case",
+        "label": "First month-end cash with expected sales",
         "value": 70000,
         "format": "currency",
-        "detail": ""
+        "detail": "Assumes all sales are collected in the same month."
       }
     ],
-    "finding": "If $50 of each extra $100 in sales is left after delivery costs, the business needs $60,000 more sales each month to cover a $30,000 hire. The one-time setup also uses $20,000 of cash.",
-    "nextStep": "Check how quickly those extra sales could arrive, the full cost of the hire and how much cash to keep available.",
+    "finding": "A $30,000 monthly hire needs $60,000 more monthly sales, assuming half of each sale is left after delivery.",
+    "nextStep": "Check how quickly those sales and customer payments could arrive, and whether cash covers the wait.",
     "qa": [
       {
-        "question": "What does this mean?",
-        "answer": "In the expected case, the hire brings $60,000 more sales. Half is left after delivery costs, which just covers the $30,000 hire. The monthly amount left after listed costs stays at $30,000."
+        "question": "Why does a $30,000 hire need $60,000 more sales?",
+        "answer": "Half of every extra sale pays for delivery in this example. Another $60,000 in sales leaves $30,000 after delivery, which then pays the hire’s $30,000 monthly cost. The amount left after monthly costs stays at $30,000, the same as without the hire."
       },
       {
-        "question": "Why is this happening?",
-        "answer": "Each extra $100 in sales leaves $50 after delivery costs. Covering a $30,000 hire therefore needs $60,000 of extra sales. With only $20,000 extra sales, just $10,000 is left after the listed monthly costs."
+        "question": "What if the hire brings only $20,000 more sales?",
+        "answer": "Only $10,000 of that extra sales amount remains after delivery costs. The hire still costs $30,000, so the business has $20,000 less left than without the hire: $10,000 instead of $30,000 after monthly costs."
       },
       {
-        "question": "What should I do next?",
-        "answer": "Check whether the extra sales are realistic and how long they may take. Include payment delays and any costs missing from this example."
+        "question": "Can the business afford the setup and the wait for sales?",
+        "answer": "That needs a cash forecast. This example starts with $60,000 and assumes immediate customer payment. After the $20,000 setup payment, first month-end cash is $70,000 with expected sales or $50,000 with lower sales. Check the full hire cost, payment dates and a slower start before deciding."
       }
     ],
     "scenario": {
-      "title": "What changes in the first month?",
-      "description": "Opening cash is $60,000 in every case; one-time setup cash is deducted only in the hire cases.",
+      "title": "How much is left, and what happens to first-month cash?",
+      "description": "Each case starts with $60,000 cash. First add the amount left after monthly costs, then subtract the one-time setup payment where there is a hire.",
       "columns": [
         {
           "key": "case",
@@ -801,12 +809,12 @@
         },
         {
           "key": "setupCash",
-          "label": "One-time setup cash",
+          "label": "One-time setup payment",
           "format": "currency"
         },
         {
           "key": "closingCash",
-          "label": "Closing cash",
+          "label": "Cash at first month-end",
           "format": "currency"
         }
       ],
@@ -830,7 +838,7 @@
           "closingCash": 50000
         }
       ],
-      "note": "The monthly amount left excludes the one-time setup payment, unlisted costs, interest and tax. Payment delays or different delivery costs would change the result."
+      "note": "Monthly results exclude the one-time setup payment, unlisted costs, interest and tax. The cash figures assume all sales and monthly costs are received or paid in that month."
     },
     "deliverables": [
       "An agreed budget or scenario model around the hiring decision",
@@ -838,27 +846,28 @@
       "A walkthrough of the trade-offs and information still needed"
     ],
     "cautions": [
-      "Expected sales are assumptions, not guaranteed results.",
-      "This is a small illustration of tailored work, not a fixed-price starter package.",
-      "Scope, deliverables, timeline and fees are agreed separately."
+      "Expected extra sales are assumptions, not guaranteed results.",
+      "The $60,000 figure only covers the assumed monthly hire cost at the stated delivery-cost rate. It does not recover the setup payment.",
+      "This is a simplified example of a tailored project. Scope, deliverables, timing and fees are agreed separately."
     ],
     "calculationNotes": [
-      "Share left after delivery costs: (200,000 − 100,000) ÷ 200,000 = 50%.",
-      "Incremental sales needed: 30,000 ÷ 50% = 60,000 per month.",
-      "No hire left after listed costs: 200,000 − 100,000 − 70,000 = 30,000.",
-      "Expected hire left after listed costs: 260,000 − 130,000 − 70,000 − 30,000 = 30,000.",
-      "Lower-sales hire left after listed costs: 220,000 − 110,000 − 70,000 − 30,000 = 10,000.",
-      "Expected closing cash: 60,000 + 30,000 − 20,000 = 70,000; lower-sales closing cash = 50,000."
-    ]
+      "The assumption is that half of sales remains after delivery costs: ($200,000 − $100,000) ÷ $200,000 = 50%.",
+      "Extra monthly sales needed to cover the hire: $30,000 ÷ 50% = $60,000.",
+      "No hire: $200,000 sales − $100,000 delivery costs − $70,000 existing fixed costs = $30,000 left.",
+      "Hire with expected sales: $260,000 − $130,000 − $70,000 − $30,000 = $30,000 left after monthly costs.",
+      "Hire with lower sales: $220,000 − $110,000 − $70,000 − $30,000 = $10,000 left after monthly costs.",
+      "Starting with $60,000 cash, expected first-month closing cash is $60,000 + $30,000 − $20,000 setup = $70,000. With lower sales it is $60,000 + $10,000 − $20,000 = $50,000. Without a hire it is $60,000 + $30,000 = $90,000."
+    ],
+    "meaning": "That only covers the monthly hire cost; the $20,000 setup payment is extra."
   },
   {
     "id": "understand-cash-profit",
     "name": "Understand cash and profit",
     "category": "Tailored project",
-    "question": "Why can profit look positive while cash falls?",
+    "question": "We made a profit. Why did our bank balance fall?",
     "scope": "Illustrative deeper review of pricing, margins or cash flow. The area to investigate, deliverables, timeline and fee are agreed separately.",
-    "problem": "The accounts show $30,000 profit before unlisted costs and tax, yet cash falls by $15,000. Why?",
-    "inputLabel": "One fictional month",
+    "problem": "For one month, the listed sales and costs show $30,000 profit. Yet the bank balance falls from $50,000 to $35,000. The difference comes from when money was received or paid.",
+    "inputLabel": "One fictional month: sales, costs and actual payments",
     "inputs": {
       "columns": [
         {
@@ -874,7 +883,7 @@
       ],
       "rows": [
         {
-          "item": "Sales invoiced",
+          "item": "Sales recorded in the accounts",
           "amount": 120000
         },
         {
@@ -890,7 +899,7 @@
           "amount": 45000
         },
         {
-          "item": "Other operating expenses, all paid",
+          "item": "Other running costs, all paid",
           "amount": 30000
         },
         {
@@ -902,82 +911,82 @@
           "amount": 50000
         }
       ],
-      "note": "No opening customer or supplier balances are involved. The additional unsold stock is separate from the cost of items sold. No other cash movements, depreciation, interest or tax are included."
+      "note": "The example has no customer or supplier balances carried over from an earlier month. The $20,000 extra stock is still unsold, so it is separate from the $60,000 cost of items sold. No other cash movements, depreciation, interest or tax are included."
     },
     "metrics": [
       {
-        "label": "Profit before unlisted costs and tax",
+        "label": "Profit from the listed sales and costs",
         "value": 30000,
         "format": "currency",
-        "detail": ""
+        "detail": "Other costs, depreciation, interest and tax are excluded."
       },
       {
-        "label": "Change in cash",
+        "label": "Change in bank balance",
         "value": -15000,
         "format": "currency",
         "detail": ""
       },
       {
-        "label": "Cash at month-end",
+        "label": "Bank balance at month-end",
         "value": 35000,
         "format": "currency",
-        "detail": ""
+        "detail": "Down from $50,000 at the start."
       }
     ],
-    "finding": "Customers still owe $40,000, and $20,000 went into extra stock. The business has also not yet paid $15,000 of supplier bills. Together, these explain why cash fell by $15,000 despite the $30,000 profit shown.",
-    "nextStep": "Review the unpaid customer invoices and unsold stock, while making sure the outstanding supplier payments stay in the cash plan.",
+    "finding": "$30,000 profit is shown, yet the bank balance falls from $50,000 to $35,000.",
+    "nextStep": "Confirm customer payment dates, review unsold stock and plan for those supplier bills.",
     "qa": [
       {
-        "question": "What does this mean?",
-        "answer": "A sale can count in the accounts before the customer pays. A stock purchase can use cash before the stock is sold. That is why profit and cash can move differently."
+        "question": "Why is profit different from money in the bank?",
+        "answer": "The accounts include $120,000 of sales, but customers have paid only $80,000. The business also paid $20,000 for stock it has not sold yet. Sales can count before payment arrives, and buying unsold stock can use cash before its cost appears in profit."
       },
       {
-        "question": "Why is this happening?",
-        "answer": "Customers still owe $40,000, extra stock used $20,000, and $15,000 of supplier bills remain unpaid. Those three differences explain the cash change."
+        "question": "Why does the chart add $15,000 of unpaid supplier bills?",
+        "answer": "Profit already deducts $60,000 for the items sold, but only $45,000 has been paid to suppliers. Add back the unpaid $15,000 when explaining the cash change because that money has not left the bank yet. It is still owed; it is not extra income."
       },
       {
-        "question": "What should I do next?",
-        "answer": "Confirm when customers will pay, check whether the extra stock is needed, and keep unpaid supplier bills in the cash plan."
+        "question": "How does the full cash calculation work?",
+        "answer": "Start with the $30,000 listed profit. Subtract $40,000 of sales not yet collected, add $15,000 of supplier costs not yet paid, then subtract $20,000 spent on extra stock. The result is a $15,000 cash decrease. Check the unpaid invoices and supplier due dates, and whether the extra stock is needed."
       }
     ],
     "scenario": {
-      "title": "From profit shown to cash change",
-      "description": "Start with the profit shown, then adjust for money not yet received or paid and the extra stock purchase.",
+      "title": "How $30,000 profit becomes a $15,000 cash decrease",
+      "description": "Adjust the listed profit for sales not yet paid, supplier costs not yet paid and stock bought but not yet sold.",
       "columns": [
         {
           "key": "item",
-          "label": "Bridge item",
+          "label": "Step in the calculation",
           "format": "text"
         },
         {
           "key": "cashEffect",
-          "label": "Amount",
+          "label": "Adjustment or result",
           "format": "currency"
         }
       ],
       "rows": [
         {
-          "item": "Profit before unlisted costs and tax",
+          "item": "Start with profit from the listed items",
           "cashEffect": 30000
         },
         {
-          "item": "Less sales not collected",
+          "item": "Subtract sales customers have not paid",
           "cashEffect": -40000
         },
         {
-          "item": "Add supplier costs not yet paid",
+          "item": "Add back supplier costs not yet paid",
           "cashEffect": 15000
         },
         {
-          "item": "Less extra unsold stock paid for",
+          "item": "Subtract extra unsold stock paid for",
           "cashEffect": -20000
         },
         {
-          "item": "Change in cash",
+          "item": "Result: change in bank balance",
           "cashEffect": -15000
         }
       ],
-      "note": "Closing cash is opening cash $50,000 plus the $15,000 net outflow: $35,000. Unpaid supplier bills are still obligations."
+      "note": "Starting cash $50,000 minus the $15,000 cash decrease leaves $35,000. The $15,000 unpaid supplier bills must still be paid later."
     },
     "deliverables": [
       "An agreed review of the relevant profit and cash drivers",
@@ -985,32 +994,33 @@
       "A walkthrough of the findings and next questions"
     ],
     "cautions": [
-      "The profit shown excludes unlisted costs, depreciation, interest and tax. It is not final profit.",
-      "The example is deliberately simplified; a real reconciliation may have additional adjustments.",
-      "Tailored scope, deliverables, timeline and fees are agreed separately."
+      "The $30,000 profit is based only on the listed sales and costs. Other costs, depreciation, interest and tax are excluded.",
+      "A real business may need more adjustments than this simplified example.",
+      "Tailored scope, deliverables, timing and fees are agreed separately."
     ],
     "calculationNotes": [
-      "Operating profit: 120,000 − 60,000 − 30,000 = 30,000.",
-      "Uncollected sales: 120,000 − 80,000 = 40,000.",
-      "Supplier costs not paid: 60,000 − 45,000 = 15,000.",
-      "Bridge: 30,000 − 40,000 + 15,000 − 20,000 = −15,000.",
-      "Direct cash check: 80,000 − 45,000 − 30,000 − 20,000 = −15,000.",
-      "Closing cash: 50,000 − 15,000 = 35,000."
-    ]
+      "Profit from the listed items: $120,000 sales − $60,000 cost of items sold − $30,000 other costs = $30,000.",
+      "Customers have not yet paid $120,000 − $80,000 = $40,000 of sales.",
+      "The business has not yet paid $60,000 − $45,000 = $15,000 of supplier costs already included in profit.",
+      "Convert the listed profit to the cash change: $30,000 − $40,000 uncollected sales + $15,000 unpaid supplier costs − $20,000 extra stock = −$15,000.",
+      "Check using actual payments: $80,000 received − $45,000 supplier payments − $30,000 other payments − $20,000 extra stock = −$15,000.",
+      "Cash at month-end: $50,000 starting balance − $15,000 decrease = $35,000."
+    ],
+    "meaning": "Customers still owe $40,000; extra stock used $20,000. Unpaid supplier bills kept $15,000 in the bank for now."
   },
   {
     "id": "assess-marketing",
     "name": "Assess marketing performance",
     "category": "Tailored project",
-    "question": "Are cheaper new customers actually more profitable?",
+    "question": "Do the sales from our ads cover the costs?",
     "scope": "Analysis of existing marketing spend, sales and customer-profitability data, with assumptions and gaps made clear. Tailored scope and fee are agreed separately.",
-    "problem": "Social ads bring in new customers more cheaply. But do their first purchases leave enough to cover delivery and advertising?",
-    "inputLabel": "Two fictional channels, one first-order cohort",
+    "problem": "Social ads cost less per new customer than Search ads. The comparison checks whether those customers’ first orders cover both delivery and advertising costs.",
+    "inputLabel": "First orders from new customers recorded against two ad channels",
     "inputs": {
       "columns": [
         {
           "key": "channel",
-          "label": "Channel",
+          "label": "Ad channel",
           "format": "text"
         },
         {
@@ -1025,7 +1035,7 @@
         },
         {
           "key": "revenue",
-          "label": "First-order revenue",
+          "label": "Sales from first orders",
           "format": "currency"
         },
         {
@@ -1050,20 +1060,20 @@
           "directCosts": 16800
         }
       ],
-      "note": "Assume 60 distinct new paying customers, each assigned once to a channel using the supplied records. Revenue is after discounts and refunds; direct costs include fulfilment. Repeat purchases, shared overheads, interest and tax are excluded."
+      "note": "Assume 60 different new paying customers, each counted once and linked to one channel in the supplied records. Sales are after discounts and refunds. Delivery costs include fulfilling the orders. Later purchases, shared running costs, interest and tax are excluded."
     },
     "metrics": [
       {
         "label": "Search: left after delivery and ads",
         "value": 6000,
         "format": "currency",
-        "detail": ""
+        "detail": "Before shared running costs and tax."
       },
       {
         "label": "Social: left after delivery and ads",
         "value": -800,
         "format": "currency",
-        "detail": ""
+        "detail": "A negative value means first orders did not cover these costs."
       },
       {
         "label": "Search: ad cost per new customer",
@@ -1078,25 +1088,25 @@
         "detail": ""
       }
     ],
-    "finding": "Search leaves $6,000 after delivery and ads. Social’s first purchases fall $800 short of covering those costs, despite the lower cost of finding a customer.",
-    "nextStep": "Check which ads customers came from, refunds and repeat purchases before changing the budget.",
+    "finding": "Search orders leave $6,000 after delivery and ads. Social orders fall $800 short of those costs.",
+    "nextStep": "Check sales, refunds and delivery costs for each channel, then compare repeat purchases before changing spend.",
     "qa": [
       {
-        "question": "What does this mean?",
-        "answer": "After delivery and ad costs, Search leaves $6,000 and Social is $800 short. This only covers first purchases, before overheads and tax."
+        "question": "Why does Search look better even though its customers cost more?",
+        "answer": "Per new customer, Search has $2,000 in first-order sales, $1,200 in delivery costs and $500 in ads, leaving $300. Social has $600 in sales, $420 in delivery costs and $200 in ads, leaving a $20 shortfall. These are averages from the example records."
       },
       {
-        "question": "Why is this happening?",
-        "answer": "Each Search customer leaves $800 after delivery, then costs $500 in ads. Each Social customer leaves $180, but costs $200 in ads. Order size, discounts or the items bought may explain the difference; check the records."
+        "question": "Does −$800 mean Social had negative sales?",
+        "answer": "No. Social generated $24,000 in sales. Delivery cost $16,800 and ads cost $8,000, for total costs of $24,800. The −$800 is the shortfall after those costs. It is not sales revenue or a sales-to-ad-spend ratio."
       },
       {
-        "question": "What should I do next?",
-        "answer": "Count each customer once, include refunds and all costs, and check which channel each sale came from. Then look at repeat purchases before deciding what to change."
+        "question": "Should we move the budget to Search?",
+        "answer": "These figures alone do not settle that. First check that customers are counted once, sales are assigned consistently, and refunds and delivery costs are complete. Then compare later purchases and any other relevant costs. The example only covers first orders and does not prove which sales the ads caused."
       }
     ],
     "scenario": {
-      "title": "Follow the money per customer",
-      "description": "Divide each channel’s sales, delivery costs and ad spend by its number of new paying customers.",
+      "title": "What one new customer leaves, on average",
+      "description": "Divide each channel’s first-order sales, delivery costs and ad spend by its number of new customers.",
       "columns": [
         {
           "key": "channel",
@@ -1105,27 +1115,27 @@
         },
         {
           "key": "revenuePerCustomer",
-          "label": "Sales per customer",
+          "label": "First-order sales per customer",
           "format": "currency"
         },
         {
           "key": "directCostPerCustomer",
-          "label": "Delivery cost per customer",
+          "label": "Delivery costs per customer",
           "format": "currency"
         },
         {
           "key": "contributionBeforeAds",
-          "label": "Left before ads",
+          "label": "Left after delivery",
           "format": "currency"
         },
         {
           "key": "acquisitionCost",
-          "label": "Ad cost per customer",
+          "label": "Ads per customer",
           "format": "currency"
         },
         {
           "key": "contributionAfterAds",
-          "label": "Left after ads",
+          "label": "Left after delivery and ads",
           "format": "currency"
         }
       ],
@@ -1147,7 +1157,7 @@
           "contributionAfterAds": -20
         }
       ],
-      "note": "Matching sales to a channel does not prove the ads caused those sales."
+      "note": "The after-ad result already deducts delivery costs. It is not total sales or a sales-to-ad-spend ratio. Matching a sale to a channel does not prove the ad caused it."
     },
     "deliverables": [
       "A performance analysis using existing spend, sales and cost records",
@@ -1155,26 +1165,29 @@
       "Questions and options to review before taking action"
     ],
     "cautions": [
-      "This service covers performance analysis, not campaign management, SEO or content production.",
-      "Only first purchases are included, before overheads and tax. Future repeat purchases are excluded.",
-      "Tailored scope, deliverables, timeline and fees are agreed separately."
+      "The analysis covers marketing results. It does not include running campaigns, SEO or producing content.",
+      "Only first purchases are included. Later purchases, shared running costs, interest and tax are excluded.",
+      "A sale recorded against a channel is not proof that the advertisement caused it.",
+      "Tailored scope, deliverables, timing and fees are agreed separately."
     ],
     "calculationNotes": [
-      "Search money left after ads: 40,000 − 24,000 − 10,000 = 6,000.",
-      "Social money left after ads: 24,000 − 16,800 − 8,000 = −800.",
-      "Search ad cost per new customer: 10,000 ÷ 20 = 500; Social: 8,000 ÷ 40 = 200.",
-      "Search money left per customer after ads: 6,000 ÷ 20 = 300; Social: −800 ÷ 40 = −20.",
-      "Combined money left after ads: 64,000 − 40,800 − 18,000 = 5,200."
-    ]
+      "Search: $40,000 sales − $24,000 delivery costs − $10,000 ads = $6,000 left.",
+      "Social: $24,000 sales − $16,800 delivery costs − $8,000 ads = −$800. Costs exceed first-order sales by $800.",
+      "Search ad cost per new customer: $10,000 ÷ 20 = $500. Social: $8,000 ÷ 40 = $200.",
+      "Search average left per customer: $2,000 sales − $1,200 delivery costs − $500 ads = $300. Across 20 customers, that is $6,000.",
+      "Social average left per customer: $600 sales − $420 delivery costs − $200 ads = −$20. Across 40 customers, that is −$800.",
+      "Both channels combined: $64,000 sales − $40,800 delivery costs − $18,000 ads = $5,200 left before shared running costs and tax."
+    ],
+    "meaning": "Social’s ad cost per new customer is lower, but their first orders leave less to cover that cost."
   },
   {
     "id": "useful-reporting",
     "name": "Make reporting more useful",
     "category": "Tailored project",
-    "question": "Which numbers should lead to a useful conversation?",
+    "question": "Sales are up. What else needs our attention?",
     "scope": "An agreed reporting pack, performance dashboard or defined spreadsheet workflow, with documentation and a team handover. Tailored scope and fee are agreed separately.",
-    "problem": "The owner sees sales rising, but the monthly report does not make the next decisions clear. A short view should connect important numbers to questions and owners.",
-    "inputLabel": "Four inputs from two fictional monthly reports",
+    "problem": "The monthly report shows higher sales. It also needs to show how much each sale leaves and which customer payments are late, so the team knows what to check.",
+    "inputLabel": "Two months compared using the same definitions",
     "inputs": {
       "columns": [
         {
@@ -1205,7 +1218,7 @@
           "current": 78000
         },
         {
-          "item": "Overdue customer invoices at month end",
+          "item": "Customer invoices past their payment due date",
           "previous": 10000,
           "current": 25000
         },
@@ -1215,57 +1228,57 @@
           "current": 35000
         }
       ],
-      "note": "Both months use the same definitions. Overdue payments and cash are measured at month-end. The example’s warning levels are chosen for this business, not industry rules."
+      "note": "The same definitions are used in both months. Overdue invoices are customer bills past their payment due date. Overdue invoices and cash are measured at month-end. The review levels below are choices for this fictional business."
     },
     "metrics": [
       {
-        "label": "Sales growth",
+        "label": "Increase in sales",
         "value": 20,
         "format": "percent",
-        "detail": ""
+        "detail": "From $100,000 to $120,000."
       },
       {
-        "label": "Share left after delivery costs",
+        "label": "Percentage of sales left after delivery",
         "value": 35,
         "format": "percent",
-        "detail": "$35 left from every $100 sold, down from $40. Before overheads and tax."
+        "detail": "$35 per $100 sold, down from $40. Shared running costs and tax are not deducted."
       },
       {
-        "label": "Overdue customer payments",
+        "label": "Customer payments past due",
         "value": 25000,
         "format": "currency",
-        "detail": ""
+        "detail": "Up from $10,000."
       },
       {
-        "label": "Cash at month-end",
+        "label": "Bank balance at month-end",
         "value": 35000,
         "format": "currency",
-        "detail": ""
+        "detail": "Down from $40,000."
       }
     ],
-    "finding": "Sales rose 20%. Money left after delivery costs rose only 5%, from $40,000 to $42,000. That means the share left fell from 40% to 35%. The amount customers owe past its due date rose from $10,000 to $25,000.",
-    "nextStep": "Ask sales or operations why less is left from each dollar of sales. Ask finance when the overdue money should arrive.",
+    "finding": "Sales rose $20,000, but each $100 sold leaves $35 after delivery, down from $40. Overdue customer payments rose from $10,000 to $25,000.",
+    "nextStep": "Ask sales and operations to check prices and costs. Ask finance to confirm overdue invoice payment dates.",
     "qa": [
       {
-        "question": "What does this mean?",
-        "answer": "Rising sales are not the whole story. A smaller share is left after delivery costs, and more money is overdue from customers."
+        "question": "Did the business make more from its sales?",
+        "answer": "The total left after delivery rose from $40,000 to $42,000, so there was $2,000 more. But sales rose by $20,000. Each $100 sold now leaves $35 instead of $40 because delivery costs rose faster than sales. Shared running costs and tax still have to be covered."
       },
       {
-        "question": "Why is this happening?",
-        "answer": "Delivery costs rose 30% while sales rose 20%. Check prices, the types of work sold and delivery costs to understand why. The figures do not explain why customer payments are late."
+        "question": "Do overdue payments explain the lower bank balance?",
+        "answer": "Not on their own. Overdue invoices rose from $10,000 to $25,000, while cash fell from $40,000 to $35,000. Check actual customer receipts and all other payments to explain the cash movement. The report does not show enough detail to establish the cause."
       },
       {
-        "question": "What should I do next?",
-        "answer": "Agree what each number means, who checks it and when it needs attention. Keep a simple update and checking process."
+        "question": "How should the team use this report?",
+        "answer": "Ask sales and operations to compare prices and delivery costs between the months. Ask finance to list the overdue invoices, confirm expected payment dates and check upcoming bills. Agree when those checks will be reviewed, so the report leads to specific follow-up work."
       }
     ],
     "scenario": {
-      "title": "Turn each warning sign into a question",
-      "description": "These example warning levels are chosen for the fictional business.",
+      "title": "Which result needs a check, and who will do it?",
+      "description": "For this fictional business, the team has chosen the review levels below. They are starting points for a check, not universal targets.",
       "columns": [
         {
           "key": "measure",
-          "label": "Measure",
+          "label": "Number to check",
           "format": "text"
         },
         {
@@ -1275,44 +1288,44 @@
         },
         {
           "key": "threshold",
-          "label": "Example review threshold",
+          "label": "When this business checks it",
           "format": "text"
         },
         {
           "key": "owner",
-          "label": "Owner",
+          "label": "Person or team to check",
           "format": "text"
         },
         {
           "key": "question",
-          "label": "Question or next check",
+          "label": "Specific next check",
           "format": "text"
         }
       ],
       "rows": [
         {
-          "measure": "Share left after delivery costs",
+          "measure": "Percentage of sales left after delivery",
           "current": "35%",
-          "threshold": "Review below 38%",
-          "owner": "Sales / operations",
-          "question": "What changed in prices, sales mix or direct costs?"
+          "threshold": "Check if below 38%",
+          "owner": "Sales and operations",
+          "question": "Compare prices and delivery costs with last month. Which products or jobs changed?"
         },
         {
-          "measure": "Overdue customer payments",
+          "measure": "Customer payments past due",
           "current": "$25,000",
-          "threshold": "Review above $15,000",
+          "threshold": "Check if above $15,000",
           "owner": "Finance",
-          "question": "Which invoices are overdue, and when is collection expected?"
+          "question": "List overdue invoices, confirm payment dates and follow up unpaid amounts."
         },
         {
-          "measure": "Cash balance",
+          "measure": "Bank balance",
           "current": "$35,000",
-          "threshold": "Review below $30,000",
+          "threshold": "Check if below $30,000",
           "owner": "Finance",
-          "question": "Above this example threshold; still check upcoming payments."
+          "question": "The balance is above this level. Still compare upcoming bills with dated expected receipts."
         }
       ],
-      "note": "A warning level tells someone to check. It does not prove that the business or its cash is safe."
+      "note": "Being above the $30,000 cash review level does not show that every upcoming bill can be paid. Check the dated cash forecast as well."
     },
     "deliverables": [
       "An agreed reporting pack, dashboard or spreadsheet workflow",
@@ -1320,18 +1333,20 @@
       "A handover so the team can own the reporting process"
     ],
     "cautions": [
-      "Money left after delivery costs still has to cover overheads and tax. It is not final profit.",
-      "This is a sample report, not a live connection to business records.",
-      "Tailored scope, deliverables, timeline and fees are agreed separately."
+      "The amount left after delivery costs still needs to cover shared running costs, interest and tax.",
+      "The sample is a static report. It is not connected to live business records.",
+      "The example review levels are choices for this fictional business, not industry standards or guarantees of safety.",
+      "Tailored scope, deliverables, timing and fees are agreed separately."
     ],
     "calculationNotes": [
-      "Previous money left: 100,000 − 60,000 = 40,000; share left = 40%.",
-      "Current money left: 120,000 − 78,000 = 42,000; share left = 35%.",
-      "Revenue growth: (120,000 − 100,000) ÷ 100,000 = 20%.",
-      "Direct-cost growth: (78,000 − 60,000) ÷ 60,000 = 30%.",
-      "Growth in money left: (42,000 − 40,000) ÷ 40,000 = 5%.",
-      "Margin change: 35% − 40% = −5 percentage points.",
-      "Overdue invoice change: 25,000 − 10,000 = 15,000; cash change: 35,000 − 40,000 = −5,000."
-    ]
+      "Previous amount left after delivery: $100,000 − $60,000 = $40,000, or $40 per $100 sold.",
+      "Current amount left after delivery: $120,000 − $78,000 = $42,000, or $35 per $100 sold.",
+      "Sales increased by $20,000. Divide $20,000 by $100,000 to get 20%.",
+      "Delivery costs increased by $18,000. Divide $18,000 by $60,000 to get 30%.",
+      "The amount left increased by $2,000. Divide $2,000 by $40,000 to get 5%.",
+      "The percentage of sales left fell from 40% to 35%, a fall of 5 percentage points.",
+      "Overdue payments rose by $25,000 − $10,000 = $15,000. Cash fell by $40,000 − $35,000 = $5,000. These totals do not explain all the movements in cash."
+    ],
+    "meaning": "Despite higher sales, only $2,000 more is left after delivery. More customer money is also past due."
   }
 ]

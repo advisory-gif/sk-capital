@@ -6,11 +6,13 @@ const { outputFiles } = await build({ entryPoints: ['src/lib/sample-visuals.ts']
 const { sampleVisual } = await import(`data:text/javascript;base64,${Buffer.from(outputFiles[0].text).toString('base64')}`);
 const data = JSON.parse(await readFile('src/data/service-samples.json', 'utf8'));
 const models = Object.fromEntries(data.map(sample => [sample.id, sampleVisual(sample)]));
-test('all eight examples have a short takeaway, one focused visual and bounded geometry', () => {
+test('all eight examples have three concise story lines, one focused visual and bounded geometry', () => {
   assert.equal(Object.keys(models).length, 8);
   for (const [id, model] of Object.entries(models)) {
-    assert.ok(model.title && model.takeaway && model.next && model.note, id);
-    assert.ok((model.takeaway + model.next).split(/\s+/).length < 70, id);
+    assert.ok(model.title && model.note, id);
+    const sample = data.find(sample => sample.id === id);
+    assert.ok(sample.finding && sample.meaning && sample.nextStep, id);
+    assert.ok([sample.finding, sample.meaning, sample.nextStep].join(' ').split(/\s+/).length <= 85, id);
     if (model.bars) for (const bar of model.bars) {
       assert.ok(Number.isFinite(bar.value), id);
       assert.ok((bar.start ?? 0) >= (model.min ?? 0), id);
@@ -44,11 +46,14 @@ test('plan gap has three correctly calculated, additive unfavourable drivers', (
   const m = models['plan-vs-actual'];
   assert.deepEqual(m.bars.map(row => row.value), [15000, 6000, 2000]);
   assert.equal(m.bars.reduce((sum, row) => sum + row.value, 0), 45000 - 22000);
+  assert.ok(m.bars.every(bar => bar.tone === 'negative'));
 });
 test('AI sample is a process illustration rather than a fabricated performance chart', () => {
   assert.equal(models['ai-finance-workflow'].kind, 'workflow');
   assert.equal(models['ai-finance-workflow'].bars, undefined);
-  assert.ok(models['ai-finance-workflow'].note.includes('prewritten, not a live AI chat'));
+  assert.ok(/prewritten/i.test(models['ai-finance-workflow'].note));
+  assert.ok(models['ai-finance-workflow'].note.includes('does not run an AI tool'));
+  assert.equal(models['ai-finance-workflow'].steps.length, 3);
 });
 test('hire compares incremental monthly sales with the contribution-based break-even threshold', () => {
   const m = models['plan-hire-expansion'];
@@ -72,6 +77,8 @@ test('reporting separates currency and percentage measures without misleading sc
   assert.equal((m.tiles[0].current - m.tiles[0].previous) / m.tiles[0].previous * 100, 20);
   assert.equal(m.tiles[1].current - m.tiles[1].previous, -5);
   assert.equal(m.tiles[1].max, 100);
+  assert.equal(m.tiles[1].format, 'currency');
+  assert.equal(m.tiles[1].label, 'Left from every $100 sold');
   for (const tile of m.tiles) assert.ok(tile.max >= Math.max(tile.previous, tile.current));
 });
 
@@ -88,4 +95,17 @@ test('all sample prose uses fictional USD and consistent US number formatting', 
   assert.equal(formatExample(35, 'percent'), '35%');
   assert.ok(exampleCurrencyNote.includes('fictional US dollars (USD)'));
   assert.ok(exampleCurrencyNote.includes('not service prices or currency conversions'));
+});
+
+test('clarity rewrites preserve every approved fictional numeric value', async () => {
+  const baseline = JSON.parse(await readFile('tests/fixtures/service-sample-numbers.json', 'utf8'));
+  const current = {};
+  const collect = (value, path = '') => {
+    if (typeof value === 'number') current[path] = value;
+    else if (Array.isArray(value)) value.forEach((item, index) => collect(item, `${path}/${index}`));
+    else if (value && typeof value === 'object') Object.entries(value).forEach(([key, item]) => collect(item, `${path}/${key}`));
+  };
+  collect(data);
+  assert.equal(Object.keys(baseline).length, 149);
+  assert.deepEqual(current, baseline);
 });

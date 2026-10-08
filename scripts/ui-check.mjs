@@ -63,7 +63,8 @@ const sample = ui.document.querySelector('#sample-output');
 assert.ok(sample.textContent.includes('Fictional example · Margin Check · USD'));
 assert.equal(sample.querySelectorAll('.sample-visual').length, 1);
 assert.deepEqual([...sample.querySelectorAll('.contribution-stack [data-value]')].map(node => Number(node.dataset.value)), [38000, 12000]);
-assert.ok(sample.textContent.includes('$50,000 in sales leaves $12,000 after delivery costs'));
+assert.ok(sample.textContent.includes('See what three projects leave.'));
+assert.ok(sample.textContent.includes('$12,000'));
 assert.ok(sample.textContent.includes('not service prices or a client result'));
 assert.ok(starterCta.compareDocumentPosition(sample) & ui.window.Node.DOCUMENT_POSITION_FOLLOWING);
 assert.ok(sample.compareDocumentPosition(ui.document.querySelector('#ai-workflow')) & ui.window.Node.DOCUMENT_POSITION_FOLLOWING);
@@ -82,6 +83,20 @@ console.log('PASS four unpriced custom capabilities, Services navigation, positi
 const toggle = ui.document.querySelector('button[aria-controls="mobile-menu"]');
 for (let i=0;i<2;i++) { toggle.click(); await delay(10); assert.ok(ui.document.querySelector('#mobile-menu')); toggle.click(); await delay(10); assert.equal(ui.document.querySelector('#mobile-menu'),null); }
 toggle.click(); await delay(10); ui.document.querySelector('#mobile-menu a').click(); await delay(20); assert.equal(ui.document.querySelector('#mobile-menu'),null); assert.equal(ui.window.location.hash,'#services');
+const servicesLink = [...ui.document.querySelectorAll('nav a')].find(link => link.textContent === 'Services');
+const beforeRepeatedAnchor = ui.scrollTargets.filter(id => id === 'services').length;
+servicesLink.click(); await delay(20); servicesLink.click(); await delay(20);
+assert.equal(ui.scrollTargets.filter(id => id === 'services').length, beforeRepeatedAnchor + 2);
+for (const escapeFromChild of [false, true]) {
+  toggle.click(); await delay(10);
+  const focused = escapeFromChild ? ui.document.querySelector('#mobile-menu a') : toggle;
+  focused.focus(); focused.dispatchEvent(new ui.window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+  await delay(10);
+  assert.equal(ui.document.querySelector('#mobile-menu'), null);
+  assert.equal(ui.document.activeElement, toggle);
+  assert.equal(toggle.getAttribute('aria-expanded'), 'false');
+}
+console.log('PASS repeated same-anchor navigation and mobile Escape from toggle/link with restored focus');
 const bookingLinks=[...ui.document.querySelectorAll('a')].filter(a=>a.textContent.includes('Book a free intro')); assert.ok(bookingLinks.length); assert.ok(bookingLinks.every(a=>a.href==='https://cal.com/skcapital/free-financial-breakdown'));
 assert.ok(ui.document.querySelector('a[href^="mailto:advisory@skcapital.co.in"]')); assert.deepEqual(ui.errors,[]); ui.window.close(); console.log('PASS repeated mobile toggles, close on navigation, booking and email destinations');
 console.log('DOM checks do not verify visual layout or hosting geolocation headers.');
@@ -135,7 +150,15 @@ for (const item of exampleData) {
   assert.ok(allDetails.contains(examples.document.querySelector('table')));
   assert.ok(allDetails.contains(examples.document.querySelector('#explanations-heading')));
   assert.equal(examples.document.querySelectorAll('.sample-overview .sample-visual').length, 1);
+  assert.deepEqual([...examples.document.querySelectorAll('.sample-story h2')].map(node => node.textContent), ['What happened', 'Why it matters', 'What to check']);
+  assert.deepEqual([...examples.document.querySelectorAll('.sample-story p')].map(node => node.textContent), [item.finding, item.meaning, item.nextStep]);
+  assert.ok(!examples.document.querySelector('.sample-overview').textContent.includes('undefined'));
+  assert.ok(examples.document.querySelector('.sample-story').compareDocumentPosition(examples.document.querySelector('.sample-visual')) & examples.window.Node.DOCUMENT_POSITION_FOLLOWING);
   assert.equal(examples.document.querySelectorAll('.sample-overview table, .sample-overview details').length, 0);
+  assert.equal(examples.document.querySelectorAll('.sample-details-body .text-sm').length, 0);
+  assert.ok(examples.document.querySelector('.sample-service-scope'));
+  if (item.id === 'plan-vs-actual') assert.equal(examples.document.querySelectorAll('.visual-bar-negative').length, 3);
+  if (item.id === 'plan-hire-expansion') assert.ok(examples.document.querySelector('.visual-bars').getAttribute('aria-label').includes('$60,000 extra monthly sales'));
   allDetails.querySelector('summary').click(); assert.equal(allDetails.open, true);
   allDetails.querySelector('summary').click(); assert.equal(allDetails.open, false);
 
