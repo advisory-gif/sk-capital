@@ -12,13 +12,14 @@ export default function Navbar() {
       <div className="hidden md:flex items-center gap-8 text-sm">
         <Link to="/#services" className="text-ink hover:text-forest">Services</Link>
         <Link to="/#process" className="text-ink hover:text-forest">How it works</Link>
+        <Link to="/samples" className="text-ink hover:text-forest">Examples</Link>
         
         <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary">Book a free intro</a>
       </div>
       <button className="md:hidden p-2 text-forest" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</button>
     </nav>
     {open && <nav id="mobile-menu" aria-label="Mobile navigation" onKeyDown={event => { if (event.key === 'Escape') close(); }} className="md:hidden px-6 pb-6 flex flex-col gap-5 text-forest">
-      <Link to="/#services" onClick={close}>Services</Link><Link to="/#process" onClick={close}>How it works</Link>
+      <Link to="/#services" onClick={close}>Services</Link><Link to="/#process" onClick={close}>How it works</Link><Link to="/samples" onClick={close}>Examples</Link>
       <a href={bookingUrl} onClick={close} target="_blank" rel="noopener noreferrer" className="button-primary self-start">Book a free intro</a>
     </nav>}
   </header>;

@@ -17,8 +17,8 @@ export const investigationSteps = [
 ];
 
 export const customCapabilities = [
-  ['Plan a hire or expansion', 'A budget, forecast or scenario model to compare growth options and what they could mean for your cash and costs.'],
-  ['Understand cash and profit', 'A deeper review of pricing, margins or cash flow, shaped around the part of the business you want to investigate.'],
-  ['Assess marketing performance', 'Analysis of marketing spend, sales and customer profitability using your existing data, with assumptions and data gaps made clear.'],
-  ['Make reporting more useful', 'A reporting pack, performance dashboard or defined spreadsheet workflow, with documentation and a handover for your team.'],
+  ['Plan a hire or expansion', 'A budget, forecast or scenario model to compare growth options and what they could mean for your cash and costs.', 'plan-hire-expansion'],
+  ['Understand cash and profit', 'A deeper review of pricing, margins or cash flow, shaped around the part of the business you want to investigate.', 'understand-cash-profit'],
+  ['Assess marketing performance', 'Analysis of marketing spend, sales and customer profitability using your existing data, with assumptions and data gaps made clear.', 'assess-marketing'],
+  ['Make reporting more useful', 'A reporting pack, performance dashboard or defined spreadsheet workflow, with documentation and a handover for your team.', 'useful-reporting'],
 ];

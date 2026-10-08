@@ -34,6 +34,20 @@
 }
 section[id] { scroll-margin-top: 6rem; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #0C2B15; outline-offset: 5px; }
+select:focus-visible, [tabindex="0"]:focus-visible { outline: 2px solid #0C2B15; outline-offset: 5px; }
+main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: none; }
+.example-link { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-size: 1rem; font-weight: 600; color: #0C2B15; text-decoration: underline; text-underline-offset: 0.3em; }
+.example-link:hover { text-decoration-thickness: 2px; }
+.sample-disclosure { padding: 1.25rem 0; border-top: 1px solid rgb(12 43 21 / 20%); }
+.sample-disclosure:last-child { border-bottom: 1px solid rgb(12 43 21 / 20%); }
+.sample-disclosure summary { cursor: pointer; font-weight: 600; font-size: 1rem; line-height: 1.6; padding: 0.25rem 0; }
+.sample-disclosure p { max-width: 55rem; }
+.sample-table-scroll { overflow-x: auto; overscroll-behavior-inline: contain; max-width: 100%; }
+.sample-table { width: 100%; border-collapse: collapse; font-size: 1rem; line-height: 1.6; text-align: left; }
+.sample-table caption { text-align: left; padding-bottom: 1rem; font-weight: 600; }
+.sample-table th, .sample-table td { padding: 0.875rem 1rem; border-bottom: 1px solid rgb(12 43 21 / 15%); vertical-align: top; min-width: 8rem; }
+.sample-table thead { background: #F6F8F4; }
+.sample-table tbody th { font-weight: 500; min-width: 11rem; }
 .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 100; background: #96F878; color: #0C2B15; padding: 1rem; }
 .skip-link:focus { top: 1rem; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

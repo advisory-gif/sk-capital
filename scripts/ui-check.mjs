@@ -2,7 +2,7 @@ import { build } from 'esbuild';
 import { JSDOM, VirtualConsole } from 'jsdom';
 import assert from 'node:assert/strict';
 import { setTimeout as delay } from 'node:timers/promises';
-const bundled = await build({ entryPoints: ['src/main.tsx'], bundle: true, write: false, format: 'iife', jsx: 'automatic', platform: 'browser', loader: { '.css': 'empty' } });
+const bundled = await build({ entryPoints: ['src/main.tsx'], bundle: true, write: false, format: 'iife', jsx: 'automatic', platform: 'browser', loader: { '.css': 'empty' }, define: { 'import.meta.env.MODE': '"test"' } });
 const script = bundled.outputFiles[0].text;
 async function load({ country = 'US', stored, url = 'https://example.test/', slow = false, failed = false, motion = 'unavailable' } = {}) {
   const observers = []; const mediaListeners = new Set(); const media = { matches: motion === 'reduced', addEventListener: (_, listener) => mediaListeners.add(listener), removeEventListener: (_, listener) => mediaListeners.delete(listener) };
@@ -23,6 +23,11 @@ async function load({ country = 'US', stored, url = 'https://example.test/', slo
   }});
   dom.window.eval(script);
   await delay(slow ? 25 : 100);
+  if (!slow) for (let attempt = 0; attempt < 100; attempt++) {
+    const currency = dom.window.document.querySelector('#currency');
+    if (dom.window.document.querySelector('h1') && (!currency || currency.value)) break;
+    await delay(20);
+  }
   return { dom, window: dom.window, document: dom.window.document, errors, scrollTargets, observers, media, mediaListeners };
 }
 for (const [country, expected, prices] of [['IN','INR',['₹2,000','₹3,500','₹5,000']],['US','USD',['US$25','US$45','US$59']],['AE','AED',['AED 95','AED 165','AED 219']],['GB','USD',['US$25']]]) {
@@ -76,7 +81,7 @@ assert.ok(!/US\$|₹|AED \d/.test(custom.textContent));
 assert.ok(!/accounting|bookkeeping/i.test(ui.document.body.textContent));
 assert.ok([...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'Services' && a.hash === '#services'));
 assert.ok(![...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'Reviews'));
-assert.equal(custom.querySelector('a').href, 'https://cal.com/skcapital/free-financial-breakdown');
+assert.equal(custom.querySelector('a.button-secondary').href, 'https://cal.com/skcapital/free-financial-breakdown');
 assert.ok(custom.querySelector('a[href^="mailto:advisory@skcapital.co.in"]'));
 console.log('PASS four unpriced custom capabilities, Services navigation, positive scope copy, custom booking/email');
 const toggle = ui.document.querySelector('button[aria-controls="mobile-menu"]');
@@ -107,3 +112,66 @@ reveal.media.matches = true; reveal.mediaListeners.forEach(listener => listener(
 assert.equal(observer.observed.size, 0); assert.equal(reveal.document.querySelectorAll('.is-revealed').length, 0);
 assert.deepEqual(reveal.errors, []); reveal.window.close();
 console.log('PASS one reserved-space responsive illustrative image, observer fallback, one-time reveal, reduced motion at load and when changed');
+
+// Exercise every service's own link and the complete example route lifecycle.
+const { readFile } = await import('node:fs/promises');
+const exampleData = JSON.parse(await readFile('src/data/service-samples.json', 'utf8'));
+const examples = await load({ stored: 'AED' });
+const serviceLinks = [...examples.document.querySelectorAll('#services a[aria-label^="See an example"], #custom-projects a[aria-label^="See an example"]')];
+assert.equal(serviceLinks.length, 8);
+assert.deepEqual(serviceLinks.map(link => link.pathname.split('/').pop()), exampleData.map(item => item.id));
+assert.ok(examples.document.querySelector('#starter-conditions').textContent.includes('15-minute'));
+assert.ok(examples.document.querySelector('#starter-conditions').textContent.includes('before paid work begins'));
+assert.equal((examples.document.querySelector('#services').textContent.match(/One-time fixed-scope fee/g) || []).length, 4);
+assert.ok(!examples.document.body.textContent.includes('base fee'));
+for (const item of exampleData) {
+  const link = examples.document.querySelector(`a[href="/samples/${item.id}"]`);
+  link.click(); await delay(40);
+  assert.equal(examples.window.location.pathname, `/samples/${item.id}`);
+  assert.equal(examples.document.title, `${item.name} example | SK Capital`);
+  assert.equal(examples.document.querySelectorAll('h1').length, 1);
+  assert.equal(examples.document.querySelector('h1').textContent, item.question);
+  assert.equal(examples.document.activeElement.tagName, 'H1');
+  assert.ok(examples.document.body.textContent.includes('All example amounts are INR (₹)'));
+  assert.ok(examples.document.body.textContent.includes(item.finding));
+  assert.ok(examples.document.body.textContent.includes(item.nextStep));
+  assert.equal(examples.document.querySelectorAll('#explanations-heading + p + details, #explanations-heading ~ details').length, 3);
+  assert.equal(examples.document.querySelectorAll('table').length, 2);
+  for (const detail of examples.document.querySelectorAll('details')) {
+    detail.querySelector('summary').click(); assert.equal(detail.open, true);
+    detail.querySelector('summary').click(); assert.equal(detail.open, false);
+  }
+  for (const table of examples.document.querySelectorAll('table')) {
+    assert.ok(table.querySelector('caption'));
+    assert.ok(table.querySelector('th[scope="col"]'));
+    assert.equal(table.querySelectorAll('th[scope="row"]').length, table.querySelectorAll('tbody tr').length);
+  }
+  const ids = [...examples.document.querySelectorAll('[id]')].map(node => node.id);
+  assert.equal(ids.length, new Set(ids).size);
+  assert.equal(examples.document.querySelectorAll('form,input,textarea,iframe').length, 0);
+  [...examples.document.querySelectorAll('a')].find(a => a.textContent === 'Back to services').click(); await delay(40);
+  assert.equal(examples.window.location.pathname, '/');
+  assert.equal(examples.document.activeElement.id, item.category === 'Tailored project' ? 'custom-projects' : 'services');
+  assert.equal(examples.document.querySelector('#currency').value, 'AED');
+}
+assert.deepEqual(examples.errors, []); examples.window.close();
+for (const item of exampleData) {
+  const direct = await load({ url: `https://example.test/samples/${item.id}` });
+  assert.equal(direct.document.querySelector('h1').textContent, item.question);
+  assert.equal(direct.document.querySelectorAll('#currency').length, 0);
+  assert.deepEqual(direct.errors, []); direct.window.close();
+}
+const list = await load({ url:'https://example.test/samples' });
+assert.equal(list.document.querySelectorAll('main article').length, 8);
+list.document.querySelector('main article a').click(); await delay(40);
+list.window.history.back(); await delay(40);
+assert.equal(list.window.location.pathname, '/samples');
+list.window.history.forward(); await delay(40);
+assert.equal(list.window.location.pathname, '/samples/margin-check');
+list.document.querySelector('.skip-link').click(); assert.equal(list.document.activeElement.id, 'main-content');
+assert.deepEqual(list.errors, []); list.window.close();
+const missing = await load({ url:'https://example.test/samples/not-a-service' });
+assert.ok(missing.document.querySelector('h1').textContent.includes('right example'));
+assert.ok(missing.document.querySelector('main a[href="/samples"]'));
+missing.window.close();
+console.log('PASS all eight service links, direct routes, 24 explanations, repeated disclosures, accessible tables, focus, back/forward, missing route, fixed INR examples and retained regional prices');

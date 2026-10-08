@@ -1,0 +1,1337 @@
+[
+  {
+    "id": "margin-check",
+    "name": "Margin Check",
+    "category": "Starter project",
+    "question": "What does each sale really leave?",
+    "scope": "Up to 10 products, services or projects; one price-or-cost scenario; a one-page summary with up to three points to investigate.",
+    "problem": "Three projects brought in ₹50,000. The owner wants to know how much is left after the costs directly needed to deliver them.",
+    "inputLabel": "Three fictional projects",
+    "inputs": {
+      "columns": [
+        {
+          "key": "item",
+          "label": "Project",
+          "format": "text"
+        },
+        {
+          "key": "revenue",
+          "label": "Revenue",
+          "format": "currency"
+        },
+        {
+          "key": "directCosts",
+          "label": "Direct costs",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "item": "Project A",
+          "revenue": 20000,
+          "directCosts": 14000
+        },
+        {
+          "item": "Project B",
+          "revenue": 18000,
+          "directCosts": 14400
+        },
+        {
+          "item": "Project C",
+          "revenue": 12000,
+          "directCosts": 9600
+        }
+      ],
+      "note": "Direct costs are costs assigned to delivering these projects. Shared overheads, tax and finance costs are not included."
+    },
+    "metrics": [
+      {
+        "label": "Total revenue",
+        "value": 50000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Total direct costs",
+        "value": 38000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Contribution left",
+        "value": 12000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Contribution margin",
+        "value": 24,
+        "format": "percent",
+        "detail": ""
+      }
+    ],
+    "finding": "₹12,000, or 24% of revenue, is left to cover overheads and other costs. If direct costs rise by ₹5,000 with revenue unchanged, that falls to ₹7,000, or 14%.",
+    "nextStep": "Check which delivery costs could rise, then review the price and cost assumptions for the next quote.",
+    "qa": [
+      {
+        "question": "What does this mean?",
+        "answer": "Every ₹100 of revenue leaves ₹24 after the direct costs in this example. That is contribution, not net profit: overheads and other costs still have to be covered."
+      },
+      {
+        "question": "Why is this happening?",
+        "answer": "The arithmetic is ₹50,000 revenue less ₹38,000 direct costs. Project A contributes 30% and Projects B and C contribute 20%. These figures alone do not tell us whether prices, supplier costs or delivery effort explain the difference."
+      },
+      {
+        "question": "What should I do next?",
+        "answer": "Confirm that the direct costs are complete, compare the lower-margin projects, and check the next quote against a realistic cost estimate."
+      }
+    ],
+    "scenario": {
+      "title": "One cost-increase scenario",
+      "description": "Revenue stays the same; total direct costs rise by ₹5,000.",
+      "columns": [
+        {
+          "key": "case",
+          "label": "Case",
+          "format": "text"
+        },
+        {
+          "key": "revenue",
+          "label": "Revenue",
+          "format": "currency"
+        },
+        {
+          "key": "directCosts",
+          "label": "Direct costs",
+          "format": "currency"
+        },
+        {
+          "key": "contribution",
+          "label": "Contribution",
+          "format": "currency"
+        },
+        {
+          "key": "margin",
+          "label": "Margin",
+          "format": "percent"
+        }
+      ],
+      "rows": [
+        {
+          "case": "Current example",
+          "revenue": 50000,
+          "directCosts": 38000,
+          "contribution": 12000,
+          "margin": 24
+        },
+        {
+          "case": "₹5,000 extra direct cost",
+          "revenue": 50000,
+          "directCosts": 43000,
+          "contribution": 7000,
+          "margin": 14
+        }
+      ],
+      "note": "This is the same numerical example as the existing website illustration, expanded into three fictional projects."
+    },
+    "deliverables": [
+      "A comparison of contribution for the three projects",
+      "One cost-increase scenario",
+      "A one-page summary and up to three checks: cost completeness, lower-margin projects and the next quote"
+    ],
+    "cautions": [
+      "Contribution is revenue less the stated direct costs. It is not net income.",
+      "The cost increase is an assumption, not a prediction."
+    ],
+    "calculationNotes": [
+      "Revenue: 20,000 + 18,000 + 12,000 = 50,000.",
+      "Direct costs: 14,000 + 14,400 + 9,600 = 38,000.",
+      "Contribution: 50,000 − 38,000 = 12,000; 12,000 ÷ 50,000 = 24%.",
+      "Scenario: 50,000 − 43,000 = 7,000; 7,000 ÷ 50,000 = 14%."
+    ]
+  },
+  {
+    "id": "four-week-cash",
+    "name": "Four-Week Cash Snapshot",
+    "category": "Starter project",
+    "question": "Could cash get tight in the next four weeks?",
+    "scope": "Opening cash plus up to 20 dated expected receipts and payments; a four-week forecast; one delayed-payment scenario; a one-page summary.",
+    "problem": "The business starts with ₹30,000 in cash. Its owner wants to know whether the next four weeks of expected receipts will cover the payments due.",
+    "inputLabel": "Opening cash ₹30,000, plus eight dated entries",
+    "inputs": {
+      "columns": [
+        {
+          "key": "date",
+          "label": "Expected date",
+          "format": "text"
+        },
+        {
+          "key": "item",
+          "label": "Receipt or payment",
+          "format": "text"
+        },
+        {
+          "key": "direction",
+          "label": "Cash direction",
+          "format": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "date": "2026-11-02",
+          "item": "Customer receipt A",
+          "direction": "In",
+          "amount": 30000
+        },
+        {
+          "date": "2026-11-06",
+          "item": "Supplier payment",
+          "direction": "Out",
+          "amount": 20000
+        },
+        {
+          "date": "2026-11-09",
+          "item": "Customer receipt B",
+          "direction": "In",
+          "amount": 20000
+        },
+        {
+          "date": "2026-11-13",
+          "item": "Payroll",
+          "direction": "Out",
+          "amount": 45000
+        },
+        {
+          "date": "2026-11-16",
+          "item": "Customer receipt C",
+          "direction": "In",
+          "amount": 40000
+        },
+        {
+          "date": "2026-11-20",
+          "item": "Supplier payment",
+          "direction": "Out",
+          "amount": 25000
+        },
+        {
+          "date": "2026-11-23",
+          "item": "Customer receipt D",
+          "direction": "In",
+          "amount": 25000
+        },
+        {
+          "date": "2026-11-27",
+          "item": "Rent and utilities",
+          "direction": "Out",
+          "amount": 20000
+        }
+      ],
+      "note": "Fictional forecast for 2–29 November 2026. Receipts and payments occur on the stated dates. No borrowing facility is assumed."
+    },
+    "metrics": [
+      {
+        "label": "Opening cash",
+        "value": 30000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Base-case closing cash",
+        "value": 35000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Lowest base-case cash",
+        "value": 15000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Delayed-receipt shortfall",
+        "value": 10000,
+        "format": "currency",
+        "detail": "Cash would fall to −₹10,000 on 20 November."
+      }
+    ],
+    "finding": "The base case stays above zero and ends at ₹35,000. Moving the ₹40,000 receipt from 16 to 26 November creates a ₹10,000 shortfall on 20 November, even though the month still ends at ₹35,000.",
+    "nextStep": "Confirm the ₹40,000 receipt date and agree a contingency before the 20 November supplier payment falls due.",
+    "qa": [
+      {
+        "question": "What does this mean?",
+        "answer": "The total money expected over four weeks is enough overall, but the timing matters. A late receipt could leave a payment unfunded before the money arrives."
+      },
+      {
+        "question": "Why is this happening?",
+        "answer": "In the delay scenario, cash entering week three is ₹15,000 and the ₹25,000 supplier payment falls due before the ₹40,000 receipt. That produces a ₹10,000 gap. The delay is a stress-test assumption, not a claim about the customer."
+      },
+      {
+        "question": "What should I do next?",
+        "answer": "Verify the receipt date, check which payments are fixed, and discuss an approved contingency such as an agreed payment-date change or an existing cash buffer."
+      }
+    ],
+    "scenario": {
+      "title": "One delayed-receipt scenario",
+      "description": "Only receipt C changes: 16 November becomes 26 November. All other amounts and dates stay the same.",
+      "columns": [
+        {
+          "key": "week",
+          "label": "Week ending",
+          "format": "text"
+        },
+        {
+          "key": "baseClosing",
+          "label": "Base-case closing cash",
+          "format": "currency"
+        },
+        {
+          "key": "delayedClosing",
+          "label": "Delayed-receipt closing cash",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "week": "8 Nov 2026",
+          "baseClosing": 40000,
+          "delayedClosing": 40000
+        },
+        {
+          "week": "15 Nov 2026",
+          "baseClosing": 15000,
+          "delayedClosing": 15000
+        },
+        {
+          "week": "22 Nov 2026",
+          "baseClosing": 30000,
+          "delayedClosing": -10000
+        },
+        {
+          "week": "29 Nov 2026",
+          "baseClosing": 35000,
+          "delayedClosing": 35000
+        }
+      ],
+      "note": "A negative forecast balance represents funding needed; it does not assume the bank will permit an overdraft. The dated entries were checked as well as the weekly totals."
+    },
+    "deliverables": [
+      "A four-week cash forecast from the eight entries",
+      "One delayed-receipt scenario",
+      "A one-page summary of the potential gap and receipt/payment questions"
+    ],
+    "cautions": [
+      "Expected cash receipts are not the same as revenue or profit.",
+      "Unlisted payments, taxes or changes in timing would change the forecast."
+    ],
+    "calculationNotes": [
+      "Expected receipts: 30,000 + 20,000 + 40,000 + 25,000 = 115,000.",
+      "Expected payments: 20,000 + 45,000 + 25,000 + 20,000 = 110,000.",
+      "Closing cash: 30,000 + 115,000 − 110,000 = 35,000.",
+      "Delayed week three: 15,000 − 25,000 = −10,000.",
+      "Delayed week four: −10,000 + 25,000 + 40,000 − 20,000 = 35,000."
+    ]
+  },
+  {
+    "id": "plan-vs-actual",
+    "name": "Plan vs Actual Review",
+    "category": "Starter project",
+    "question": "Where did results differ from the plan?",
+    "scope": "An existing budget and matching actuals for up to three months and 15 categories; the three largest differences by value; a one-page summary.",
+    "problem": "The owner had a two-month budget, but less money was left after operating costs than expected. Which differences need attention first?",
+    "inputLabel": "Two months, four matching categories",
+    "inputs": {
+      "columns": [
+        {
+          "key": "month",
+          "label": "Period",
+          "format": "text"
+        },
+        {
+          "key": "category",
+          "label": "Category",
+          "format": "text"
+        },
+        {
+          "key": "kind",
+          "label": "Type",
+          "format": "text"
+        },
+        {
+          "key": "planned",
+          "label": "Plan",
+          "format": "currency"
+        },
+        {
+          "key": "actual",
+          "label": "Actual",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "month": "Month 1",
+          "category": "Sales",
+          "kind": "Income",
+          "planned": 100000,
+          "actual": 90000
+        },
+        {
+          "month": "Month 1",
+          "category": "Direct costs",
+          "kind": "Expense",
+          "planned": 50000,
+          "actual": 49000
+        },
+        {
+          "month": "Month 1",
+          "category": "Payroll",
+          "kind": "Expense",
+          "planned": 20000,
+          "actual": 22000
+        },
+        {
+          "month": "Month 1",
+          "category": "Rent",
+          "kind": "Expense",
+          "planned": 10000,
+          "actual": 10000
+        },
+        {
+          "month": "Month 2",
+          "category": "Sales",
+          "kind": "Income",
+          "planned": 110000,
+          "actual": 105000
+        },
+        {
+          "month": "Month 2",
+          "category": "Direct costs",
+          "kind": "Expense",
+          "planned": 55000,
+          "actual": 58000
+        },
+        {
+          "month": "Month 2",
+          "category": "Payroll",
+          "kind": "Expense",
+          "planned": 20000,
+          "actual": 24000
+        },
+        {
+          "month": "Month 2",
+          "category": "Rent",
+          "kind": "Expense",
+          "planned": 10000,
+          "actual": 10000
+        }
+      ],
+      "note": "The illustration includes only sales, direct costs, payroll and rent, on a consistent basis. Its operating surplus is before any unlisted costs, interest and tax."
+    },
+    "metrics": [
+      {
+        "label": "Planned operating surplus",
+        "value": 45000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Actual operating surplus",
+        "value": 22000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Unfavourable difference",
+        "value": 23000,
+        "format": "currency",
+        "detail": ""
+      }
+    ],
+    "finding": "The ₹23,000 shortfall is explained by ₹15,000 less sales, ₹6,000 more payroll and ₹2,000 more direct costs. These are the three largest category differences by value.",
+    "nextStep": "Ask the team what changed in sales volumes or prices, staffing or hours, and unit delivery costs before revising the plan.",
+    "qa": [
+      {
+        "question": "What does this mean?",
+        "answer": "Across both months, the operating surplus in this simplified model is ₹22,000 rather than the planned ₹45,000. The ₹23,000 gap is a performance difference, not a cash forecast."
+      },
+      {
+        "question": "Why is this happening?",
+        "answer": "Sales are below plan while payroll and direct costs are above it. The numbers show where the gap sits. Lower volumes, different prices, overtime or a costlier sales mix are possible explanations to test, not proven causes."
+      },
+      {
+        "question": "What should I do next?",
+        "answer": "Review the ₹15,000 sales difference first, then the ₹6,000 payroll and ₹2,000 direct-cost differences with the people responsible for those figures."
+      }
+    ],
+    "scenario": {
+      "title": "The three largest differences",
+      "description": "Categories are aggregated across both months and ranked by the absolute difference.",
+      "columns": [
+        {
+          "key": "category",
+          "label": "Category",
+          "format": "text"
+        },
+        {
+          "key": "planned",
+          "label": "Two-month plan",
+          "format": "currency"
+        },
+        {
+          "key": "actual",
+          "label": "Two-month actual",
+          "format": "currency"
+        },
+        {
+          "key": "impact",
+          "label": "Effect on operating surplus",
+          "format": "text"
+        }
+      ],
+      "rows": [
+        {
+          "category": "Sales",
+          "planned": 210000,
+          "actual": 195000,
+          "impact": "₹15,000 lower"
+        },
+        {
+          "category": "Payroll",
+          "planned": 40000,
+          "actual": 46000,
+          "impact": "₹6,000 lower"
+        },
+        {
+          "category": "Direct costs",
+          "planned": 105000,
+          "actual": 107000,
+          "impact": "₹2,000 lower"
+        }
+      ],
+      "note": "More income is favourable; more expense is unfavourable. Rent matches its ₹20,000 budget."
+    },
+    "deliverables": [
+      "A matching monthly plan-versus-actual comparison",
+      "The top three differences by value",
+      "A one-page summary with possible drivers and team questions"
+    ],
+    "cautions": [
+      "Variances identify questions; they do not establish the underlying causes.",
+      "This example excludes any cost categories not shown and is not a statement of net income."
+    ],
+    "calculationNotes": [
+      "Planned surplus: 210,000 − 105,000 − 40,000 − 20,000 = 45,000.",
+      "Actual surplus: 195,000 − 107,000 − 46,000 − 20,000 = 22,000.",
+      "Surplus change: −15,000 sales − 6,000 payroll − 2,000 direct costs = −23,000.",
+      "Eight monthly rows cover two months and four unique categories, within the starter limits."
+    ]
+  },
+  {
+    "id": "ai-finance-workflow",
+    "name": "AI Finance Workflow Setup",
+    "category": "Optional workflow support",
+    "question": "Can one spreadsheet become a clearer first draft?",
+    "scope": "One approved spreadsheet input to one draft commentary workflow in the client’s approved ChatGPT or Claude setup; reusable prompt, input template, sample draft, basic tests, human-review checklist and walkthrough.",
+    "problem": "The owner repeats the same monthly variance explanation. A defined workflow could turn one approved input table into a draft for someone to check.",
+    "inputLabel": "One approved input template, with three fictional rows",
+    "inputs": {
+      "columns": [
+        {
+          "key": "category",
+          "label": "Category",
+          "format": "text"
+        },
+        {
+          "key": "kind",
+          "label": "Type",
+          "format": "text"
+        },
+        {
+          "key": "planned",
+          "label": "Plan",
+          "format": "currency"
+        },
+        {
+          "key": "actual",
+          "label": "Actual",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "category": "Sales",
+          "kind": "Income",
+          "planned": 100000,
+          "actual": 90000
+        },
+        {
+          "category": "Direct costs",
+          "kind": "Expense",
+          "planned": 60000,
+          "actual": 58000
+        },
+        {
+          "category": "Other operating costs",
+          "kind": "Expense",
+          "planned": 25000,
+          "actual": 27000
+        }
+      ],
+      "note": "This demonstration contains no live AI, connection, upload or API call. The commentary below is prewritten."
+    },
+    "metrics": [
+      {
+        "label": "Planned operating surplus",
+        "value": 15000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Actual operating surplus",
+        "value": 5000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Unfavourable difference",
+        "value": 10000,
+        "format": "currency",
+        "detail": ""
+      }
+    ],
+    "finding": "The draft points to the ₹10,000 sales shortfall. Lower direct costs and higher other operating costs offset each other. A person still needs to validate the inputs, arithmetic and possible explanations.",
+    "nextStep": "Agree one approved input template and tool, test the draft against known numbers, and assign a reviewer before using it for decisions.",
+    "draftCommentary": "Sales were ₹90,000 against a ₹1,00,000 plan, a ₹10,000 shortfall. Direct costs were ₹2,000 below plan, while other operating costs were ₹2,000 above plan. The operating surplus from the categories supplied was ₹5,000 against ₹15,000 planned. The figures show the differences but do not establish their causes. Check sales volumes and prices, the direct-cost mix and the additional operating costs with the relevant owners.",
+    "qa": [
+      {
+        "question": "What does this mean?",
+        "answer": "This is a demonstration of one repeatable spreadsheet-to-commentary workflow. The draft shown here is prewritten; clicking these questions does not run AI."
+      },
+      {
+        "question": "Why is this happening?",
+        "answer": "A consistent input table and a defined prompt can make the drafting task clearer. They do not guarantee correct numbers or explanations. The example’s ₹10,000 surplus gap comes entirely from the sales difference after the two cost differences offset."
+      },
+      {
+        "question": "What should I do next?",
+        "answer": "Confirm which data and tool are approved, use the reusable prompt, run the basic tests, and have a named person verify the draft before it is shared or used."
+      }
+    ],
+    "scenario": {
+      "title": "Basic checks before a draft is used",
+      "description": "These are expected workflow behaviours, not evidence that a live integration has been installed.",
+      "columns": [
+        {
+          "key": "test",
+          "label": "Test input",
+          "format": "text"
+        },
+        {
+          "key": "expected",
+          "label": "Expected behaviour",
+          "format": "text"
+        }
+      ],
+      "rows": [
+        {
+          "test": "The three complete example rows",
+          "expected": "Reconcile to ₹5,000 actual and ₹15,000 planned operating surplus."
+        },
+        {
+          "test": "A required actual amount is blank",
+          "expected": "Stop and ask for the missing figure; do not treat a blank as zero."
+        },
+        {
+          "test": "A required amount contains text",
+          "expected": "Flag the invalid value; do not produce numerical conclusions."
+        },
+        {
+          "test": "A note claims a reason without supporting data",
+          "expected": "Label it unverified or ask for evidence; do not present it as fact."
+        }
+      ],
+      "note": ""
+    },
+    "deliverables": [
+      "A reusable prompt and one input template",
+      "A prewritten sample variance-commentary draft and basic test cases",
+      "A human-review checklist and walkthrough"
+    ],
+    "cautions": [
+      "All AI outputs require human review before financial decisions.",
+      "Tool subscriptions, API usage, custom integrations and ongoing support are separate.",
+      "Excel add-in setup depends on compatibility and administrator approval.",
+      "Use only tools and data approved for the intended purpose. This demonstration uses fictional data."
+    ],
+    "calculationNotes": [
+      "Planned surplus: 100,000 − 60,000 − 25,000 = 15,000.",
+      "Actual surplus: 90,000 − 58,000 − 27,000 = 5,000.",
+      "Surplus change: −10,000 sales + 2,000 direct-cost saving − 2,000 other-cost increase = −10,000.",
+      "The draft is stored text. No model call is made by these example files."
+    ]
+  },
+  {
+    "id": "plan-hire-expansion",
+    "name": "Plan a hire or expansion",
+    "category": "Tailored project",
+    "question": "What would a new hire need to pay for itself?",
+    "scope": "Illustrative tailored planning work. The actual budget, forecast, scenarios, deliverables, timeline and fee are agreed separately after discussing the decision.",
+    "problem": "The owner is considering a hire costing ₹30,000 per month plus ₹20,000 of one-time setup cash. Would the expected extra sales cover the ongoing cost?",
+    "inputLabel": "Three simple monthly scenarios",
+    "inputs": {
+      "columns": [
+        {
+          "key": "case",
+          "label": "Scenario",
+          "format": "text"
+        },
+        {
+          "key": "revenue",
+          "label": "Sales",
+          "format": "currency"
+        },
+        {
+          "key": "directCosts",
+          "label": "Direct costs",
+          "format": "currency"
+        },
+        {
+          "key": "existingFixedCosts",
+          "label": "Existing fixed costs",
+          "format": "currency"
+        },
+        {
+          "key": "hireCost",
+          "label": "New monthly hire cost",
+          "format": "currency"
+        },
+        {
+          "key": "setupCash",
+          "label": "One-time setup cash",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "case": "No hire",
+          "revenue": 200000,
+          "directCosts": 100000,
+          "existingFixedCosts": 70000,
+          "hireCost": 0,
+          "setupCash": 0
+        },
+        {
+          "case": "Hire: expected sales",
+          "revenue": 260000,
+          "directCosts": 130000,
+          "existingFixedCosts": 70000,
+          "hireCost": 30000,
+          "setupCash": 20000
+        },
+        {
+          "case": "Hire: lower sales",
+          "revenue": 220000,
+          "directCosts": 110000,
+          "existingFixedCosts": 70000,
+          "hireCost": 30000,
+          "setupCash": 20000
+        }
+      ],
+      "note": "Assumptions: opening cash ₹60,000; contribution rate stays at 50%; all sales are collected and operating costs paid in the same month. Hire cost includes all assumed employment costs. Setup cash is shown separately; its accounting treatment is not modelled."
+    },
+    "metrics": [
+      {
+        "label": "Monthly hire cost",
+        "value": 30000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Extra monthly sales to cover hire",
+        "value": 60000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "One-time setup cash",
+        "value": 20000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Expected first-month closing cash",
+        "value": 70000,
+        "format": "currency",
+        "detail": ""
+      }
+    ],
+    "finding": "At a 50% contribution rate, ₹60,000 of extra monthly sales is needed just to cover the ₹30,000 hire cost. The expected-sales case reaches that threshold, while setup cash reduces first-month closing cash by ₹20,000 versus no hire.",
+    "nextStep": "Test the sales ramp and collection timing, confirm the full hire and setup costs, and agree the minimum cash buffer before deciding.",
+    "qa": [
+      {
+        "question": "What does this mean?",
+        "answer": "The expected hire case produces the same ₹30,000 monthly operating surplus as no hire. It assumes ₹60,000 more sales, which generates ₹30,000 of contribution to cover the hire."
+      },
+      {
+        "question": "Why is this happening?",
+        "answer": "Each extra ₹100 of sales contributes ₹50 under the 50% assumption. Covering a ₹30,000 monthly hire therefore needs ₹60,000 of extra sales. A slower ramp to only ₹20,000 extra sales leaves monthly operating surplus at ₹10,000."
+      },
+      {
+        "question": "What should I do next?",
+        "answer": "Check whether the additional sales assumption is credible, model how long it may take, and include payment timing and any costs missing from this simplified view."
+      }
+    ],
+    "scenario": {
+      "title": "What changes in the first month?",
+      "description": "Opening cash is ₹60,000 in every case; one-time setup cash is deducted only in the hire cases.",
+      "columns": [
+        {
+          "key": "case",
+          "label": "Scenario",
+          "format": "text"
+        },
+        {
+          "key": "operatingSurplus",
+          "label": "Recurring operating surplus",
+          "format": "currency"
+        },
+        {
+          "key": "setupCash",
+          "label": "One-time setup cash",
+          "format": "currency"
+        },
+        {
+          "key": "closingCash",
+          "label": "Closing cash",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "case": "No hire",
+          "operatingSurplus": 30000,
+          "setupCash": 0,
+          "closingCash": 90000
+        },
+        {
+          "case": "Hire: expected sales",
+          "operatingSurplus": 30000,
+          "setupCash": 20000,
+          "closingCash": 70000
+        },
+        {
+          "case": "Hire: lower sales",
+          "operatingSurplus": 10000,
+          "setupCash": 20000,
+          "closingCash": 50000
+        }
+      ],
+      "note": "Recurring operating surplus excludes the one-time setup item and any unlisted costs, interest and tax. Real collection delays or a different cost mix would change these results."
+    },
+    "deliverables": [
+      "An agreed budget or scenario model around the hiring decision",
+      "A comparison of recurring costs, one-time cash needs and assumptions",
+      "A walkthrough of the trade-offs and information still needed"
+    ],
+    "cautions": [
+      "Expected sales are assumptions, not guaranteed results.",
+      "This is a small illustration of tailored work, not a fixed-price starter package.",
+      "Scope, deliverables, timeline and fees are agreed separately."
+    ],
+    "calculationNotes": [
+      "Contribution rate: (200,000 − 100,000) ÷ 200,000 = 50%.",
+      "Incremental sales needed: 30,000 ÷ 50% = 60,000 per month.",
+      "No hire surplus: 200,000 − 100,000 − 70,000 = 30,000.",
+      "Expected hire surplus: 260,000 − 130,000 − 70,000 − 30,000 = 30,000.",
+      "Lower-sales hire surplus: 220,000 − 110,000 − 70,000 − 30,000 = 10,000.",
+      "Expected closing cash: 60,000 + 30,000 − 20,000 = 70,000; lower-sales closing cash = 50,000."
+    ]
+  },
+  {
+    "id": "understand-cash-profit",
+    "name": "Understand cash and profit",
+    "category": "Tailored project",
+    "question": "Why can profit look positive while cash falls?",
+    "scope": "Illustrative deeper review of pricing, margins or cash flow. The area to investigate, deliverables, timeline and fee are agreed separately.",
+    "problem": "The month shows ₹30,000 of operating profit in the simplified accounts, yet cash falls by ₹15,000. The owner wants a clear explanation.",
+    "inputLabel": "One fictional month",
+    "inputs": {
+      "columns": [
+        {
+          "key": "item",
+          "label": "Input",
+          "format": "text"
+        },
+        {
+          "key": "amount",
+          "label": "Amount",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "item": "Sales invoiced",
+          "amount": 120000
+        },
+        {
+          "item": "Cash collected from those sales",
+          "amount": 80000
+        },
+        {
+          "item": "Cost of items sold",
+          "amount": 60000
+        },
+        {
+          "item": "Cash paid for those items",
+          "amount": 45000
+        },
+        {
+          "item": "Other operating expenses, all paid",
+          "amount": 30000
+        },
+        {
+          "item": "Additional unsold stock bought and paid for",
+          "amount": 20000
+        },
+        {
+          "item": "Opening cash",
+          "amount": 50000
+        }
+      ],
+      "note": "No opening customer or supplier balances are involved. The additional unsold stock is separate from the cost of items sold. No other cash movements, depreciation, interest or tax are included."
+    },
+    "metrics": [
+      {
+        "label": "Operating profit in this model",
+        "value": 30000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Net cash movement",
+        "value": -15000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Closing cash",
+        "value": 35000,
+        "format": "currency",
+        "detail": ""
+      }
+    ],
+    "finding": "₹40,000 of sales has not been collected and ₹20,000 went into extra unsold stock. Leaving ₹15,000 of supplier costs unpaid partly offsets this. Together, those timing and stock differences turn ₹30,000 of operating profit into a ₹15,000 cash outflow.",
+    "nextStep": "Review the unpaid customer invoices and unsold stock, while making sure the outstanding supplier payments stay in the cash plan.",
+    "qa": [
+      {
+        "question": "What does this mean?",
+        "answer": "Profit records the sales and costs recognised in the period. Cash follows money actually received and paid. They can move in opposite directions, as they do here."
+      },
+      {
+        "question": "Why is this happening?",
+        "answer": "The example has ₹40,000 of uncollected sales and ₹20,000 spent on stock not yet sold. It also has ₹15,000 of recognised supplier costs not yet paid. Those three differences reconcile the profit figure to the cash movement."
+      },
+      {
+        "question": "What should I do next?",
+        "answer": "Confirm when the customer invoices should be collected, review whether the extra stock is needed, and include the unpaid supplier bills in upcoming cash forecasts."
+      }
+    ],
+    "scenario": {
+      "title": "A simple profit-to-cash bridge",
+      "description": "Start with operating profit, then adjust for the three stated differences.",
+      "columns": [
+        {
+          "key": "item",
+          "label": "Bridge item",
+          "format": "text"
+        },
+        {
+          "key": "cashEffect",
+          "label": "Amount",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "item": "Operating profit in this model",
+          "cashEffect": 30000
+        },
+        {
+          "item": "Less sales not collected",
+          "cashEffect": -40000
+        },
+        {
+          "item": "Add supplier costs not yet paid",
+          "cashEffect": 15000
+        },
+        {
+          "item": "Less extra unsold stock paid for",
+          "cashEffect": -20000
+        },
+        {
+          "item": "Net cash movement",
+          "cashEffect": -15000
+        }
+      ],
+      "note": "Closing cash is opening cash ₹50,000 plus the ₹15,000 net outflow: ₹35,000. Unpaid supplier bills are still obligations."
+    },
+    "deliverables": [
+      "An agreed review of the relevant profit and cash drivers",
+      "A clear reconciliation or model using the agreed data",
+      "A walkthrough of the findings and next questions"
+    ],
+    "cautions": [
+      "Operating profit here excludes any unlisted costs, depreciation, interest and tax. It is not net income.",
+      "The example is deliberately simplified; a real reconciliation may have additional adjustments.",
+      "Tailored scope, deliverables, timeline and fees are agreed separately."
+    ],
+    "calculationNotes": [
+      "Operating profit: 120,000 − 60,000 − 30,000 = 30,000.",
+      "Uncollected sales: 120,000 − 80,000 = 40,000.",
+      "Supplier costs not paid: 60,000 − 45,000 = 15,000.",
+      "Bridge: 30,000 − 40,000 + 15,000 − 20,000 = −15,000.",
+      "Direct cash check: 80,000 − 45,000 − 30,000 − 20,000 = −15,000.",
+      "Closing cash: 50,000 − 15,000 = 35,000."
+    ]
+  },
+  {
+    "id": "assess-marketing",
+    "name": "Assess marketing performance",
+    "category": "Tailored project",
+    "question": "Are cheaper new customers actually more profitable?",
+    "scope": "Analysis of existing marketing spend, sales and customer-profitability data, with assumptions and gaps made clear. Tailored scope and fee are agreed separately.",
+    "problem": "Social ads bring in more new paying customers at a lower acquisition cost. The owner wants to know whether that also leaves more money after delivery costs and ad spend.",
+    "inputLabel": "Two fictional channels, one first-order cohort",
+    "inputs": {
+      "columns": [
+        {
+          "key": "channel",
+          "label": "Channel",
+          "format": "text"
+        },
+        {
+          "key": "spend",
+          "label": "Ad spend",
+          "format": "currency"
+        },
+        {
+          "key": "newCustomers",
+          "label": "New paying customers",
+          "format": "integer"
+        },
+        {
+          "key": "revenue",
+          "label": "First-order revenue",
+          "format": "currency"
+        },
+        {
+          "key": "directCosts",
+          "label": "Direct costs",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "channel": "Search ads",
+          "spend": 10000,
+          "newCustomers": 20,
+          "revenue": 40000,
+          "directCosts": 24000
+        },
+        {
+          "channel": "Social ads",
+          "spend": 8000,
+          "newCustomers": 40,
+          "revenue": 24000,
+          "directCosts": 16800
+        }
+      ],
+      "note": "Assume 60 distinct new paying customers, each assigned once to a channel using the supplied records. Revenue is after discounts and refunds; direct costs include fulfilment. Repeat purchases, shared overheads, interest and tax are excluded."
+    },
+    "metrics": [
+      {
+        "label": "Search: contribution after ad spend",
+        "value": 6000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Social: contribution after ad spend",
+        "value": -800,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Search: cost per new customer",
+        "value": 500,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Social: cost per new customer",
+        "value": 200,
+        "format": "currency",
+        "detail": ""
+      }
+    ],
+    "finding": "Social’s acquisition cost is lower, but its first orders leave ₹800 less than the ad spend after direct costs. Search leaves ₹6,000 after direct costs and ad spend. Cheaper acquisition alone does not establish better customer profitability.",
+    "nextStep": "Validate attribution, refunds and repeat-purchase evidence before changing budgets; investigate why Social’s first-order contribution is low.",
+    "qa": [
+      {
+        "question": "What does this mean?",
+        "answer": "Search leaves ₹6,000 and Social leaves −₹800 after the direct costs and ad spend shown. These are first-order contribution figures, not net profit or customer lifetime value."
+      },
+      {
+        "question": "Why is this happening?",
+        "answer": "Search generates ₹800 of contribution per new customer before ₹500 of acquisition cost. Social generates ₹180 before ₹200 of acquisition cost. The data does not tell us whether order size, discounts or product mix caused that difference."
+      },
+      {
+        "question": "What should I do next?",
+        "answer": "Check that customers are deduplicated, costs and refunds are complete, and the channel attribution is reliable. Then examine repeat purchases and a bounded test before assuming a budget change will improve results."
+      }
+    ],
+    "scenario": {
+      "title": "Follow the money per customer",
+      "description": "Divide the cohort’s revenue, costs and ad spend by its new paying customers.",
+      "columns": [
+        {
+          "key": "channel",
+          "label": "Channel",
+          "format": "text"
+        },
+        {
+          "key": "revenuePerCustomer",
+          "label": "Revenue per customer",
+          "format": "currency"
+        },
+        {
+          "key": "directCostPerCustomer",
+          "label": "Direct cost per customer",
+          "format": "currency"
+        },
+        {
+          "key": "contributionBeforeAds",
+          "label": "Contribution before ads",
+          "format": "currency"
+        },
+        {
+          "key": "acquisitionCost",
+          "label": "Acquisition cost",
+          "format": "currency"
+        },
+        {
+          "key": "contributionAfterAds",
+          "label": "Contribution after ads",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "channel": "Search ads",
+          "revenuePerCustomer": 2000,
+          "directCostPerCustomer": 1200,
+          "contributionBeforeAds": 800,
+          "acquisitionCost": 500,
+          "contributionAfterAds": 300
+        },
+        {
+          "channel": "Social ads",
+          "revenuePerCustomer": 600,
+          "directCostPerCustomer": 420,
+          "contributionBeforeAds": 180,
+          "acquisitionCost": 200,
+          "contributionAfterAds": -20
+        }
+      ],
+      "note": "The illustrative attribution links records to channels; it does not prove the ads caused those sales."
+    },
+    "deliverables": [
+      "A performance analysis using existing spend, sales and cost records",
+      "Clearly defined measures, assumptions and evidence gaps",
+      "Questions and options to review before taking action"
+    ],
+    "cautions": [
+      "This service covers performance analysis, not campaign management, SEO or content production.",
+      "First-order contribution excludes future repeat purchases and shared overheads.",
+      "Tailored scope, deliverables, timeline and fees are agreed separately."
+    ],
+    "calculationNotes": [
+      "Search contribution after ads: 40,000 − 24,000 − 10,000 = 6,000.",
+      "Social contribution after ads: 24,000 − 16,800 − 8,000 = −800.",
+      "Search acquisition cost: 10,000 ÷ 20 = 500; Social: 8,000 ÷ 40 = 200.",
+      "Search contribution per customer after ads: 6,000 ÷ 20 = 300; Social: −800 ÷ 40 = −20.",
+      "Combined contribution after ads: 64,000 − 40,800 − 18,000 = 5,200."
+    ]
+  },
+  {
+    "id": "useful-reporting",
+    "name": "Make reporting more useful",
+    "category": "Tailored project",
+    "question": "Which numbers should lead to a useful conversation?",
+    "scope": "An agreed reporting pack, performance dashboard or defined spreadsheet workflow, with documentation and a team handover. Tailored scope and fee are agreed separately.",
+    "problem": "The owner sees sales rising, but the monthly report does not make the next decisions clear. A short view should connect important numbers to questions and owners.",
+    "inputLabel": "Four inputs from two fictional monthly reports",
+    "inputs": {
+      "columns": [
+        {
+          "key": "item",
+          "label": "Measure",
+          "format": "text"
+        },
+        {
+          "key": "previous",
+          "label": "Previous month",
+          "format": "currency"
+        },
+        {
+          "key": "current",
+          "label": "Current month",
+          "format": "currency"
+        }
+      ],
+      "rows": [
+        {
+          "item": "Revenue",
+          "previous": 100000,
+          "current": 120000
+        },
+        {
+          "item": "Direct costs",
+          "previous": 60000,
+          "current": 78000
+        },
+        {
+          "item": "Overdue customer invoices at month end",
+          "previous": 10000,
+          "current": 25000
+        },
+        {
+          "item": "Cash balance at month end",
+          "previous": 40000,
+          "current": 35000
+        }
+      ],
+      "note": "Both months use the same definitions. Overdue invoices and cash are month-end balances. The illustrative reporting thresholds below are management choices, not industry benchmarks."
+    },
+    "metrics": [
+      {
+        "label": "Revenue growth",
+        "value": 20,
+        "format": "percent",
+        "detail": ""
+      },
+      {
+        "label": "Current contribution margin",
+        "value": 35,
+        "format": "percent",
+        "detail": "Down from 40%: a fall of 5 percentage points."
+      },
+      {
+        "label": "Overdue invoices",
+        "value": 25000,
+        "format": "currency",
+        "detail": ""
+      },
+      {
+        "label": "Closing cash",
+        "value": 35000,
+        "format": "currency",
+        "detail": ""
+      }
+    ],
+    "finding": "Sales rose 20%, but contribution rose only 5%, from ₹40,000 to ₹42,000. Contribution margin fell from 40% to 35%, and overdue invoices rose from ₹10,000 to ₹25,000. Those changes deserve a clear question and an owner.",
+    "nextStep": "Review margin with the sales or operations owner, review overdue invoices with the finance owner, and keep each measure’s definition and next review date visible.",
+    "qa": [
+      {
+        "question": "What does this mean?",
+        "answer": "A useful report connects a small number of consistently defined measures to decisions. Here, growth alone hides a lower contribution rate and more overdue invoices."
+      },
+      {
+        "question": "Why is this happening?",
+        "answer": "Direct costs rose 30% while sales rose 20%, so the contribution rate fell. The report does not establish whether pricing, sales mix or cost changes caused that. It also shows overdue invoices rising, without proving why customers have not paid."
+      },
+      {
+        "question": "What should I do next?",
+        "answer": "Agree the definitions and review thresholds, assign an owner to each flagged question, and document how the report is updated and checked."
+      }
+    ],
+    "scenario": {
+      "title": "A short decision list",
+      "description": "Example thresholds are chosen solely for this fictional demonstration.",
+      "columns": [
+        {
+          "key": "measure",
+          "label": "Measure",
+          "format": "text"
+        },
+        {
+          "key": "current",
+          "label": "Current result",
+          "format": "text"
+        },
+        {
+          "key": "threshold",
+          "label": "Example review threshold",
+          "format": "text"
+        },
+        {
+          "key": "owner",
+          "label": "Owner",
+          "format": "text"
+        },
+        {
+          "key": "question",
+          "label": "Question or next check",
+          "format": "text"
+        }
+      ],
+      "rows": [
+        {
+          "measure": "Contribution margin",
+          "current": "35%",
+          "threshold": "Review below 38%",
+          "owner": "Sales / operations",
+          "question": "What changed in prices, sales mix or direct costs?"
+        },
+        {
+          "measure": "Overdue customer invoices",
+          "current": "₹25,000",
+          "threshold": "Review above ₹15,000",
+          "owner": "Finance",
+          "question": "Which invoices are overdue, and when is collection expected?"
+        },
+        {
+          "measure": "Cash balance",
+          "current": "₹35,000",
+          "threshold": "Review below ₹30,000",
+          "owner": "Finance",
+          "question": "Above this example threshold; still check upcoming payments."
+        }
+      ],
+      "note": "A threshold flags a question. It is not a guarantee that cash or performance is safe."
+    },
+    "deliverables": [
+      "An agreed reporting pack, dashboard or spreadsheet workflow",
+      "Definitions, update instructions and validation checks",
+      "A handover so the team can own the reporting process"
+    ],
+    "cautions": [
+      "Contribution is not net income.",
+      "No live data feed, automatic alert or implemented integration is claimed by this demonstration.",
+      "Tailored scope, deliverables, timeline and fees are agreed separately."
+    ],
+    "calculationNotes": [
+      "Previous contribution: 100,000 − 60,000 = 40,000; margin = 40%.",
+      "Current contribution: 120,000 − 78,000 = 42,000; margin = 35%.",
+      "Revenue growth: (120,000 − 100,000) ÷ 100,000 = 20%.",
+      "Direct-cost growth: (78,000 − 60,000) ÷ 60,000 = 30%.",
+      "Contribution growth: (42,000 − 40,000) ÷ 40,000 = 5%.",
+      "Margin change: 35% − 40% = −5 percentage points.",
+      "Overdue invoice change: 25,000 − 10,000 = 15,000; cash change: 35,000 − 40,000 = −5,000."
+    ]
+  }
+]
