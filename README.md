@@ -1,6 +1,6 @@
 # SK Capital website
 
-A small, single-page React + Vite site for starter finance projects and tailored planning, reporting and implementation for small service businesses. The visual direction uses warm white, deep green and restrained lime accents, with open-source Newsreader headings and Inter body text. This is inspired by the current clean editorial feel of bcg.com; it does not use BCG branding, proprietary fonts or assets. Editable source replaces the legacy compiled export; do not publish the old root-level assets or the separate rejected redesign.
+A small, single-page React + Vite site for Business Performance Advisory: problem-led analysis of profit, cash, growth and marketing performance, with practical planning, reporting and focused AI workflows. The visual direction uses warm white, deep green and restrained lime accents, with open-source Newsreader headings and Inter body text. This is inspired by the current clean editorial feel of bcg.com; it does not use BCG branding, proprietary fonts or assets. Editable source replaces the legacy compiled export; do not publish the old root-level assets or the separate rejected redesign.
 
 ## Run and check
 
@@ -19,7 +19,7 @@ npm run dev -- --host 127.0.0.1
 
 ## Site content
 
-Edit `src/lib/offers.ts` for the three fixed-scope starter finance projects. The secondary AI workflow setup and its regional fee are in `src/components/Reviews.tsx`. Do not add claims of verified client results or working integrations without evidence.
+Edit `src/lib/advisory.ts` for the positioning, owner questions, investigation steps and custom capabilities. Edit `src/lib/offers.ts` for the three fixed-scope starter finance projects. The secondary AI workflow setup and its regional fee are in `src/components/Reviews.tsx`. Do not add claims of verified client results or working integrations without evidence. Marketing support means performance analysis using client-supplied data, not campaign management, SEO or content execution. The inline `MarginExample` is a clearly labelled fictional excerpt, not a client result. Its contribution calculation is revenue less the defined direct delivery costs, before shared overheads and tax. No public sample download link has been verified, so do not add a download button until a real, approved destination exists.
 
 Larger engagements are described in `src/components/CustomProjects.tsx`, without fixed prices. Agree scope, deliverables, inputs, tools, timeline and fees before committing. Starter package delivery remains limited to the stated inputs and outputs; bookkeeping, reconciliations and data cleanup are not included. Custom copy does not expand delivery into audit, tax, regulated advice or enterprise-system expertise.
 
@@ -37,7 +37,7 @@ Official references:
 
 ## Publish review / handoff
 
-1. Use the draft PR branch `codex/subtle-editorial-visuals`, not the older launch-candidate PR.
+1. Use the draft PR branch `codex/business-performance-advisory`, not the older launch-candidate PR.
 2. In the existing Vercel project, verify its connected repository is `advisory-gif/sk-capital` and that its domain is the intended `www.skcapital.co.in` before publishing. Do not create or connect a different project by guesswork.
 3. Review the exact commit from this PR. Build command: `npm run build`. Output directory: `dist`. Install command: `npm ci`. Repository root directory: repository root. `vercel.json` sets the build/output and excludes `/api/` from the SPA rewrite.
 4. The `/api/country` Node function must deploy alongside static assets. A plain static-only upload cannot provide automatic country detection, though manual currency and USD fallback still work.

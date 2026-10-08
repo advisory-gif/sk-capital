@@ -12,7 +12,7 @@ if (/^#\/(pricing|portfolio|blog|how-we-use-ai)?(?:$|[?#])/.test(window.location
 function NavigationEffects() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
-    document.title = pathname === '/pricing' ? 'Project pricing | SK Capital Advisory' : 'Business health, cash flow & margins | SK Capital Advisory';
+    document.title = 'Business Performance Advisory | SK Capital';
     if (hash) document.getElementById(hash === '#reviews' ? 'services' : hash.slice(1))?.scrollIntoView();
     else window.scrollTo(0, 0);
   }, [pathname, hash]);
