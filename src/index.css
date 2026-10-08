@@ -37,3 +37,30 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 100; background: #96F878; color: #0C2B15; padding: 1rem; }
 .skip-link:focus { top: 1rem; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* One editorial photograph; the intrinsic ratio reserves its space before load. */
+.hero-layout { display: grid; gap: 3rem; align-items: center; }
+.hero-visual { min-width: 0; }
+.hero-visual img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; }
+@media (min-width: 1024px) {
+  .hero-layout { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 3rem; }
+}
+/* Content stays visible without the enhancement, even if observation fails. */
+@media (prefers-reduced-motion: no-preference) {
+  .is-revealed { animation: section-enter 550ms ease-out; }
+  .button-primary, .button-secondary { transition: background-color 180ms ease, transform 180ms ease; }
+  .button-primary svg { transition: transform 180ms ease; }
+  .service-card { transition: border-color 180ms ease, transform 180ms ease; }
+  @media (hover: hover) and (pointer: fine) {
+    .button-primary:hover, .button-secondary:hover { transform: translateY(-2px); }
+    .button-primary:hover svg { transform: translateX(2px); }
+    .service-card:hover { transform: translateY(-3px); border-color: #0C2B15; }
+  }
+}
+@keyframes section-enter {
+  from { opacity: 0.86; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-revealed, .button-primary, .button-secondary, .button-primary svg, .service-card { animation: none; transition: none; transform: none; }
+}

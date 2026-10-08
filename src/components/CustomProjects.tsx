@@ -8,7 +8,7 @@ const capabilities = [
 ];
 
 export default function CustomProjects() {
-  return <section id="custom-projects" className="section-space border-b border-forest/15">
+  return <section data-reveal id="custom-projects" className="section-space border-b border-forest/15">
     <div className="content-width">
       <p className="eyebrow">Larger, tailored projects</p>
       <h2 className="section-title">Need more than a starting point?</h2>
