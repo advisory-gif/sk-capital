@@ -15,7 +15,7 @@ if (!standalone && /^#\/(pricing|portfolio|blog|how-we-use-ai)?(?:$|[?#])/.test(
   window.history.replaceState(null, '', route);
 }
 function NavigationEffects() {
-  const { pathname, hash } = useLocation();
+  const { pathname, hash, key } = useLocation();
   useEffect(() => {
     const isSample = pathname.startsWith('/samples');
     const sample = findSample(pathname.split('/')[2]);
@@ -33,7 +33,7 @@ function NavigationEffects() {
     else window.scrollTo(0, 0);
     // Make client-side page changes understandable to keyboard and screen-reader users.
     if (isSample && !hash) document.querySelector<HTMLElement>('main h1')?.focus({ preventScroll: true });
-  }, [pathname, hash]);
+  }, [pathname, hash, key]);
   return null;
 }
 export default function App() {

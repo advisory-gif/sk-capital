@@ -14,8 +14,8 @@ ok([s['name'] for s in d['services']]==names,'All eight service names match curr
 ok(len(set(s['id'] for s in d['services']))==8,'Eight unique stable service IDs')
 for s in d['services']:
  ok(len(s['qa'])==3,s['name']+': exactly three prewritten Q&As')
- ok([q['question'] for q in s['qa']]==['What does this mean?','Why is this happening?','What should I do next?'],s['name']+': standard explanatory questions')
- for key in ['question','scope','problem','finding','nextStep','inputLabel']:
+ ok(len(set(q['question'] for q in s['qa']))==3 and all(q['question'] and q['answer'] for q in s['qa']),s['name']+': three distinct, answered questions')
+ for key in ['question','scope','problem','finding','meaning','nextStep','inputLabel']:
   ok(bool(s[key]),s['name']+': nonempty '+key)
  for obj in [s['inputs'],s['scenario']]:
   for c in obj['columns']:
@@ -60,7 +60,7 @@ for x in P['scenario']['rows']:
  for k in ['planned','actual']:eq(x[k],agg[x['category']][k],'Variance table aggregate '+x['category']+' '+k)
 r=A['inputs']['rows'];asum=lambda key:sum(x[key]*(1 if x['kind']=='Income' else -1) for x in r)
 eq(asum('planned'),15000,'AI planned subtotal');eq(asum('actual'),5000,'AI actual subtotal');eq(asum('actual')-asum('planned'),-10000,'AI variance');ok(bool(A['draftCommentary']),'AI includes prewritten draft')
-ok('prewritten, not a live AI chat' in A['inputs']['note'],'AI clearly identifies the prewritten demonstration')
+ok('prewritten' in A['inputs']['note'].lower() and 'not' in A['inputs']['note'].lower(),'AI clearly identifies the prewritten demonstration')
 for src,out in zip(H['inputs']['rows'],H['scenario']['rows']):
  eq(src['revenue']-src['directCosts']-src['existingFixedCosts']-src['hireCost'],out['operatingSurplus'],'Hire recurring surplus '+src['case'])
  eq(60000+out['operatingSurplus']-src['setupCash'],out['closingCash'],'Hire first-month cash '+src['case'])

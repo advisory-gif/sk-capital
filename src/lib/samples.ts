@@ -9,7 +9,7 @@ export type ServiceSample = {
   id: string; name: string; category: string; question: string; scope: string;
   problem: string; inputLabel: string; inputs: ExampleTable;
   metrics: { label: string; value: number; format: string; detail: string }[];
-  finding: string; nextStep: string; draftCommentary?: string;
+  finding: string; meaning: string; nextStep: string; draftCommentary?: string;
   qa: { question: string; answer: string }[];
   scenario: ExampleTable & { title: string; description: string };
   deliverables: string[]; cautions: string[]; calculationNotes: string[];
