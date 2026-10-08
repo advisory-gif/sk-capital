@@ -38,6 +38,19 @@ const late = await load({ country:'IN',slow:true }); const select = late.documen
 const legacy = await load({ url:'https://example.test/#/pricing' }); assert.equal(legacy.window.location.hash,'#services'); legacy.window.close(); console.log('PASS old hash pricing link routes to current services');
 const oldAnchor = await load({ url:'https://example.test/#reviews' }); assert.ok(oldAnchor.scrollTargets.includes('services')); oldAnchor.window.close(); console.log('PASS legacy reviews anchor scrolls to services');
 const ui = await load();
+assert.equal(ui.document.title, 'Business Performance Advisory | SK Capital');
+assert.equal(ui.document.querySelector('h1').textContent, 'Understand what’s holding your business back. Know what to do next.');
+assert.equal(ui.document.querySelectorAll('#questions h3').length, 5);
+assert.ok(ui.document.querySelector('#questions').textContent.includes('marketing'));
+assert.ok(ui.document.querySelector('#questions').textContent.includes('Campaign management, SEO and content production sit outside this service.'));
+assert.ok(ui.document.querySelector('#contact h2').textContent.includes('Not sure'));
+assert.deepEqual([...ui.document.querySelectorAll('main > section[id]')].map(section => section.id), ['questions', 'process', 'services', 'custom-projects', 'contact']);
+assert.ok(!/FP&A|BP&A|guaranteed|testimonial/i.test(ui.document.body.textContent));
+assert.deepEqual([...ui.document.querySelectorAll('#services article h3')].map(heading => heading.textContent), ['What does each sale really leave?', 'Could cash get tight in the next four weeks?', 'Where did results differ from the plan?']);
+for (const name of ['Margin Check', 'Four-Week Cash Snapshot', 'Plan vs Actual Review', 'AI Finance Workflow Setup']) assert.ok(ui.document.querySelector('#services').textContent.includes(name));
+assert.ok(ui.document.querySelector('#ai-workflow').textContent.includes('one approved spreadsheet input to one draft commentary workflow'));
+assert.equal(ui.document.querySelectorAll('a[download]').length, 0);
+console.log('PASS problem-led order, five owner questions, bounded marketing and AI scope, factual service labels, no unverified download links');
 const custom = ui.document.querySelector('#custom-projects');
 assert.equal(custom.querySelectorAll('li').length, 4);
 assert.ok(custom.textContent.includes('fees are agreed after a conversation'));
@@ -56,7 +69,7 @@ assert.ok(ui.document.querySelector('a[href^="mailto:advisory@skcapital.co.in"]'
 console.log('DOM checks do not verify visual layout or hosting geolocation headers.');
 
 const noObserver = await load();
-assert.equal(noObserver.document.querySelectorAll('[data-reveal]').length, 4);
+assert.equal(noObserver.document.querySelectorAll('[data-reveal]').length, 5);
 assert.equal(noObserver.document.querySelectorAll('.is-revealed').length, 0);
 const photo = noObserver.document.querySelector('.hero-visual img');
 assert.equal(noObserver.document.querySelectorAll('img').length, 1);
@@ -68,7 +81,7 @@ const reduced = await load({ motion: 'reduced' });
 assert.equal(reduced.observers.length, 0); assert.equal(reduced.document.querySelectorAll('.is-revealed').length, 0); reduced.window.close();
 const reveal = await load({ motion: 'enabled' });
 const observer = reveal.observers.find(item => item.observed.size);
-assert.equal(observer.observed.size, 4);
+assert.equal(observer.observed.size, 5);
 const section = reveal.document.querySelector('#custom-projects');
 observer.callback([{target: section, isIntersecting: false}]); assert.ok(!section.classList.contains('is-revealed'));
 observer.callback([{target: section, isIntersecting: true}]); assert.ok(section.classList.contains('is-revealed')); assert.ok(!observer.observed.has(section));
