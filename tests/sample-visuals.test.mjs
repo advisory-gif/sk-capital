@@ -109,3 +109,12 @@ test('clarity rewrites preserve every approved fictional numeric value', async (
   assert.equal(Object.keys(baseline).length, 149);
   assert.deepEqual(current, baseline);
 });
+
+
+test('every example has one short question and one actionable takeaway', () => {
+  for (const sample of data) {
+    assert.ok(sample.question.split(/\s+/).length <= 10, sample.id);
+    assert.ok(sample.takeaway.split(/\s+/).length <= 24, sample.id);
+    assert.ok(sample.takeaway.endsWith('.'), sample.id);
+  }
+});

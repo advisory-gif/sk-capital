@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { exampleCurrencyNote, findSample, formatExample, samples } from '@/lib/samples';
 import type { ExampleTable, ServiceSample } from '@/lib/samples';
 import SampleVisual from '@/components/SampleVisual';
+import SamplePreview from '@/components/SamplePreview';
 import { sampleVisual } from '@/lib/sample-visuals';
 
 function DataTable({ data, caption }: { data: ExampleTable; caption: string }) {
@@ -35,17 +36,16 @@ function SampleDetail({ sample }: { sample: ServiceSample }) {
         <h1 tabIndex={-1} className="font-display text-4xl sm:text-5xl leading-[1.06] tracking-tight">{sample.question}</h1>
         <p className="sample-short-disclaimer">Fictional example · US dollars (USD), not service prices</p>
       </header>
-      <div className="sample-story">
-        {[['What happened', sample.finding], ['Why it matters', sample.meaning], ['What to check', sample.nextStep]].map(([heading, text]) => <section className="sample-story-point" key={heading}>
-          <h2>{heading}</h2><p>{text}</p>
-        </section>)}
-      </div>
       <SampleVisual model={model} />
+      <p className="sample-takeaway"><span>The next step</span>{sample.takeaway}</p>
     </div>
     <details id="sample-details" className="sample-more">
-      <summary>Show details <span>Common questions and supporting numbers</span></summary>
+      <summary>See the details <span>Numbers, assumptions and scope</span></summary>
       <div className="sample-details-body">
-        <section aria-labelledby="explanations-heading" className="max-w-4xl">
+        <div className="sample-story">
+          {[['What happened', sample.finding], ['Why it matters', sample.meaning], ['What to check', sample.nextStep]].map(([heading, text]) => <section className="sample-story-point" key={heading}><h2>{heading}</h2><p>{text}</p></section>)}
+        </div>
+        <section aria-labelledby="explanations-heading" className="max-w-4xl mt-8">
           <h2 id="explanations-heading" className="font-display text-2xl mb-4">Common questions</h2>
           {sample.qa.map(qa => <details key={qa.question} className="sample-disclosure"><summary>{qa.question}</summary><p className="text-ink leading-relaxed mt-4">{qa.answer}</p></details>)}
         </section>
@@ -74,8 +74,12 @@ export default function Samples() {
   if (sampleId) return <section className="content-width section-space"><p className="eyebrow">Example not found</p><h1 tabIndex={-1} className="section-title">Let’s find the right example.</h1><p className="text-ink mt-5 mb-8">This example link is not available. You can browse all eight services below.</p><Link to="/samples" className="button-primary">See all examples <ArrowRight size={16} aria-hidden="true" /></Link></section>;
   return <section className="content-width section-space">
     <Link to="/#services" className="example-link mb-8"><ArrowLeft size={16} aria-hidden="true" /> Back to services</Link>
-    <header className="max-w-3xl"><p className="eyebrow">See the work</p><h1 tabIndex={-1} className="section-title">A business question.<br />A few numbers. A clearer next step.</h1><p className="text-lg text-ink leading-relaxed mt-6">What happened, why it matters and what to check.</p><p className="text-base text-ink leading-relaxed mt-5">Fictional examples in US dollars (USD), not service prices.</p></header>
-    <div className="grid md:grid-cols-2 gap-x-12 mt-10">{samples.map((item, index) => <article key={item.id} className="py-8 border-t border-forest/20"><p className="text-base font-semibold text-forest mb-3">0{index + 1} · {item.category}</p><h2 className="font-display text-3xl">{item.question}</h2><p className="text-base font-semibold mt-4">{item.name}</p><Link to={`/samples/${item.id}`} className="example-link mt-5" aria-label={`See an example of ${item.name}`}>See the example <ArrowRight size={16} aria-hidden="true" /></Link></article>)}</div>
-    <p className="text-base text-ink leading-relaxed mt-6 max-w-3xl">The first three examples illustrate starter scopes. AI Finance Workflow Setup covers one defined workflow. Tailored projects receive a separate quote, with deliverables, timing and fees agreed after a conversation.</p>
+    <header className="max-w-3xl"><p className="eyebrow">See the work</p><h1 tabIndex={-1} className="section-title">Real business questions.<br />Simple examples.</h1><p className="text-base text-ink leading-relaxed mt-5">Fictional examples in US dollars (USD), not client results or service prices.</p></header>
+    <div className="sample-gallery">{samples.map((item, index) => <article key={item.id} className="sample-card">
+      <p className="sample-card-service">0{index + 1} · {item.name}</p>
+      <h2 className="font-display text-3xl">{item.question}</h2>
+      <SamplePreview sample={item} />
+      <Link to={`/samples/${item.id}`} className="example-link" aria-label={`See an example of ${item.name}`}>See the example <ArrowRight size={16} aria-hidden="true" /></Link>
+    </article>)}</div>
   </section>;
 }

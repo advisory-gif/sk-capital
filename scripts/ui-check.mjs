@@ -153,7 +153,10 @@ for (const item of exampleData) {
   assert.deepEqual([...examples.document.querySelectorAll('.sample-story h2')].map(node => node.textContent), ['What happened', 'Why it matters', 'What to check']);
   assert.deepEqual([...examples.document.querySelectorAll('.sample-story p')].map(node => node.textContent), [item.finding, item.meaning, item.nextStep]);
   assert.ok(!examples.document.querySelector('.sample-overview').textContent.includes('undefined'));
-  assert.ok(examples.document.querySelector('.sample-story').compareDocumentPosition(examples.document.querySelector('.sample-visual')) & examples.window.Node.DOCUMENT_POSITION_FOLLOWING);
+  assert.ok(allDetails.contains(examples.document.querySelector('.sample-story')));
+  assert.equal(examples.document.querySelectorAll('.sample-overview .sample-story').length, 0);
+  assert.equal(examples.document.querySelector('.sample-takeaway').textContent, `The next step${item.takeaway}`);
+  assert.ok(examples.document.querySelector('.sample-visual').compareDocumentPosition(examples.document.querySelector('.sample-takeaway')) & examples.window.Node.DOCUMENT_POSITION_FOLLOWING);
   assert.equal(examples.document.querySelectorAll('.sample-overview table, .sample-overview details').length, 0);
   assert.equal(examples.document.querySelectorAll('.sample-details-body .text-sm').length, 0);
   assert.ok(examples.document.querySelector('.sample-service-scope'));
@@ -190,6 +193,10 @@ for (const item of exampleData) {
 }
 const list = await load({ url:'https://example.test/samples' });
 assert.equal(list.document.querySelectorAll('main article').length, 8);
+assert.equal(list.document.querySelectorAll('.sample-preview').length, 8);
+const galleryIds = [...list.document.querySelectorAll('[id]')].map(node => node.id);
+assert.equal(galleryIds.length, new Set(galleryIds).size);
+assert.ok(!list.document.body.textContent.includes('undefined'));
 list.document.querySelector('main article a').click(); await delay(40);
 list.window.history.back(); await delay(40);
 assert.equal(list.window.location.pathname, '/samples');
