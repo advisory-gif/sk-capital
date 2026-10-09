@@ -49,3 +49,23 @@ test('chart and text colours preserve contrast and consistent negative meaning',
   assert.equal(declarations('.visual-bar-negative').background, 'var(--chart-negative)');
   assert.equal(declarations('.cash-legend .cash-delayed-key')['border-top'], '3px dashed var(--chart-negative)');
 });
+
+test('narrow gallery previews reflow amounts and workflow without wide fixed tracks', () => {
+  const atWidth = width => {
+    const found = {};
+    css.walkAtRules('media', rule => {
+      if (rule.params !== `(max-width: ${width}px)`) return;
+      rule.walkRules(child => {
+        found[child.selector] ??= {};
+        child.walkDecls(decl => { found[child.selector][decl.prop] = decl.value; });
+      });
+    });
+    return found;
+  };
+  const narrow = atWidth(420), tiny = atWidth(360);
+  assert.equal(narrow['.preview-hire']['grid-template-columns'], 'minmax(0, 1fr)');
+  assert.equal(narrow['.preview-reporting > div > p']['flex-wrap'], 'wrap');
+  assert.equal(narrow['.preview-reporting strong']['font-size'], '1rem');
+  assert.equal(tiny['.preview-workflow .workflow-track']['grid-template-columns'], 'minmax(0, 1fr)');
+  assert.equal(tiny['.preview-workflow .workflow-arrow'].transform, 'none');
+});
