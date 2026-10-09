@@ -232,3 +232,18 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
   .preview-hire { gap: .5rem; }
   .preview-hire strong { font-size: 1.25rem; }
 }
+/* Keep gallery illustrations inside their cards at narrow/zoomed widths. */
+@media (max-width: 420px) {
+  .preview-hire { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+  .preview-hire > svg { transform: rotate(90deg); justify-self: center; }
+  .preview-hire > div { display: flex; justify-content: space-between; align-items: center; gap: .75rem; }
+  .preview-hire strong { margin-top: 0; flex-shrink: 0; }
+  .preview-reporting > div > p { flex-wrap: wrap; gap: .375rem; }
+  .preview-reporting strong { font-size: 1rem; }
+}
+@media (max-width: 360px) {
+  .preview-workflow .workflow-track { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
+  .preview-workflow .workflow-step { display: flex; align-items: center; justify-content: center; gap: .75rem; }
+  .preview-workflow .workflow-step > svg, .preview-workflow .workflow-step h3 { margin: 0; }
+  .preview-workflow .workflow-arrow { left: calc(50% - 11px); top: calc(100% + .2rem); transform: none; }
+}
