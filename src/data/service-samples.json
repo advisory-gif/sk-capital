@@ -3,7 +3,7 @@
     "id": "margin-check",
     "name": "Margin Check",
     "category": "Starter project",
-    "question": "How much of each sale is left after doing the work?",
+    "question": "What’s left from each sale?",
     "scope": "Up to 10 products, services or projects; one price-or-cost scenario; a one-page summary with up to three points to investigate.",
     "problem": "Three projects generated $50,000 in sales. How much is left after paying the costs of doing that work?",
     "inputLabel": "Sales and delivery costs for three fictional projects",
@@ -150,13 +150,14 @@
       "Project A leaves $6,000 of $20,000, or $30 per $100 sold. Project B leaves $3,600 of $18,000, and Project C leaves $2,400 of $12,000: each leaves $20 per $100 sold.",
       "With the extra cost: $50,000 − $43,000 = $7,000. Divide $7,000 by $50,000 to get 14%, or $14 left per $100 sold."
     ],
-    "meaning": "That is $24 per $100 sold, before rent, other running costs and tax."
+    "meaning": "That is $24 per $100 sold, before rent, other running costs and tax.",
+    "takeaway": "Check that the $24 left from every $100 sold covers your other running costs before setting your next price."
   },
   {
     "id": "four-week-cash",
     "name": "Four-Week Cash Snapshot",
     "category": "Starter project",
-    "question": "Can we pay the bills if one customer pays late?",
+    "question": "What if a customer pays late?",
     "scope": "Opening cash plus up to 20 dated expected receipts and payments; a four-week forecast; one delayed-payment scenario; a one-page summary.",
     "problem": "The business starts with $30,000. A customer is due to pay $40,000 on 16 November. What happens if that payment arrives on 26 November instead?",
     "inputLabel": "Starting cash: $30,000. Expected payments in and out: 2–29 November 2026",
@@ -338,13 +339,14 @@
       "With the late payment, $15,000 is available before the $25,000 supplier bill on 20 November. $15,000 − $25,000 = −$10,000, a $10,000 shortfall.",
       "After that shortfall: −$10,000 + $25,000 received on 23 November + $40,000 received on 26 November − $20,000 paid on 27 November = $35,000."
     ],
-    "meaning": "The final $35,000 balance cannot pay a bill that was due earlier."
+    "meaning": "The final $35,000 balance cannot pay a bill that was due earlier.",
+    "takeaway": "Confirm payment dates early so a $10,000 cash gap does not leave a bill unpaid."
   },
   {
     "id": "plan-vs-actual",
     "name": "Plan vs Actual Review",
     "category": "Starter project",
-    "question": "Why was $23,000 less left than we planned?",
+    "question": "Why did we miss the plan?",
     "scope": "An existing budget and matching actuals for up to three months and 15 categories; the three largest differences by value; a one-page summary.",
     "problem": "Over two months, the business expected to have $45,000 left after delivery costs, payroll and rent. It had $22,000 left. Where did the $23,000 difference come from?",
     "inputLabel": "Two months of planned and actual sales and costs",
@@ -536,13 +538,14 @@
       "$15,000 less sales + $6,000 extra payroll + $2,000 extra delivery costs = $23,000 less left. Rent is unchanged.",
       "The example uses two months and four categories, within the starter project limits."
     ],
-    "meaning": "$15,000 less sales, $6,000 extra payroll and $2,000 extra delivery costs explain the $23,000 gap."
+    "meaning": "$15,000 less sales, $6,000 extra payroll and $2,000 extra delivery costs explain the $23,000 gap.",
+    "takeaway": "Check the sales shortfall first: it explains $15,000 of the $23,000 gap."
   },
   {
     "id": "ai-finance-workflow",
     "name": "AI Finance Workflow Setup",
     "category": "Optional workflow support",
-    "question": "How can AI help write our monthly numbers update?",
+    "question": "Can AI help with our monthly update?",
     "scope": "One approved spreadsheet input to one draft commentary workflow in the client’s approved ChatGPT or Claude setup; reusable prompt, input template, sample draft, basic tests, human-review checklist and walkthrough.",
     "problem": "A business wants to turn its monthly spreadsheet into a short explanation without writing the update from scratch each time.",
     "inputLabel": "One example spreadsheet: planned and actual sales and costs",
@@ -680,13 +683,14 @@
       "Both planned and actual costs total $85,000. The $10,000 fall in sales therefore explains the $10,000 gap in the amount left.",
       "The displayed draft is stored example text. The page does not call an AI model."
     ],
-    "meaning": "AI can draft an update, but a person must check it. This is a prewritten illustration."
+    "meaning": "AI can draft an update, but a person must check it. This is a prewritten illustration.",
+    "takeaway": "Let AI draft the update, then have a person check the figures and explanations."
   },
   {
     "id": "plan-hire-expansion",
     "name": "Plan a hire or expansion",
     "category": "Tailored project",
-    "question": "How much more would we need to sell to cover a new hire?",
+    "question": "Will extra sales cover a new hire?",
     "scope": "Illustrative tailored planning work. The actual budget, forecast, scenarios, deliverables, timeline and fee are agreed separately after discussing the decision.",
     "problem": "The example hire costs $30,000 a month, plus $20,000 to set up. The business expects each extra $100 of sales to leave $50 after delivery costs.",
     "inputLabel": "Three monthly cases: no hire, expected sales and lower sales",
@@ -858,13 +862,14 @@
       "Hire with lower sales: $220,000 − $110,000 − $70,000 − $30,000 = $10,000 left after monthly costs.",
       "Starting with $60,000 cash, expected first-month closing cash is $60,000 + $30,000 − $20,000 setup = $70,000. With lower sales it is $60,000 + $10,000 − $20,000 = $50,000. Without a hire it is $60,000 + $30,000 = $90,000."
     ],
-    "meaning": "That only covers the monthly hire cost; the $20,000 setup payment is extra."
+    "meaning": "That only covers the monthly hire cost; the $20,000 setup payment is extra.",
+    "takeaway": "Check whether $60,000 in extra monthly sales is realistic before committing to the hire."
   },
   {
     "id": "understand-cash-profit",
     "name": "Understand cash and profit",
     "category": "Tailored project",
-    "question": "We made a profit. Why did our bank balance fall?",
+    "question": "We made a profit. Where’s the cash?",
     "scope": "Illustrative deeper review of pricing, margins or cash flow. The area to investigate, deliverables, timeline and fee are agreed separately.",
     "problem": "For one month, the listed sales and costs show $30,000 profit. Yet the bank balance falls from $50,000 to $35,000. The difference comes from when money was received or paid.",
     "inputLabel": "One fictional month: sales, costs and actual payments",
@@ -1006,13 +1011,14 @@
       "Check using actual payments: $80,000 received − $45,000 supplier payments − $30,000 other payments − $20,000 extra stock = −$15,000.",
       "Cash at month-end: $50,000 starting balance − $15,000 decrease = $35,000."
     ],
-    "meaning": "Customers still owe $40,000; extra stock used $20,000. Unpaid supplier bills kept $15,000 in the bank for now."
+    "meaning": "Customers still owe $40,000; extra stock used $20,000. Unpaid supplier bills kept $15,000 in the bank for now.",
+    "takeaway": "Follow up unpaid customer invoices and review stock purchases before assuming profit is available to spend."
   },
   {
     "id": "assess-marketing",
     "name": "Assess marketing performance",
     "category": "Tailored project",
-    "question": "Do the sales from our ads cover the costs?",
+    "question": "Are our ads paying their way?",
     "scope": "Analysis of existing marketing spend, sales and customer-profitability data, with assumptions and gaps made clear. Tailored scope and fee are agreed separately.",
     "problem": "Social ads cost less per new customer than Search ads. The comparison checks whether those customers’ first orders cover both delivery and advertising costs.",
     "inputLabel": "First orders from new customers recorded against two ad channels",
@@ -1178,13 +1184,14 @@
       "Social average left per customer: $600 sales − $420 delivery costs − $200 ads = −$20. Across 40 customers, that is −$800.",
       "Both channels combined: $64,000 sales − $40,800 delivery costs − $18,000 ads = $5,200 left before shared running costs and tax."
     ],
-    "meaning": "Social’s ad cost per new customer is lower, but their first orders leave less to cover that cost."
+    "meaning": "Social’s ad cost per new customer is lower, but their first orders leave less to cover that cost.",
+    "takeaway": "Compare what each channel leaves after delivery and ads, then check repeat purchases before changing spend."
   },
   {
     "id": "useful-reporting",
     "name": "Make reporting more useful",
     "category": "Tailored project",
-    "question": "Sales are up. What else needs our attention?",
+    "question": "Sales are up. Is the business healthier?",
     "scope": "An agreed reporting pack, performance dashboard or defined spreadsheet workflow, with documentation and a team handover. Tailored scope and fee are agreed separately.",
     "problem": "The monthly report shows higher sales. It also needs to show how much each sale leaves and which customer payments are late, so the team knows what to check.",
     "inputLabel": "Two months compared using the same definitions",
@@ -1347,6 +1354,7 @@
       "The percentage of sales left fell from 40% to 35%, a fall of 5 percentage points.",
       "Overdue payments rose by $25,000 − $10,000 = $15,000. Cash fell by $40,000 − $35,000 = $5,000. These totals do not explain all the movements in cash."
     ],
-    "meaning": "Despite higher sales, only $2,000 more is left after delivery. More customer money is also past due."
+    "meaning": "Despite higher sales, only $2,000 more is left after delivery. More customer money is also past due.",
+    "takeaway": "Look beyond sales: check shrinking margins and follow up overdue customer payments."
   }
 ]

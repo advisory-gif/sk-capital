@@ -171,3 +171,64 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 /* Long disclosure text and tables must not widen their grid or page. */
 .sample-overview > *, .sample-details-body, .sample-details-body section, .sample-disclosure { min-width: 0; max-width: 100%; }
 .sample-page p, .sample-page li, .sample-page summary, .sample-page th, .sample-page td { overflow-wrap: anywhere; }
+
+/* Ten-second examples: question, generous visual, one next step. */
+.sample-page { max-width: 64rem; }
+.sample-overview { display: flex; flex-direction: column; gap: 1.4rem; }
+.sample-question { max-width: 48rem; }
+.sample-question h1 { font-size: clamp(2rem, 4vw, 3.25rem); }
+.sample-overview > .sample-visual { align-self: stretch; padding: 1.75rem 2rem; }
+.sample-takeaway { font-size: 1.125rem; line-height: 1.6; max-width: 48rem; }
+.sample-takeaway > span { display: block; font-size: .875rem; font-weight: 600; color: #435448; margin-bottom: .4rem; }
+.sample-overview .workflow-track { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.sample-overview .workflow-step { display: block; padding: 1.25rem; height: 100%; }
+.sample-overview .workflow-step h3 { margin-top: .75rem; }
+.sample-overview .workflow-arrow { position: absolute; left: calc(100% + .25rem); top: 40%; transform: rotate(-90deg); margin: 0; }
+.sample-overview .reporting-dashboard { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.sample-overview .reporting-tile h3 { min-height: 3.25rem; }
+.sample-overview .visual-bar-track { height: 1.85rem; }
+.sample-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+.sample-card { min-width: 0; border: 1px solid #d7dfd2; border-radius: 4px; padding: 1.75rem; display: flex; flex-direction: column; }
+.sample-card-service { font-size: .875rem; font-weight: 600; color: #435448; margin-bottom: .75rem; }
+.sample-card h2 { min-height: 4.5rem; line-height: 1.15; }
+.sample-card > .example-link { margin-top: auto; align-self: start; }
+.sample-preview { --chart-positive: #34714b; --chart-negative: #963e22; --chart-neutral: #647f70; --sample-body: 1rem; --sample-value: 1.125rem; --sample-leading: 1.625; padding: 1.25rem; background: #f7f8f3; margin: 1.25rem 0; min-width: 0; }
+.preview-caption { font-size: 1rem; font-weight: 600; margin-bottom: 1rem; }
+.preview-note { color: #435448; font-size: .875rem; line-height: 1.5; margin-top: 1rem; }
+.sample-preview .contribution-stack { height: 3rem; }
+.sample-preview .stack-labels { gap: .75rem; }
+.sample-preview .chart-scale { margin-top: .25rem; }
+.preview-workflow .workflow-track { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.preview-workflow .workflow-step { display: block; border: 0; background: transparent; padding: 0; text-align: center; }
+.preview-workflow .workflow-step > svg { margin: .5rem auto; }
+.preview-workflow .workflow-number, .preview-workflow .workflow-step p { display: none; }
+.preview-workflow .workflow-step h3 { font-size: .875rem; margin-top: .75rem; }
+.preview-workflow .workflow-arrow { position: absolute; left: calc(100% - .1rem); top: 10%; transform: rotate(-90deg); margin: 0; }
+.preview-reporting > div { padding-block: .6rem; border-bottom: 1px solid #d7dfd2; }
+.preview-reporting > div > span { font-size: .875rem; }
+.preview-reporting > div > p { display: flex; align-items: center; gap: .75rem; margin-top: .25rem; font-variant-numeric: tabular-nums; }
+.preview-reporting strong { font-size: 1.25rem; }
+.preview-hire { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; }
+.preview-hire span, .preview-hire strong { display: block; }
+.preview-hire span { font-size: .875rem; }
+.preview-hire strong { font-size: 1.5rem; margin-top: .5rem; font-variant-numeric: tabular-nums; }
+.preview-hire .preview-note { grid-column: 1 / -1; margin-top: 0; }
+@media (max-width: 767px) {
+  .sample-gallery { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .sample-card { padding: 1.25rem; }
+  .sample-card h2 { min-height: 0; font-size: 1.75rem; }
+  .sample-overview > .sample-visual { padding: 1.25rem; }
+  .sample-overview .reporting-dashboard { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .sample-overview .reporting-tile h3 { min-height: 0; }
+  .sample-overview .workflow-track { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .sample-overview .workflow-step { display: grid; grid-template-columns: 2.25rem 1fr; gap: 0 1rem; }
+  .sample-overview .workflow-step > svg { grid-row: 1 / 3; align-self: center; }
+  .sample-overview .workflow-step h3 { margin-top: 0; }
+  .sample-overview .workflow-step p { grid-column: 2; margin-top: .15rem; }
+  .sample-overview .workflow-arrow { top: calc(100% + .3rem); left: calc(50% - 11px); transform: none; }
+}
+@media (max-width: 420px) {
+  .sample-preview { padding: 1rem; }
+  .preview-hire { gap: .5rem; }
+  .preview-hire strong { font-size: 1.25rem; }
+}

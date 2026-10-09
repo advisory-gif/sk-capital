@@ -1,25 +1,25 @@
 {
   "margin-check": {
     "title": "Where the $50,000 in sales goes",
-    "note": "The amount left still has to cover rent, other running costs and tax.",
+    "note": "Before other running costs and tax.",
     "barLabels": [
-      "Cost of doing the work",
-      "Left after delivery costs"
+      "Delivery costs",
+      "Left for other costs"
     ]
   },
   "four-week-cash": {
     "title": "Cash available on each payment date",
-    "note": "2–29 November 2026. Each step is a listed payment in or out. Below $0 means a shortfall.",
+    "note": "2–29 Nov 2026. One $40,000 customer payment is delayed; below $0 means a cash gap.",
     "legendLabels": [
-      "$40,000 arrives on 16 Nov",
-      "$40,000 arrives on 26 Nov"
+      "Payment on time · 16 Nov",
+      "Payment 10 days late · 26 Nov"
     ],
-    "lowLabel": "Late-payment balance on 20 November",
+    "lowLabel": "Lowest cash if late · 20 Nov",
     "accessibleDescription": "Two forecasts start with $30,000 and end with $35,000. If the $40,000 customer payment arrives on 16 November, the balance stays at or above $15,000. If it arrives on 26 November, the forecast falls to minus $10,000 on 20 November. Below zero is a funding gap, not an agreed overdraft."
   },
   "plan-vs-actual": {
-    "title": "Three changes add up to $23,000 less left",
-    "note": "Two months combined. Each bar shows how much one change reduced the amount left compared with the plan.",
+    "title": "$23,000 less left than planned",
+    "note": "Two months combined. Each bar adds to the gap.",
     "barLabels": [
       "Sales below plan",
       "Payroll above plan",
@@ -27,54 +27,54 @@
     ]
   },
   "ai-finance-workflow": {
-    "title": "Spreadsheet → draft update → human check",
+    "title": "From numbers to a checked update",
     "note": "Prewritten illustration. This page does not run an AI tool.",
     "steps": [
       {
-        "title": "Add the figures",
-        "text": "Use the approved monthly template."
+        "title": "Sheet",
+        "text": "Approved figures"
       },
       {
-        "title": "Draft the update",
-        "text": "Explain the differences without guessing causes."
+        "title": "AI draft",
+        "text": "Monthly update"
       },
       {
-        "title": "Check before use",
-        "text": "A person checks totals and explanations."
+        "title": "Human check",
+        "text": "Check before use"
       }
     ]
   },
   "plan-hire-expansion": {
     "title": "Would the extra sales cover the hire?",
-    "note": "Assumes $50 of each extra $100 sold is left after delivery. The $20,000 setup payment is separate.",
+    "note": "Assumes 50% left after delivery. $30,000 monthly hire; $20,000 setup is extra.",
     "barLabels": [
-      "Extra sales: expected case",
-      "Extra sales: lower-sales case"
+      "Expected extra sales",
+      "Lower-sales case"
     ],
-    "referenceText": "Dashed line: $60,000 extra monthly sales, enough to cover the $30,000 monthly hire cost."
+    "referenceText": "Dashed line: $60,000 extra monthly sales to cover the hire."
   },
   "understand-cash-profit": {
-    "title": "Why profit and the bank balance move differently",
-    "note": "Profit excludes unlisted costs and tax. The $15,000 unpaid supplier costs are still owed.",
+    "title": "$30,000 profit → $15,000 less cash",
+    "note": "Listed items only, before tax. Unpaid supplier bills are still owed.",
     "barLabels": [
-      "Profit from the listed items",
-      "Subtract sales not yet paid",
-      "Add back supplier costs not yet paid",
-      "Subtract extra stock paid for",
-      "Result: change in bank balance"
+      "Profit shown",
+      "Sales not yet paid",
+      "Supplier bills not yet paid",
+      "Extra stock paid for",
+      "Change in bank balance"
     ]
   },
   "assess-marketing": {
     "title": "Amount left after delivery costs and ads",
-    "note": "First orders only. A negative result means those costs exceed sales. Shared running costs and tax are excluded.",
+    "note": "First orders only, before shared running costs and tax.",
     "barLabels": [
       "Search ads",
       "Social ads"
     ]
   },
   "useful-reporting": {
-    "title": "Higher sales, less left per $100, more late payments",
-    "note": "Previous month compared with current month. The amount left excludes shared running costs and tax.",
+    "title": "Three numbers worth watching",
+    "note": "Previous → current month. Amount left is before shared costs and tax.",
     "tileLabels": [
       "Sales",
       "Left from every $100 sold",

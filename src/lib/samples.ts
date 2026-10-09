@@ -6,7 +6,7 @@ export type ExampleTable = {
   note: string;
 };
 export type ServiceSample = {
-  id: string; name: string; category: string; question: string; scope: string;
+  id: string; name: string; category: string; question: string; takeaway: string; scope: string;
   problem: string; inputLabel: string; inputs: ExampleTable;
   metrics: { label: string; value: number; format: string; detail: string }[];
   finding: string; meaning: string; nextStep: string; draftCommentary?: string;
