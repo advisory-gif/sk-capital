@@ -1,4 +1,4 @@
-export const currencyKey = 'skcapital.currency';
+export const currencyKey = 'clearfig.currency';
 export function isCurrency(value) { return ['INR', 'USD', 'AED'].includes(value); }
 export function currencyForCountry(country) {
   const code = typeof country === 'string' ? country.toUpperCase() : '';

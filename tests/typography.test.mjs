@@ -25,12 +25,12 @@ test('example bodies and chart labels share a readable type scale', () => {
   assert.equal(label['text-transform'], undefined);
 });
 
-test('chart figures share Inter while display headings retain Newsreader', () => {
+test('chart figures share Figtree while display headings retain Fraunces', () => {
   const values = declarations('.stack-labels strong, .visual-bar-label strong, .dashboard-period strong, .cash-shortfall strong, .reporting-change');
-  assert.equal(values['font-family'], "'Inter', Arial, sans-serif");
+  assert.equal(values['font-family'], "'Figtree', system-ui, sans-serif");
   assert.equal(values['font-size'], 'var(--sample-value)');
   assert.equal(values['font-variant-numeric'], 'tabular-nums');
-  assert.ok(declarations('.visual-title')['font-family'].includes('Newsreader'));
+  assert.ok(declarations('.visual-title')['font-family'].includes('Fraunces'));
   assert.equal(declarations('.stack-labels strong')['font-family'], undefined);
 });
 
@@ -41,11 +41,11 @@ const luminance = hex => {
 const contrast = (a, b) => { const pair = [luminance(a), luminance(b)].sort((x, y) => x - y); return (pair[1] + .05) / (pair[0] + .05); };
 
 test('chart and text colours preserve contrast and consistent negative meaning', () => {
-  for (const token of ['--chart-positive', '--chart-negative', '--chart-neutral']) assert.ok(contrast(tokens[token], '#e6ece2') >= 3, token);
-  assert.ok(contrast(tokens['--chart-neutral'], '#96f878') >= 3);
-  assert.ok(contrast('#435448', '#f7f8f3') >= 4.5);
-  assert.ok(contrast('#212427', '#ffffff') >= 4.5);
-  assert.ok(contrast('#0C2B15', '#96f878') >= 4.5);
+  for (const token of ['--chart-positive', '--chart-negative', '--chart-neutral']) assert.ok(contrast(tokens[token], '#EFE8E2') >= 3, token);
+  assert.ok(contrast(tokens['--chart-neutral'], '#E7D3C4') >= 3);
+  assert.ok(contrast('#4A433C', '#F7F4EF') >= 4.5);
+  assert.ok(contrast('#1C1714', '#ffffff') >= 4.5);
+  assert.ok(contrast('#ffffff', '#5C2A38') >= 4.5);
   assert.equal(declarations('.visual-bar-negative').background, 'var(--chart-negative)');
   assert.equal(declarations('.cash-legend .cash-delayed-key')['border-top'], '3px dashed var(--chart-negative)');
 });
