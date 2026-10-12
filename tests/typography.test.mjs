@@ -25,12 +25,26 @@ test('example bodies and chart labels share a readable type scale', () => {
   assert.equal(label['text-transform'], undefined);
 });
 
-test('chart figures share Figtree while display headings retain Fraunces', () => {
+test('headlines are Newsreader, body is Inter, and the surface stays flat', async () => {
+  const css = await readFile('src/index.css', 'utf8');
+  const html = await readFile('index.html', 'utf8');
+  const entry = await readFile('src/main.tsx', 'utf8');
+  assert.equal(declarations('body')['font-family'], "'Inter', system-ui, sans-serif");
+  assert.match(declarations('h1, h2, h3, h4, h5, h6')['font-family'], /Newsreader/);
+  assert.match(declarations('.plain-title')['font-family'], /Newsreader/);
+  assert.match(declarations('.move-list h3')['font-family'], /Newsreader/);
+  assert.doesNotMatch(css, /gradient|box-shadow|Figtree|Fraunces/);
+  assert.doesNotMatch(html, /fonts\.googleapis|Figtree|Fraunces/);
+  assert.match(entry, /@fontsource\/inter\/latin-400\.css/);
+  assert.match(entry, /@fontsource\/newsreader\/latin-500\.css/);
+});
+
+test('chart figures use Inter while display headings use Newsreader', () => {
   const values = declarations('.stack-labels strong, .visual-bar-label strong, .dashboard-period strong, .cash-shortfall strong, .reporting-change');
-  assert.equal(values['font-family'], "'Figtree', system-ui, sans-serif");
+  assert.equal(values['font-family'], "'Inter', system-ui, sans-serif");
   assert.equal(values['font-size'], 'var(--sample-value)');
   assert.equal(values['font-variant-numeric'], 'tabular-nums');
-  assert.ok(declarations('.visual-title')['font-family'].includes('Fraunces'));
+  assert.ok(declarations('.visual-title')['font-family'].includes('Newsreader'));
   assert.equal(declarations('.stack-labels strong')['font-family'], undefined);
 });
 

@@ -1,2 +1,2 @@
-/** Founders approved the Review and Monthly prices in src/lib/pricing.mjs. */
-export const showPrices = true;
+/** Public pages do not list fees. Scope and fee are agreed before any paid work. */
+export const showPrices = false;

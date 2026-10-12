@@ -1,5 +1,6 @@
-export const bookingUrl = 'https://cal.com/skcapital/free-financial-breakdown';
-export const emailAddress = 'snesh@clearfig.in';
+export const bookingUrl = 'https://cal.com/clearfig/self-check';
+export const bookingLabel = 'Book a free 20-minute self-check';
+export const emailAddress = 'hello@clearfig.in';
 export const enquiryUrl = (subject: string) => `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}`;
 export const offers = [
   { question: 'What does each sale really leave?', name: 'Margin Check', sampleId: 'margin-check', description: 'See what each sale leaves after its direct costs.', prices: { INR: 2000, USD: 25, AED: 95 }, features: ['Share prices and direct costs for up to 10 products, services or projects in our template.', 'Get a margin comparison and one simple price-or-cost scenario.', 'Receive a one-page summary with up to three points to investigate.'] },

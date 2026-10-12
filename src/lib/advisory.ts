@@ -1,22 +1,23 @@
 export const siteName = 'Clearfig';
 export const siteUrl = 'https://clearfig.in';
-export const positioning = 'See the business in your own data';
-export const oneLiner = 'Clearfig shows you, from your own data, which customers, products and channels make you money and which drain it, then helps you fix it.';
-export const heroSupport = 'We read your sales, customers, marketing and costs together, so you can see what\'s really working, stop what isn\'t, and grow with confidence.';
-export const homeTitle = 'Clearfig | See your business in your own data';
+export const tagline = 'See how your business really makes money.';
+export const positioning = tagline;
+export const oneLiner = 'Clearfig is a data and business-clarity company. A 360-degree business health check reads customers, products, pricing, channels, marketing and money, so you can see how the business really works.';
+export const heroSupport = 'A 360-degree business health check for growing owner-led businesses. We read customers, products, pricing, channels, marketing and money together, beside your accountant.';
+export const homeTitle = 'Clearfig | See how your business really makes money.';
 export const homeDescription = oneLiner;
 export const detailsTitle = 'Details | Clearfig';
-export const detailsDescription = 'Who Clearfig is for, what a Review covers, and how your data is handled.';
+export const detailsDescription = 'Who Clearfig is for, what a health check covers, and how your data is handled.';
 export const examplesTitle = 'Examples | Clearfig';
 export const examplesDescription = 'Fictional examples of a business question read through data. Made-up US dollar figures, not client results or fees.';
 export const sampleDescription = 'A fictional Clearfig example: one business question, a chart, and a practical next step. US dollar figures, not a client result.';
-export const heroTitle = oneLiner;
+export const heroTitle = tagline;
 
 export const audience = {
   title: 'For owners who need a clear picture before the next decision.',
-  lead: 'The first conversations are with owner-led agencies and consultancies, and with product and D2C brands, of about 10 to 50 people, in the UK, the UAE and India.',
-  also: 'Owners of other businesses are welcome when the problem is the same: the data exists, but the business is hard to see.',
-  notFor: 'This is not bookkeeping, tax filing, audit, or a software product. If a different kind of help would serve you better, we will say so.',
+  lead: 'For growing owner-led businesses, in any sector, anywhere.',
+  also: 'The data exists, but the business is hard to see. A health check reads it with you.',
+  notFor: 'This is not bookkeeping, tax, audit or a CFO service, and it is not a software product. Clearfig works beside your accountant. If a different kind of help would serve you better, we will say so.',
 };
 
 export const businessQuestions: [string, string][] = [
@@ -35,10 +36,10 @@ export const investigationSteps: [string, string, string][] = [
 ];
 
 export const deliverables: [string, string][] = [
-  ['Customers, products and channels', 'Which make you money, and which drain it. This includes margin by client, project and service.'],
-  ['Marketing and costs', 'Your sales, marketing and costs, read together.'],
+  ['Customers, products, pricing and channels', 'Which make you money, and which drain it. This includes margin by client, product and channel.'],
+  ['Marketing and money', 'Your marketing, pricing and money, read together.'],
   ['A clear action plan: what to grow, what to fix, what to stop', 'Written from your own data, so you can act.'],
-  ['A written report', 'The reading, the gaps, and that plan. The Review takes 2 to 3 weeks.'],
+  ['A written report', 'The reading, the gaps, and that plan. A focused review takes 2 to 3 weeks.'],
 ];
 
 export const trustPoints: [string, string][] = [
@@ -48,11 +49,11 @@ export const trustPoints: [string, string][] = [
 ];
 
 export const faqs: [string, string][] = [
-  ['What does Clearfig actually do?', 'Clearfig shows you, from your own data, which customers, products and channels make you money and which drain it, then helps you fix it. We read sales, customers, marketing and costs together. You leave with a clear action plan: what to grow, what to fix, what to stop.'],
-  ['How is this different from my accountant?', 'An accountant records what happened and handles the filings the law requires. Clearfig is not that work. We read your data, including that record when it helps, to show how the business is doing and what to do next. We do not provide bookkeeping, tax, audit or other regulated accounting services.'],
-  ['What do I receive from a focused review?', 'A written reading of your customers, products, channels, marketing and costs, the assumptions and gaps, and a clear action plan: what to grow, what to fix, what to stop. The exact deliverable is confirmed in the scope before work starts. The review stands on its own. You do not have to continue.'],
-  ['What does it cost?', 'The prices are on the homepage, for India, the UAE and the UK. The self-check is free. A Review is paid 50% upfront and 50% on delivery, and that fee is credited against the first month of Monthly. Monthly is billed in advance, with a 3-month minimum, then 30 days\' notice. Implementation is quoted separately after a Review.'],
-  ['Who is it for?', 'Owners of agencies, consultancies, and product and D2C brands. We are starting with businesses of about 10 to 50 people in the UK, the UAE and India.'],
+  ['What does Clearfig actually do?', 'Clearfig is a data and business-clarity company. A 360-degree business health check shows, from your own data, how customers, products, pricing, channels, marketing and money fit together. You leave with a clear action plan: what to grow, what to fix, what to stop.'],
+  ['How is this different from my accountant?', 'An accountant records what happened and handles the filings the law requires. Clearfig is not that work. We work beside your accountant. We read your data, including that record when it helps, to show how the business is doing and what to do next. We do not provide bookkeeping, tax, audit, CFO or other regulated accounting services.'],
+  ['What do I receive from a focused review?', 'A written reading of your customers, products, pricing, channels, marketing and money, the assumptions and gaps, and a clear action plan: what to grow, what to fix, what to stop. The exact deliverable is confirmed in the scope before work starts. The review stands on its own. You do not have to continue.'],
+  ['What does it cost?', 'The 20-minute self-check is free. Any further work is scoped before it starts, and the fee is agreed then. Clearfig does not publish prices.'],
+  ['Who is it for?', 'Growing owner-led businesses, in any sector, anywhere.'],
   ['What should I send before we speak?', 'A short note about the business and one question is enough. Do not include bank statements, customer details or other sensitive documents in that first email.'],
   ['Are the examples real clients?', 'No. Every example uses fictional US dollar figures. They show the kind of question a review can look at. They are not client results, case studies or fees.'],
   ['Do you work with messy numbers?', 'Often the useful outcome is to see what is missing. We agree the inputs before work starts. Tidying the source data, rebuilding history or taking over reporting is separate work, and only if we agree it.'],

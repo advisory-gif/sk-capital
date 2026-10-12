@@ -13,7 +13,7 @@ export default function Details() {
       <div className="content-width max-w-3xl">
         <p className="eyebrow">Details</p>
         <h1 className="section-title">The rest of the picture.</h1>
-        <p className="mt-6 text-lg leading-relaxed text-soft">The homepage is the offer. This page is who it is for, what a Review covers, and how your data is handled.</p>
+        <p className="mt-6 text-lg leading-relaxed text-soft">The homepage is the offer. This page is who it is for, what a health check covers, and how your data is handled.</p>
         <p className="mt-4 text-base leading-relaxed text-soft">Clear means seeing the business as it really is. Fig is the fig tree: natural, fruitful and long-lived.</p>
       </div>
     </section>
@@ -70,7 +70,7 @@ export default function Details() {
       <div className="content-width">
         <p className="eyebrow">What you get</p>
         <h2 className="section-title">A focused business review, scoped before it starts.</h2>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">One question, read across customers, products, channels, marketing and costs. Before any work starts, we agree what we will look at and what you will receive. The review stands on its own.</p>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">One question, read across customers, products, pricing, channels, marketing and money. Before any work starts, we agree what we will look at and what you will receive. The review stands on its own.</p>
         <ul className="mt-12 grid gap-8 sm:grid-cols-2">
           {deliverables.map(([title, text]) => (
             <li key={title} className="border-t border-line pt-5">
@@ -79,7 +79,7 @@ export default function Details() {
             </li>
           ))}
         </ul>
-        <p className="mt-8 max-w-3xl text-base leading-relaxed text-soft">The Clearfig Review uses your own data for that written report. Agreed before we start: the question, the information you will share, and the timing. The fee is the published price for your market.</p>
+        <p className="mt-8 max-w-3xl text-base leading-relaxed text-soft">The health check uses your own data for that written report. Agreed before we start: the question, the information you will share, the timing and the fee.</p>
       </div>
     </section>
 
@@ -87,8 +87,8 @@ export default function Details() {
       <div className="content-width max-w-3xl">
         <p className="eyebrow">Not your accountant</p>
         <h2 className="section-title">The books are one input. The business is the question.</h2>
-        <p className="mt-5 text-base leading-relaxed text-soft">An accountant records what happened and handles the filings the law requires. That record can be one input. Clearfig reads it alongside the rest of your data: clients, operations, capacity, marketing and cash.</p>
-        <p className="mt-4 text-base leading-relaxed text-soft">Clearfig does not provide bookkeeping, tax, audit or other regulated accounting services. Your accountant remains the right person for the regulated work.</p>
+        <p className="mt-5 text-base leading-relaxed text-soft">An accountant records what happened and handles the filings the law requires. That record can be one input. Clearfig reads it alongside the rest of your data, and works beside your accountant.</p>
+        <p className="mt-4 text-base leading-relaxed text-soft">Clearfig does not provide bookkeeping, tax, audit, CFO or other regulated accounting services. Your accountant remains the right person for the regulated work.</p>
       </div>
     </section>
 

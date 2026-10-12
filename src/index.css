@@ -14,13 +14,13 @@
   }
   * { @apply border-border; }
   html { scroll-behavior: smooth; }
-  body { @apply antialiased; font-family: 'Figtree', system-ui, sans-serif; background-color: #F6F3EE; color: #1C1714; }
-  h1, h2, h3, h4, h5, h6 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; }
+  body { @apply antialiased; font-family: 'Inter', system-ui, sans-serif; background-color: #F6F3EE; color: #1C1714; }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Newsreader', Georgia, serif; font-weight: 500; }
 }
 
 @layer utilities {
-  .font-display { font-family: 'Fraunces', Georgia, serif; font-weight: 500; }
-  .font-body, .font-ui { font-family: 'Figtree', system-ui, sans-serif; }
+  .font-display { font-family: 'Newsreader', Georgia, serif; font-weight: 500; }
+  .font-body, .font-ui { font-family: 'Inter', system-ui, sans-serif; }
 }
 
 @layer components {
@@ -73,7 +73,7 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
   from { opacity: 0.94; }
   to { opacity: 1; }
 }
-.nav-cta { min-height: 2.5rem; padding: 0.45rem 0.9rem; font-size: 0.875rem; font-weight: 600; }
+.nav-cta { min-height: 2.5rem; padding: 0.45rem 0.85rem; font-size: 0.8125rem; font-weight: 600; white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) {
   .is-revealed, .button-primary, .button-secondary, .button-primary svg, .service-card, .panel-copy, .panel-photo { animation: none; transition: none; transform: none; }
 }
@@ -81,8 +81,8 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
   :root { --header-bar: 4.5rem; }
 }
 
-/* Shared example typography and chart colours. Headings use Fraunces;
-   body, chart labels and values use Figtree at consistent, readable sizes. */
+/* Shared example typography and chart colours. Display headings use Newsreader;
+   body, chart labels and values use Inter at consistent, readable sizes. */
 .sample-page, .sample-visual {
   --sample-body: 1rem;
   --sample-small: .875rem;
@@ -98,10 +98,10 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 .sample-question .eyebrow { margin-bottom: 1rem; }
 .sample-short-disclaimer { margin-top: 1rem; font-size: .875rem; line-height: 1.6; color: #4A433C; }
 .sample-story { display: grid; gap: 1.15rem; }
-.sample-story-point h2 { font-family: 'Figtree', system-ui, sans-serif; font-size: var(--sample-body); line-height: var(--sample-leading); font-weight: 600; margin-bottom: .375rem; color: #4A433C; }
+.sample-story-point h2 { font-family: 'Inter', system-ui, sans-serif; font-size: var(--sample-body); line-height: var(--sample-leading); font-weight: 600; margin-bottom: .375rem; color: #4A433C; }
 .sample-story-point p { font-size: var(--sample-body); line-height: var(--sample-leading); color: #1C1714; }
-.sample-visual { font-family: 'Figtree', system-ui, sans-serif; font-size: var(--sample-body); line-height: var(--sample-leading); min-width: 0; margin: 0; padding: 1.5rem; border: 1px solid #E4DDD4; background: #F7F4EF; border-radius: 4px; }
-.visual-title { font-family: 'Fraunces', Georgia, serif; font-size: 1.5rem; line-height: 1.25; margin-bottom: 1.5rem; }
+.sample-visual { font-family: 'Inter', system-ui, sans-serif; font-size: var(--sample-body); line-height: var(--sample-leading); min-width: 0; margin: 0; padding: 1.5rem; border: 1px solid #E4DDD4; background: #F7F4EF; border-radius: 4px; }
+.visual-title { font-family: 'Newsreader', Georgia, serif; font-size: 1.5rem; line-height: 1.25; margin-bottom: 1.5rem; }
 .chart-note { font-size: var(--sample-body); line-height: var(--sample-leading); color: #4A433C; margin-top: 1.25rem; }
 .contribution-stack { display: flex; height: 5rem; overflow: hidden; border-radius: 3px; }
 .contribution-stack > span, .stack-labels i { background: var(--chart-neutral); }
@@ -110,7 +110,7 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 .stack-labels span { display: block; font-size: var(--sample-body); }
 .stack-labels i { display: inline-block; width: .75rem; height: .75rem; }
 .stack-labels strong { display: block; margin-top: .5rem; }
-.stack-labels strong, .visual-bar-label strong, .dashboard-period strong, .cash-shortfall strong, .reporting-change { font-family: 'Figtree', system-ui, sans-serif; font-size: var(--sample-value); line-height: 1.5; font-weight: 600; font-variant-numeric: tabular-nums; }
+.stack-labels strong, .visual-bar-label strong, .dashboard-period strong, .cash-shortfall strong, .reporting-change { font-family: 'Inter', system-ui, sans-serif; font-size: var(--sample-value); line-height: 1.5; font-weight: 600; font-variant-numeric: tabular-nums; }
 .visual-bars { min-width: 0; }
 .visual-bar-row { margin-bottom: 1.15rem; }
 .visual-bar-label { display: flex; justify-content: space-between; gap: 1rem; font-size: var(--sample-body); line-height: var(--sample-leading); margin-bottom: .5rem; }
@@ -138,11 +138,11 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 .workflow-track li { position: relative; }
 .workflow-step { padding: 1rem; background: white; border: 1px solid #E4DDD4; position: relative; }
 .workflow-number { position: absolute; right: 1rem; top: 1rem; font-size: .8125rem; }
-.workflow-step h3 { font-family: 'Figtree', system-ui, sans-serif; font-size: var(--sample-body); line-height: var(--sample-leading); font-weight: 600; margin-top: .75rem; }
+.workflow-step h3 { font-family: 'Inter', system-ui, sans-serif; font-size: var(--sample-body); line-height: var(--sample-leading); font-weight: 600; margin-top: .75rem; }
 .workflow-step p { font-size: var(--sample-body); line-height: var(--sample-leading); margin-top: .5rem; }
 .workflow-arrow { margin: .65rem auto 0; }
 .reporting-dashboard { display: grid; gap: 1.5rem; }
-.reporting-tile h3 { font-family: 'Figtree', system-ui, sans-serif; font-size: var(--sample-body); line-height: var(--sample-leading); font-weight: 600; }
+.reporting-tile h3 { font-family: 'Inter', system-ui, sans-serif; font-size: var(--sample-body); line-height: var(--sample-leading); font-weight: 600; }
 .reporting-change { margin-top: .25rem; margin-bottom: .85rem; }
 .dashboard-period { margin-top: .65rem; }
 .dashboard-period > span { display: flex; justify-content: space-between; gap: 1rem; font-size: var(--sample-body); }
@@ -152,7 +152,7 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 .sample-more { border-block: 1px solid #E4DDD4; margin-top: 2rem; }
 .sample-more > summary { cursor: pointer; padding: 1.25rem 0; font-weight: 600; font-size: 1rem; }
 .sample-more > summary > span { font-weight: 400; color: #4A433C; font-size: .875rem; margin-left: 1rem; }
-.sample-details-body { font-family: 'Figtree', system-ui, sans-serif; font-size: var(--sample-body); line-height: var(--sample-leading); padding: .5rem 0 2rem; }
+.sample-details-body { font-family: 'Inter', system-ui, sans-serif; font-size: var(--sample-body); line-height: var(--sample-leading); padding: .5rem 0 2rem; }
 .sample-service-scope p, .sample-service-scope li { font-size: var(--sample-body); line-height: var(--sample-leading); }
 @media (min-width: 768px) {
   .sample-overview { grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); column-gap: 3rem; row-gap: 1.75rem; align-items: start; }
@@ -257,15 +257,16 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 .plain-rule { display: block; width: 2.25rem; height: 1px; margin-bottom: 1.35rem; background: #5C2A38; }
 .plain-title {
   max-width: 18ch;
-  font-family: 'Figtree', system-ui, sans-serif;
+  font-family: 'Newsreader', Georgia, serif;
   font-weight: 500;
   font-size: clamp(2rem, 7vw, 3.25rem);
-  line-height: 1.12;
-  letter-spacing: -0.03em;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
   color: #1C1714;
   text-wrap: balance;
 }
 .plain-title-long { max-width: 28ch; font-size: clamp(1.65rem, 4.6vw, 2.5rem); line-height: 1.28; letter-spacing: -0.02em; }
+.plain-title-tagline { max-width: 22ch; }
 .plain-line { max-width: 36rem; margin-top: 1.15rem; font-size: 1.0625rem; line-height: 1.55; color: #4A433C; }
 .plain-note { max-width: 32rem; margin-top: 0.85rem; font-size: 0.9375rem; line-height: 1.5; color: #4A433C; }
 .plain-split { display: grid; gap: 2.5rem; align-items: start; }
@@ -279,6 +280,8 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 .source-grid li:nth-child(2) .source-mark { width: 46%; }
 .source-grid li:nth-child(3) .source-mark { width: 84%; }
 .source-grid li:nth-child(4) .source-mark { width: 38%; }
+.source-grid li:nth-child(5) .source-mark { width: 66%; }
+.source-grid li:nth-child(6) .source-mark { width: 52%; }
 .clear-chart { margin: 0; border: 1px solid #E4DDD4; background: #fff; padding: 1.35rem 1.25rem 1.5rem; }
 .clear-chart figcaption { font-size: 0.9375rem; font-weight: 600; color: #1C1714; }
 .clear-row { display: grid; gap: 0.4rem; margin-top: 1.15rem; }
@@ -289,18 +292,18 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 .clear-bar-drain { width: 34%; background: #8F3D2A; }
 .move-list { display: grid; gap: 2.75rem; margin-top: 0.25rem; }
 .move-list h3 {
-  font-family: 'Figtree', system-ui, sans-serif;
+  font-family: 'Newsreader', Georgia, serif;
   font-weight: 500;
   font-size: clamp(2.25rem, 8vw, 3.25rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: #1C1714;
 }
 .move-list p { margin-top: 0.65rem; max-width: 16rem; font-size: 1.0625rem; line-height: 1.5; color: #4A433C; }
 .price-grid, .founder-grid { display: grid; gap: 2.75rem; margin-top: 3rem; }
 .price-figure {
   margin-top: 0.65rem;
-  font-family: 'Figtree', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 500;
   font-size: clamp(2.25rem, 7vw, 3.25rem);
   line-height: 1.05;
@@ -311,7 +314,7 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 @media (min-width: 700px) {
   .plain-section { padding: 6.5rem 0 7rem; }
   .plain-head { flex-direction: row; align-items: flex-end; justify-content: space-between; }
-  .source-grid { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  .source-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
   .clear-row { grid-template-columns: 9.5rem 1fr; gap: 1rem; align-items: center; }
 }
 @media (min-width: 900px) {
