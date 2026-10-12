@@ -11,7 +11,7 @@ export default function Footer() {
           <p className="mt-3 max-w-sm text-base leading-relaxed text-soft">Clarity from your own data, so you can earn more and spend less.</p>
         </div>
         <div className="sm:text-right">
-          <a className="text-fig underline decoration-fig/40 underline-offset-4 hover:decoration-fig" href={`mailto:${emailAddress}`}>{emailAddress}</a>
+          <a className="text-leaf underline decoration-leaf/40 underline-offset-4 hover:decoration-leaf" href={`mailto:${emailAddress}`}>{emailAddress}</a>
           <p className="mt-3 text-sm text-soft"><Link to="/#pricing" className="hover:text-ink">Pricing</Link> · <Link to="/#faq" className="hover:text-ink">Questions</Link> · <Link to="/samples" className="hover:text-ink">Examples</Link></p>
           <p className="mt-3 text-sm text-soft">© {new Date().getFullYear()} Clearfig</p>
         </div>

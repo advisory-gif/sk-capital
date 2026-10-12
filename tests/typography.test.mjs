@@ -46,6 +46,8 @@ test('chart and text colours preserve contrast and consistent negative meaning',
   assert.ok(contrast('#4A433C', '#F7F4EF') >= 4.5);
   assert.ok(contrast('#1C1714', '#ffffff') >= 4.5);
   assert.ok(contrast('#ffffff', '#5C2A38') >= 4.5);
+  assert.ok(contrast('#4E6B3A', '#F6F3EE') >= 4.5);
+  assert.ok(contrast('#4E6B3A', '#ffffff') >= 4.5);
   assert.equal(declarations('.visual-bar-negative').background, 'var(--chart-negative)');
   assert.equal(declarations('.cash-legend .cash-delayed-key')['border-top'], '3px dashed var(--chart-negative)');
 });

@@ -52,6 +52,7 @@ module.exports = {
           DEFAULT: "#5C2A38",
           deep: "#3F1C28",
         },
+        leaf: "#4E6B3A",
         ink: "#1C1714",
         soft: "#4A433C",
         paper: "#F6F3EE",

@@ -25,6 +25,16 @@ test('public metadata is Clearfig, not SK Capital', async () => {
   assert.doesNotMatch(html, /—/);
 });
 
+test('ripe fig logo uses fig, leaf, ink and paper', async () => {
+  const logo = await readFile('public/logo.svg', 'utf8');
+  const favicon = await readFile('public/favicon.svg', 'utf8');
+  for (const colour of ['#5C2A38', '#4E6B3A', '#1C1714', '#F6F3EE']) assert.match(logo, new RegExp(colour));
+  assert.doesNotMatch(logo, /<text[\s>]/);
+  assert.match(favicon, /#5C2A38/);
+  assert.match(favicon, /#A9BF8F/);
+  assert.match(await readFile('src/components/Logo.tsx', 'utf8'), /src="\/logo\.svg"/);
+});
+
 test('README keeps the former name and photo credits', async () => {
   const readme = await readFile('README.md', 'utf8');
   assert.match(readme, /formerly SK Capital/);

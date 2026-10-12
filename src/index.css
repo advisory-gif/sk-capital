@@ -34,7 +34,7 @@ section[id] { scroll-margin-top: 6rem; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid #1C1714; outline-offset: 5px; }
 select:focus-visible, [tabindex="0"]:focus-visible { outline: 2px solid #1C1714; outline-offset: 5px; }
 main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: none; }
-.example-link { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-size: 1rem; font-weight: 600; color: #5C2A38; text-decoration: underline; text-underline-offset: 0.3em; }
+.example-link { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-size: 1rem; font-weight: 600; color: #4E6B3A; text-decoration: underline; text-underline-offset: 0.3em; }
 .example-link:hover { text-decoration-thickness: 2px; }
 .sample-disclosure { padding: 1.25rem 0; border-top: 1px solid #E4DDD4; }
 .sample-disclosure:last-child { border-bottom: 1px solid #E4DDD4; }
@@ -57,7 +57,7 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 .photo-frame img { filter: saturate(0.86); }
 .photo-caption { margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.5; color: #4A433C; }
 .photo-caption a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; }
-.logo { height: 1.75rem; width: auto; display: block; }
+.logo { height: 2rem; width: auto; display: block; }
 @media (min-width: 1024px) {
   .hero-layout { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 3rem; }
 }

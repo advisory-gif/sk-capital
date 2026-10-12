@@ -119,7 +119,7 @@ assert.ok([...ui.document.querySelectorAll('nav a')].some(a => a.textContent ===
 assert.ok([...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'Pricing' && a.hash === '#pricing'));
 assert.ok(![...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'Reviews' || a.textContent === 'Services'));
 assert.ok(ui.document.querySelector('a[href^="mailto:snesh@clearfig.in"]'));
-assert.equal(ui.document.querySelector('svg[aria-label="Clearfig"]')?.querySelector('text')?.textContent, 'Clearfig');
+assert.equal(ui.document.querySelector('img[alt="Clearfig"]')?.getAttribute('src'), '/logo.svg');
 const toggle = ui.document.querySelector('button[aria-controls="mobile-menu"]');
 for (let i=0;i<2;i++) { toggle.click(); await delay(10); assert.ok(ui.document.querySelector('#mobile-menu')); toggle.click(); await delay(10); assert.equal(ui.document.querySelector('#mobile-menu'),null); }
 toggle.click(); await delay(10); ui.document.querySelector('#mobile-menu a').click(); await delay(20); assert.equal(ui.document.querySelector('#mobile-menu'),null); assert.equal(ui.window.location.hash,'#who');
@@ -146,7 +146,8 @@ assert.equal(noObserver.document.querySelectorAll('[data-reveal]').length, 10);
 assert.equal(noObserver.document.querySelectorAll('.is-revealed').length, 0);
 const photo = noObserver.document.querySelector('.hero-visual img');
 const charts = noObserver.document.querySelector('#review img');
-assert.equal(noObserver.document.querySelectorAll('img').length, 2);
+assert.equal(noObserver.document.querySelectorAll('img').length, 4);
+assert.equal(noObserver.document.querySelectorAll('img[alt="Clearfig"]').length, 2);
 assert.equal(photo.width, 1440); assert.equal(photo.height, 960);
 assert.ok(photo.alt.includes('Illustrative')); assert.ok(photo.srcset.includes('640w'));
 assert.equal(photo.getAttribute('fetchpriority'), 'high');

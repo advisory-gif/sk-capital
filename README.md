@@ -46,7 +46,7 @@ The hero image is eager-loaded. The second image is lazy-loaded. Both are WebP, 
 
 ## Visual system
 
-Warm paper (`#F6F3EE`), ink (`#1C1714`) and a deep fig (`#5C2A38`). Fraunces for headings, Figtree for text, with Georgia and system-ui as fallbacks. The wordmark is an SVG fig plus the Clearfig name (`public/logo.svg`, `public/favicon.svg`, `src/components/Logo.tsx`). This replaces the earlier green and ivory SK Capital look.
+Warm paper (`#F6F3EE`), ink (`#1C1714`), fig (`#5C2A38`) and leaf (`#4E6B3A`). Fraunces for headings, Figtree for text, with Georgia and system-ui as fallbacks. The wordmark is the ripe-fig logo: a fig in fig, a leaf in leaf, “Clear” in ink and “fig” in fig (`public/logo.svg`, `public/favicon.svg`, `src/components/Logo.tsx`). Reversed and single-colour files are `public/logo-reversed.svg` and `public/logo-mono.svg`. The mark alone is `public/mark.svg`. This replaces the earlier green and ivory SK Capital look.
 
 ## Sample checks
 
