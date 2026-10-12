@@ -2,12 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { currencyForCountry, savedCurrency, saveCurrency, detectCurrency, currencyKey } from '../src/lib/currency.mjs';
 import handler from '../api/country.js';
-test('country mapping: India, US, UAE and safe defaults', () => {
-  for (const [country, expected] of [['IN','INR'],['US','USD'],['AE','AED'],['ae','AED'],['GB','USD'],[null,'USD'],[undefined,'USD'],['invalid','USD']]) assert.equal(currencyForCountry(country), expected);
+test('country mapping: India, UAE, UK and India as the default', () => {
+  for (const [country, expected] of [['IN','INR'],['US','INR'],['AE','AED'],['ae','AED'],['GB','GBP'],['gb','GBP'],[null,'INR'],[undefined,'INR'],['invalid','INR']]) assert.equal(currencyForCountry(country), expected);
 });
 test('manual choice persists; invalid values are ignored', () => {
   const data = new Map(); const store = { getItem: key => data.get(key), setItem: (key, value) => data.set(key, value) };
-  saveCurrency(store,'AED'); assert.equal(savedCurrency(store),'AED'); saveCurrency(store,'EUR'); assert.equal(savedCurrency(store),'AED'); data.set(currencyKey,'invalid'); assert.equal(savedCurrency(store),null);
+  saveCurrency(store,'AED'); assert.equal(savedCurrency(store),'AED'); saveCurrency(store,'GBP'); assert.equal(savedCurrency(store),'GBP'); saveCurrency(store,'USD'); assert.equal(savedCurrency(store),'GBP'); saveCurrency(store,'EUR'); assert.equal(savedCurrency(store),'GBP'); data.set(currencyKey,'invalid'); assert.equal(savedCurrency(store),null);
 });
 test('blocked storage is safe', () => {
   const store = { getItem() { throw Error('blocked'); }, setItem() { throw Error('blocked'); } };
@@ -15,7 +15,8 @@ test('blocked storage is safe', () => {
 });
 test('same-origin detection; network, HTTP, malformed and missing country fallbacks', async () => {
   assert.equal(await detectCurrency(async (url, options) => { assert.equal(url,'/api/country'); assert.equal(options.cache,'no-store'); return { ok:true,json:async()=>({country:'IN'}) }; }), 'INR');
-  for (const fetcher of [async()=>{throw Error('offline');},async()=>({ok:false}),async()=>({ok:true,json:async()=>{throw Error('HTML');}}),async()=>({ok:true,json:async()=>null})]) assert.equal(await detectCurrency(fetcher),'USD');
+  for (const fetcher of [async()=>{throw Error('offline');},async()=>({ok:false}),async()=>({ok:true,json:async()=>{throw Error('HTML');}}),async()=>({ok:true,json:async()=>null})]) assert.equal(await detectCurrency(fetcher),'INR');
+  assert.equal(await detectCurrency(async () => ({ ok: true, json: async () => ({ country: 'GB' }) })), 'GBP');
 });
 test('endpoint returns only country; prevents cross-visitor caching', () => {
   for (const [raw, expected] of [['IN','IN'],['ae','AE'],[undefined,null],[['US','IN'],null],['bad',null]]) {

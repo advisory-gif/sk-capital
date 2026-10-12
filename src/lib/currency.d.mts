@@ -1,4 +1,4 @@
-export type Currency = 'INR' | 'USD' | 'AED';
+export type Currency = 'INR' | 'AED' | 'GBP';
 export const currencyKey: string;
 export function isCurrency(value: unknown): value is Currency;
 export function currencyForCountry(country: unknown): Currency;
