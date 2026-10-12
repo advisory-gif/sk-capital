@@ -32,11 +32,10 @@ export const investigationSteps: [string, string, string][] = [
 ];
 
 export const deliverables: [string, string][] = [
-  ['A plain-English reading', 'What your numbers show about how the business earns, spends and loses money. Written for the owner, not for a finance team.'],
-  ['Where to earn more', 'Which clients, projects or products look worth growing, based on the figures you supplied.'],
-  ['Where to spend less', 'Which costs, hours or work are taking more than they return.'],
-  ['What is still unknown', 'The assumptions and the gaps. We will not dress up a missing number as a fact.'],
-  ['A next decision', 'One practical step you can take, and whether implementation or a later review should be agreed separately.'],
+  ['Margin by client, project and service', 'Read from the data you already keep, so you can see which work earns more than it costs.'],
+  ['Where money leaks', 'The costs, hours or work that take more than they return.'],
+  ['The 3 decisions to make next', 'Three practical choices from those numbers, written so you can act.'],
+  ['A written report', 'The reading, the gaps, and those decisions. The Review takes 2 to 3 weeks.'],
 ];
 
 export const trustPoints: [string, string][] = [
@@ -49,7 +48,7 @@ export const faqs: [string, string][] = [
   ['What does Clearfig actually do?', 'We help owners understand their business through their own data, so they can earn more and spend less. Finance tools, spreadsheets and AI can help with the work. They are tools. The promise is a clearer reading of your numbers, and a decision you can carry out.'],
   ['How is this different from my accountant?', 'An accountant records what happened and handles the filings the law requires. Clearfig uses that kind of record, and your other operating numbers, to help you decide what to do next. We do not provide bookkeeping, tax, audit or other regulated accounting services.'],
   ['What do I receive from a focused review?', 'A written reading of the agreed question, the assumptions and gaps, and a practical next decision. The exact deliverable is confirmed in the scope before work starts. The review stands on its own. You do not have to continue.'],
-  ['What does it cost?', 'We do not publish a fee. The fee is agreed with the scope, before any paid work starts. The first conversation is free.'],
+  ['What does it cost?', 'The prices are published on this page, for India, the UAE and the UK. The self-check is free. A Review is paid 50% upfront and 50% on delivery, and that fee is credited against the first month of Monthly. Monthly is billed in advance, with a 3-month minimum, then 30 days\' notice. Implementation is quoted separately after a Review.'],
   ['Who is it for?', 'Owners of service and product businesses. We are starting with owner-led agencies and consultancies of about 10 to 50 people in the UK, the UAE and India, usually around margins, pricing and capacity.'],
   ['What should I send before we speak?', 'A short note about the business and one question is enough. Do not include bank statements, customer details or other sensitive documents in that first email.'],
   ['Are the examples real clients?', 'No. Every example uses fictional US dollar figures. They show the kind of question a review can look at. They are not client results, case studies or fees.'],

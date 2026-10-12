@@ -27,7 +27,7 @@ Edit `src/lib/advisory.ts` for the promise, audience, questions, steps, delivera
 
 The first public offer is a focused business review. Scope, inputs, deliverable, timing and fee are agreed before paid work starts. The booking link is still `https://cal.com/skcapital/free-financial-breakdown` until the founders replace it. The contact email is `snesh@clearfig.in`.
 
-Fees are not approved. `src/lib/publication.mjs` exports `showPrices` as `false`. The amounts in `src/lib/offers.ts` stay in source and are not rendered while that flag is false. Do not set it to true, and do not publish a price, until the founders approve one.
+The founders have approved public prices for three steps: a free self-check, the Clearfig Review, and Clearfig Monthly. India is ₹35,000 for the Review and ₹25,000 per month, with founding-client pricing available for the first 3 clients. The UAE is AED 7,500 and AED 4,500 per month. The UK is £2,500 and £1,500 per month. The selector defaults to India. `src/lib/publication.mjs` exports `showPrices` as `true`. The older starter amounts in `src/lib/offers.ts` are not these fees and are not rendered.
 
 Examples under `/samples` use the existing fictional US dollar data. They are labelled as examples, not client results. `src/data/service-samples.json` is unchanged.
 

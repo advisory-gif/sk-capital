@@ -108,7 +108,7 @@ export default function Home() {
             <figcaption className="photo-caption">Illustrative photo by <a href={photos.charts.href}>Carlos Muza</a> on Unsplash. Not a client report.</figcaption>
           </figure>
         </div>
-        <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-12 grid gap-8 sm:grid-cols-2">
           {deliverables.map(([title, text]) => (
             <li key={title} className="border-t border-line pt-5">
               <h3 className="font-display text-2xl text-ink">{title}</h3>
@@ -116,18 +116,19 @@ export default function Home() {
             </li>
           ))}
         </ul>
-        <p className="mt-8 max-w-3xl text-base leading-relaxed text-soft">Agreed before we start: the question, the information you will share, the deliverable, the timing and the fee. We do not publish a price.</p>
+        <p className="mt-8 max-w-3xl text-base leading-relaxed text-soft">The Clearfig Review uses your own data for that written report. Agreed before we start: the question, the information you will share, and the timing. The fee is the published price for your market.</p>
         <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary mt-8">Book a free conversation <ArrowRight size={16} aria-hidden="true" /></a>
-        <PriceList />
       </div>
     </section>
+
+    <PriceList />
 
     <section data-reveal id="accountant" className="section-space border-t border-line">
       <div className="content-width max-w-3xl">
         <p className="eyebrow">Beside your accountant, not instead</p>
         <h2 className="section-title">Your accountant keeps the record. This helps you use it.</h2>
         <p className="mt-5 text-base leading-relaxed text-soft">An accountant records what happened, keeps the books in order, and handles the filings the law requires. That record matters. Clearfig sits next to it. We help you read your own data so you can see where to earn more and where to spend less.</p>
-        <p className="mt-4 text-base leading-relaxed text-soft">Clearfig does not provide bookkeeping, tax, audit or other regulated accounting services. Your accountant remains the right person for those.</p>
+        <p className="mt-4 text-base leading-relaxed text-soft">Clearfig does not provide bookkeeping, tax, audit or other regulated accounting services, and it is not a CFO service. Your accountant remains the right person for the regulated work.</p>
       </div>
     </section>
 

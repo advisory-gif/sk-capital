@@ -29,17 +29,41 @@ async function load({ country = 'US', stored, url = 'https://example.test/', slo
   }
   return { dom, window: dom.window, document: dom.window.document, errors, scrollTargets, observers, media, mediaListeners };
 }
+const marketPrices = {
+  IN: { value: 'INR', review: '₹35,000', monthly: '₹25,000', founding: true },
+  US: { value: 'INR', review: '₹35,000', monthly: '₹25,000', founding: true },
+  AE: { value: 'AED', review: 'AED 7,500', monthly: 'AED 4,500', founding: false },
+  GB: { value: 'GBP', review: '£2,500', monthly: '£1,500', founding: false },
+};
 for (const country of ['IN', 'US', 'AE', 'GB']) {
   const { document, errors, window } = await load({ country });
-  assert.equal(document.querySelector('#currency'), null);
+  const expected = marketPrices[country];
+  const select = document.querySelector('#currency');
+  assert.equal(select.value, expected.value);
+  assert.deepEqual([...select.options].map(option => option.textContent), ['India', 'UAE', 'UK']);
+  const pricing = document.querySelector('#pricing');
+  assert.ok(pricing.textContent.includes('Free self-check'));
+  assert.ok(pricing.textContent.includes('Clearfig Review'));
+  assert.ok(pricing.textContent.includes('Clearfig Monthly'));
+  assert.ok(pricing.textContent.includes(expected.review));
+  assert.ok(pricing.textContent.includes(expected.monthly));
+  assert.ok(pricing.textContent.includes('2 to 3 weeks'));
+  assert.ok(pricing.textContent.includes('50% upfront and 50% on delivery'));
+  assert.ok(pricing.textContent.includes('credited against the first month of Monthly'));
+  assert.ok(pricing.textContent.includes('3-month minimum'));
+  assert.ok(pricing.textContent.includes("30 days' notice"));
+  assert.ok(pricing.textContent.includes('quoted separately after a Review'));
+  assert.ok(pricing.textContent.includes('not a bookkeeping, tax or CFO service'));
+  assert.equal(pricing.textContent.includes('Founding-client pricing is available for the first 3 clients'), expected.founding);
   for (const price of ['₹2,000', '₹3,500', '₹5,000', 'US$25', 'US$45', 'US$59', 'AED 95', 'AED 165', 'AED 219', '3,999', 'One-time fixed-scope fee', 'Loading price']) assert.equal(document.body.textContent.includes(price), false, price);
   assert.equal(document.querySelectorAll('form').length, 0);
   assert.equal(document.querySelectorAll('h1').length, 1);
+  assert.ok(!document.body.textContent.includes('—'));
   assert.deepEqual(errors, []);
   window.close();
-  console.log(`PASS ${country}: no published prices, no currency selector, no fake form`);
+  console.log(`PASS ${country}: published ${expected.review} Review and ${expected.monthly} Monthly, no old fees`);
 }
-const legacy = await load({ url:'https://example.test/#/pricing' }); assert.equal(legacy.window.location.hash,'#review'); legacy.window.close(); console.log('PASS old hash pricing link routes to the review');
+const legacy = await load({ url:'https://example.test/#/pricing' }); assert.equal(legacy.window.location.hash,'#pricing'); legacy.window.close(); console.log('PASS old hash pricing link routes to pricing');
 const oldAnchor = await load({ url:'https://example.test/#reviews' }); assert.ok(oldAnchor.scrollTargets.includes('review')); oldAnchor.window.close(); console.log('PASS legacy reviews anchor scrolls to the review');
 const ui = await load();
 assert.equal(ui.document.title, 'Clearfig | Clarity from your own data');
@@ -52,6 +76,9 @@ assert.ok(ui.document.querySelector('#questions').textContent.includes('Which cl
 assert.deepEqual([...ui.document.querySelectorAll('#process h3')].map(heading => heading.textContent), ['Understand', 'Decide', 'Implement', 'Review']);
 assert.ok(ui.document.querySelector('#process').textContent.includes('separate scope'));
 assert.ok(ui.document.querySelector('#review').textContent.includes('scoped before it starts'));
+assert.ok(ui.document.querySelector('#review').textContent.includes('published price'));
+assert.ok(ui.document.querySelector('#pricing').textContent.includes('₹35,000'));
+assert.equal(ui.document.querySelector('#currency').value, 'INR');
 assert.ok(ui.document.querySelector('#who').textContent.includes('10 to 50'));
 assert.ok(ui.document.querySelector('#accountant').textContent.includes('does not provide bookkeeping, tax, audit'));
 assert.ok(ui.document.querySelector('#about').textContent.includes('Snesh'));
@@ -59,7 +86,7 @@ assert.ok(ui.document.querySelector('#about').textContent.includes('Megha'));
 assert.ok(ui.document.querySelector('#about').textContent.includes('TBC'));
 assert.equal(ui.document.querySelectorAll('#faq details').length, 8);
 assert.ok(ui.document.querySelector('#contact h2').textContent.includes('numbers you already have'));
-assert.deepEqual([...ui.document.querySelectorAll('main > section[id]')].map(section => section.id), ['who', 'questions', 'process', 'review', 'accountant', 'examples', 'trust', 'faq', 'about', 'contact']);
+assert.deepEqual([...ui.document.querySelectorAll('main > section[id]')].map(section => section.id), ['who', 'questions', 'process', 'review', 'pricing', 'accountant', 'examples', 'trust', 'faq', 'about', 'contact']);
 assert.ok(!/FP&A|BP&A|guaranteed|testimonial|bank-grade|AI-proof|SK Capital/i.test(ui.document.body.textContent));
 assert.ok(!ui.document.body.textContent.includes('—'));
 assert.ok(!ui.document.body.textContent.includes('one approved spreadsheet input to one draft commentary workflow'));
@@ -78,8 +105,18 @@ assert.ok(sample.textContent.includes('not service prices or a client result'));
 assert.ok(heroCta.compareDocumentPosition(sample) & ui.window.Node.DOCUMENT_POSITION_FOLLOWING);
 assert.ok(sample.compareDocumentPosition(ui.document.querySelector('#contact')) & ui.window.Node.DOCUMENT_POSITION_FOLLOWING);
 assert.equal(ui.document.querySelectorAll('#examples a[aria-label^="See an example"]').length, 8);
-console.log('PASS Clearfig promise, owner questions, fictional Margin Check, unpublished prices');
+const priceSelect = ui.document.querySelector('#currency');
+priceSelect.value = 'GBP';
+priceSelect.dispatchEvent(new ui.window.Event('change', { bubbles: true }));
+await delay(20);
+assert.equal(priceSelect.value, 'GBP');
+assert.ok(ui.document.querySelector('#pricing').textContent.includes('£2,500'));
+assert.ok(ui.document.querySelector('#pricing').textContent.includes('£1,500'));
+assert.equal(ui.document.querySelector('#pricing').textContent.includes('Founding-client pricing'), false);
+assert.equal(ui.window.localStorage.getItem('clearfig.currency'), 'GBP');
+console.log('PASS Clearfig promise, owner questions, fictional Margin Check, published prices');
 assert.ok([...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'How it works' && a.hash === '#process'));
+assert.ok([...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'Pricing' && a.hash === '#pricing'));
 assert.ok(![...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'Reviews' || a.textContent === 'Services'));
 assert.ok(ui.document.querySelector('a[href^="mailto:snesh@clearfig.in"]'));
 assert.equal(ui.document.querySelector('svg[aria-label="Clearfig"]')?.querySelector('text')?.textContent, 'Clearfig');
@@ -105,7 +142,7 @@ assert.ok(ui.document.querySelector('a[href^="mailto:snesh@clearfig.in"]')); ass
 console.log('DOM checks do not verify visual layout or hosting geolocation headers.');
 
 const noObserver = await load();
-assert.equal(noObserver.document.querySelectorAll('[data-reveal]').length, 9);
+assert.equal(noObserver.document.querySelectorAll('[data-reveal]').length, 10);
 assert.equal(noObserver.document.querySelectorAll('.is-revealed').length, 0);
 const photo = noObserver.document.querySelector('.hero-visual img');
 const charts = noObserver.document.querySelector('#review img');
@@ -122,7 +159,7 @@ const reduced = await load({ motion: 'reduced' });
 assert.equal(reduced.observers.length, 0); assert.equal(reduced.document.querySelectorAll('.is-revealed').length, 0); reduced.window.close();
 const reveal = await load({ motion: 'enabled' });
 const observer = reveal.observers.find(item => item.observed.size);
-assert.equal(observer.observed.size, 9);
+assert.equal(observer.observed.size, 10);
 const section = reveal.document.querySelector('#about');
 observer.callback([{target: section, isIntersecting: false}]); assert.ok(!section.classList.contains('is-revealed'));
 observer.callback([{target: section, isIntersecting: true}]); assert.ok(section.classList.contains('is-revealed')); assert.ok(!observer.observed.has(section));
@@ -138,7 +175,8 @@ const examples = await load({ stored: 'AED' });
 const serviceLinks = [...examples.document.querySelectorAll('#examples a[aria-label^="See an example"]')];
 assert.equal(serviceLinks.length, 8);
 assert.deepEqual(serviceLinks.map(link => link.pathname.split('/').pop()), exampleData.map(item => item.id));
-assert.equal(examples.document.querySelector('#currency'), null);
+assert.equal(examples.document.querySelector('#currency').value, 'AED');
+assert.ok(examples.document.body.textContent.includes('AED 7,500'));
 for (const item of exampleData) {
   const link = examples.document.querySelector(`a[href="/samples/${item.id}"]`);
   link.click(); await delay(120);
@@ -187,7 +225,9 @@ for (const item of exampleData) {
   [...examples.document.querySelectorAll('a')].find(a => a.textContent === 'Back to examples').click(); await delay(150);
   assert.equal(examples.window.location.pathname, '/');
   assert.equal(examples.document.activeElement.id, 'examples');
-  assert.equal(examples.document.querySelector('#currency'), null);
+  assert.equal(examples.document.querySelector('#currency').value, 'AED');
+  assert.ok(examples.document.querySelector('#pricing').textContent.includes('AED 7,500'));
+  assert.equal(examples.document.querySelector('#pricing').textContent.includes('₹35,000'), false);
 }
 assert.deepEqual(examples.errors, []); examples.window.close();
 for (const item of exampleData) {
@@ -213,4 +253,4 @@ const missing = await load({ url:'https://example.test/samples/not-a-service' })
 assert.ok(missing.document.querySelector('h1').textContent.includes('right example'));
 assert.ok(missing.document.querySelector('main a[href="/samples"]'));
 missing.window.close();
-console.log('PASS all eight example links, direct routes, 24 explanations, repeated disclosures, accessible tables, focus, back/forward, missing route, fixed USD examples and unpublished fees');
+console.log('PASS all eight example links, direct routes, 24 explanations, repeated disclosures, accessible tables, focus, back/forward, missing route, fixed USD examples and market prices');

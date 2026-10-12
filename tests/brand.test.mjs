@@ -2,9 +2,18 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { showPrices } from '../src/lib/publication.mjs';
+import { formatPrice, prices } from '../src/lib/pricing.mjs';
 
-test('fees stay unpublished until founders approve a price', () => {
-  assert.equal(showPrices, false);
+test('approved Review and Monthly prices are the published fees', () => {
+  assert.equal(showPrices, true);
+  assert.equal(formatPrice('INR', prices.INR.review), '₹35,000');
+  assert.equal(formatPrice('INR', prices.INR.monthly), '₹25,000');
+  assert.equal(formatPrice('AED', prices.AED.review), 'AED 7,500');
+  assert.equal(formatPrice('AED', prices.AED.monthly), 'AED 4,500');
+  assert.equal(formatPrice('GBP', prices.GBP.review), '£2,500');
+  assert.equal(formatPrice('GBP', prices.GBP.monthly), '£1,500');
+  assert.equal(prices.INR.review, 35000);
+  assert.doesNotMatch(JSON.stringify(prices), /2000|95|219/);
 });
 
 test('public metadata is Clearfig, not SK Capital', async () => {

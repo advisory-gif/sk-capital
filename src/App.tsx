@@ -53,7 +53,7 @@ export default function App() {
       <main id="main-content" tabIndex={-1}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/pricing" element={<Navigate to="/#review" replace />} />
+          <Route path="/pricing" element={<Navigate to="/#pricing" replace />} />
           <Route path="/samples" element={<Samples />} />
           <Route path="/samples/:sampleId" element={<Samples />} />
           <Route path="*" element={<Navigate to="/" replace />} />
