@@ -45,9 +45,7 @@ export default function Home() {
           <p className="panel-line">You still cannot see the business clearly.</p>
           <p className="panel-note">For owner-led agencies and consultancies, and for product and D2C brands.</p>
         </div>
-        <div className="content-width">
-          <PanelCredit photo={homePhotos.data} />
-        </div>
+        <PanelCredit photo={homePhotos.data} />
       </div>
     </section>
 
@@ -94,8 +92,8 @@ export default function Home() {
           <ul className="founder-grid">
             {founders.map(founder => (
               <li key={founder.name}>
-                <h3 className="font-display text-3xl text-ink sm:text-4xl">{founder.name}</h3>
-                <p className="mt-2 text-base text-fig">{founder.role}</p>
+                <h3 className="font-ui text-2xl font-medium tracking-tight text-ink">{founder.name}</h3>
+                <p className="mt-2 text-sm text-soft">{founder.role}</p>
                 <p className="mt-4 max-w-md text-base leading-relaxed text-soft">{founder.background}</p>
               </li>
             ))}

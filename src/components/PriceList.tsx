@@ -62,20 +62,20 @@ function ApprovedPrices() {
           </div>
           <ol className="price-grid" aria-live="polite">
             <li>
-              <h3 className="font-display text-3xl text-ink">Clearfig Review</h3>
+              <h3 className="font-ui text-sm font-medium tracking-wide text-soft">Clearfig Review</h3>
               <p className="price-figure">{review}</p>
               <p className="mt-3 text-sm text-soft">2 to 3 weeks</p>
               <p className="mt-4 max-w-md text-base leading-relaxed text-soft">See which customers, products and channels make you money, and which drain it.</p>
               {currency === 'INR' && <p className="mt-4 max-w-md text-base leading-relaxed text-soft">Founding-client pricing is available for the first 3 clients.</p>}
             </li>
             <li>
-              <h3 className="font-display text-3xl text-ink">Clearfig Monthly</h3>
+              <h3 className="font-ui text-sm font-medium tracking-wide text-soft">Clearfig Monthly</h3>
               <p className="price-figure">{monthly}</p>
               <p className="mt-3 text-sm text-soft">per month</p>
               <p className="mt-4 max-w-md text-base leading-relaxed text-soft">Each month, see what to grow, what to fix, and what to stop.</p>
             </li>
           </ol>
-          <p className="mt-14 max-w-3xl text-base leading-relaxed text-soft">Free self-check comes first. The Review is scoped before it starts. The fee is the published price for your market. A Review is paid 50% upfront and 50% on delivery, and credited against the first month of Monthly. Monthly is billed in advance, with a 3-month minimum and then 30 days&apos; notice. Implementation is quoted separately after a Review. Clearfig does not provide bookkeeping, tax or other regulated accounting services.</p>
+          <p className="mt-16 max-w-2xl border-t border-line pt-8 text-base leading-relaxed text-soft">Free self-check comes first. The Review is scoped before it starts. The fee is the published price for your market. A Review is paid 50% upfront and 50% on delivery, and credited against the first month of Monthly. Monthly is billed in advance, with a 3-month minimum and then 30 days&apos; notice. Implementation is quoted separately after a Review. Clearfig does not provide bookkeeping, tax or other regulated accounting services.</p>
         </div>
       </div>
     </section>

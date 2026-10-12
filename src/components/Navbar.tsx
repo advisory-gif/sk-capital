@@ -18,7 +18,7 @@ export default function Navbar() {
   const close = () => setOpen(false);
   return (
     <header
-      className="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-md"
+      className="sticky top-0 z-50 border-b border-line bg-paper"
       onKeyDown={event => {
         if (event.key === 'Escape' && open) {
           event.preventDefault();
@@ -29,9 +29,9 @@ export default function Navbar() {
     >
       <nav className="content-width flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]" aria-label="Main navigation">
         <Link to="/" onClick={close} className="shrink-0 text-ink"><Logo /></Link>
-        <div className="hidden items-center gap-6 text-sm lg:flex">
-          {links.map(([href, label]) => <Link key={href} to={href} className="text-soft hover:text-ink">{label}</Link>)}
-          <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary">Book a free conversation</a>
+        <div className="hidden items-center gap-8 text-sm font-medium lg:flex">
+          {links.map(([href, label]) => <Link key={href} to={href} className="text-ink/80 hover:text-ink">{label}</Link>)}
+          <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary nav-cta">Book a free conversation</a>
         </div>
         <button
           ref={toggleRef}

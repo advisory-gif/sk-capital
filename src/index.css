@@ -52,7 +52,7 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* One editorial photograph; the intrinsic ratio reserves its space before load. */
-.hero-layout { max-width: 46rem; }
+.hero-layout { max-width: 38rem; }
 .section-loose { @apply py-24 lg:py-36; }
 .hero-visual { min-width: 0; }
 .hero-visual img, .photo-frame img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 0.5rem; }
@@ -70,9 +70,10 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
   }
 }
 @keyframes section-enter {
-  from { opacity: 0.86; }
+  from { opacity: 0.94; }
   to { opacity: 1; }
 }
+.nav-cta { min-height: 2.5rem; padding: 0.45rem 0.9rem; font-size: 0.875rem; font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   .is-revealed, .button-primary, .button-secondary, .button-primary svg, .service-card, .panel-copy, .panel-photo { animation: none; transition: none; transform: none; }
 }
@@ -249,9 +250,9 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
   .preview-workflow .workflow-arrow { left: calc(50% - 11px); top: calc(100% + .2rem); transform: none; }
 }
 
-/* Homepage panels: full-bleed photographs, one headline, one line.
-   Sticky cover and the story crossfade run only when motion is allowed.
-   Without that, every panel stays in normal flow and fully readable. */
+/* Homepage panels keep the full-bleed sequence. Type, rules and photographs
+   are quieter: a sans headline, a one-pixel rule, and a muted overlay.
+   Sticky cover and the story crossfade run only when motion is allowed. */
 footer { position: relative; z-index: 6; background: #F6F3EE; }
 .bleed-panel {
   position: relative;
@@ -266,47 +267,47 @@ footer { position: relative; z-index: 6; background: #F6F3EE; }
 .panel-media, .panel-scrim { position: absolute; inset: 0; }
 .panel-media { z-index: 0; overflow: hidden; }
 .panel-scrim { z-index: 1; pointer-events: none; }
-.panel-scrim-dark { background: linear-gradient(180deg, rgba(28, 23, 20, 0.12) 0%, rgba(28, 23, 20, 0.5) 46%, #1C1714 74%); }
-.panel-scrim-deep { background: linear-gradient(180deg, rgba(28, 23, 20, 0.38) 0%, rgba(28, 23, 20, 0.82) 26%, #1C1714 48%); }
-.panel-scrim-light { background: linear-gradient(180deg, rgba(246, 243, 238, 0) 20%, rgba(246, 243, 238, 0.92) 50%, #F6F3EE 68%); }
-.panel-photo { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.panel-scrim-dark { background: linear-gradient(180deg, rgba(28, 23, 20, 0.22) 0%, rgba(28, 23, 20, 0.34) 48%, rgba(28, 23, 20, 0.88) 100%); }
+.panel-scrim-deep { background: linear-gradient(180deg, rgba(28, 23, 20, 0.28) 0%, rgba(28, 23, 20, 0.5) 36%, rgba(28, 23, 20, 0.9) 100%); }
+.panel-scrim-light { background: linear-gradient(180deg, rgba(246, 243, 238, 0.08) 18%, rgba(246, 243, 238, 0.82) 58%, #F6F3EE 76%); }
+.panel-photo { position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: saturate(0.72) contrast(0.97); }
 .panel-copy, .panel-credit, .panel-sheet { position: relative; z-index: 2; }
-.panel-copy { padding-bottom: 1.75rem; }
-.panel-rule { display: block; width: 3.25rem; height: 3px; margin-bottom: 1.15rem; background: #C8923B; }
+.panel-copy { padding-bottom: 1.35rem; }
+.panel-rule { display: block; width: 2.25rem; height: 1px; margin-bottom: 1.35rem; background: currentColor; opacity: 0.7; }
 .panel-title {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: 'Figtree', system-ui, sans-serif;
   font-weight: 500;
-  font-size: clamp(3.5rem, 12vw, 7.5rem);
-  line-height: 0.94;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: #F6F3EE;
 }
 .panel-title-long {
-  font-size: clamp(2rem, 3.5vw, 3.35rem);
-  line-height: 1.12;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.7rem, 2.35vw, 2.35rem);
+  line-height: 1.22;
+  letter-spacing: -0.02em;
 }
 .panel-line {
-  max-width: 38rem;
-  margin-top: 1rem;
-  font-size: clamp(1.125rem, 2vw, 1.35rem);
-  line-height: 1.45;
-  color: rgba(246, 243, 238, 0.92);
+  max-width: 34rem;
+  margin-top: 1.15rem;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: #F6F3EE;
 }
-.panel-note { max-width: 36rem; margin-top: 1rem; font-size: 1rem; line-height: 1.5; color: rgba(246, 243, 238, 0.82); }
-.tone-light .panel-title, .tone-light .panel-line, .tone-light .panel-note, .panel-sheet .panel-title, .panel-sheet .panel-line, .panel-sheet .panel-note { color: #1C1714; }
+.panel-note { max-width: 32rem; margin-top: 0.85rem; font-size: 0.9375rem; line-height: 1.5; color: #E7E1D8; }
+.tone-light .panel-title, .tone-light .panel-line, .panel-sheet .panel-title, .panel-sheet .panel-line { color: #1C1714; }
 .panel-sheet .panel-line, .panel-sheet .panel-note, .tone-light .panel-line, .tone-light .panel-note { color: #4A433C; }
 .panel-credit {
   margin: 0;
-  padding: 0.7rem 1.25rem 0.85rem;
-  background: #1C1714;
+  padding: 0 0 1.5rem;
+  background: transparent;
   color: #F6F3EE;
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   line-height: 1.45;
 }
 .panel-credit a { color: inherit; text-decoration: underline; text-underline-offset: 0.18em; }
-.panel-sheet { margin-top: auto; background: #F6F3EE; color: #1C1714; padding-top: 2.25rem; }
-.panel-sheet .panel-credit { background: transparent; color: #4A433C; padding: 0.85rem 0 1.25rem; }
+.panel-sheet { margin-top: auto; background: #F6F3EE; color: #1C1714; padding-top: 3.25rem; border-top: 1px solid #E4DDD4; }
+.panel-sheet .panel-credit { color: #4A433C; padding-bottom: 1.5rem; }
 .tone-dark a:focus-visible, .tone-dark button:focus-visible { outline-color: #F6F3EE; }
 #problem { z-index: 2; }
 #review { z-index: 3; background: #1C1714; }
@@ -314,17 +315,18 @@ footer { position: relative; z-index: 6; background: #F6F3EE; }
 #about { z-index: 5; background: #F6F3EE; }
 .story-sticky { position: relative; }
 .story-progress { display: none; }
-.offer-sheet, .founders-sheet { position: relative; z-index: 2; background: #F6F3EE; padding: 4.5rem 0 5.5rem; }
-.price-grid, .founder-grid { display: grid; gap: 3rem; }
-.price-grid { margin-top: 3.5rem; }
+.offer-sheet, .founders-sheet { position: relative; z-index: 2; background: #F6F3EE; padding: 5.5rem 0 6.5rem; border-top: 1px solid #E4DDD4; }
+.price-grid, .founder-grid { display: grid; gap: 3.5rem; }
+.price-grid { margin-top: 0; }
 .price-figure {
-  margin-top: 0.85rem;
-  font-family: 'Fraunces', Georgia, serif;
+  margin-top: 0.65rem;
+  font-family: 'Figtree', system-ui, sans-serif;
   font-weight: 500;
-  font-size: clamp(3rem, 6vw, 4.75rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: #1C1714;
+  font-variant-numeric: tabular-nums;
 }
 @media (min-width: 640px) {
   .price-grid, .founder-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
@@ -336,7 +338,7 @@ footer { position: relative; z-index: 6; background: #F6F3EE; }
   #review { z-index: 3; }
   #pricing { z-index: 4; }
   #about { z-index: 5; }
-  html.motion-on [data-parallax] .panel-photo { height: 120%; top: -10%; will-change: transform; }
+  html.motion-on [data-parallax] .panel-photo { height: 108%; top: -4%; will-change: transform; }
   html.motion-on .story-ready { height: 280vh; }
   html.motion-on .story-ready .story-sticky {
     position: sticky;
@@ -359,14 +361,14 @@ footer { position: relative; z-index: 6; background: #F6F3EE; }
     right: 0;
     bottom: 0;
     z-index: 3;
-    height: 3px;
+    height: 1px;
     background: rgba(246, 243, 238, 0.28);
   }
   html.motion-on .story-ready .story-progress span {
     display: block;
     height: 100%;
     width: 100%;
-    background: #C8923B;
+    background: #F6F3EE;
     transform: scaleX(var(--story, 0));
     transform-origin: left center;
   }
@@ -379,7 +381,7 @@ footer { position: relative; z-index: 6; background: #F6F3EE; }
   }
 }
 @keyframes panel-rise {
-  from { opacity: 0.72; transform: translateY(28px); }
+  from { opacity: 0.94; transform: translateY(10px); }
   to { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {

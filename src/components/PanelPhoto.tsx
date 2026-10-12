@@ -18,7 +18,7 @@ export function PanelPhoto({ photo, eager = false }: { photo: HomePhoto; eager?:
 
 export function PanelCredit({ photo }: { photo: HomePhoto }) {
   return (
-    <p className="panel-credit">
+    <p className="panel-credit content-width">
       Illustrative photo by <a href={photo.href}>{photo.credit}</a> on {photo.source}. {photo.note}
     </p>
   );

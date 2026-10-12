@@ -24,7 +24,7 @@ export function useHomeMotion() {
         const rect = panel.getBoundingClientRect();
         if (rect.bottom < -80 || rect.top > viewHeight + 80) return;
         const progress = (viewHeight - rect.top) / (viewHeight + rect.height);
-        const shift = (progress - 0.5) * -36;
+        const shift = (progress - 0.5) * -12;
         image.style.transform = `translate3d(0, ${shift}px, 0)`;
       });
       if (!story || slides.length < 2) return;

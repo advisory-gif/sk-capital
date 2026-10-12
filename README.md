@@ -53,7 +53,7 @@ Homepage panels use the first seven. The hero is eager-loaded. The rest are lazy
 
 ## Visual system
 
-Warm paper (`#F6F3EE`), ink (`#1C1714`), fig (`#5C2A38`) and leaf (`#4E6B3A`). Ochre (`#C8923B`) is a display accent only, used as a short rule on the homepage, not for small text. Fraunces for headings, Figtree for text, with Georgia and system-ui as fallbacks. The wordmark is the ripe-fig logo: a fig in fig, a leaf in leaf, “Clear” in ink and “fig” in fig (`public/logo.svg`, `public/favicon.svg`, `src/components/Logo.tsx`). Reversed and single-colour files are `public/logo-reversed.svg` and `public/logo-mono.svg`. The mark alone is `public/mark.svg`. This replaces the earlier green and ivory SK Capital look.
+Warm paper (`#F6F3EE`), ink (`#1C1714`), fig (`#5C2A38`) and leaf (`#4E6B3A`). Homepage panels use Figtree, with a one-pixel rule and slightly muted photographs. Fraunces remains the heading face on the details page and in the examples. Figtree is the text face, with Georgia and system-ui as fallbacks. The wordmark is the ripe-fig logo: a fig in fig, a leaf in leaf, “Clear” in ink and “fig” in fig (`public/logo.svg`, `public/favicon.svg`, `src/components/Logo.tsx`). Reversed and single-colour files are `public/logo-reversed.svg` and `public/logo-mono.svg`. The mark alone is `public/mark.svg`. This replaces the earlier green and ivory SK Capital look.
 
 ## Sample checks
 
