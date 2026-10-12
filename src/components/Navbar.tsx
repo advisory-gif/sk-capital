@@ -5,10 +5,9 @@ import Logo from '@/components/Logo';
 import { bookingUrl } from '@/lib/offers';
 
 const links = [
-  ['/#who', "Who it's for"],
-  ['/#process', 'How it works'],
-  ['/#review', 'What you get'],
+  ['/#review', 'The fix'],
   ['/#pricing', 'Pricing'],
+  ['/details', 'Details'],
   ['/samples', 'Examples'],
   ['/#about', 'About'],
 ] as const;

@@ -23,12 +23,11 @@ function DataTable({ data, caption }: { data: ExampleTable; caption: string }) {
 }
 
 function SampleDetail({ sample }: { sample: ServiceSample }) {
-  const returnSection = 'examples';
   const model = sampleVisual(sample);
   return <article className="content-width sample-page">
     <div className="flex flex-wrap gap-x-8 gap-y-2 mb-6">
       <Link to="/samples" className="example-link"><ArrowLeft size={16} aria-hidden="true" /> All examples</Link>
-      <Link to={`/#${returnSection}`} className="example-link">Back to examples</Link>
+      <Link to="/samples" className="example-link">Back to examples</Link>
     </div>
     <div className="sample-overview">
       <header className="sample-question">
@@ -63,7 +62,7 @@ function SampleDetail({ sample }: { sample: ServiceSample }) {
         </details>
       </div>
     </details>
-    <div className="flex flex-wrap items-center gap-6 mt-6"><Link to="/samples" className="button-secondary">Explore another example <ArrowRight size={16} aria-hidden="true" /></Link><Link to={`/#${returnSection}`} className="example-link">Back to examples</Link></div>
+    <div className="flex flex-wrap items-center gap-6 mt-6"><Link to="/samples" className="button-secondary">Explore another example <ArrowRight size={16} aria-hidden="true" /></Link><Link to="/samples" className="example-link">Back to examples</Link></div>
   </article>;
 }
 
@@ -73,7 +72,7 @@ export default function Samples() {
   if (sample) return <SampleDetail key={sample.id} sample={sample} />;
   if (sampleId) return <section className="content-width section-space"><p className="eyebrow">Example not found</p><h1 tabIndex={-1} className="section-title">Let us find the right example.</h1><p className="mt-5 mb-8 text-base leading-relaxed text-soft">This example link is not available. You can browse all eight fictional examples below.</p><Link to="/samples" className="button-primary">See all examples <ArrowRight size={16} aria-hidden="true" /></Link></section>;
   return <section className="content-width section-space">
-    <Link to="/#examples" className="example-link mb-8"><ArrowLeft size={16} aria-hidden="true" /> Back to Clearfig</Link>
+    <Link to="/" className="example-link mb-8"><ArrowLeft size={16} aria-hidden="true" /> Back to Clearfig</Link>
     <header className="max-w-3xl"><p className="eyebrow">Fictional examples</p><h1 tabIndex={-1} className="section-title">Real kinds of questions. Made-up numbers.</h1><p className="mt-5 text-base leading-relaxed text-soft">Fictional examples in US dollars (USD), not client results or service prices. They show how your own data can point to a next step, from clients and capacity to marketing and cash.</p></header>
     <div className="sample-gallery">{samples.map((item, index) => <article key={item.id} className="sample-card">
       <p className="sample-card-service">0{index + 1} · {item.name}</p>

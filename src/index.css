@@ -51,16 +51,14 @@ main:focus, section[tabindex="-1"]:focus, h1[tabindex="-1"]:focus { outline: non
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 /* One editorial photograph; the intrinsic ratio reserves its space before load. */
-.hero-layout { display: grid; gap: 3rem; align-items: center; }
+.hero-layout { max-width: 46rem; }
+.section-loose { @apply py-24 lg:py-36; }
 .hero-visual { min-width: 0; }
 .hero-visual img, .photo-frame img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 0.5rem; }
 .photo-frame img { filter: saturate(0.86); }
 .photo-caption { margin-top: 0.75rem; font-size: 0.875rem; line-height: 1.5; color: #4A433C; }
 .photo-caption a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; }
 .logo { height: 2rem; width: auto; display: block; }
-@media (min-width: 1024px) {
-  .hero-layout { grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 3rem; }
-}
 /* Content stays visible without the enhancement, even if observation fails. */
 @media (prefers-reduced-motion: no-preference) {
   .is-revealed { animation: section-enter 550ms ease-out; }

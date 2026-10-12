@@ -1,6 +1,6 @@
 # Clearfig website
 
-The public site for Clearfig, formerly SK Capital. Clearfig is a data company. It helps owners see their business clearly through their own data: a 360-degree health check across revenue, costs, clients, operations, capacity, marketing and cash. Finance is one lens among several. The intended domain is [clearfig.in](https://clearfig.in). This repository used to be published as SK Capital at skcapital.co.in. Do not deploy, publish, change DNS, or change Vercel settings from this codebase until the founders ask.
+The public site for Clearfig, formerly SK Capital. Clearfig shows owners, from their own data, which customers, products and channels make them money and which drain it, then helps them fix it. The intended domain is [clearfig.in](https://clearfig.in). This repository used to be published as SK Capital at skcapital.co.in. Do not deploy, publish, change DNS, or change Vercel settings from this codebase until the founders ask.
 
 Spreadsheets and AI can support the work. They are not the promise. The promise is a clear view of the business from the owner's own data, and a decision they can carry out.
 
@@ -35,14 +35,14 @@ The site does not claim bookkeeping, tax, audit, regulated accounting, client re
 
 ## Photographs
 
-Calm desk photographs, used as illustration. They are not Clearfig clients, offices or reports. Both are free to use under the [Unsplash License](https://unsplash.com/license), including commercial use. Attribution is not required by that licence. Credits are on the page and here.
+Calm desk photographs, used as illustration on the details page. They are not Clearfig clients, offices or reports. Both are free to use under the [Unsplash License](https://unsplash.com/license), including commercial use. Attribution is not required by that licence. Credits are on the details page and here.
 
 | File | Subject | Photographer | Source |
 |---|---|---|---|
 | `public/images/reviewing-numbers-640.webp`, `960`, `1440` | Person reviewing notes beside a laptop | Scott Graham | [Unsplash](https://unsplash.com/photos/person-holding-pencil-near-laptop-computer-5fNmWej4tAA) |
 | `public/images/charts-desk-800.webp`, `1200` | Laptop with charts and a notebook | Carlos Muza | [Unsplash](https://unsplash.com/photos/laptop-computer-on-glass-top-table-hpjSkU2UYSU) |
 
-The hero image is eager-loaded. The second image is lazy-loaded. Both are WebP, with width and height set so the layout does not jump. Alt text describes the photo and says it is illustrative.
+On the details page, the first photograph is eager-loaded and the second is lazy-loaded. Both are WebP, with width and height set so the layout does not jump. Alt text describes the photo and says it is illustrative. The homepage does not show them.
 
 ## Visual system
 

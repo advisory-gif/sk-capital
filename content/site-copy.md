@@ -10,9 +10,15 @@ There are no TBC placeholders. The founder biographies are published.
 
 Title: Clearfig | See your business in your own data
 
-Description: Owners do not see their business clearly through their own data. Clearfig reads that data across revenue, costs, clients, operations, capacity, marketing and cash.
+Description: Clearfig shows you, from your own data, which customers, products and channels make you money and which drain it, then helps you fix it.
 
 The same title and description are used for the social preview. Canonical URL: https://clearfig.in/
+
+### Details
+
+Title: Details | Clearfig
+
+Description: Who Clearfig is for, what a Review covers, and how your data is handled.
 
 ### Examples index
 
@@ -42,10 +48,9 @@ Navigation label: Main navigation
 
 Links:
 
-- Who it's for
-- How it works
-- What you get
+- The fix
 - Pricing
+- Details
 - Examples
 - About
 
@@ -61,21 +66,109 @@ The mobile menu repeats the same links and the same button.
 
 ## Homepage
 
+Five short sections. The longer explanations are on the details page.
+
 ### Hero
 
-Eyebrow: See the business in your own data
+Heading: Clearfig shows you, from your own data, which customers, products and channels make you money and which drain it, then helps you fix it.
 
-Heading: See your business clearly, through the data you already have.
-
-Clearfig is a data company. We help owners see the whole business through their own data: a 360-degree health check of revenue, costs, clients, operations, capacity, marketing and cash. Finance is one lens among several.
+We read your sales, customers, marketing and costs together, so you can see what's really working, stop what isn't, and grow with confidence.
 
 Button: Book a free conversation
 
-A free conversation. Any review is scoped before work starts.
+Any review is scoped before work starts.
 
-Photo alt text: Illustrative photo of a person reviewing notes beside a laptop at a quiet desk.
+### Problem
 
-Caption: Illustrative photo by Scott Graham on Unsplash. Not a Clearfig client.
+Heading: You have the data.
+
+You still cannot see the business clearly.
+
+For owner-led agencies and consultancies, and for product and D2C brands.
+
+### The fix
+
+Heading: Grow. Fix. Stop.
+
+Grow
+
+What makes you money.
+
+Fix
+
+What is getting in the way.
+
+Stop
+
+What drains you.
+
+### Offer
+
+Heading: A Review. Then each month.
+
+Choose India, the UAE or the UK.
+
+Label: Show prices in
+
+Options: India, UAE, UK
+
+India is the default. The UAE and the UK appear when that market is already known, or when the visitor chooses it. A saved choice is kept.
+
+Clearfig Review
+
+Time: 2 to 3 weeks
+
+See which customers, products and channels make you money, and which drain it.
+
+India only: Founding-client pricing is available for the first 3 clients.
+
+Clearfig Monthly
+
+Billed: per month
+
+Each month, see what to grow, what to fix, and what to stop.
+
+Prices:
+
+- India: Review ₹35,000. Monthly ₹25,000 per month.
+- UAE: Review AED 7,500. Monthly AED 4,500 per month.
+- UK: Review £2,500. Monthly £1,500 per month.
+
+Free self-check comes first. The Review is scoped before it starts. The fee is the published price for your market. A Review is paid 50% upfront and 50% on delivery, and credited against the first month of Monthly. Monthly is billed in advance, with a 3-month minimum and then 30 days' notice. Implementation is quoted separately after a Review. Clearfig does not provide bookkeeping, tax or other regulated accounting services.
+
+### Founders
+
+Heading: The founders.
+
+Snesh Kakkar
+
+Founder
+
+Around ten years across strategy, business partnering and finance, including at American Express and Amazon, helping leaders turn data into decisions. At Clearfig, he brings that clarity to business owners.
+
+Megha Dalmia
+
+Founder
+
+Around ten years across strategy, business partnering and finance, at firms like ITC Infotech and Sun Pharma, finding what the data says about where a business wins and where it leaks. At Clearfig, she makes that easy to see and act on.
+
+We started Clearfig because the owners who need this clarity most rarely get it.
+
+Button: Book a free conversation
+
+## Details
+
+Title: Details | Clearfig
+
+Description: Who Clearfig is for, what a Review covers, and how your data is handled.
+
+Eyebrow: Details
+
+Heading: The rest of the picture.
+
+The homepage is the offer. This page is who it is for, what a Review covers, and how your data is handled.
+
+Clear means seeing the business as it really is. Fig is the fig tree: natural, fruitful and long-lived.
 
 ### Who it is for
 
@@ -83,9 +176,9 @@ Eyebrow: Who it is for
 
 Heading: For owners who need a clear picture before the next decision.
 
-The first conversations are with owner-led agencies and consultancies of about 10 to 50 people, in the UK, the UAE and India. The questions usually cross clients, pricing, capacity, marketing and how the work runs.
+The first conversations are with owner-led agencies and consultancies, and with product and D2C brands, of about 10 to 50 people, in the UK, the UAE and India.
 
-Owners of other service and product businesses are welcome when the problem is the same: the data exists, but the business is hard to see.
+Owners of other businesses are welcome when the problem is the same: the data exists, but the business is hard to see.
 
 Aside heading: Not the right fit if you need
 
@@ -149,77 +242,25 @@ Eyebrow: What you get
 
 Heading: A focused business review, scoped before it starts.
 
-One owner. One question, set inside a 360-degree view of the business. The data you already keep. Before any work starts, we agree what we will look at and what you will receive. The review stands on its own.
+One question, read across customers, products, channels, marketing and costs. Before any work starts, we agree what we will look at and what you will receive. The review stands on its own.
 
-Photo alt text: Illustrative photo of a laptop showing charts, with a notebook on the desk.
+Customers, products and channels
 
-Caption: Illustrative photo by Carlos Muza on Unsplash. Not a client report.
+Which make you money, and which drain it. This includes margin by client, project and service.
 
-Margin by client, project and service
+Marketing and costs
 
-Read from the data you already keep, so you can see which clients, projects and services are worth more of the business.
+Your sales, marketing and costs, read together.
 
-Where money leaks
+A clear action plan: what to grow, what to fix, what to stop
 
-The costs, hours or work that take more than they return.
-
-The 3 decisions to make next
-
-Three practical choices from those numbers, written so you can act.
+Written from your own data, so you can act.
 
 A written report
 
-The reading, the gaps, and those decisions. The Review takes 2 to 3 weeks.
+The reading, the gaps, and that plan. The Review takes 2 to 3 weeks.
 
 The Clearfig Review uses your own data for that written report. Agreed before we start: the question, the information you will share, and the timing. The fee is the published price for your market.
-
-Button: Book a free conversation
-
-### Pricing
-
-Eyebrow: Pricing
-
-Heading: Free self-check, then a Review, then a month.
-
-Three steps. The self-check is free. Choose India, the UAE or the UK for the paid steps. Implementation is quoted separately after a Review.
-
-Label: Show prices in
-
-Options: India, UAE, UK
-
-India is the default. The UAE and the UK appear when that market is already known, or when the visitor chooses it. A saved choice is kept.
-
-01. Free self-check
-
-Price: Free
-
-A free first step with the numbers you already have, before any paid work.
-
-02. Clearfig Review
-
-Time: 2 to 3 weeks
-
-We use your own data to show margin by client, project and service, where money leaks, and the 3 decisions to make next, in a written report.
-
-Paid 50% upfront and 50% on delivery, and credited against the first month of Monthly.
-
-India only: Founding-client pricing is available for the first 3 clients.
-
-03. Clearfig Monthly
-
-Billed: per month
-
-A monthly dashboard and a review call. Billed in advance, with a 3-month minimum and then 30 days' notice.
-
-Prices:
-
-- India: Review ₹35,000. Monthly ₹25,000 per month.
-- UAE: Review AED 7,500. Monthly AED 4,500 per month.
-- UK: Review £2,500. Monthly £1,500 per month.
-
-Implementation is quoted separately after a Review. Clearfig does not provide bookkeeping, tax or other regulated accounting services.
-
-Button: Book a free conversation
 
 ### Not your accountant
 
@@ -231,36 +272,15 @@ An accountant records what happened and handles the filings the law requires. Th
 
 Clearfig does not provide bookkeeping, tax, audit or other regulated accounting services. Your accountant remains the right person for the regulated work.
 
-### Examples on the homepage
+### Examples
 
 Eyebrow: Examples
 
-Heading: The same kind of reading, with fictional numbers.
+Heading: Fictional numbers. Real kinds of questions.
 
-These examples use made-up US dollar figures. They show how one question in your data, from clients and capacity to marketing and cash, can turn into a next step. They are not client results, and they are not our fees.
+Eight examples use made-up US dollar figures. They are not client results, and they are not our fees.
 
-Eyebrow: A fictional reading
-
-Heading: See what three projects leave.
-
-Three projects generated $50,000 in sales and cost $38,000 to deliver, leaving $12,000.
-
-Fictional example · Margin Check · USD. These are business figures, not service prices or a client result.
-
-Link: Explore all eight examples
-
-The chart on this block uses the Margin Check chart copy below.
-
-Then eight links:
-
-- Margin Check. Link text: What’s left from each sale?. Accessible name: See an example of Margin Check.
-- Four-Week Cash Snapshot. Link text: What if a customer pays late?. Accessible name: See an example of Four-Week Cash Snapshot.
-- Plan vs Actual Review. Link text: Why did we miss the plan?. Accessible name: See an example of Plan vs Actual Review.
-- AI Finance Workflow Setup. Link text: Can AI help with our monthly update?. Accessible name: See an example of AI Finance Workflow Setup.
-- Plan a hire or expansion. Link text: Will extra sales cover a new hire?. Accessible name: See an example of Plan a hire or expansion.
-- Understand cash and profit. Link text: We made a profit. Where’s the cash?. Accessible name: See an example of Understand cash and profit.
-- Assess marketing performance. Link text: Are our ads paying their way?. Accessible name: See an example of Assess marketing performance.
-- Make reporting more useful. Link text: Sales are up. Is the business healthier?. Accessible name: See an example of Make reporting more useful.
+Link: See the examples
 
 ### How your numbers are handled
 
@@ -292,7 +312,7 @@ Heading: Before you book.
 
 What does Clearfig actually do?
 
-We help owners see their business clearly through their own data. The work is a 360-degree health check across revenue, costs, clients, operations, capacity, marketing and cash. Spreadsheets and AI can help. They are tools. The promise is a clearer picture, and a decision you can carry out.
+Clearfig shows you, from your own data, which customers, products and channels make you money and which drain it, then helps you fix it. We read sales, customers, marketing and costs together. You leave with a clear action plan: what to grow, what to fix, what to stop.
 
 How is this different from my accountant?
 
@@ -300,15 +320,15 @@ An accountant records what happened and handles the filings the law requires. Cl
 
 What do I receive from a focused review?
 
-A written reading of the agreed question, the assumptions and gaps, and a practical next decision. The exact deliverable is confirmed in the scope before work starts. The review stands on its own. You do not have to continue.
+A written reading of your customers, products, channels, marketing and costs, the assumptions and gaps, and a clear action plan: what to grow, what to fix, what to stop. The exact deliverable is confirmed in the scope before work starts. The review stands on its own. You do not have to continue.
 
 What does it cost?
 
-The prices are published on this page, for India, the UAE and the UK. The self-check is free. A Review is paid 50% upfront and 50% on delivery, and that fee is credited against the first month of Monthly. Monthly is billed in advance, with a 3-month minimum, then 30 days' notice. Implementation is quoted separately after a Review.
+The prices are on the homepage, for India, the UAE and the UK. The self-check is free. A Review is paid 50% upfront and 50% on delivery, and that fee is credited against the first month of Monthly. Monthly is billed in advance, with a 3-month minimum, then 30 days' notice. Implementation is quoted separately after a Review.
 
 Who is it for?
 
-Owners of service and product businesses. We are starting with owner-led agencies and consultancies of about 10 to 50 people in the UK, the UAE and India, usually across clients, pricing, capacity and how the work runs.
+Owners of agencies, consultancies, and product and D2C brands. We are starting with businesses of about 10 to 50 people in the UK, the UAE and India.
 
 What should I send before we speak?
 
@@ -322,39 +342,11 @@ Do you work with messy numbers?
 
 Often the useful outcome is to see what is missing. We agree the inputs before work starts. Tidying the source data, rebuilding history or taking over reporting is separate work, and only if we agree it.
 
-### About
-
-Eyebrow: About
-
-Heading: Two founders. One clear view.
-
-Snesh and Megha are the founders of Clearfig. They help owners see the business clearly through their own data, choose a practical next decision, and carry it out.
-
-Clear means seeing the business as it really is. Fig is the fig tree: natural, fruitful and long-lived. The name is about a clear view today, and a business that can last.
-
-Snesh Kakkar
-
-Founder
-
-Around ten years across strategy, business partnering and finance, including at American Express and Amazon, helping leaders turn data into decisions. At Clearfig, he brings that clarity to business owners.
-
-Megha Dalmia
-
-Founder
-
-Around ten years across strategy, business partnering and finance, at firms like ITC Infotech and Sun Pharma, finding what the data says about where a business wins and where it leaks. At Clearfig, she makes that easy to see and act on.
-
-We started Clearfig because the owners who need this clarity most rarely get it.
-
 ### Contact
-
-Eyebrow: Start with your own data
 
 Heading: Bring one question and the numbers you already have.
 
-Tell us what you want to see more clearly. We will use a free conversation to understand the question, and whether a review of your own data would help.
-
-Button: Book a free conversation
+A short note is enough. Do not include bank statements or customer lists in the first email.
 
 Email link: snesh@clearfig.in
 
@@ -362,19 +354,28 @@ The email link opens the visitor's email app with the subject "A question about 
 
 Email opens your email app. Nothing is sent automatically.
 
+Photo alt text: Illustrative photo of a person reviewing notes beside a laptop at a quiet desk.
+
+Caption: Illustrative photo by Scott Graham on Unsplash. Not a Clearfig client.
+
+Photo alt text: Illustrative photo of a laptop showing charts, with a notebook on the desk.
+
+Caption: Illustrative photo by Carlos Muza on Unsplash. Not a client report.
+
 ## Footer
 
-See your business clearly, through your own data.
+Know what makes you money, and what drains it.
 
 Email: snesh@clearfig.in
 
-Links: Pricing · Questions · Examples
+Links: Pricing · Details · Examples
 
 © 2026 Clearfig
 
 The year is the current year.
 
 Clearfig does not provide bookkeeping, tax, audit or other regulated accounting services. Examples on this site are fictional.
+
 
 ## Examples index
 

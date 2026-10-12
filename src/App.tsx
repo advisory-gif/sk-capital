@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
-import { BrowserRouter, HashRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Home from '@/pages/Home';
+import Details from '@/pages/Details';
 import Samples from '@/pages/Samples';
 import { findSample } from '@/lib/samples';
-import { examplesDescription, examplesTitle, homeDescription, homeTitle, sampleDescription, siteUrl } from '@/lib/advisory';
+import { detailsDescription, detailsTitle, examplesDescription, examplesTitle, homeDescription, homeTitle, sampleDescription, siteUrl } from '@/lib/advisory';
 
 const standalone = import.meta.env.MODE === 'standalone';
 const Router = standalone ? HashRouter : BrowserRouter;
@@ -19,11 +20,22 @@ if (!standalone && /^#\/(pricing|portfolio|blog|how-we-use-ai)?(?:$|[?#])/.test(
 
 function NavigationEffects() {
   const { pathname, hash, key } = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
+    const detailSections = new Set(['who', 'questions', 'process', 'accountant', 'trust', 'faq', 'contact']);
+    if (pathname === '/' && (hash === '#examples' || hash === '#custom-projects')) {
+      navigate('/samples', { replace: true });
+      return;
+    }
+    if (pathname === '/' && detailSections.has(hash.slice(1))) {
+      navigate(`/details${hash}`, { replace: true });
+      return;
+    }
     const isSample = pathname.startsWith('/samples');
+    const isDetails = pathname === '/details';
     const sample = findSample(pathname.split('/')[2]);
-    const title = sample ? `${sample.name} example | Clearfig` : isSample ? examplesTitle : homeTitle;
-    const description = sample ? sampleDescription : isSample ? examplesDescription : homeDescription;
+    const title = sample ? `${sample.name} example | Clearfig` : isDetails ? detailsTitle : isSample ? examplesTitle : homeTitle;
+    const description = sample ? sampleDescription : isDetails ? detailsDescription : isSample ? examplesDescription : homeDescription;
     document.title = title;
     for (const [selector, content] of [
       ['meta[name="description"]', description],
@@ -39,8 +51,8 @@ function NavigationEffects() {
       target?.scrollIntoView();
       if (target) { target.tabIndex = -1; target.focus({ preventScroll: true }); }
     } else window.scrollTo(0, 0);
-    if (isSample && !hash) document.querySelector<HTMLElement>('main h1')?.focus({ preventScroll: true });
-  }, [pathname, hash, key]);
+    if ((isSample || isDetails) && !hash) document.querySelector<HTMLElement>('main h1')?.focus({ preventScroll: true });
+  }, [pathname, hash, key, navigate]);
   return null;
 }
 
@@ -53,6 +65,7 @@ export default function App() {
       <main id="main-content" tabIndex={-1}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/details" element={<Details />} />
           <Route path="/pricing" element={<Navigate to="/#pricing" replace />} />
           <Route path="/samples" element={<Samples />} />
           <Route path="/samples/:sampleId" element={<Samples />} />

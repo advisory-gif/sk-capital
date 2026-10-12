@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight } from 'lucide-react';
-import { bookingUrl } from '@/lib/offers';
 import { showPrices } from '@/lib/publication.mjs';
 import { formatPrice, prices } from '@/lib/pricing.mjs';
 import { detectCurrency, isCurrency, savedCurrency, saveCurrency } from '@/lib/currency.mjs';
@@ -39,13 +37,12 @@ function ApprovedPrices() {
   const review = formatPrice(currency, prices[currency].review);
   const monthly = formatPrice(currency, prices[currency].monthly);
   return (
-    <section data-reveal id="pricing" className="section-space border-t border-line bg-wash">
+    <section data-reveal id="pricing" className="section-loose border-t border-line bg-wash">
       <div className="content-width">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="eyebrow">Pricing</p>
-            <h2 className="section-title">Free self-check, then a Review, then a month.</h2>
-            <p className="mt-5 text-base leading-relaxed text-soft">Three steps. The self-check is free. Choose India, the UAE or the UK for the paid steps. Implementation is quoted separately after a Review.</p>
+            <h2 className="section-title">A Review. Then each month.</h2>
+            <p className="mt-5 text-base leading-relaxed text-soft">Choose India, the UAE or the UK.</p>
           </div>
           <div>
             <label htmlFor="currency" className="mb-2 block text-sm text-soft">Show prices in</label>
@@ -54,32 +51,22 @@ function ApprovedPrices() {
             </select>
           </div>
         </div>
-        <ol className="mt-10 grid gap-6 lg:grid-cols-3" aria-live="polite">
-          <li className="flex flex-col rounded-lg border border-line bg-white p-6">
-            <span className="font-ui text-sm text-fig">01</span>
-            <h3 className="mt-3 font-display text-2xl text-ink">Free self-check</h3>
-            <p className="mt-4 font-display text-4xl text-ink">Free</p>
-            <p className="mt-4 text-base leading-relaxed text-soft">A free first step with the numbers you already have, before any paid work.</p>
-          </li>
-          <li className="flex flex-col rounded-lg border border-fig bg-white p-6">
-            <span className="font-ui text-sm text-fig">02</span>
-            <h3 className="mt-3 font-display text-2xl text-ink">Clearfig Review</h3>
+        <ol className="mt-16 grid gap-10 sm:grid-cols-2" aria-live="polite">
+          <li>
+            <h3 className="font-display text-3xl text-ink">Clearfig Review</h3>
             <p className="mt-4 font-display text-4xl text-ink">{review}</p>
-            <p className="mt-1 text-sm text-soft">2 to 3 weeks</p>
-            <p className="mt-4 text-base leading-relaxed text-soft">We use your own data to show margin by client, project and service, where money leaks, and the 3 decisions to make next, in a written report.</p>
-            <p className="mt-4 text-base leading-relaxed text-soft">Paid 50% upfront and 50% on delivery, and credited against the first month of Monthly.</p>
-            {currency === 'INR' && <p className="mt-4 text-base leading-relaxed text-soft">Founding-client pricing is available for the first 3 clients.</p>}
+            <p className="mt-2 text-sm text-soft">2 to 3 weeks</p>
+            <p className="mt-4 max-w-md text-base leading-relaxed text-soft">See which customers, products and channels make you money, and which drain it.</p>
+            {currency === 'INR' && <p className="mt-4 max-w-md text-base leading-relaxed text-soft">Founding-client pricing is available for the first 3 clients.</p>}
           </li>
-          <li className="flex flex-col rounded-lg border border-line bg-white p-6">
-            <span className="font-ui text-sm text-fig">03</span>
-            <h3 className="mt-3 font-display text-2xl text-ink">Clearfig Monthly</h3>
+          <li>
+            <h3 className="font-display text-3xl text-ink">Clearfig Monthly</h3>
             <p className="mt-4 font-display text-4xl text-ink">{monthly}</p>
-            <p className="mt-1 text-sm text-soft">per month</p>
-            <p className="mt-4 text-base leading-relaxed text-soft">A monthly dashboard and a review call. Billed in advance, with a 3-month minimum and then 30 days&apos; notice.</p>
+            <p className="mt-2 text-sm text-soft">per month</p>
+            <p className="mt-4 max-w-md text-base leading-relaxed text-soft">Each month, see what to grow, what to fix, and what to stop.</p>
           </li>
         </ol>
-        <p className="mt-8 max-w-3xl text-base leading-relaxed text-soft">Implementation is quoted separately after a Review. Clearfig does not provide bookkeeping, tax or other regulated accounting services.</p>
-        <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary mt-8">Book a free conversation <ArrowRight size={16} aria-hidden="true" /></a>
+        <p className="mt-12 max-w-3xl text-base leading-relaxed text-soft">Free self-check comes first. The Review is scoped before it starts. The fee is the published price for your market. A Review is paid 50% upfront and 50% on delivery, and credited against the first month of Monthly. Monthly is billed in advance, with a 3-month minimum and then 30 days&apos; notice. Implementation is quoted separately after a Review. Clearfig does not provide bookkeeping, tax or other regulated accounting services.</p>
       </div>
     </section>
   );
