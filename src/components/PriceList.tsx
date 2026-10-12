@@ -78,7 +78,7 @@ function ApprovedPrices() {
             <p className="mt-4 text-base leading-relaxed text-soft">A monthly dashboard and a review call. Billed in advance, with a 3-month minimum and then 30 days&apos; notice.</p>
           </li>
         </ol>
-        <p className="mt-8 max-w-3xl text-base leading-relaxed text-soft">Implementation is quoted separately after a Review. Clearfig is not a bookkeeping, tax or CFO service.</p>
+        <p className="mt-8 max-w-3xl text-base leading-relaxed text-soft">Implementation is quoted separately after a Review. Clearfig does not provide bookkeeping, tax or other regulated accounting services.</p>
         <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary mt-8">Book a free conversation <ArrowRight size={16} aria-hidden="true" /></a>
       </div>
     </section>

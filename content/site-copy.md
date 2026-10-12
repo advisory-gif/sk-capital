@@ -8,9 +8,9 @@ There are no TBC placeholders. The founder biographies are published.
 
 ### Homepage
 
-Title: Clearfig | Clarity from your own data
+Title: Clearfig | See your business in your own data
 
-Description: Clearfig helps owners understand their business through their own data, so they can earn more and spend less. See where you earn, where you overspend, and what to do next.
+Description: Owners do not see their business clearly through their own data. Clearfig reads that data across revenue, costs, clients, operations, capacity, marketing and cash.
 
 The same title and description are used for the social preview. Canonical URL: https://clearfig.in/
 
@@ -18,7 +18,7 @@ The same title and description are used for the social preview. Canonical URL: h
 
 Title: Examples | Clearfig
 
-Description: Fictional examples of reading a business question through numbers. Made-up US dollar figures, not client results or fees.
+Description: Fictional examples of a business question read through data. Made-up US dollar figures, not client results or fees.
 
 ### Each example page
 
@@ -63,11 +63,11 @@ The mobile menu repeats the same links and the same button.
 
 ### Hero
 
-Eyebrow: Clarity from your own data
+Eyebrow: See the business in your own data
 
-Heading: Earn more and spend less, from the numbers you already have.
+Heading: See your business clearly, through the data you already have.
 
-Clearfig helps owners understand their business through their own data. See where you earn, where you overspend, and what to do next. Your numbers already hold the answers.
+Clearfig is a data company. We help owners see the whole business through their own data: a 360-degree health check of revenue, costs, clients, operations, capacity, marketing and cash. Finance is one lens among several.
 
 Button: Book a free conversation
 
@@ -81,11 +81,11 @@ Caption: Illustrative photo by Scott Graham on Unsplash. Not a Clearfig client.
 
 Eyebrow: Who it is for
 
-Heading: For owners who need the picture before the next decision.
+Heading: For owners who need a clear picture before the next decision.
 
-The first conversations are with owner-led agencies and consultancies of about 10 to 50 people, in the UK, the UAE and India. The questions are usually project margins, pricing and capacity.
+The first conversations are with owner-led agencies and consultancies of about 10 to 50 people, in the UK, the UAE and India. The questions usually cross clients, pricing, capacity, marketing and how the work runs.
 
-Owners of other service and product businesses are welcome when the question is the same: how the business earns, spends and loses money.
+Owners of other service and product businesses are welcome when the problem is the same: the data exists, but the business is hard to see.
 
 Aside heading: Not the right fit if you need
 
@@ -93,31 +93,31 @@ This is not bookkeeping, tax filing, audit, or a software product. If a differen
 
 ### Questions
 
-Eyebrow: Your numbers already hold the answers
+Eyebrow: The picture is already in your data
 
 Heading: Questions owners ask when the picture is not clear.
 
-You do not need a new system to start. Bring the reports you already use. We read them with you, so you can see where money is earned and where it is lost.
+You do not need a new system to start. Bring the reports you already use. We read them with you, across revenue, costs, clients, operations, capacity, marketing and cash.
 
 01. Sales are growing. Why isn't profit?
 
-Sales can rise while the amount left after delivery costs falls. The project and product numbers you already keep show which work pays, and which work costs more than it returns.
+Sales can rise while the business is less healthy. The project and product data you already keep show which work pays, and which work costs more than it returns.
 
 02. Which clients, projects or products are worth growing?
 
-Not every sale deserves more of your time. Compare what each one earns with what it takes to deliver, using your own figures.
+Not every client or product deserves more of the business. Compare what each one brings in with what it takes to deliver, using your own data.
 
 03. Where are we spending more than the work is worth?
 
-Look at delivery time, direct costs and the overheads already in your reports. See which spend earns its place, and which spend you can reduce.
+Look at delivery time, direct costs and the running costs already in your reports. See which spend earns its place, and which you can reduce.
 
 04. Can we take on more work, or is the team already full?
 
-Match the work you want with the hours you have. Your capacity numbers show whether the next yes needs a higher price, a later start, or more people.
+Match the work you want with the hours you have. Your capacity data show whether the next yes needs a higher price, a later start, or more people.
 
 05. Why does cash feel tight when everyone is busy?
 
-Busy is not the same as money in the bank. Your invoices and payment dates show where you have earned the work but not yet been paid.
+Busy is not the same as cash in the bank. Your invoices and payment dates show work you have delivered and not yet been paid for. Cash is one part of the picture.
 
 ### How it works
 
@@ -125,23 +125,23 @@ Eyebrow: How it works
 
 Heading: Understand. Decide. Implement. Review.
 
-Each step starts from your own data. The point is a decision you can carry out, then a look back at whether you earned more or spent less.
+Each step starts from your own data. The point is a clearer view of the business, a decision you can carry out, and a look back at what changed.
 
 01. Understand
 
-Start with one question and the numbers you already have. See where the business earns, where it spends, and where the picture is still incomplete.
+Start with one question and the data you already have. See revenue, costs, clients, operations, capacity, marketing and cash, and where the picture is still incomplete.
 
 02. Decide
 
-Choose a practical next step from what those numbers show. Separate the facts from the assumptions before you commit time or money.
+Choose a practical next step from what the data shows. Separate the facts from the assumptions before you commit time or money.
 
 03. Implement
 
-Carry the decision into how you price, staff or track the work. Any further implementation is a separate scope, agreed before it starts.
+Carry the decision into how you price, staff, market or track the work. Any further implementation is a separate scope, agreed before it starts.
 
 04. Review
 
-Come back to the same numbers and see what changed. The aim is to earn more where the work is worth it, and spend less where it is not.
+Come back to the same data and see what changed. The aim is a healthier business: more of what is working, and less of what is not.
 
 ### What you get
 
@@ -149,7 +149,7 @@ Eyebrow: What you get
 
 Heading: A focused business review, scoped before it starts.
 
-One owner. One question. The data you already keep. Before any work starts, we agree what we will look at and what you will receive. The review is there to help you earn more and spend less. It stands on its own.
+One owner. One question, set inside a 360-degree view of the business. The data you already keep. Before any work starts, we agree what we will look at and what you will receive. The review stands on its own.
 
 Photo alt text: Illustrative photo of a laptop showing charts, with a notebook on the desk.
 
@@ -157,7 +157,7 @@ Caption: Illustrative photo by Carlos Muza on Unsplash. Not a client report.
 
 Margin by client, project and service
 
-Read from the data you already keep, so you can see which work earns more than it costs.
+Read from the data you already keep, so you can see which clients, projects and services are worth more of the business.
 
 Where money leaks
 
@@ -217,19 +217,19 @@ Prices:
 - UAE: Review AED 7,500. Monthly AED 4,500 per month.
 - UK: Review £2,500. Monthly £1,500 per month.
 
-Implementation is quoted separately after a Review. Clearfig is not a bookkeeping, tax or CFO service.
+Implementation is quoted separately after a Review. Clearfig does not provide bookkeeping, tax or other regulated accounting services.
 
 Button: Book a free conversation
 
-### Beside your accountant
+### Not your accountant
 
-Eyebrow: Beside your accountant, not instead
+Eyebrow: Not your accountant
 
-Heading: Your accountant keeps the record. This helps you use it.
+Heading: The books are one input. The business is the question.
 
-An accountant records what happened, keeps the books in order, and handles the filings the law requires. That record matters. Clearfig sits next to it. We help you read your own data so you can see where to earn more and where to spend less.
+An accountant records what happened and handles the filings the law requires. That record can be one input. Clearfig reads it alongside the rest of your data: clients, operations, capacity, marketing and cash.
 
-Clearfig does not provide bookkeeping, tax, audit or other regulated accounting services, and it is not a CFO service. Your accountant remains the right person for the regulated work.
+Clearfig does not provide bookkeeping, tax, audit or other regulated accounting services. Your accountant remains the right person for the regulated work.
 
 ### Examples on the homepage
 
@@ -237,7 +237,7 @@ Eyebrow: Examples
 
 Heading: The same kind of reading, with fictional numbers.
 
-These examples use made-up US dollar figures. They show how a question in your own data can turn into a next step. They are not client results, and they are not our fees.
+These examples use made-up US dollar figures. They show how one question in your data, from clients and capacity to marketing and cash, can turn into a next step. They are not client results, and they are not our fees.
 
 Eyebrow: A fictional reading
 
@@ -292,11 +292,11 @@ Heading: Before you book.
 
 What does Clearfig actually do?
 
-We help owners understand their business through their own data, so they can earn more and spend less. Finance tools, spreadsheets and AI can help with the work. They are tools. The promise is a clearer reading of your numbers, and a decision you can carry out.
+We help owners see their business clearly through their own data. The work is a 360-degree health check across revenue, costs, clients, operations, capacity, marketing and cash. Spreadsheets and AI can help. They are tools. The promise is a clearer picture, and a decision you can carry out.
 
 How is this different from my accountant?
 
-An accountant records what happened and handles the filings the law requires. Clearfig uses that kind of record, and your other operating numbers, to help you decide what to do next. We do not provide bookkeeping, tax, audit or other regulated accounting services.
+An accountant records what happened and handles the filings the law requires. Clearfig is not that work. We read your data, including that record when it helps, to show how the business is doing and what to do next. We do not provide bookkeeping, tax, audit or other regulated accounting services.
 
 What do I receive from a focused review?
 
@@ -308,7 +308,7 @@ The prices are published on this page, for India, the UAE and the UK. The self-c
 
 Who is it for?
 
-Owners of service and product businesses. We are starting with owner-led agencies and consultancies of about 10 to 50 people in the UK, the UAE and India, usually around margins, pricing and capacity.
+Owners of service and product businesses. We are starting with owner-led agencies and consultancies of about 10 to 50 people in the UK, the UAE and India, usually across clients, pricing, capacity and how the work runs.
 
 What should I send before we speak?
 
@@ -320,7 +320,7 @@ No. Every example uses fictional US dollar figures. They show the kind of questi
 
 Do you work with messy numbers?
 
-Often the useful outcome is to see what is missing. We agree the inputs before work starts. Cleaning up books, rebuilding history or taking over reporting is separate work, and only if we agree it.
+Often the useful outcome is to see what is missing. We agree the inputs before work starts. Tidying the source data, rebuilding history or taking over reporting is separate work, and only if we agree it.
 
 ### About
 
@@ -328,7 +328,7 @@ Eyebrow: About
 
 Heading: Two founders. One clear view.
 
-Snesh and Megha are the founders of Clearfig. They help owners see how the business earns, spends and loses money, choose a practical next decision, and carry it out.
+Snesh and Megha are the founders of Clearfig. They help owners see the business clearly through their own data, choose a practical next decision, and carry it out.
 
 Clear means seeing the business as it really is. Fig is the fig tree: natural, fruitful and long-lived. The name is about a clear view today, and a business that can last.
 
@@ -336,13 +336,13 @@ Snesh Kakkar
 
 Founder
 
-Close to seven years in financial planning and analysis, including at American Express and Amazon, turning numbers into the forecasts and reports leaders decide on. Now he brings that same clarity to business owners.
+Around ten years across strategy, business partnering and finance, including at American Express and Amazon, helping leaders turn data into decisions. At Clearfig, he brings that clarity to business owners.
 
 Megha Dalmia
 
 Founder
 
-Megha has spent her career finding where profit hides and where cost leaks, at firms like ITC Infotech and Sun Pharma. At Clearfig, she makes that easy to see and act on.
+Around ten years across strategy, business partnering and finance, at firms like ITC Infotech and Sun Pharma, finding what the data says about where a business wins and where it leaks. At Clearfig, she makes that easy to see and act on.
 
 We started Clearfig because the owners who need this clarity most rarely get it.
 
@@ -352,7 +352,7 @@ Eyebrow: Start with your own data
 
 Heading: Bring one question and the numbers you already have.
 
-Tell us what you want to see more clearly. We will use a free conversation to understand the question, and whether a focused review would help you earn more and spend less.
+Tell us what you want to see more clearly. We will use a free conversation to understand the question, and whether a review of your own data would help.
 
 Button: Book a free conversation
 
@@ -364,7 +364,7 @@ Email opens your email app. Nothing is sent automatically.
 
 ## Footer
 
-Clarity from your own data, so you can earn more and spend less.
+See your business clearly, through your own data.
 
 Email: snesh@clearfig.in
 
@@ -374,7 +374,7 @@ Links: Pricing · Questions · Examples
 
 The year is the current year.
 
-Clearfig is not a bookkeeping, tax, audit or CFO service. Examples on this site are fictional.
+Clearfig does not provide bookkeeping, tax, audit or other regulated accounting services. Examples on this site are fictional.
 
 ## Examples index
 
@@ -384,7 +384,7 @@ Eyebrow: Fictional examples
 
 Heading: Real kinds of questions. Made-up numbers.
 
-Fictional examples in US dollars (USD), not client results or service prices. They show how your own data can point to a next step.
+Fictional examples in US dollars (USD), not client results or service prices. They show how your own data can point to a next step, from clients and capacity to marketing and cash.
 
 ### Card 1. Margin Check
 

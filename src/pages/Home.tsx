@@ -55,9 +55,9 @@ export default function Home() {
 
     <section data-reveal id="questions" className="section-space border-t border-line">
       <div className="content-width">
-        <p className="eyebrow">Your numbers already hold the answers</p>
+        <p className="eyebrow">The picture is already in your data</p>
         <h2 className="section-title">Questions owners ask when the picture is not clear.</h2>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">You do not need a new system to start. Bring the reports you already use. We read them with you, so you can see where money is earned and where it is lost.</p>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">You do not need a new system to start. Bring the reports you already use. We read them with you, across revenue, costs, clients, operations, capacity, marketing and cash.</p>
         <div className="mt-8">
           {businessQuestions.map(([question, help], index) => (
             <div key={question} className="grid gap-3 border-t border-line py-7 md:grid-cols-2 md:gap-12">
@@ -73,7 +73,7 @@ export default function Home() {
       <div className="content-width">
         <p className="eyebrow">How it works</p>
         <h2 className="section-title">Understand. Decide. Implement. Review.</h2>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">Each step starts from your own data. The point is a decision you can carry out, then a look back at whether you earned more or spent less.</p>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">Each step starts from your own data. The point is a clearer view of the business, a decision you can carry out, and a look back at what changed.</p>
         <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {investigationSteps.map(([number, title, text]) => (
             <li key={number}>
@@ -92,7 +92,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">What you get</p>
             <h2 className="section-title">A focused business review, scoped before it starts.</h2>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">One owner. One question. The data you already keep. Before any work starts, we agree what we will look at and what you will receive. The review is there to help you earn more and spend less. It stands on its own.</p>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">One owner. One question, set inside a 360-degree view of the business. The data you already keep. Before any work starts, we agree what we will look at and what you will receive. The review stands on its own.</p>
           </div>
           <figure className="photo-frame">
             <img
@@ -125,10 +125,10 @@ export default function Home() {
 
     <section data-reveal id="accountant" className="section-space border-t border-line">
       <div className="content-width max-w-3xl">
-        <p className="eyebrow">Beside your accountant, not instead</p>
-        <h2 className="section-title">Your accountant keeps the record. This helps you use it.</h2>
-        <p className="mt-5 text-base leading-relaxed text-soft">An accountant records what happened, keeps the books in order, and handles the filings the law requires. That record matters. Clearfig sits next to it. We help you read your own data so you can see where to earn more and where to spend less.</p>
-        <p className="mt-4 text-base leading-relaxed text-soft">Clearfig does not provide bookkeeping, tax, audit or other regulated accounting services, and it is not a CFO service. Your accountant remains the right person for the regulated work.</p>
+        <p className="eyebrow">Not your accountant</p>
+        <h2 className="section-title">The books are one input. The business is the question.</h2>
+        <p className="mt-5 text-base leading-relaxed text-soft">An accountant records what happened and handles the filings the law requires. That record can be one input. Clearfig reads it alongside the rest of your data: clients, operations, capacity, marketing and cash.</p>
+        <p className="mt-4 text-base leading-relaxed text-soft">Clearfig does not provide bookkeeping, tax, audit or other regulated accounting services. Your accountant remains the right person for the regulated work.</p>
       </div>
     </section>
 
@@ -136,7 +136,7 @@ export default function Home() {
       <div className="content-width">
         <p className="eyebrow">Examples</p>
         <h2 className="section-title">The same kind of reading, with fictional numbers.</h2>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">These examples use made-up US dollar figures. They show how a question in your own data can turn into a next step. They are not client results, and they are not our fees.</p>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">These examples use made-up US dollar figures. They show how one question in your data, from clients and capacity to marketing and cash, can turn into a next step. They are not client results, and they are not our fees.</p>
         <MarginExample />
         <ul className="mt-10 grid gap-x-10 sm:grid-cols-2">
           {samples.map(sample => (
@@ -185,7 +185,7 @@ export default function Home() {
       <div className="content-width">
         <p className="eyebrow">About</p>
         <h2 className="section-title">Two founders. One clear view.</h2>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">Snesh and Megha are the founders of Clearfig. They help owners see how the business earns, spends and loses money, choose a practical next decision, and carry it out.</p>
+        <p className="mt-5 max-w-2xl text-base leading-relaxed text-soft">Snesh and Megha are the founders of Clearfig. They help owners see the business clearly through their own data, choose a practical next decision, and carry it out.</p>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-soft">Clear means seeing the business as it really is. Fig is the fig tree: natural, fruitful and long-lived. The name is about a clear view today, and a business that can last.</p>
         <ul className="mt-10 grid gap-6 sm:grid-cols-2">
           {founders.map(founder => (
@@ -204,7 +204,7 @@ export default function Home() {
       <div className="content-width max-w-3xl">
         <p className="eyebrow">Start with your own data</p>
         <h2 className="section-title">Bring one question and the numbers you already have.</h2>
-        <p className="mt-5 text-base leading-relaxed text-soft">Tell us what you want to see more clearly. We will use a free conversation to understand the question, and whether a focused review would help you earn more and spend less.</p>
+        <p className="mt-5 text-base leading-relaxed text-soft">Tell us what you want to see more clearly. We will use a free conversation to understand the question, and whether a review of your own data would help.</p>
         <div className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:items-center">
           <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary">Book a free conversation <ArrowRight size={16} aria-hidden="true" /></a>
           <a href={enquiryUrl('A question about my business')} className="text-base text-ink underline decoration-fig/40 underline-offset-4">{emailAddress}</a>

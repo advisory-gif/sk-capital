@@ -1,8 +1,8 @@
 # Clearfig website
 
-The public site for Clearfig, formerly SK Capital. Clearfig helps owners understand their business through their own data, so they can earn more and spend less. The intended domain is [clearfig.in](https://clearfig.in). This repository used to be published as SK Capital at skcapital.co.in. Do not deploy, publish, change DNS, or change Vercel settings from this codebase until the founders ask.
+The public site for Clearfig, formerly SK Capital. Clearfig is a data company. It helps owners see their business clearly through their own data: a 360-degree health check across revenue, costs, clients, operations, capacity, marketing and cash. Finance is one lens among several. The intended domain is [clearfig.in](https://clearfig.in). This repository used to be published as SK Capital at skcapital.co.in. Do not deploy, publish, change DNS, or change Vercel settings from this codebase until the founders ask.
 
-Finance tools, spreadsheets and AI can support the work. They are not the promise. The promise is clarity from the owner's own numbers, and a decision they can carry out.
+Spreadsheets and AI can support the work. They are not the promise. The promise is a clear view of the business from the owner's own data, and a decision they can carry out.
 
 ## Run and check
 
@@ -35,7 +35,7 @@ The site does not claim bookkeeping, tax, audit, regulated accounting, client re
 
 ## Photographs
 
-Calm finance photographs, used as illustration. They are not Clearfig clients, offices or reports. Both are free to use under the [Unsplash License](https://unsplash.com/license), including commercial use. Attribution is not required by that licence. Credits are on the page and here.
+Calm desk photographs, used as illustration. They are not Clearfig clients, offices or reports. Both are free to use under the [Unsplash License](https://unsplash.com/license), including commercial use. Attribution is not required by that licence. Credits are on the page and here.
 
 | File | Subject | Photographer | Source |
 |---|---|---|---|
