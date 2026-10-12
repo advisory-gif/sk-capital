@@ -81,9 +81,13 @@ assert.ok(ui.document.querySelector('#pricing').textContent.includes('₹35,000'
 assert.equal(ui.document.querySelector('#currency').value, 'INR');
 assert.ok(ui.document.querySelector('#who').textContent.includes('10 to 50'));
 assert.ok(ui.document.querySelector('#accountant').textContent.includes('does not provide bookkeeping, tax, audit'));
-assert.ok(ui.document.querySelector('#about').textContent.includes('Snesh'));
-assert.ok(ui.document.querySelector('#about').textContent.includes('Megha'));
-assert.ok(ui.document.querySelector('#about').textContent.includes('TBC'));
+assert.ok(ui.document.querySelector('#about').textContent.includes('Snesh Kakkar'));
+assert.ok(ui.document.querySelector('#about').textContent.includes('American Express and Amazon'));
+assert.ok(ui.document.querySelector('#about').textContent.includes('Megha Dalmia'));
+assert.ok(ui.document.querySelector('#about').textContent.includes('ITC Infotech and Sun Pharma'));
+assert.ok(ui.document.querySelector('#about').textContent.includes('We started Clearfig because the owners who need this clarity most rarely get it.'));
+assert.ok(!ui.document.querySelector('#about').textContent.includes('TBC'));
+assert.ok(!ui.document.body.textContent.includes('Short biographies are not published yet'));
 assert.equal(ui.document.querySelectorAll('#faq details').length, 8);
 assert.ok(ui.document.querySelector('#contact h2').textContent.includes('numbers you already have'));
 assert.deepEqual([...ui.document.querySelectorAll('main > section[id]')].map(section => section.id), ['who', 'questions', 'process', 'review', 'pricing', 'accountant', 'examples', 'trust', 'faq', 'about', 'contact']);

@@ -56,9 +56,19 @@ export const faqs: [string, string][] = [
 ];
 
 export const founders = [
-  { name: 'Snesh', role: 'Founder', background: 'Background: TBC' },
-  { name: 'Megha', role: 'Founder', background: 'Background: TBC' },
+  {
+    name: 'Snesh Kakkar',
+    role: 'Founder',
+    background: 'Close to seven years in financial planning and analysis, including at American Express and Amazon, turning numbers into the forecasts and reports leaders decide on. Now he brings that same clarity to business owners.',
+  },
+  {
+    name: 'Megha Dalmia',
+    role: 'Founder',
+    background: 'Megha has spent her career finding where profit hides and where cost leaks, at firms like ITC Infotech and Sun Pharma. At Clearfig, she makes that easy to see and act on.',
+  },
 ];
+
+export const founderClose = 'We started Clearfig because the owners who need this clarity most rarely get it.';
 
 export const photos = {
   reviewing: {

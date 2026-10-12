@@ -23,7 +23,7 @@ npm run dev -- --host 127.0.0.1
 
 ## What the site says
 
-Edit `src/lib/advisory.ts` for the promise, audience, questions, steps, deliverables, trust notes, FAQs and founder placeholders. Founder biographies and credentials are marked TBC. Do not invent them.
+Edit `src/lib/advisory.ts` for the promise, audience, questions, steps, deliverables, trust notes, FAQs and founder biographies.
 
 The first public offer is a focused business review. Scope, inputs, deliverable, timing and fee are agreed before paid work starts. The booking link is still `https://cal.com/skcapital/free-financial-breakdown` until the founders replace it. The contact email is `snesh@clearfig.in`.
 

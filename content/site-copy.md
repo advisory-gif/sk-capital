@@ -2,18 +2,7 @@
 
 This is the user-facing copy on the site, in page order. It is an export for editing. It does not change layout or colours.
 
-Search for **TBC** to find every placeholder.
-
-## Placeholders
-
-These are the only placeholder lines. They are in the About section.
-
-- Snesh: Background: TBC
-- Snesh: Credentials: TBC
-- Megha: Background: TBC
-- Megha: Credentials: TBC
-
-The sentence under those cards is published copy, not a placeholder: "Short biographies are not published yet. Nothing on this page is a claim of qualification."
+There are no TBC placeholders. The founder biographies are published.
 
 ## Meta
 
@@ -343,31 +332,19 @@ Snesh and Megha are the founders of Clearfig. They help owners see how the busin
 
 Clear means seeing the business as it really is. Fig is the fig tree: natural, fruitful and long-lived. The name is about a clear view today, and a business that can last.
 
-Snesh
+Snesh Kakkar
 
 Founder
 
-Background: TBC
+Close to seven years in financial planning and analysis, including at American Express and Amazon, turning numbers into the forecasts and reports leaders decide on. Now he brings that same clarity to business owners.
 
-> **Placeholder.** Background: TBC
-
-Credentials: TBC
-
-> **Placeholder.** Credentials: TBC
-
-Megha
+Megha Dalmia
 
 Founder
 
-Background: TBC
+Megha has spent her career finding where profit hides and where cost leaks, at firms like ITC Infotech and Sun Pharma. At Clearfig, she makes that easy to see and act on.
 
-> **Placeholder.** Background: TBC
-
-Credentials: TBC
-
-> **Placeholder.** Credentials: TBC
-
-Short biographies are not published yet. Nothing on this page is a claim of qualification.
+We started Clearfig because the owners who need this clarity most rarely get it.
 
 ### Contact
 

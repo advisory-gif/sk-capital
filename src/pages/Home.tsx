@@ -6,7 +6,7 @@ import PriceList from '@/components/PriceList';
 import { bookingUrl, emailAddress, enquiryUrl } from '@/lib/offers';
 import { samples } from '@/lib/samples';
 import {
-  audience, businessQuestions, deliverables, faqs, founders, heroDescription, heroTitle,
+  audience, businessQuestions, deliverables, faqs, founderClose, founders, heroDescription, heroTitle,
   investigationSteps, photos, positioning, trustPoints,
 } from '@/lib/advisory';
 
@@ -192,12 +192,11 @@ export default function Home() {
             <li key={founder.name} className="rounded-lg border border-line bg-white p-6">
               <h3 className="font-display text-3xl text-ink">{founder.name}</h3>
               <p className="mt-2 text-base text-fig">{founder.role}</p>
-              <p className="mt-4 text-base text-soft">{founder.background}</p>
-              <p className="mt-2 text-sm text-soft">Credentials: TBC</p>
+              <p className="mt-4 text-base leading-relaxed text-soft">{founder.background}</p>
             </li>
           ))}
         </ul>
-        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-soft">Short biographies are not published yet. Nothing on this page is a claim of qualification.</p>
+        <p className="mt-6 max-w-2xl text-base leading-relaxed text-soft">{founderClose}</p>
       </div>
     </section>
 
