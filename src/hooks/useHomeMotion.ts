@@ -30,7 +30,8 @@ export function useHomeMotion() {
       if (!story || slides.length < 2) return;
       const rect = story.getBoundingClientRect();
       const span = Math.max(rect.height - viewHeight, 1);
-      const progress = Math.min(1, Math.max(0, -rect.top / span));
+      // Finish the last slide before the next panel covers this one.
+      const progress = Math.min(1, Math.max(0, (-rect.top / span) / 0.82));
       story.style.setProperty('--story', progress.toFixed(4));
       const local = progress * (slides.length - 1);
       slides.forEach((slide, index) => {
