@@ -35,25 +35,18 @@ The site does not claim bookkeeping, tax, audit, regulated accounting, client re
 
 ## Photographs
 
-Homepage and details photographs are illustrations of the kind of work Clearfig is about. They are not Clearfig clients, offices, reports, or the founders. Unsplash photos are free to use under the [Unsplash License](https://unsplash.com/license), including commercial use. Pexels photos are free to use under the [Pexels License](https://www.pexels.com/license/). Attribution is not required by either licence. Credits are on the page and here.
+The homepage does not use photographs. Its charts are drawn in the page and are not client results. The details page uses two photographs of the kind of work Clearfig is about. They are not Clearfig clients, offices, or reports. Unsplash photos are free to use under the [Unsplash License](https://unsplash.com/license), including commercial use. Attribution is not required. Credits are on the page and here.
 
 | File | Subject | Photographer | Source |
 |---|---|---|---|
-| `public/images/cafe-counter-640.webp`, `960`, `1600` | Customers at a cafe counter | Pavel Danilyuk | [Pexels](https://www.pexels.com/photo/a-woman-standing-behind-the-counter-of-a-coffee-shop-6612738/) |
-| `public/images/data-screen-960.webp`, `1600` | Charts and numbers on a laptop | Antoni Shkraba | [Pexels](https://www.pexels.com/photo/statistics-displayed-on-a-monitor-5466250/) |
-| `public/images/product-bottles-960.webp`, `1600` | Bottled products on a pink surface | pmv chamara | [Unsplash](https://unsplash.com/photos/a-group-of-bottles-of-skin-care-products-on-a-pink-background-5NeK1ZvgCBc) |
-| `public/images/team-table-960.webp`, `1600` | Team working around a laptop | Annie Spratt | [Unsplash](https://unsplash.com/photos/group-of-people-using-laptop-computer-QckxruozjRg) |
-| `public/images/clothing-store-960.webp`, `1600` | Clothing store with shirts on racks | Clark Street Mercantile | [Unsplash](https://unsplash.com/photos/clothes-store-interior-P3pI6xzovu0) |
-| `public/images/cafe-payment-960.webp`, `1600` | Card payment at a cafe counter | Clay Banks | [Unsplash](https://unsplash.com/photos/man-paying-using-credit-card-oNm9NkTFLfA) |
-| `public/images/coffee-pour-960.webp`, `1600` | Two people pouring coffee | Nathan Dumlao | [Unsplash](https://unsplash.com/photos/two-person-pouring-coffee-with-piled-cups-eksqjXTLpak) |
 | `public/images/reviewing-numbers-640.webp`, `960`, `1440` | Person reviewing notes beside a laptop | Scott Graham | [Unsplash](https://unsplash.com/photos/person-holding-pencil-near-laptop-computer-5fNmWej4tAA) |
 | `public/images/charts-desk-800.webp`, `1200` | Laptop with charts and a notebook | Carlos Muza | [Unsplash](https://unsplash.com/photos/laptop-computer-on-glass-top-table-hpjSkU2UYSU) |
 
-Homepage panels use the first seven. The hero is eager-loaded. The rest are lazy-loaded. The details page still uses Scott Graham (eager) and Carlos Muza (lazy). All are WebP, with width and height set. Alt text says the photo is illustrative.
+Scott Graham is eager-loaded. Carlos Muza is lazy-loaded. Both are WebP, with width and height set. Alt text says the photo is illustrative.
 
 ## Visual system
 
-Warm paper (`#F6F3EE`), ink (`#1C1714`), fig (`#5C2A38`) and leaf (`#4E6B3A`). Homepage panels use Figtree, with a one-pixel rule and slightly muted photographs. Fraunces remains the heading face on the details page and in the examples. Figtree is the text face, with Georgia and system-ui as fallbacks. The wordmark is the ripe-fig logo: a fig in fig, a leaf in leaf, “Clear” in ink and “fig” in fig (`public/logo.svg`, `public/favicon.svg`, `src/components/Logo.tsx`). Reversed and single-colour files are `public/logo-reversed.svg` and `public/logo-mono.svg`. The mark alone is `public/mark.svg`. This replaces the earlier green and ivory SK Capital look.
+Warm paper (`#F6F3EE`), ink (`#1C1714`), fig (`#5C2A38`) and leaf (`#4E6B3A`). The homepage is paper, with Figtree headlines, a one-pixel fig rule, and charts drawn beside the words. Fraunces remains the heading face on the details page and in the examples. Figtree is the text face, with Georgia and system-ui as fallbacks. The wordmark is the ripe-fig logo: a fig in fig, a leaf in leaf, “Clear” in ink and “fig” in fig (`public/logo.svg`, `public/favicon.svg`, `src/components/Logo.tsx`). Reversed and single-colour files are `public/logo-reversed.svg` and `public/logo-mono.svg`. The mark alone is `public/mark.svg`. This replaces the earlier green and ivory SK Capital look.
 
 ## Sample checks
 

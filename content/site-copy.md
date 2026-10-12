@@ -66,19 +66,7 @@ The mobile menu repeats the same links and the same button.
 
 ## Homepage
 
-Five short sections. The longer explanations are on the details page.
-
-### Hero
-
-Heading: Clearfig shows you, from your own data, which customers, products and channels make you money and which drain it, then helps you fix it.
-
-We read your sales, customers, marketing and costs together, so you can see what's really working, stop what isn't, and grow with confidence.
-
-Button: Book a free conversation
-
-Any review is scoped before work starts.
-
-Photograph: Illustrative photo by Pavel Danilyuk on Pexels. Not a Clearfig client.
+Five short sections, in this order. The longer explanations are on the details page. The homepage uses simple charts drawn on the page. They are not photographs and not client results.
 
 ### Problem
 
@@ -88,7 +76,19 @@ You still cannot see the business clearly.
 
 For owner-led agencies and consultancies, and for product and D2C brands.
 
-Photograph: Illustrative photo by Antoni Shkraba on Pexels. Not a Clearfig client.
+Four separate labels: Sales, Customers, Marketing, Costs.
+
+### The promise
+
+Heading: Clearfig shows you, from your own data, which customers, products and channels make you money and which drain it, then helps you fix it.
+
+We read your sales, customers, marketing and costs together, so you can see what's really working, stop what isn't, and grow with confidence.
+
+Button: Book a free conversation
+
+Any review is scoped before work starts.
+
+A small chart beside the words: Makes you money, and Drains you. Caption: One view. Not a client result.
 
 ### The fix
 
@@ -98,27 +98,19 @@ Grow
 
 What makes you money.
 
-Photograph: Illustrative photo by pmv chamara on Unsplash. Not a Clearfig client.
-
 Fix
 
 What is getting in the way.
 
-Photograph: Illustrative photo by Annie Spratt on Unsplash. Not a Clearfig client.
-
 Stop
 
 What drains you.
-
-Photograph: Illustrative photo by Clark Street Mercantile on Unsplash. Not a Clearfig client.
 
 ### Offer
 
 Heading: A Review. Then each month.
 
 Choose India, the UAE or the UK.
-
-Photograph: Illustrative photo by Clay Banks on Unsplash. Not a Clearfig client.
 
 Label: Show prices in
 
@@ -153,8 +145,6 @@ Free self-check comes first. The Review is scoped before it starts. The fee is t
 Heading: The founders.
 
 We started Clearfig because the owners who need this clarity most rarely get it.
-
-Photograph: Illustrative photo by Nathan Dumlao on Unsplash. Not the founders.
 
 Snesh Kakkar
 

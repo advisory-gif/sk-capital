@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { PanelCredit, PanelPhoto } from '@/components/PanelPhoto';
 import { showPrices } from '@/lib/publication.mjs';
 import { formatPrice, prices } from '@/lib/pricing.mjs';
 import { detectCurrency, isCurrency, savedCurrency, saveCurrency } from '@/lib/currency.mjs';
 import type { Currency } from '@/lib/currency.mjs';
-import { homePhotos } from '@/lib/home-photos';
 
 const markets: { id: Currency; label: string }[] = [
   { id: 'INR', label: 'India' },
@@ -39,27 +37,21 @@ function ApprovedPrices() {
   const review = formatPrice(currency, prices[currency].review);
   const monthly = formatPrice(currency, prices[currency].monthly);
   return (
-    <section data-reveal id="pricing" className="offer-panel">
-      <div className="bleed-panel tone-dark" data-parallax>
-        <div className="panel-media">
-          <PanelPhoto photo={homePhotos.counter} />
-        </div>
-        <div className="panel-scrim panel-scrim-dark" />
-        <div className="content-width panel-copy">
-          <span className="panel-rule" aria-hidden="true" />
-          <h2 className="panel-title">A Review. Then each month.</h2>
-          <p className="panel-line">Choose India, the UAE or the UK.</p>
-        </div>
-        <PanelCredit photo={homePhotos.counter} />
-      </div>
-      <div className="offer-sheet">
-        <div className="content-width">
+    <section data-reveal id="pricing" className="plain-section">
+      <div className="content-width">
+        <div className="plain-head">
+          <div>
+            <span className="plain-rule" aria-hidden="true" />
+            <h2 className="plain-title">A Review. Then each month.</h2>
+            <p className="plain-line">Choose India, the UAE or the UK.</p>
+          </div>
           <div className="max-w-xs">
             <label htmlFor="currency" className="mb-2 block text-sm text-soft">Show prices in</label>
             <select id="currency" value={currency} onChange={event => choose(event.target.value)} className="min-h-12 w-full rounded-md border border-line bg-white px-3 text-base text-ink">
               {markets.map(market => <option key={market.id} value={market.id}>{market.label}</option>)}
             </select>
           </div>
+        </div>
           <ol className="price-grid" aria-live="polite">
             <li>
               <h3 className="font-ui text-sm font-medium tracking-wide text-soft">Clearfig Review</h3>
@@ -76,7 +68,6 @@ function ApprovedPrices() {
             </li>
           </ol>
           <p className="mt-16 max-w-2xl border-t border-line pt-8 text-base leading-relaxed text-soft">Free self-check comes first. The Review is scoped before it starts. The fee is the published price for your market. A Review is paid 50% upfront and 50% on delivery, and credited against the first month of Monthly. Monthly is billed in advance, with a 3-month minimum and then 30 days&apos; notice. Implementation is quoted separately after a Review. Clearfig does not provide bookkeeping, tax or other regulated accounting services.</p>
-        </div>
       </div>
     </section>
   );
