@@ -78,6 +78,8 @@ Button: Book a free conversation
 
 Any review is scoped before work starts.
 
+Photograph: Illustrative photo by Pavel Danilyuk on Pexels. Not a Clearfig client.
+
 ### Problem
 
 Heading: You have the data.
@@ -85,6 +87,8 @@ Heading: You have the data.
 You still cannot see the business clearly.
 
 For owner-led agencies and consultancies, and for product and D2C brands.
+
+Photograph: Illustrative photo by Antoni Shkraba on Pexels. Not a Clearfig client.
 
 ### The fix
 
@@ -94,19 +98,27 @@ Grow
 
 What makes you money.
 
+Photograph: Illustrative photo by pmv chamara on Unsplash. Not a Clearfig client.
+
 Fix
 
 What is getting in the way.
 
+Photograph: Illustrative photo by Annie Spratt on Unsplash. Not a Clearfig client.
+
 Stop
 
 What drains you.
+
+Photograph: Illustrative photo by Clark Street Mercantile on Unsplash. Not a Clearfig client.
 
 ### Offer
 
 Heading: A Review. Then each month.
 
 Choose India, the UAE or the UK.
+
+Photograph: Illustrative photo by Clay Banks on Unsplash. Not a Clearfig client.
 
 Label: Show prices in
 
@@ -140,6 +152,10 @@ Free self-check comes first. The Review is scoped before it starts. The fee is t
 
 Heading: The founders.
 
+We started Clearfig because the owners who need this clarity most rarely get it.
+
+Photograph: Illustrative photo by Nathan Dumlao on Unsplash. Not the founders.
+
 Snesh Kakkar
 
 Founder
@@ -151,8 +167,6 @@ Megha Dalmia
 Founder
 
 Around ten years across strategy, business partnering and finance, at firms like ITC Infotech and Sun Pharma, finding what the data says about where a business wins and where it leaks. At Clearfig, she makes that easy to see and act on.
-
-We started Clearfig because the owners who need this clarity most rarely get it.
 
 Button: Book a free conversation
 
