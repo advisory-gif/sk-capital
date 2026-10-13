@@ -1,6 +1,6 @@
 # Clearfig website
 
-The public site for Clearfig, formerly SK Capital. Clearfig shows owners, from their own data, which customers, products and channels make them money and which drain it, then helps them fix it. The intended domain is [clearfig.in](https://clearfig.in). This repository used to be published as SK Capital at skcapital.co.in. Do not deploy, publish, change DNS, or change Vercel settings from this codebase until the founders ask.
+The public site for Clearfig, formerly SK Capital. Clearfig is a data and business-clarity company. The tagline is "See how your business really makes money." A 360-degree business health check reads customers, products, pricing, channels, marketing and money for growing owner-led businesses, in any sector, anywhere. Clearfig works beside the client's accountant. It is not a bookkeeping, tax, audit or CFO service. The intended domain is [clearfig.in](https://clearfig.in). This repository used to be published as SK Capital at skcapital.co.in. Do not change DNS or Vercel project settings from this codebase.
 
 Spreadsheets and AI can support the work. They are not the promise. The promise is a clear view of the business from the owner's own data, and a decision they can carry out.
 
@@ -19,15 +19,15 @@ python3 scripts/check-sample-numbers.py
 npm run dev -- --host 127.0.0.1
 ```
 
-`npm test` covers country mapping, fee publication staying off, Clearfig metadata, sample data, chart geometry and contrast. `npm run test:ui` bundles the React app and checks copy, navigation, the unpublished price flag, fictional examples and keyboard behaviour. It is not visual layout QA.
+`npm test` covers country mapping, fees staying off the public pages, Clearfig metadata, sample data, chart geometry and contrast. `npm run test:ui` bundles the React app and checks copy, navigation, the unpublished price flag, fictional examples and keyboard behaviour. It is not visual layout QA.
 
 ## What the site says
 
 Edit `src/lib/advisory.ts` for the promise, audience, questions, steps, deliverables, trust notes, FAQs and founder biographies.
 
-The first public offer is a focused business review. Scope, inputs, deliverable, timing and fee are agreed before paid work starts. The booking link is still `https://cal.com/skcapital/free-financial-breakdown` until the founders replace it. The contact email is `snesh@clearfig.in`.
+The public offer is a free 30-minute business check, then a 360-degree business health check. Scope, inputs, deliverable, timing and fee are agreed before paid work starts. The booking link is `https://cal.com/clearfig/self-check`. The contact email is `hello@clearfig.in`.
 
-The founders have approved public prices for three steps: a free self-check, the Clearfig Review, and Clearfig Monthly. India is ₹35,000 for the Review and ₹25,000 per month, with founding-client pricing available for the first 3 clients. The UAE is AED 7,500 and AED 4,500 per month. The UK is £2,500 and £1,500 per month. The selector defaults to India. `src/lib/publication.mjs` exports `showPrices` as `true`. The older starter amounts in `src/lib/offers.ts` are not these fees and are not rendered.
+The site does not publish fees, guarantees, client names or testimonials. `src/lib/publication.mjs` exports `showPrices` as `false`. The older starter amounts in `src/lib/offers.ts` are not rendered.
 
 Examples under `/samples` use the existing fictional US dollar data. They are labelled as examples, not client results. `src/data/service-samples.json` is unchanged.
 
@@ -46,7 +46,7 @@ Scott Graham is eager-loaded. Carlos Muza is lazy-loaded. Both are WebP, with wi
 
 ## Visual system
 
-Warm paper (`#F6F3EE`), ink (`#1C1714`), fig (`#5C2A38`) and leaf (`#4E6B3A`). The homepage is paper, with Figtree headlines, a one-pixel fig rule, and charts drawn beside the words. Fraunces remains the heading face on the details page and in the examples. Figtree is the text face, with Georgia and system-ui as fallbacks. The wordmark is the ripe-fig logo: a fig in fig, a leaf in leaf, “Clear” in ink and “fig” in fig (`public/logo.svg`, `public/favicon.svg`, `src/components/Logo.tsx`). Reversed and single-colour files are `public/logo-reversed.svg` and `public/logo-mono.svg`. The mark alone is `public/mark.svg`. This replaces the earlier green and ivory SK Capital look.
+Warm paper (`#F6F3EE`), ink (`#1C1714`), fig (`#5C2A38`) and leaf (`#4E6B3A`). The homepage is paper, with a one-pixel fig rule and charts drawn beside the words. Headlines use Newsreader. Body text, navigation and chart figures use Inter. Georgia and system-ui are the fallbacks. The faces are self-hosted from `@fontsource`, the Vite equivalent of `next/font/google`. The surface is flat: no gradients and no drop shadows. The wordmark is the ripe-fig logo: a fig in fig, a leaf in leaf, “Clear” in ink and “fig” in fig (`public/logo.svg`, `src/components/Logo.tsx`). Browser icons are the ripe-fig mark at `public/favicon-32.png`, `public/favicon-180.png` and `public/favicon-512.png`. The mark alone is `public/mark.png` (and `public/mark.svg`). Reversed and single-colour files are `public/logo-reversed.svg` and `public/logo-mono.svg`. This replaces the earlier green and ivory look.
 
 ## Sample checks
 
@@ -56,4 +56,4 @@ For a self-contained offline review, build with `npm run build -- --mode standal
 
 ## Out of scope
 
-Publishing, DNS and Vercel project settings are intentionally untouched. `vercel.json` is unchanged. Connecting clearfig.in, and replacing the old booking path, are founder decisions.
+DNS and Vercel project settings are intentionally untouched. `vercel.json` is unchanged. Connecting clearfig.in is a separate decision. The booking path on the site is https://cal.com/clearfig/self-check.

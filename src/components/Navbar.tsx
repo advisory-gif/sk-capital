@@ -2,11 +2,11 @@ import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Logo from '@/components/Logo';
-import { bookingUrl } from '@/lib/offers';
+import { bookingLabel, bookingUrl } from '@/lib/offers';
 
 const links = [
   ['/#review', 'The fix'],
-  ['/#pricing', 'Pricing'],
+  ['/#pricing', 'The check'],
   ['/details', 'Details'],
   ['/samples', 'Examples'],
   ['/#about', 'About'],
@@ -29,9 +29,9 @@ export default function Navbar() {
     >
       <nav className="content-width flex h-16 items-center justify-between gap-4 lg:h-[4.5rem]" aria-label="Main navigation">
         <Link to="/" onClick={close} className="shrink-0 text-ink"><Logo /></Link>
-        <div className="hidden items-center gap-8 text-sm font-medium lg:flex">
+        <div className="hidden items-center gap-4 text-sm font-medium xl:gap-6 lg:flex">
           {links.map(([href, label]) => <Link key={href} to={href} className="text-ink/80 hover:text-ink">{label}</Link>)}
-          <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary nav-cta">Book a free conversation</a>
+          <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary nav-cta">{bookingLabel}</a>
         </div>
         <button
           ref={toggleRef}
@@ -47,7 +47,7 @@ export default function Navbar() {
       {open && (
         <nav id="mobile-menu" aria-label="Mobile navigation" className="content-width flex flex-col gap-1 pb-5 lg:hidden">
           {links.map(([href, label]) => <Link key={href} to={href} onClick={close} className="py-3 text-ink">{label}</Link>)}
-          <a href={bookingUrl} onClick={close} target="_blank" rel="noopener noreferrer" className="button-primary mt-2 self-start">Book a free conversation</a>
+          <a href={bookingUrl} onClick={close} target="_blank" rel="noopener noreferrer" className="button-primary mt-2 self-start">{bookingLabel}</a>
         </nav>
       )}
     </header>

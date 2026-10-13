@@ -4,8 +4,8 @@ import { readFile } from 'node:fs/promises';
 import { showPrices } from '../src/lib/publication.mjs';
 import { formatPrice, prices } from '../src/lib/pricing.mjs';
 
-test('approved Review and Monthly prices are the published fees', () => {
-  assert.equal(showPrices, true);
+test('fee table stays off the public site', () => {
+  assert.equal(showPrices, false);
   assert.equal(formatPrice('INR', prices.INR.review), '₹35,000');
   assert.equal(formatPrice('INR', prices.INR.monthly), '₹25,000');
   assert.equal(formatPrice('AED', prices.AED.review), 'AED 7,500');
@@ -18,23 +18,27 @@ test('approved Review and Monthly prices are the published fees', () => {
 
 test('public metadata is Clearfig, not SK Capital', async () => {
   const html = await readFile('index.html', 'utf8');
-  assert.match(html, /Clearfig \| See your business in your own data/);
-  assert.match(html, /which customers, products and channels make you money and which drain it, then helps you fix it/);
+  assert.match(html, /Clearfig \| See how your business really makes money\./);
+  assert.match(html, /360-degree business health check/);
   assert.doesNotMatch(html, /CFO|FP&A|earn more and spend less|3 decisions/);
   assert.match(html, /https:\/\/clearfig\.in\//);
-  assert.match(html, /favicon\.svg/);
-  assert.doesNotMatch(html, /SK Capital|skcapital\.co\.in/);
+  assert.match(html, /favicon-32\.png/);
+  assert.match(html, /favicon-180\.png/);
+  assert.match(html, /favicon-512\.png/);
+  assert.doesNotMatch(html, /SK Capital|skcapital/);
   assert.doesNotMatch(html, /—/);
 });
 
 test('ripe fig logo uses fig, leaf, ink and paper', async () => {
   const logo = await readFile('public/logo.svg', 'utf8');
-  const favicon = await readFile('public/favicon.svg', 'utf8');
   for (const colour of ['#5C2A38', '#4E6B3A', '#1C1714', '#F6F3EE']) assert.match(logo, new RegExp(colour));
   assert.doesNotMatch(logo, /<text[\s>]/);
-  assert.match(favicon, /#5C2A38/);
-  assert.match(favicon, /#A9BF8F/);
   assert.match(await readFile('src/components/Logo.tsx', 'utf8'), /src="\/logo\.svg"/);
+  for (const file of ['public/favicon-32.png', 'public/favicon-180.png', 'public/favicon-512.png', 'public/mark.png']) {
+    const bytes = await readFile(file);
+    assert.equal(bytes.readUInt32BE(0), 0x89504e47);
+    assert.ok(bytes.length > 500, file);
+  }
 });
 
 test('README keeps the former name and photo credits', async () => {

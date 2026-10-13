@@ -1,4 +1,4 @@
-/** Approved public fees. India, the UAE and the UK only. */
+/** Internal fee table. Public pages do not show these amounts. */
 export const prices = {
   INR: { review: 35000, monthly: 25000 },
   AED: { review: 7500, monthly: 4500 },

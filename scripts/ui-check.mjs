@@ -29,55 +29,39 @@ async function load({ country = 'US', stored, url = 'https://example.test/', slo
   }
   return { dom, window: dom.window, document: dom.window.document, errors, scrollTargets, observers, media, mediaListeners };
 }
-const marketPrices = {
-  IN: { value: 'INR', review: '₹35,000', monthly: '₹25,000', founding: true },
-  US: { value: 'INR', review: '₹35,000', monthly: '₹25,000', founding: true },
-  AE: { value: 'AED', review: 'AED 7,500', monthly: 'AED 4,500', founding: false },
-  GB: { value: 'GBP', review: '£2,500', monthly: '£1,500', founding: false },
-};
+const hiddenFees = ['₹', '₹35,000', '₹25,000', 'AED 7,500', 'AED 4,500', '£2,500', '£1,500', '₹2,000', '₹3,500', '₹5,000', 'US$25', 'US$45', 'US$59', 'AED 95', 'AED 165', 'AED 219', '3,999', 'One-time fixed-scope fee', 'Loading price', 'Founding-client pricing', 'Show prices in', 'Choose India', 'Hyderabad', 'Indian businesses', 'crore'];
 for (const country of ['IN', 'US', 'AE', 'GB']) {
   const { document, errors, window } = await load({ country });
-  const expected = marketPrices[country];
-  const select = document.querySelector('#currency');
-  assert.equal(select.value, expected.value);
-  assert.deepEqual([...select.options].map(option => option.textContent), ['India', 'UAE', 'UK']);
+  assert.equal(document.querySelector('#currency'), null);
   const pricing = document.querySelector('#pricing');
-  assert.ok(pricing.textContent.includes('Free self-check'));
-  assert.ok(pricing.textContent.includes('Clearfig Review'));
-  assert.ok(pricing.textContent.includes('Clearfig Monthly'));
-  assert.ok(pricing.textContent.includes(expected.review));
-  assert.ok(pricing.textContent.includes(expected.monthly));
-  assert.ok(pricing.textContent.includes('2 to 3 weeks'));
-  assert.ok(pricing.textContent.includes('50% upfront and 50% on delivery'));
-  assert.ok(pricing.textContent.includes('credited against the first month of Monthly'));
-  assert.ok(pricing.textContent.includes('3-month minimum'));
-  assert.ok(pricing.textContent.includes("30 days' notice"));
-  assert.ok(pricing.textContent.includes('quoted separately after a Review'));
-  assert.ok(pricing.textContent.includes('does not provide bookkeeping, tax or other regulated accounting services'));
-  assert.equal(pricing.textContent.includes('CFO'), false);
-  assert.equal(pricing.textContent.includes('Founding-client pricing is available for the first 3 clients'), expected.founding);
-  for (const price of ['₹2,000', '₹3,500', '₹5,000', 'US$25', 'US$45', 'US$59', 'AED 95', 'AED 165', 'AED 219', '3,999', 'One-time fixed-scope fee', 'Loading price']) assert.equal(document.body.textContent.includes(price), false, price);
+  assert.ok(pricing.textContent.includes('The health check'));
+  assert.ok(pricing.textContent.includes('Business check'));
+  assert.ok(pricing.textContent.includes('30 minutes, free'));
+  assert.ok(pricing.textContent.includes('The 30-minute business check is free'));
+  assert.ok(pricing.textContent.includes('fee is agreed'));
+  assert.ok(pricing.textContent.includes('does not provide bookkeeping, tax, audit, CFO or other regulated accounting services'));
+  assert.ok(pricing.textContent.includes('not a bookkeeping, tax, audit or a CFO service'));
+  for (const price of hiddenFees) assert.equal(document.body.textContent.includes(price), false, `${country} ${price}`);
   assert.equal(document.querySelectorAll('form').length, 0);
   assert.equal(document.querySelectorAll('h1').length, 1);
   assert.ok(!document.body.textContent.includes('—'));
   assert.deepEqual(errors, []);
   window.close();
-  console.log(`PASS ${country}: published ${expected.review} Review and ${expected.monthly} Monthly, no old fees`);
+  console.log(`PASS ${country}: location-neutral health check, no published fees`);
 }
 const legacy = await load({ url:'https://example.test/#/pricing' }); assert.equal(legacy.window.location.hash,'#pricing'); legacy.window.close(); console.log('PASS old hash pricing link routes to pricing');
 const oldAnchor = await load({ url:'https://example.test/#reviews' }); assert.ok(oldAnchor.scrollTargets.includes('review')); oldAnchor.window.close(); console.log('PASS legacy reviews anchor scrolls to the review');
 const ui = await load();
-assert.equal(ui.document.title, 'Clearfig | See your business in your own data');
-assert.equal(ui.document.querySelector('h1').textContent, 'Clearfig shows you, from your own data, which customers, products and channels make you money and which drain it, then helps you fix it.');
-assert.ok(ui.document.body.textContent.includes('We read your sales, customers, marketing and costs together'));
+assert.equal(ui.document.title, 'Clearfig | See how your business really makes money.');
+assert.equal(ui.document.querySelector('h1').textContent, 'See how your business really makes money.');
+assert.ok(ui.document.body.textContent.includes('data and business-clarity company') || ui.document.body.textContent.includes('360-degree business health check'));
+assert.ok(ui.document.body.textContent.includes('customers, products, pricing, channels, marketing and money'));
 assert.ok(ui.document.body.textContent.includes('You have the data.'));
 assert.ok(ui.document.body.textContent.includes('You still cannot see the business clearly.'));
-assert.ok(ui.document.body.textContent.includes('product and D2C brands'));
+assert.ok(ui.document.body.textContent.includes('growing owner-led businesses, in any sector, anywhere'));
 assert.deepEqual([...ui.document.querySelectorAll('#review h3')].map(heading => heading.textContent), ['Grow', 'Fix', 'Stop']);
-assert.ok(ui.document.querySelector('#pricing').textContent.includes('scoped before it starts'));
-assert.ok(ui.document.querySelector('#pricing').textContent.includes('published price'));
-assert.ok(ui.document.querySelector('#pricing').textContent.includes('₹35,000'));
-assert.equal(ui.document.querySelector('#currency').value, 'INR');
+assert.ok(ui.document.querySelector('#pricing').textContent.includes('scoped before'));
+assert.equal(ui.document.querySelector('#currency'), null);
 assert.equal(ui.document.querySelector('#questions'), null);
 assert.equal(ui.document.querySelector('#accountant'), null);
 assert.ok(!ui.document.body.textContent.includes('the 3 decisions'));
@@ -93,37 +77,30 @@ assert.ok(!ui.document.querySelector('#about').textContent.includes('TBC'));
 assert.ok(!ui.document.body.textContent.includes('Short biographies are not published yet'));
 assert.equal(ui.document.querySelectorAll('#faq details').length, 0);
 assert.deepEqual([...ui.document.querySelectorAll('main > section[id]')].map(section => section.id), ['problem', 'review', 'pricing', 'about']);
-assert.ok(!/FP&A|BP&A|CFO|guaranteed|testimonial|bank-grade|AI-proof|SK Capital/i.test(ui.document.body.textContent));
+assert.ok(!/FP&A|BP&A|guaranteed|testimonial|bank-grade|AI-proof|SK Capital|Hyderabad|Indian businesses|crore|fractional CFO|your CFO/i.test(ui.document.body.textContent));
+assert.ok(ui.document.body.textContent.includes('not a bookkeeping, tax, audit or a CFO service'));
 assert.ok(!ui.document.body.textContent.includes('financial planning and analysis'));
 assert.ok(!ui.document.body.textContent.includes('earn more and spend less'));
 assert.ok(!ui.document.body.textContent.includes('—'));
 assert.ok(!ui.document.body.textContent.includes('one approved spreadsheet input to one draft commentary workflow'));
 assert.equal(ui.document.querySelectorAll('a[download]').length, 0);
 const heroCta = ui.document.querySelector('.hero-layout .button-primary');
-assert.equal(heroCta.href, 'https://cal.com/skcapital/free-financial-breakdown');
+assert.equal(heroCta.href, 'https://cal.com/clearfig/self-check');
+assert.equal(heroCta.textContent.replace(/\s+/g, ' ').trim(), 'Book a free 30-minute business check');
 assert.equal(heroCta.target, '_blank');
 assert.equal(ui.document.querySelectorAll('.hero-layout .button-primary, .hero-layout a.example-link').length, 1);
 assert.ok(heroCta.compareDocumentPosition(ui.document.querySelector('#about')) & ui.window.Node.DOCUMENT_POSITION_FOLLOWING);
-const priceSelect = ui.document.querySelector('#currency');
-priceSelect.value = 'GBP';
-priceSelect.dispatchEvent(new ui.window.Event('change', { bubbles: true }));
-await delay(20);
-assert.equal(priceSelect.value, 'GBP');
-assert.ok(ui.document.querySelector('#pricing').textContent.includes('£2,500'));
-assert.ok(ui.document.querySelector('#pricing').textContent.includes('£1,500'));
-assert.equal(ui.document.querySelector('#pricing').textContent.includes('Founding-client pricing'), false);
-assert.equal(ui.window.localStorage.getItem('clearfig.currency'), 'GBP');
-console.log('PASS Clearfig promise, short homepage, published prices');
+console.log('PASS Clearfig promise, short homepage, no published prices');
 assert.ok([...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'The fix' && a.hash === '#review'));
-assert.ok([...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'Pricing' && a.hash === '#pricing'));
+assert.ok([...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'The check' && a.hash === '#pricing'));
 assert.ok([...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'Details' && a.getAttribute('href') === '/details'));
 assert.ok(![...ui.document.querySelectorAll('nav a')].some(a => a.textContent === 'Reviews' || a.textContent === 'Services'));
-assert.ok(ui.document.querySelector('a[href^="mailto:snesh@clearfig.in"]'));
+assert.ok(ui.document.querySelector('a[href^="mailto:hello@clearfig.in"]'));
 assert.equal(ui.document.querySelector('img[alt="Clearfig"]')?.getAttribute('src'), '/logo.svg');
 const toggle = ui.document.querySelector('button[aria-controls="mobile-menu"]');
 for (let i=0;i<2;i++) { toggle.click(); await delay(10); assert.ok(ui.document.querySelector('#mobile-menu')); toggle.click(); await delay(10); assert.equal(ui.document.querySelector('#mobile-menu'),null); }
 toggle.click(); await delay(10); ui.document.querySelector('#mobile-menu a').click(); await delay(20); assert.equal(ui.document.querySelector('#mobile-menu'),null); assert.equal(ui.window.location.hash,'#review');
-const pricingLink = [...ui.document.querySelectorAll('nav a')].find(link => link.textContent === 'Pricing');
+const pricingLink = [...ui.document.querySelectorAll('nav a')].find(link => link.textContent === 'The check');
 const beforeRepeatedAnchor = ui.scrollTargets.filter(id => id === 'pricing').length;
 pricingLink.click(); await delay(20); pricingLink.click(); await delay(20);
 assert.equal(ui.scrollTargets.filter(id => id === 'pricing').length, beforeRepeatedAnchor + 2);
@@ -137,8 +114,8 @@ for (const escapeFromChild of [false, true]) {
   assert.equal(toggle.getAttribute('aria-expanded'), 'false');
 }
 console.log('PASS repeated same-anchor navigation and mobile Escape from toggle/link with restored focus');
-const bookingLinks=[...ui.document.querySelectorAll('a')].filter(a=>a.textContent.includes('Book a free conversation')); assert.ok(bookingLinks.length >= 3); assert.ok(bookingLinks.every(a=>a.href==='https://cal.com/skcapital/free-financial-breakdown'));
-assert.ok(ui.document.querySelector('a[href^="mailto:snesh@clearfig.in"]')); assert.deepEqual(ui.errors,[]); ui.window.close(); console.log('PASS repeated mobile toggles, close on navigation, booking and email destinations');
+const bookingLinks=[...ui.document.querySelectorAll('a')].filter(a=>a.textContent.includes('Book a free 30-minute business check')); assert.ok(bookingLinks.length >= 3); assert.ok(bookingLinks.every(a=>a.href==='https://cal.com/clearfig/self-check'));
+assert.ok(ui.document.querySelector('a[href^="mailto:hello@clearfig.in"]')); assert.deepEqual(ui.errors,[]); ui.window.close(); console.log('PASS repeated mobile toggles, close on navigation, booking and email destinations');
 console.log('DOM checks do not verify visual layout or hosting geolocation headers.');
 
 const noObserver = await load();
@@ -160,11 +137,14 @@ assert.equal(details.document.querySelectorAll('#questions h3').length, 5);
 assert.ok(details.document.querySelector('#questions').textContent.includes('Sales are growing. Why isn\'t profit?'));
 assert.deepEqual([...details.document.querySelectorAll('#process h3')].map(heading => heading.textContent), ['Understand', 'Decide', 'Implement', 'Review']);
 assert.ok(details.document.querySelector('#process').textContent.includes('separate scope'));
-assert.ok(details.document.querySelector('#who').textContent.includes('10 to 50'));
-assert.ok(details.document.querySelector('#who').textContent.includes('product and D2C brands'));
+assert.ok(details.document.querySelector('#who').textContent.includes('any sector, anywhere'));
+assert.ok(!details.document.querySelector('#who').textContent.includes('10 to 50'));
+assert.ok(!/Hyderabad|Indian businesses|crore|₹/.test(details.document.body.textContent));
 assert.ok(details.document.querySelector('#deliverables').textContent.includes('A clear action plan: what to grow, what to fix, what to stop'));
-assert.ok(details.document.querySelector('#deliverables').textContent.includes('Marketing and costs'));
-assert.ok(details.document.querySelector('#deliverables').textContent.includes('published price'));
+assert.ok(details.document.querySelector('#deliverables').textContent.includes('Marketing and money'));
+assert.ok(details.document.querySelector('#deliverables').textContent.includes('the fee'));
+assert.ok(!details.document.querySelector('#deliverables').textContent.includes('published price'));
+assert.ok(details.document.querySelector('#accountant').textContent.includes('beside your accountant'));
 assert.ok(details.document.querySelector('#accountant').textContent.includes('does not provide bookkeeping, tax, audit'));
 assert.equal(details.document.querySelectorAll('#faq details').length, 8);
 assert.ok(details.document.querySelector('#contact h2').textContent.includes('numbers you already have'));
@@ -200,8 +180,8 @@ console.log('PASS one reserved-space responsive illustrative image, observer fal
 const { readFile } = await import('node:fs/promises');
 const exampleData = JSON.parse(await readFile('src/data/service-samples.json', 'utf8'));
 const examples = await load({ stored: 'AED' });
-assert.equal(examples.document.querySelector('#currency').value, 'AED');
-assert.ok(examples.document.body.textContent.includes('AED 7,500'));
+assert.equal(examples.document.querySelector('#currency'), null);
+assert.equal(examples.document.body.textContent.includes('AED 7,500'), false);
 [...examples.document.querySelectorAll('a')].find(a => a.textContent === 'Examples').click();
 await delay(120);
 assert.equal(examples.window.location.pathname, '/samples');
@@ -263,9 +243,9 @@ for (const item of exampleData) {
 }
 examples.document.querySelector('header a[href="/"]').click(); await delay(150);
 assert.equal(examples.window.location.pathname, '/');
-assert.equal(examples.document.querySelector('#currency').value, 'AED');
-assert.ok(examples.document.querySelector('#pricing').textContent.includes('AED 7,500'));
-assert.equal(examples.document.querySelector('#pricing').textContent.includes('₹35,000'), false);
+assert.equal(examples.document.querySelector('#currency'), null);
+assert.equal(examples.document.querySelector('#pricing').textContent.includes('AED'), false);
+assert.equal(examples.document.querySelector('#pricing').textContent.includes('₹'), false);
 assert.deepEqual(examples.errors, []); examples.window.close();
 for (const item of exampleData) {
   const direct = await load({ url: `https://example.test/samples/${item.id}` });
@@ -290,4 +270,4 @@ const missing = await load({ url:'https://example.test/samples/not-a-service' })
 assert.ok(missing.document.querySelector('h1').textContent.includes('right example'));
 assert.ok(missing.document.querySelector('main a[href="/samples"]'));
 missing.window.close();
-console.log('PASS all eight example links, direct routes, 24 explanations, repeated disclosures, accessible tables, focus, back/forward, missing route, fixed USD examples and market prices');
+console.log('PASS all eight example links, direct routes, 24 explanations, repeated disclosures, accessible tables, focus, back/forward, missing route, fixed USD examples and no market prices');

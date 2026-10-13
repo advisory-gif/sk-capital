@@ -1,10 +1,10 @@
 import { ArrowRight } from 'lucide-react';
 import { useSectionReveal } from '@/hooks/useSectionReveal';
 import PriceList from '@/components/PriceList';
-import { bookingUrl } from '@/lib/offers';
+import { bookingLabel, bookingUrl } from '@/lib/offers';
 import { founderClose, founders, heroSupport, heroTitle } from '@/lib/advisory';
 
-const sources = ['Sales', 'Customers', 'Marketing', 'Costs'];
+const sources = ['Customers', 'Products', 'Pricing', 'Channels', 'Marketing', 'Money'];
 const moves = [
   ['Grow', 'What makes you money.'],
   ['Fix', 'What is getting in the way.'],
@@ -19,7 +19,7 @@ export default function Home() {
         <span className="plain-rule" aria-hidden="true" />
         <h2 className="plain-title">You have the data.</h2>
         <p className="plain-line">You still cannot see the business clearly.</p>
-        <p className="plain-note">For owner-led agencies and consultancies, and for product and D2C brands.</p>
+        <p className="plain-note">For growing owner-led businesses, in any sector, anywhere.</p>
         <ul className="source-grid">
           {sources.map(source => (
             <li key={source}>
@@ -35,10 +35,10 @@ export default function Home() {
       <div className="content-width plain-split">
         <div className="hero-layout">
           <span className="plain-rule" aria-hidden="true" />
-          <h1 className="plain-title plain-title-long">{heroTitle}</h1>
+          <h1 className="plain-title plain-title-tagline">{heroTitle}</h1>
           <p className="plain-line">{heroSupport}</p>
-          <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary mt-8">Book a free conversation <ArrowRight size={16} aria-hidden="true" /></a>
-          <p className="plain-note">Any review is scoped before work starts.</p>
+          <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary mt-8">{bookingLabel} <ArrowRight size={16} aria-hidden="true" /></a>
+          <p className="plain-note">The 30-minute business check is free. Any further work is scoped before it starts.</p>
         </div>
         <figure className="clear-chart">
           <figcaption>One view. Not a client result.</figcaption>
@@ -79,13 +79,13 @@ export default function Home() {
         <ul className="founder-grid">
           {founders.map(founder => (
             <li key={founder.name}>
-              <h3 className="font-ui text-2xl font-medium tracking-tight text-ink">{founder.name}</h3>
+              <h3 className="font-display text-2xl tracking-tight text-ink">{founder.name}</h3>
               <p className="mt-2 text-sm text-soft">{founder.role}</p>
               <p className="mt-4 max-w-md text-base leading-relaxed text-soft">{founder.background}</p>
             </li>
           ))}
         </ul>
-        <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary mt-12">Book a free conversation <ArrowRight size={16} aria-hidden="true" /></a>
+        <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary mt-12">{bookingLabel} <ArrowRight size={16} aria-hidden="true" /></a>
       </div>
     </section>
   </>;
