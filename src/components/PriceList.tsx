@@ -1,7 +1,7 @@
 import { bookingLabel, bookingUrl } from '@/lib/offers';
 
 const steps = [
-  ['Self-check', '20 minutes, free.', 'A first look at how the business makes money, before any paid work.'],
+  ['Business check', '30 minutes, free.', 'A first look at how the business makes money, before any paid work.'],
   ['Health check', 'Scoped before it starts.', 'Customers, products, pricing, channels, marketing and money, read together.'],
 ] as const;
 
@@ -21,7 +21,7 @@ export default function PriceList() {
             </li>
           ))}
         </ol>
-        <p className="mt-16 max-w-2xl border-t border-line pt-8 text-base leading-relaxed text-soft">The self-check is free. Any further work is scoped before it starts, and the fee is agreed then. Clearfig does not provide bookkeeping, tax, audit, CFO or other regulated accounting services.</p>
+        <p className="mt-16 max-w-2xl border-t border-line pt-8 text-base leading-relaxed text-soft">The 30-minute business check is free. Any further work is scoped before it starts, and the fee is agreed then. Clearfig does not provide bookkeeping, tax, audit, CFO or other regulated accounting services.</p>
         <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary mt-8">{bookingLabel}</a>
       </div>
     </section>

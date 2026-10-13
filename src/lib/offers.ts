@@ -1,5 +1,5 @@
 export const bookingUrl = 'https://cal.com/clearfig/self-check';
-export const bookingLabel = 'Book a free 20-minute self-check';
+export const bookingLabel = 'Book a free 30-minute business check';
 export const emailAddress = 'hello@clearfig.in';
 export const enquiryUrl = (subject: string) => `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}`;
 export const offers = [

@@ -25,7 +25,7 @@ npm run dev -- --host 127.0.0.1
 
 Edit `src/lib/advisory.ts` for the promise, audience, questions, steps, deliverables, trust notes, FAQs and founder biographies.
 
-The public offer is a free 20-minute self-check, then a 360-degree business health check. Scope, inputs, deliverable, timing and fee are agreed before paid work starts. The booking link is `https://cal.com/clearfig/self-check`. The contact email is `hello@clearfig.in`.
+The public offer is a free 30-minute business check, then a 360-degree business health check. Scope, inputs, deliverable, timing and fee are agreed before paid work starts. The booking link is `https://cal.com/clearfig/self-check`. The contact email is `hello@clearfig.in`.
 
 The site does not publish fees, guarantees, client names or testimonials. `src/lib/publication.mjs` exports `showPrices` as `false`. The older starter amounts in `src/lib/offers.ts` are not rendered.
 
@@ -56,4 +56,4 @@ For a self-contained offline review, build with `npm run build -- --mode standal
 
 ## Out of scope
 
-DNS and Vercel project settings are intentionally untouched. `vercel.json` is unchanged. Connecting clearfig.in is a separate decision. The booking path on the site is the Clearfig self-check link.
+DNS and Vercel project settings are intentionally untouched. `vercel.json` is unchanged. Connecting clearfig.in is a separate decision. The booking path on the site is https://cal.com/clearfig/self-check.

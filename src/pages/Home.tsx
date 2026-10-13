@@ -38,7 +38,7 @@ export default function Home() {
           <h1 className="plain-title plain-title-tagline">{heroTitle}</h1>
           <p className="plain-line">{heroSupport}</p>
           <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="button-primary mt-8">{bookingLabel} <ArrowRight size={16} aria-hidden="true" /></a>
-          <p className="plain-note">The self-check is free. Any further work is scoped before it starts.</p>
+          <p className="plain-note">The 30-minute business check is free. Any further work is scoped before it starts.</p>
         </div>
         <figure className="clear-chart">
           <figcaption>One view. Not a client result.</figcaption>

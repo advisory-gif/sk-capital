@@ -35,8 +35,9 @@ for (const country of ['IN', 'US', 'AE', 'GB']) {
   assert.equal(document.querySelector('#currency'), null);
   const pricing = document.querySelector('#pricing');
   assert.ok(pricing.textContent.includes('The health check'));
-  assert.ok(pricing.textContent.includes('Self-check'));
-  assert.ok(pricing.textContent.includes('The self-check is free'));
+  assert.ok(pricing.textContent.includes('Business check'));
+  assert.ok(pricing.textContent.includes('30 minutes, free'));
+  assert.ok(pricing.textContent.includes('The 30-minute business check is free'));
   assert.ok(pricing.textContent.includes('fee is agreed'));
   assert.ok(pricing.textContent.includes('does not provide bookkeeping, tax, audit, CFO or other regulated accounting services'));
   assert.ok(pricing.textContent.includes('not a bookkeeping, tax, audit or a CFO service'));
@@ -85,7 +86,7 @@ assert.ok(!ui.document.body.textContent.includes('one approved spreadsheet input
 assert.equal(ui.document.querySelectorAll('a[download]').length, 0);
 const heroCta = ui.document.querySelector('.hero-layout .button-primary');
 assert.equal(heroCta.href, 'https://cal.com/clearfig/self-check');
-assert.equal(heroCta.textContent.replace(/\s+/g, ' ').trim(), 'Book a free 20-minute self-check');
+assert.equal(heroCta.textContent.replace(/\s+/g, ' ').trim(), 'Book a free 30-minute business check');
 assert.equal(heroCta.target, '_blank');
 assert.equal(ui.document.querySelectorAll('.hero-layout .button-primary, .hero-layout a.example-link').length, 1);
 assert.ok(heroCta.compareDocumentPosition(ui.document.querySelector('#about')) & ui.window.Node.DOCUMENT_POSITION_FOLLOWING);
@@ -113,7 +114,7 @@ for (const escapeFromChild of [false, true]) {
   assert.equal(toggle.getAttribute('aria-expanded'), 'false');
 }
 console.log('PASS repeated same-anchor navigation and mobile Escape from toggle/link with restored focus');
-const bookingLinks=[...ui.document.querySelectorAll('a')].filter(a=>a.textContent.includes('Book a free 20-minute self-check')); assert.ok(bookingLinks.length >= 3); assert.ok(bookingLinks.every(a=>a.href==='https://cal.com/clearfig/self-check'));
+const bookingLinks=[...ui.document.querySelectorAll('a')].filter(a=>a.textContent.includes('Book a free 30-minute business check')); assert.ok(bookingLinks.length >= 3); assert.ok(bookingLinks.every(a=>a.href==='https://cal.com/clearfig/self-check'));
 assert.ok(ui.document.querySelector('a[href^="mailto:hello@clearfig.in"]')); assert.deepEqual(ui.errors,[]); ui.window.close(); console.log('PASS repeated mobile toggles, close on navigation, booking and email destinations');
 console.log('DOM checks do not verify visual layout or hosting geolocation headers.');
 

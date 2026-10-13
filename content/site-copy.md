@@ -54,7 +54,7 @@ Links:
 - Examples
 - About
 
-Button: Book a free 20-minute self-check
+Button: Book a free 30-minute business check
 
 Mobile menu button, closed: Open menu
 
@@ -84,9 +84,9 @@ Heading: See how your business really makes money.
 
 A 360-degree business health check for growing owner-led businesses. We read customers, products, pricing, channels, marketing and money together, beside your accountant.
 
-Button: Book a free 20-minute self-check
+Button: Book a free 30-minute business check
 
-The self-check is free. Any further work is scoped before it starts.
+The 30-minute business check is free. Any further work is scoped before it starts.
 
 A small chart beside the words: Makes you money, and Drains you. Caption: One view. Not a client result.
 
@@ -112,9 +112,9 @@ Heading: The health check.
 
 A 360-degree look at the business. Clearfig works beside your accountant. It is not a bookkeeping, tax, audit or a CFO service.
 
-Self-check
+Business check
 
-Time: 20 minutes, free.
+Time: 30 minutes, free.
 
 A first look at how the business makes money, before any paid work.
 
@@ -124,9 +124,9 @@ Scoped before it starts.
 
 Customers, products, pricing, channels, marketing and money, read together.
 
-The self-check is free. Any further work is scoped before it starts, and the fee is agreed then. Clearfig does not provide bookkeeping, tax, audit, CFO or other regulated accounting services.
+The 30-minute business check is free. Any further work is scoped before it starts, and the fee is agreed then. Clearfig does not provide bookkeeping, tax, audit, CFO or other regulated accounting services.
 
-Button: Book a free 20-minute self-check
+Button: Book a free 30-minute business check
 
 ### Founders
 
@@ -146,7 +146,7 @@ Founder
 
 Around ten years across strategy, business partnering and finance, at firms like ITC Infotech and Sun Pharma, finding what the data says about where a business wins and where it leaks. At Clearfig, she makes that easy to see and act on.
 
-Button: Book a free 20-minute self-check
+Button: Book a free 30-minute business check
 
 ## Details
 
@@ -316,7 +316,7 @@ A written reading of your customers, products, pricing, channels, marketing and 
 
 What does it cost?
 
-The 20-minute self-check is free. Any further work is scoped before it starts, and the fee is agreed then. Clearfig does not publish prices.
+The 30-minute business check is free. Any further work is scoped before it starts, and the fee is agreed then. Clearfig does not publish prices.
 
 Who is it for?
 
